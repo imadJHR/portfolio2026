@@ -4,7 +4,6 @@ import {Hero} from "../components/hero"
 import {Services} from "../components/services"
 import {Portfolio} from "../components/portfolio"
 import {Testimonials} from "../components/testimonials"
-import {Pricing} from "../components/pricing"
 import {Contact} from "../components/contact"
 import Footer from "../components/footer"
 import {SocialSidebar} from "../components/social-sidebar"
@@ -40,7 +39,6 @@ export default function ArabicPage() {
       <Services lang="ar" t={t} />
       <Portfolio lang="ar" t={t} />
       <Testimonials lang="ar" t={t} />
-      <Pricing lang="ar" t={t} />
       <Contact lang="ar" t={t} />
       <Footer lang="ar" t={t} />
 
