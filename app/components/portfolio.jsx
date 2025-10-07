@@ -40,7 +40,7 @@ export function Portfolio({ lang, t }) {
     }
   }
 
-  const filterButtons = ["all", "vitrine", "ecommerce", "landing"]
+  const filterButtons = ["all", "vitrine", "ecommerce",] //landing
 
   return (
     <section id="portfolio" className={`relative py-16 sm:py-20 lg:py-24 xl:py-28 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}>

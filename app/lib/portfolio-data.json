@@ -1,68 +1,201 @@
+
 [
-  {
-    "id": "riad-marrakech",
-    "title": {
-      "ar": "موقع رياض مراكش الفاخر",
-      "fr": "Site Riad Marrakech Luxe"
-    },
-    "category": "vitrine",
-    "image": "/placeholder.svg?height=600&width=800",
-    "challenge": {
-      "ar": "إنشاء موقع يعكس الفخامة والأصالة المغربية",
-      "fr": "Créer un site reflétant le luxe et l'authenticité marocaine"
-    },
-    "solution": {
-      "ar": "تصميم عصري مع عناصر تقليدية وتجربة مستخدم سلسة",
-      "fr": "Design moderne avec éléments traditionnels et UX fluide"
-    },
-    "results": {
-      "ar": "زيادة الحجوزات بنسبة 200% في 3 أشهر",
-      "fr": "Augmentation des réservations de 200% en 3 mois"
-    },
-    "liveUrl": "https://example.com"
+{
+  "id": "ironz-equipement",
+  "title": {
+    "ar": "معدات الحديد",
+    "fr": "Ironz Équipements"
   },
-  {
-    "id": "boutique-caftan",
-    "title": {
-      "ar": "متجر القفطان المغربي",
-      "fr": "Boutique Caftan Marocain"
-    },
-    "category": "ecommerce",
-    "image": "/placeholder.svg?height=600&width=800",
-    "challenge": {
-      "ar": "بناء متجر إلكتروني متكامل مع نظام دفع آمن",
-      "fr": "Construire une boutique en ligne complète avec paiement sécurisé"
-    },
-    "solution": {
-      "ar": "منصة تجارة إلكترونية مع تكامل الدفع والشحن",
-      "fr": "Plateforme e-commerce avec intégration paiement et livraison"
-    },
-    "results": {
-      "ar": "أكثر من 500 طلب في الشهر الأول",
-      "fr": "Plus de 500 commandes le premier mois"
-    },
-    "liveUrl": "https://example.com"
+  "category": "ecommerce",
+  "image": "/ironz.png",
+  "challenge": {
+  "ar": "تطوير منصة تجارة إلكترونية مخصصة لعشاق اللياقة البدنية في المغرب، تجمع بين المنتجات عالية الجودة وتجربة مستخدم سريعة وسهلة.",
+  "fr": "Développer une plateforme e-commerce dédiée aux passionnés de fitness au Maroc, combinant produits de haute qualité et expérience utilisateur fluide et rapide."
+},
+  "solution": {
+    "ar": "تصميم عصري مع عناصر تقليدية وتجربة مستخدم سلسة",
+    "fr": "Design moderne avec éléments traditionnels et UX fluide"
   },
-  {
-    "id": "agence-immobilier",
-    "title": {
-      "ar": "وكالة عقارات الدار البيضاء",
-      "fr": "Agence Immobilière Casablanca"
-    },
-    "category": "vitrine",
-    "image": "/placeholder.svg?height=600&width=800",
-    "challenge": {
-      "ar": "عرض العقارات بطريقة جذابة وسهلة البحث",
-      "fr": "Présenter les propriétés de manière attractive et facile à rechercher"
-    },
-    "solution": {
-      "ar": "نظام بحث متقدم مع معرض صور احترافي",
-      "fr": "Système de recherche avancé avec galerie photos professionnelle"
-    },
-    "results": {
-      "ar": "زيادة الاستفسارات بنسبة 180%",
-      "fr": "Augmentation des demandes de 180%"
-    },
-    "liveUrl": "https://example.com"
-  }
+  "results": {
+    "ar": "زيادة في المبيعات والوعي بالعلامة التجارية",
+    "fr": "Augmentation des ventes et de la notoriété de la marque"
+  },
+  "liveUrl": "https://ironz.ma"
+},
+{
+  "id": "lettre-3d-shop",
+  "title": {
+    "fr": "Lettre3DShop / MJ PUB",
+    "ar": "ليتر 3 دي شوب / إم جاي باب"
+  },
+  "category": "ecommerce",
+  "image": "/mj.png",
+  "challenge": {
+    "fr": "Permettre aux entreprises et commerçants de concevoir et commander des enseignes lumineuses sur mesure, tout en garantissant une expérience en ligne intuitive et fiable.",
+    "ar": "تمكين الشركات والتجار من تصميم وطلب لافتات مضيئة مخصصة، مع ضمان تجربة مستخدم إلكترونية سلسة وموثوقة."
+  },
+  "solution": {
+    "fr": "Un configurateur en ligne pour personnaliser enseignes LED, lettres découpées et panneaux ; interface claire pour devis instantané, livraison France & Maroc ; galerie de réalisations pour inspirer.",
+    "ar": "منصة تكوين أونلاين لتخصيص اللافتات LED، الحروف المقتطعة واللوحات؛ واجهة واضحة لتقديم عرض فوري، شحن إلى فرنسا والمغرب؛ معرض إنجازات للإلهام."
+  },
+  "results": {
+    "fr": "Amélioration de la visibilité des produits, augmentation des demandes de devis, positionnement comme spécialiste des enseignes personnalisées.",
+    "ar": "تحسين ظهور المنتجات، زيادة طلبات العروض، تموضع كخبير في اللافتات المخصصة."
+  },
+  "liveUrl": "https://www.lettre3dshop.com"
+},
+{
+  "id": "patisserie-les-jumeaux",
+  "title": {
+    "ar": "حلويات التوأم (الجمال) الدار البيضاء",
+    "fr": "Pâtisserie Les Jumeaux Casablanca"
+  },
+  "category": "ecommerce",
+  "image": "/pat.png",
+  "challenge": {
+    "ar": "عرض أصالة وتنوع الحلويات المغربية بطريقة جذابة وسهلة",
+    "fr": "Présenter l'authenticité et la variété des pâtisseries marocaines de manière attractive et simple"
+  },
+  "solution": {
+    "ar": "تصميم أنيق وكتالوج منتجات واضح مع خيارات اتصال مباشرة",
+    "fr": "Design élégant et catalogue de produits clair avec options de contact direct"
+  },
+  "results": {
+    "ar": "تعزيز صورة العلامة التجارية وتحسين وصول العملاء",
+    "fr": "Renforcement de l'image de marque et amélioration de l'engagement client"
+  },
+  "liveUrl": "https://pat-ju.vercel.app/"
+},
+{
+  "id": "firdaous-spa",
+  "title": {
+    "ar": "منتجع وفردوس للتدليك",
+    "fr": "Firdaous Spa & Massage"
+  },
+  "category": "vitrine",
+  "image": "/spa.png",
+  "challenge": {
+    "ar": "بناء الثقة وعرض الأجواء الهادئة للخدمات الراقية عبر الإنترنت",
+    "fr": "Instaurer la confiance et transmettre l'atmosphère sereine des services haut de gamme en ligne"
+  },
+  "solution": {
+    "ar": "تصميم هادئ وجذاب مع معرض صور للخدمات وقائمة أسعار واضحة",
+    "fr": "Design apaisant et engageant avec galerie de photos des services et grille tarifaire claire"
+  },
+  "results": {
+    "ar": "تحسين حجوزات المواعيد عبر الإنترنت وإبراز الخدمات المميزة",
+    "fr": "Optimisation des prises de rendez-vous en ligne et mise en avant des services signature"
+  },
+  "liveUrl": "https://firdaousspa.netlify.app/"
+},
+{
+  "id": "cafe-restaurant-la-brioche",
+  "title": {
+    "ar": "مقهى ومطعم لابريوش (تجربة إيطالية)",
+    "fr": "Café & Restaurant La Brioche - Expérience Italienne"
+  },
+  "category": "ecommerce",
+  "image": "/test.png",
+  "challenge": {
+    "ar": "تحويل الزوار إلى زبائن عبر الحجز وعرض الأجواء الدافئة والمطبخ الإيطالي الأصيل",
+    "fr": "Convertir les visiteurs en clients par la réservation et transmettre l'ambiance chaleureuse et la cuisine italienne authentique"
+  },
+  "solution": {
+    "ar": "عرض واضح لقائمة الطعام، ميزة طلب/حجز مباشر، ومعرض صور يبرز الأجواء",
+    "fr": "Présentation claire du menu, fonctionnalité de commande/réservation directe, et galerie photos pour mettre en valeur l'ambiance"
+  },
+  "results": {
+    "ar": "زيادة معدل حجز الطاولات وطلبات التوصيل عبر الإنترنت",
+    "fr": "Augmentation du taux de réservation de tables et des commandes de livraison en ligne"
+  },
+  "liveUrl": "https://labrioche.netlify.app/"
+},
+{
+  "id": "demo-cafe-bianca",
+  "title": {
+    "ar": "كافيه بيانكا",
+    "fr": "Café Bianca"
+  },
+  "category": "vitrine",
+  "image": "/bianca.png",
+  "challenge": {
+    "ar": "جذب الزبائن الجدد وإيصال الأجواء المميزة والمريحة للمقهى عبر الإنترنت",
+    "fr": "Attirer une nouvelle clientèle et communiquer l'atmosphère unique et confortable du café en ligne"
+  },
+  "solution": {
+    "ar": "تصميم مرئي يركز على المنتجات (قهوة، حلويات)، وموقع للمحل، وخيارات اتصال سريعة",
+    "fr": "Conception visuelle axée sur les produits (café, pâtisseries), localisation du lieu et options de contact rapide"
+  },
+  "results": {
+    "ar": "زيادة حركة الزبائن نحو المحل وزيادة الوعي بالعلامة التجارية المحلية",
+    "fr": "Augmentation du trafic piéton vers le lieu physique et amélioration de la notoriété de la marque locale"
+  },
+  "liveUrl": "https://demo-cafe-bianca.netlify.app/"
+},
+{
+  "id": "marque-copine",
+  "title": {
+    "ar": "ماركة كوبين (للصديقات)",
+    "fr": "Copine - Marque / Communauté Féminine"
+  },
+  "category": "ecommerce",
+  "image": "/copine.png",
+  "challenge": {
+    "ar": "بناء علامة تجارية قوية تستهدف جمهوراً نسائياً محدداً وتعزيز التفاعل المجتمعي",
+    "fr": "Construire une marque forte ciblant un public féminin spécifique et stimuler l'engagement communautaire"
+  },
+  "solution": {
+    "ar": "تصميم عصري وجذاب، ومحتوى موجه، وتكامل مع وسائل التواصل الاجتماعي",
+    "fr": "Design moderne et attrayant, contenu orienté vers la cible, et intégration des réseaux sociaux"
+  },
+  "results": {
+    "ar": "زيادة المتابعة على وسائل التواصل الاجتماعي وتعزيز ولاء العملاء",
+    "fr": "Augmentation du nombre d'abonnés sur les réseaux sociaux et fidélisation de la clientèle"
+  },
+  "liveUrl": "https://copine.netlify.app/"
+},
+{
+  "id": "tonka-atelier-chocolatier",
+  "title": {
+    "ar": "أتوليي تونكا - صانع شوكولاتة حرفي",
+    "fr": "L'atelier Tonka - Chocolatier Artisanal"
+  },
+  "category": "vitrine",
+  "image": "/tonka.png",
+  "challenge": {
+    "ar": "تسليط الضوء على جودة الحرفية والمكونات الفاخرة لمنتجات الشوكولاتة",
+    "fr": "Mettre en valeur la qualité artisanale et les ingrédients haut de gamme des produits de chocolat"
+  },
+  "solution": {
+    "ar": "كتالوج منتجات بصور عالية الجودة، قصة العلامة التجارية (الحرفية)، وخيار طلب مخصص",
+    "fr": "Catalogue produits avec photos haute résolution, storytelling de la marque (artisanat), et option de commande personnalisée"
+  },
+  "results": {
+    "ar": "زيادة مبيعات المنتجات الفاخرة وتعزيز صورة العلامة التجارية كمرجع في الشوكولاتة",
+    "fr": "Augmentation des ventes de produits premium et renforcement de l'image de marque comme référence en chocolaterie"
+  },
+  "liveUrl": "https://tonka-atelier.netlify.app/"
+},
+{
+  "id": "la-burratina-trattoria-pizzeria",
+  "title": {
+    "ar": "مطعم وبيتزا البوراتا - القنيطرة",
+    "fr": "LA BURRATINA – TRATTORIA & PIZZERIA"
+  },
+  "category": "vitrine",
+  "image": "/burratina.png",
+  "challenge": {
+    "ar": "إيصال أصالة المطبخ الإيطالي الدافئ وتسهيل الحجز المباشر عبر الإنترنت",
+    "fr": "Communiquer l'authenticité de la cuisine italienne et faciliter la réservation directe en ligne"
+  },
+  "solution": {
+    "ar": "عرض مفصل لقائمة الطعام (بما في ذلك الأسعار)، شهادات العملاء، ونظام حجز مدمج وواضح",
+    "fr": "Présentation détaillée du menu (incluant les prix), témoignages clients, et système de réservation clair et intégré"
+  },
+  "results": {
+    "ar": "زيادة الحجوزات عبر الموقع وتحسين تقييمات العملاء عبر الإنترنت",
+    "fr": "Augmentation des réservations via le site et amélioration de la note moyenne des avis clients en ligne"
+  },
+  "liveUrl": "https://laburratinagroupe.com/"
+}
 ]
