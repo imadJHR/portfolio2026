@@ -1,0 +1,68 @@
+[
+  {
+    "id": "riad-marrakech",
+    "title": {
+      "ar": "موقع رياض مراكش الفاخر",
+      "fr": "Site Riad Marrakech Luxe"
+    },
+    "category": "vitrine",
+    "image": "/placeholder.svg?height=600&width=800",
+    "challenge": {
+      "ar": "إنشاء موقع يعكس الفخامة والأصالة المغربية",
+      "fr": "Créer un site reflétant le luxe et l'authenticité marocaine"
+    },
+    "solution": {
+      "ar": "تصميم عصري مع عناصر تقليدية وتجربة مستخدم سلسة",
+      "fr": "Design moderne avec éléments traditionnels et UX fluide"
+    },
+    "results": {
+      "ar": "زيادة الحجوزات بنسبة 200% في 3 أشهر",
+      "fr": "Augmentation des réservations de 200% en 3 mois"
+    },
+    "liveUrl": "https://example.com"
+  },
+  {
+    "id": "boutique-caftan",
+    "title": {
+      "ar": "متجر القفطان المغربي",
+      "fr": "Boutique Caftan Marocain"
+    },
+    "category": "ecommerce",
+    "image": "/placeholder.svg?height=600&width=800",
+    "challenge": {
+      "ar": "بناء متجر إلكتروني متكامل مع نظام دفع آمن",
+      "fr": "Construire une boutique en ligne complète avec paiement sécurisé"
+    },
+    "solution": {
+      "ar": "منصة تجارة إلكترونية مع تكامل الدفع والشحن",
+      "fr": "Plateforme e-commerce avec intégration paiement et livraison"
+    },
+    "results": {
+      "ar": "أكثر من 500 طلب في الشهر الأول",
+      "fr": "Plus de 500 commandes le premier mois"
+    },
+    "liveUrl": "https://example.com"
+  },
+  {
+    "id": "agence-immobilier",
+    "title": {
+      "ar": "وكالة عقارات الدار البيضاء",
+      "fr": "Agence Immobilière Casablanca"
+    },
+    "category": "vitrine",
+    "image": "/placeholder.svg?height=600&width=800",
+    "challenge": {
+      "ar": "عرض العقارات بطريقة جذابة وسهلة البحث",
+      "fr": "Présenter les propriétés de manière attractive et facile à rechercher"
+    },
+    "solution": {
+      "ar": "نظام بحث متقدم مع معرض صور احترافي",
+      "fr": "Système de recherche avancé avec galerie photos professionnelle"
+    },
+    "results": {
+      "ar": "زيادة الاستفسارات بنسبة 180%",
+      "fr": "Augmentation des demandes de 180%"
+    },
+    "liveUrl": "https://example.com"
+  }
+]
