@@ -8,6 +8,28 @@ export default function Footer({ lang, t }) {
   const isRTL = lang === "ar"
   const currentYear = new Date().getFullYear()
 
+  // Updated Color Definitions
+  const colors = {
+    primary: "#520371",      // Deep Plum
+    lightBg: "#fdf7fd",      // Light Lavender
+    darkBg: "#2a002d",       // Deep Dark Plum
+    lightAccent: "#8a05c2",  // Lighter Plum for light mode
+    darkAccent: "#a832e0",   // Brighter Plum for dark mode
+    lightText: "#2a002d",    // Dark text for light mode
+    darkText: "#fdf7fd",     // Light text for dark mode
+  }
+
+  // CSS Variables for dynamic styling
+  const cssVariables = {
+    '--brand-primary': colors.primary,
+    '--brand-light-bg': colors.lightBg,
+    '--brand-dark-bg': colors.darkBg,
+    '--brand-light-accent': colors.lightAccent,
+    '--brand-dark-accent': colors.darkAccent,
+    '--brand-light-text': colors.lightText,
+    '--brand-dark-text': colors.darkText,
+  }
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -15,13 +37,13 @@ export default function Footer({ lang, t }) {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/yourprofile",
+      href: "https://github.com/imadJHR",
       label: "GitHub",
       color: "hover:bg-gray-700 hover:text-white"
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/company/nemsi-media/?trk=similar-pages",
       label: "LinkedIn",
       color: "hover:bg-blue-600 hover:text-white"
     },
@@ -33,19 +55,19 @@ export default function Footer({ lang, t }) {
     },
     {
       icon: Instagram,
-      href: "https://instagram.com/yourprofile",
+      href: "https://www.instagram.com/nemsimedia/",
       label: "Instagram",
-      color: "hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 hover:text-white"
+      color: "hover:bg-gradient-to-br hover:from-[var(--brand-primary)] hover:to-[var(--brand-light-accent)] dark:hover:to-[var(--brand-dark-accent)] hover:text-white"
     },
     {
       icon: Mail,
-      href: "mailto:contact@example.com",
+      href: "mailto:imadjohar4@gmail.com",
       label: "Email",
-      color: "hover:bg-cyan-600 hover:text-white"
+      color: "hover:bg-[var(--brand-primary)] hover:text-white"
     },
     {
       icon: MessageCircle,
-      href: "https://wa.me/212600000000",
+      href: "https://wa.me/212645288216",
       label: "WhatsApp",
       color: "hover:bg-green-500 hover:text-white"
     }
@@ -66,9 +88,12 @@ export default function Footer({ lang, t }) {
   ]
 
   return (
-    <footer className={`relative bg-card border-t border-border/50 text-foreground overflow-hidden ${isRTL ? "rtl" : "ltr"}`}>
+    <footer 
+      style={cssVariables}
+      className={`relative bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)] border-t border-[var(--brand-primary)]/20 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-cyan-500/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-transparent to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5" />
       
       {/* Animated Orbs */}
       <motion.div
@@ -81,7 +106,7 @@ export default function Footer({ lang, t }) {
           repeat: Number.POSITIVE_INFINITY,
           ease: "easeInOut",
         }}
-        className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"
+        className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-light-accent)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -94,7 +119,7 @@ export default function Footer({ lang, t }) {
           ease: "easeInOut",
           delay: 2,
         }}
-        className="absolute -bottom-20 -right-20 w-48 h-48 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"
+        className="absolute -bottom-20 -right-20 w-48 h-48 bg-gradient-to-br from-[var(--brand-light-accent)]/10 to-[var(--brand-primary)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-3xl"
       />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,12 +136,12 @@ export default function Footer({ lang, t }) {
               whileHover={{ scale: 1.05 }}
               className="inline-block"
             >
-              <h3 className="text-2xl sm:text-3xl font-bold font-serif bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl sm:text-3xl font-bold font-serif bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent">
                 {isRTL ? "مطور مواقع" : "DevWeb Maroc"}
               </h3>
             </motion.div>
             
-            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+            <p className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 leading-relaxed text-sm sm:text-base">
               {isRTL
                 ? "نصمم مواقع إلكترونية احترافية للشركات في المغرب بأسعار تنافسية وجودة عالية"
                 : "Création de sites web professionnels pour entreprises au Maroc avec des prix compétitifs et une qualité supérieure"}
@@ -124,13 +149,13 @@ export default function Footer({ lang, t }) {
 
             {/* Contact Info */}
             <div className="space-y-2 pt-4">
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-purple-500" />
-                <span>contact@example.com</span>
+              <div className="flex items-center gap-3 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80">
+                <Mail className="w-4 h-4 text-[var(--brand-primary)]" />
+                <span>imadjohar4@gmail.com</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80">
                 <MessageCircle className="w-4 h-4 text-green-500" />
-                <span>+212 600-000-000</span>
+                <span>+212 645-288-216</span>
               </div>
             </div>
           </motion.div>
@@ -142,8 +167,8 @@ export default function Footer({ lang, t }) {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h4 className="font-bold mb-6 text-foreground text-lg flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-purple-500 to-cyan-500 rounded-full" />
+            <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-lg flex items-center gap-2">
+              <div className="w-1 h-4 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-full" />
               {isRTL ? "روابط سريعة" : "Liens rapides"}
             </h4>
             <ul className="space-y-3">
@@ -156,7 +181,7 @@ export default function Footer({ lang, t }) {
                 >
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-muted-foreground hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300"
+                    className="group flex items-center gap-2 text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-primary)] transition-all duration-300"
                   >
                     <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <span className="text-sm sm:text-base">{link.label}</span>
@@ -173,8 +198,8 @@ export default function Footer({ lang, t }) {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="font-bold mb-6 text-foreground text-lg flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full" />
+            <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-lg flex items-center gap-2">
+              <div className="w-1 h-4 bg-gradient-to-b from-[var(--brand-light-accent)] to-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] rounded-full" />
               {isRTL ? "خدماتنا" : "Nos Services"}
             </h4>
             <ul className="space-y-3">
@@ -187,7 +212,7 @@ export default function Footer({ lang, t }) {
                 >
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-muted-foreground hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300"
+                    className="group flex items-center gap-2 text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-light-accent)] dark:hover:text-[var(--brand-dark-accent)] transition-all duration-300"
                   >
                     <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <span className="text-sm sm:text-base">{link.label}</span>
@@ -206,8 +231,8 @@ export default function Footer({ lang, t }) {
             className="space-y-6"
           >
             <div>
-              <h4 className="font-bold mb-6 text-foreground text-lg flex items-center gap-2">
-                <div className="w-1 h-4 bg-gradient-to-b from-pink-500 to-purple-500 rounded-full" />
+              <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-lg flex items-center gap-2">
+                <div className="w-1 h-4 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-full" />
                 {isRTL ? "تابعنا" : "Suivez-nous"}
               </h4>
               
@@ -224,10 +249,10 @@ export default function Footer({ lang, t }) {
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`w-10 h-10 bg-muted/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-border/50 transition-all duration-300 ${social.color} group`}
+                    className={`w-10 h-10 bg-[var(--brand-light-bg)]/50 dark:bg-[var(--brand-dark-bg)]/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-[var(--brand-primary)]/20 transition-all duration-300 ${social.color} group`}
                     aria-label={social.label}
                   >
-                    <social.icon className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors duration-300" />
+                    <social.icon className="w-4 h-4 text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 group-hover:text-white transition-colors duration-300" />
                   </motion.a>
                 ))}
               </div>
@@ -238,7 +263,7 @@ export default function Footer({ lang, t }) {
               onClick={scrollToTop}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-purple-500/30 group"
+              className="w-full bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] hover:from-[var(--brand-primary)] hover:to-[var(--brand-primary)]/90 text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-[var(--brand-primary)]/30 group"
             >
               <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
               <span className="text-sm font-medium">
@@ -254,7 +279,7 @@ export default function Footer({ lang, t }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="border-t border-border/50 pt-8 pb-6"
+          className="border-t border-[var(--brand-primary)]/20 pt-8 pb-6"
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
             {/* Copyright */}
@@ -262,7 +287,7 @@ export default function Footer({ lang, t }) {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-muted-foreground text-sm flex items-center gap-2"
+              className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 text-sm flex items-center gap-2"
             >
               <span>© {currentYear} {isRTL ? "مطور مواقع المغرب" : "DevWeb Maroc"}</span>
               <motion.span
@@ -279,9 +304,9 @@ export default function Footer({ lang, t }) {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 text-sm text-muted-foreground"
+              className="flex items-center gap-2 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80"
             >
-              <Sparkles className="w-4 h-4 text-purple-500" />
+              <Sparkles className="w-4 h-4 text-[var(--brand-primary)]" />
               <span>
                 {isRTL ? "مصنوع بحب في المغرب" : "Fabriqué avec amour au Maroc"}
               </span>
@@ -296,13 +321,13 @@ export default function Footer({ lang, t }) {
             >
               <Link
                 href={`/${lang}/privacy`}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] transition-colors"
               >
                 {isRTL ? "الخصوصية" : "Confidentialité"}
               </Link>
               <Link
                 href={`/${lang}/terms`}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] transition-colors"
               >
                 {isRTL ? "الشروط" : "Conditions"}
               </Link>
