@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://yoursite.com"
+  const baseUrl = "https://nemsimedia.ma"
 
   return [
     {

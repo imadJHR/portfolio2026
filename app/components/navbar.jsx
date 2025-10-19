@@ -134,7 +134,7 @@ export default function Navbar({ lang, t }) {
               <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex-shrink-0">
                 <Image
                   src={getLogo()}
-                  alt={isRTL ? "تطوير المواقع" : "NemsiMedia"}
+                  alt={isRTL ? "نمسي ميديا" : "NemsiMedia"}
                   width={80}
                   height={80}
                   className="w-full h-full object-contain transition-all duration-300"
@@ -145,7 +145,7 @@ export default function Navbar({ lang, t }) {
               <div className="flex flex-col min-w-0">
                 {/* Logo Text: Gradient with new colors */}
                 <span className="text-lg sm:text-xl md:text-2xl font-bold font-serif bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent leading-tight whitespace-nowrap">
-                  {isRTL ? "تطوير المواقع" : "Nemsi Media"}
+                  {isRTL ?  "نمسي ميديا" : "Nemsi Media"}
                 </span>
                 <span className="text-xs text-[var(--brand-primary)]/70 dark:text-[var(--brand-dark-text)]/70 -mt-1 hidden xs:block whitespace-nowrap">
                   {isRTL ? "المغرب" : "Maroc"}
