@@ -439,7 +439,7 @@ export default function RootLayout({ children }) {
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mx-auto mb-4"></div>
                   <p className="text-gray-600 dark:text-gray-300 font-medium">
-                    Chargement de l'agence Nemsi Media Maroc...
+                    Chargement de l&apos;agence Nemsi Media Maroc...
                   </p>
                 </div>
               </div>
