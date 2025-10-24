@@ -88,7 +88,7 @@ export function Services({ lang, t }) {
     {
       id: "web-design",
       title: isRTL ? "تصميم مواقع الويب" : "Création de Sites Web",
-      description: isRTL 
+      description: isRTL
         ? "تصميم مواقع ويب احترافية متجاوبة مع محركات البحث SEO، مخصصة للشركات المغربية لزيادة الظهور الرقمي وجذب العملاء"
         : "Conception de sites web professionnels responsifs optimisés SEO, spécialisés pour les entreprises marocaines pour augmenter la visibilité digitale et attirer des clients",
       icon: Code,
@@ -138,8 +138,8 @@ export function Services({ lang, t }) {
   ]
 
   return (
-    <section 
-      id="services" 
+    <section
+      id="services"
       style={cssVariables}
       className={`relative py-16 sm:py-20 lg:py-24 xl:py-28 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
     >
@@ -219,8 +219,8 @@ export function Services({ lang, t }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-4 sm:mb-6 font-serif text-balance"
           >
-            {isRTL 
-              ? "شركة تصميم مواقع وتسويق رقمي في المغرب" 
+            {isRTL
+              ? "شركة تصميم مواقع وتسويق رقمي في المغرب"
               : "Agence Création Sites Web & Marketing Digital au Maroc"
             }
           </motion.h1>
@@ -233,7 +233,7 @@ export function Services({ lang, t }) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 max-w-3xl sm:max-w-4xl mx-auto leading-relaxed font-light"
           >
-            {isRTL 
+            {isRTL
               ? "شركة متخصصة في تصميم مواقع الويب، التسويق الرقمي SEO، تطبيقات الجوال، وإدارة وسائل التواصل الاجتماعي للشركات في المغرب. نضمن ظهورك في الصفحة الأولى على جوجل."
               : "Agence spécialisée en création de sites web, marketing digital SEO, applications mobiles et gestion des réseaux sociaux pour entreprises au Maroc. Nous garantissons votre apparition en première page sur Google."
             }
@@ -352,12 +352,12 @@ export function Services({ lang, t }) {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-lg sm:text-xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 mb-8 font-light"
           >
-            {isRTL 
+            {isRTL
               ? "🚀 احصل على موقع ويب محسن لتحسين محركات البحث SEO وارفع مبيعاتك في المغرب. تواصل معنا للحصول على استشارة مجانية."
               : "🚀 Obtenez un site web optimisé SEO et augmentez vos ventes au Maroc. Contactez-nous pour une consultation gratuite."
             }
           </motion.p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.div
               whileHover={{ scale: 1.05 }}

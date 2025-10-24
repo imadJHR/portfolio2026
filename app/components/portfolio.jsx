@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
@@ -12,17 +12,18 @@ export function Portfolio({ lang, t }) {
   const [filter, setFilter] = useState("all")
   const [selectedProject, setSelectedProject] = useState(null)
   const [isFilterOpen, setIsFilterOpen] = useState(false)
+  const [isFiltering, setIsFiltering] = useState(false)
   const isRTL = lang === "ar"
 
-  // Updated Color Definitions
+  // Couleurs d'origine conservées
   const colors = {
-    primary: "#520371",     
-    lightBg: "#fdf7fd",      
-    darkBg: "#2a002d",       
-    lightAccent: "#8a05c2",  
-    darkAccent: "#a832e0",   
-    lightText: "#2a002d",    
-    darkText: "#fdf7fd",     
+    primary: "#520371",      // Deep Plum
+    lightBg: "#fdf7fd",      // Light Lavender
+    darkBg: "#2a002d",       // Deep Dark Plum
+    lightAccent: "#8a05c2",  // Lighter Plum for light mode
+    darkAccent: "#a832e0",   // Brighter Plum for dark mode
+    lightText: "#2a002d",    // Dark text for light mode
+    darkText: "#fdf7fd",     // Light text for dark mode
   }
 
   // CSS Variables for dynamic styling
@@ -70,7 +71,25 @@ export function Portfolio({ lang, t }) {
     }
   ]
 
-  const filteredProjects = filter === "all" ? portfolioData : portfolioData.filter((p) => p.category === filter)
+  // Filter projects with loading state
+  const filteredProjects = useMemo(() => {
+    if (filter === "all") {
+      return portfolioData
+    }
+    return portfolioData.filter((p) => p.category === filter)
+  }, [filter])
+
+  // Handle filter change with loading state
+  const handleFilterChange = (newFilter) => {
+    setIsFiltering(true)
+    setFilter(newFilter)
+    setIsFilterOpen(false)
+    
+    // Simulate loading for better UX
+    setTimeout(() => {
+      setIsFiltering(false)
+    }, 300)
+  }
 
   // Animation variants
   const containerVariants = {
@@ -270,17 +289,16 @@ export function Portfolio({ lang, t }) {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button
-                    onClick={() => {
-                      setFilter(filterBtn.key)
-                      setIsFilterOpen(false)
-                    }}
+                    onClick={() => handleFilterChange(filterBtn.key)}
                     variant={filter === filterBtn.key ? "default" : "outline"}
+                    disabled={isFiltering}
                     className={`
                       relative overflow-hidden group font-medium px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 flex items-center gap-2
                       ${filter === filterBtn.key
                         ? "bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] hover:from-[var(--brand-primary)] hover:to-[var(--brand-primary)]/90 text-white shadow-lg shadow-[var(--brand-primary)]/30"
                         : "border-[var(--brand-primary)]/20 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/10 hover:border-[var(--brand-primary)]/50 bg-[var(--brand-light-bg)]/30 dark:bg-[var(--brand-dark-bg)]/30 backdrop-blur-sm"
                       }
+                      ${isFiltering ? "opacity-50 cursor-not-allowed" : ""}
                     `}
                   >
                     {filter === filterBtn.key && (
@@ -308,145 +326,169 @@ export function Portfolio({ lang, t }) {
           </div>
         </motion.div>
 
-        {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => {
-              const PlatformIcon = project.platform ? getPlatformIcon(project.platform) : null
-              
-              return (
+        {/* Loading State */}
+        <AnimatePresence mode="wait">
+          {isFiltering && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex justify-center items-center py-20"
+            >
               <motion.div
-                key={project.id}
-                layout
-                variants={itemVariants}
-                whileHover={{ 
-                  y: -8, 
-                  scale: 1.02,
-                  transition: { duration: 0.3, ease: "easeOut" }
-                }}
-                className="group cursor-pointer"
-              >
-                <Card
-                  className="h-full bg-[var(--brand-light-bg)]/50 dark:bg-[var(--brand-dark-bg)]/50 backdrop-blur-sm border-[var(--brand-primary)]/20 overflow-hidden hover:border-[var(--brand-primary)]/50 hover:shadow-2xl hover:shadow-[var(--brand-primary)]/10 transition-all duration-500 relative"
-                  onClick={() => setSelectedProject(project)}
-                >
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                className="w-12 h-12 border-4 border-[var(--brand-primary)]/20 border-t-[var(--brand-primary)] rounded-full"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Projects Grid */}
+        <AnimatePresence mode="wait">
+          {!isFiltering && (
+            <motion.div
+              key={filter}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((project, index) => {
+                  const PlatformIcon = project.platform ? getPlatformIcon(project.platform) : null
                   
-                  {/* Image Container */}
-                  <div className="relative h-60 sm:h-72 lg:h-80 overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title[lang] + " - " + (isRTL ? "مشروع تصميم موقع ويب" : "Projet création site web")}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-light-bg)]/90 dark:from-[var(--brand-dark-bg)]/90 via-[var(--brand-light-bg)]/50 dark:via-[var(--brand-dark-bg)]/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-4 right-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-3 py-1 rounded-full text-xs font-semibold border border-[var(--brand-primary)]/20 shadow-lg">
-                      {t.portfolio.filter[project.category]}
-                    </div>
-
-                    {/* Platform Badge for Social Media Projects */}
-                    {project.platform && (
-                      <div className="absolute top-4 left-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-2 py-1 rounded-full text-xs border border-[var(--brand-primary)]/20 flex items-center gap-1">
-                        <PlatformIcon className="w-3 h-3" />
-                        {project.platform}
-                      </div>
-                    )}
-
-                    {/* Project Duration */}
-                    {project.duration && (
-                      <div className={`absolute ${project.platform ? 'top-16' : 'top-4'} left-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-2 py-1 rounded-full text-xs border border-[var(--brand-primary)]/20 flex items-center gap-1`}>
-                        <Calendar className="w-3 h-3" />
-                        {project.duration}
-                      </div>
-                    )}
-
-                    {/* View Project Button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        className="bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm border border-[var(--brand-primary)]/20 rounded-full p-4 shadow-2xl"
+                  return (
+                    <motion.div
+                      key={project.id}
+                      layout
+                      variants={itemVariants}
+                      whileHover={{ 
+                        y: -8, 
+                        scale: 1.02,
+                        transition: { duration: 0.3, ease: "easeOut" }
+                      }}
+                      className="group cursor-pointer"
+                    >
+                      <Card
+                        className="h-full bg-[var(--brand-light-bg)]/50 dark:bg-[var(--brand-dark-bg)]/50 backdrop-blur-sm border-[var(--brand-primary)]/20 overflow-hidden hover:border-[var(--brand-primary)]/50 hover:shadow-2xl hover:shadow-[var(--brand-primary)]/10 transition-all duration-500 relative"
+                        onClick={() => setSelectedProject(project)}
                       >
-                        <Eye className="w-6 h-6 text-[var(--brand-primary)] dark:text-[var(--brand-primary)]" />
-                      </motion.div>
-                    </div>
-                  </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                        
+                        {/* Image Container */}
+                        <div className="relative h-60 sm:h-72 lg:h-80 overflow-hidden">
+                          <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title[lang] + " - " + (isRTL ? "مشروع تصميم موقع ويب" : "Projet création site web")}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                          
+                          {/* Gradient Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-light-bg)]/90 dark:from-[var(--brand-dark-bg)]/90 via-[var(--brand-light-bg)]/50 dark:via-[var(--brand-dark-bg)]/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+                          
+                          {/* Category Badge */}
+                          <div className="absolute top-4 right-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-3 py-1 rounded-full text-xs font-semibold border border-[var(--brand-primary)]/20 shadow-lg">
+                            {t.portfolio.filter[project.category]}
+                          </div>
 
-                  <CardContent className="p-4 sm:p-6 relative z-20">
-                    <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] group-hover:bg-gradient-to-r group-hover:from-[var(--brand-primary)] group-hover:to-[var(--brand-light-accent)] dark:group-hover:to-[var(--brand-dark-accent)] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                      {project.title[lang]}
-                    </h2>
-                    <p className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 text-sm sm:text-base mb-4 line-clamp-2 leading-relaxed font-light">
-                      {project.challenge[lang]}
-                    </p>
-                    
-                    {/* Technologies Used */}
-                    {project.technologies && (
-                      <div className="flex flex-wrap gap-1 mb-3">
-                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                          <span 
-                            key={techIndex}
-                            className="text-xs bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] px-2 py-1 rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > 3 && (
-                          <span className="text-xs bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] px-2 py-1 rounded-full">
-                            +{project.technologies.length - 3}
-                          </span>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Metrics for Marketing/Social Projects */}
-                    {renderMetrics(project)}
-
-                    <div className="flex gap-2">
-                      <Button
-                        size="sm"
-                        className="bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] hover:from-[var(--brand-primary)] hover:to-[var(--brand-primary)]/90 text-white shadow-lg shadow-[var(--brand-primary)]/30 transition-all duration-300 group/btn"
-                        asChild
-                      >
-                        <a
-                          href={project.liveUrl || project.socialUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          aria-label={`View ${project.category === 'social' ? 'social media' : 'live'} project: ${project.title[lang]}`}
-                        >
-                          {project.category === 'social' ? (
-                            <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-0.5" />
-                          ) : (
-                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-0.5" />
+                          {/* Platform Badge for Social Media Projects */}
+                          {project.platform && (
+                            <div className="absolute top-4 left-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-2 py-1 rounded-full text-xs border border-[var(--brand-primary)]/20 flex items-center gap-1">
+                              <PlatformIcon className="w-3 h-3" />
+                              {project.platform}
+                            </div>
                           )}
-                          <span className="ml-2">
-                            {project.category === 'social' ? t.portfolio.cta.viewSocial : t.portfolio.cta.viewLive}
-                          </span>
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            )})}
-          </AnimatePresence>
-        </motion.div>
+
+                          {/* Project Duration */}
+                          {project.duration && (
+                            <div className={`absolute ${project.platform ? 'top-16' : 'top-4'} left-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-2 py-1 rounded-full text-xs border border-[var(--brand-primary)]/20 flex items-center gap-1`}>
+                              <Calendar className="w-3 h-3" />
+                              {project.duration}
+                            </div>
+                          )}
+
+                          {/* View Project Button */}
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <motion.div
+                              whileHover={{ scale: 1.1 }}
+                              className="bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm border border-[var(--brand-primary)]/20 rounded-full p-4 shadow-2xl"
+                            >
+                              <Eye className="w-6 h-6 text-[var(--brand-primary)] dark:text-[var(--brand-primary)]" />
+                            </motion.div>
+                          </div>
+                        </div>
+
+                        <CardContent className="p-4 sm:p-6 relative z-20">
+                          <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] group-hover:bg-gradient-to-r group-hover:from-[var(--brand-primary)] group-hover:to-[var(--brand-light-accent)] dark:group-hover:to-[var(--brand-dark-accent)] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            {project.title[lang]}
+                          </h2>
+                          <p className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 text-sm sm:text-base mb-4 line-clamp-2 leading-relaxed font-light">
+                            {project.challenge[lang]}
+                          </p>
+                          
+                          {/* Technologies Used */}
+                          {project.technologies && (
+                            <div className="flex flex-wrap gap-1 mb-3">
+                              {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                                <span 
+                                  key={techIndex}
+                                  className="text-xs bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] px-2 py-1 rounded-full"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                              {project.technologies.length > 3 && (
+                                <span className="text-xs bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] px-2 py-1 rounded-full">
+                                  +{project.technologies.length - 3}
+                                </span>
+                              )}
+                            </div>
+                          )}
+
+                          {/* Metrics for Marketing/Social Projects */}
+                          {renderMetrics(project)}
+
+                          <div className="flex gap-2">
+                            <Button
+                              size="sm"
+                              className="bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] hover:from-[var(--brand-primary)] hover:to-[var(--brand-primary)]/90 text-white shadow-lg shadow-[var(--brand-primary)]/30 transition-all duration-300 group/btn"
+                              asChild
+                            >
+                              <a
+                                href={project.liveUrl || project.socialUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                aria-label={`View ${project.category === 'social' ? 'social media' : 'live'} project: ${project.title[lang]}`}
+                              >
+                                {project.category === 'social' ? (
+                                  <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-0.5" />
+                                ) : (
+                                  <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-0.5" />
+                                )}
+                                <span className="ml-2">
+                                  {project.category === 'social' ? t.portfolio.cta.viewSocial : t.portfolio.cta.viewLive}
+                                </span>
+                              </a>
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  )
+                })}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* No Results Message */}
-        {filteredProjects.length === 0 && (
+        {!isFiltering && filteredProjects.length === 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -456,7 +498,7 @@ export function Portfolio({ lang, t }) {
               {isRTL ? "لا توجد مشاريع في هذا التصنيف" : "Aucun projet dans cette catégorie"}
             </div>
             <Button
-              onClick={() => setFilter("all")}
+              onClick={() => handleFilterChange("all")}
               variant="outline"
               className="border-[var(--brand-primary)]/20 text-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/10"
             >
@@ -544,7 +586,10 @@ export function Portfolio({ lang, t }) {
                 <div className="absolute top-6 left-6 flex flex-col gap-2">
                   {selectedProject.platform && (
                     <div className="bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-3 py-2 rounded-full text-sm border border-[var(--brand-primary)]/20 flex items-center gap-2">
-                      {React.createElement(getPlatformIcon(selectedProject.platform), { className: "w-4 h-4" })}
+                      {(() => {
+                        const PlatformIcon = getPlatformIcon(selectedProject.platform)
+                        return <PlatformIcon className="w-4 h-4" />
+                      })()}
                       {selectedProject.platform}
                     </div>
                   )}
