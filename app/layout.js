@@ -2,6 +2,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import { ThemeProvider } from "./components/theme-provider";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
@@ -79,7 +80,7 @@ export const metadata = {
 
   // Verification for search engines
   verification: {
-    google: "ETtJY6sKr6Hwt5T63gjP5T3LKfdi2JHz3qBplCim6Mw",
+    google: "your-google-verification-code",
   },
 
   // --- Open Graph for Social Media ---
@@ -149,7 +150,7 @@ export const metadata = {
 
   // --- Additional Meta Tags ---
   other: {
-    "google-site-verification": "ETtJY6sKr6Hwt5T63gjP5T3LKfdi2JHz3qBplCim6Mw",
+    "google-site-verification": "your-google-verification-code",
     "msvalidate.01": "your-bing-verification-code",
     "facebook-domain-verification": "your-facebook-verification",
   }
@@ -396,17 +397,19 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-ETtJY6sKr6"
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-B91DP5T3PQ"
         />
-        <script
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-ETtJY6sKr6');
+              gtag('config', 'G-B91DP5T3PQ');
             `,
           }}
         />
