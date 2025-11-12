@@ -79,7 +79,7 @@ export const metadata = {
 
   // Verification for search engines
   verification: {
-    google: "your-google-verification-code",
+    google: "ETtJY6sKr6Hwt5T63gjP5T3LKfdi2JHz3qBplCim6Mw",
   },
 
   // --- Open Graph for Social Media ---
@@ -149,7 +149,7 @@ export const metadata = {
 
   // --- Additional Meta Tags ---
   other: {
-    "google-site-verification": "your-google-verification-code",
+    "google-site-verification": "ETtJY6sKr6Hwt5T63gjP5T3LKfdi2JHz3qBplCim6Mw",
     "msvalidate.01": "your-bing-verification-code",
     "facebook-domain-verification": "your-facebook-verification",
   }
@@ -394,6 +394,22 @@ export default function RootLayout({ children }) {
         {/* Preload critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ETtJY6sKr6"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ETtJY6sKr6');
+            `,
+          }}
+        />
 
         {/* Structured Data */}
         <script
