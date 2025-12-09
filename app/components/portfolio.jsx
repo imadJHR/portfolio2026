@@ -39,36 +39,25 @@ export function Portfolio({ lang, t }) {
 
   // Enhanced filter buttons with icons and counts
   const filterButtons = [
-    { 
-      key: "all", 
+    {
+      key: "all",
       label: t.portfolio.filter.all,
       count: portfolioData.length,
       icon: Target
     },
-    { 
-      key: "vitrine", 
+    {
+      key: "vitrine",
       label: t.portfolio.filter.vitrine,
       count: portfolioData.filter(p => p.category === "vitrine").length,
       icon: Eye
     },
-    { 
-      key: "ecommerce", 
+    {
+      key: "ecommerce",
       label: t.portfolio.filter.ecommerce,
       count: portfolioData.filter(p => p.category === "ecommerce").length,
       icon: Users
     },
-    { 
-      key: "marketing", 
-      label: t.portfolio.filter.marketing,
-      count: portfolioData.filter(p => p.category === "marketing").length,
-      icon: TrendingUp
-    },
-    { 
-      key: "social", 
-      label: t.portfolio.filter.social,
-      count: portfolioData.filter(p => p.category === "social").length,
-      icon: MessageCircle
-    }
+   
   ]
 
   // Filter projects with loading state
@@ -84,7 +73,7 @@ export function Portfolio({ lang, t }) {
     setIsFiltering(true)
     setFilter(newFilter)
     setIsFilterOpen(false)
-    
+
     // Simulate loading for better UX
     setTimeout(() => {
       setIsFiltering(false)
@@ -156,14 +145,14 @@ export function Portfolio({ lang, t }) {
   }
 
   return (
-    <section 
-      id="portfolio" 
+    <section
+      id="portfolio"
       style={cssVariables}
       className={`relative py-16 sm:py-20 lg:py-24 xl:py-28 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
     >
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-[var(--brand-light-bg)] to-[var(--brand-light-accent)]/5 dark:from-[var(--brand-primary)]/10 dark:via-[var(--brand-dark-bg)] dark:to-[var(--brand-dark-accent)]/10" />
-      
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -234,8 +223,8 @@ export function Portfolio({ lang, t }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 font-serif text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-balance"
           >
-            {isRTL 
-              ? "مشاريعنا في تصميم المواقع والتسويق الرقمي بالمغرب" 
+            {isRTL
+              ? "مشاريعنا في تصميم المواقع والتسويق الرقمي بالمغرب"
               : "Nos Projets en Création de Sites Web & Marketing Digital au Maroc"
             }
           </motion.h1>
@@ -248,7 +237,7 @@ export function Portfolio({ lang, t }) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-light"
           >
-            {isRTL 
+            {isRTL
               ? "اكتشف مجموعة من مشاريعنا الناجحة في تصميم مواقع الويب، المتاجر الإلكترونية، التسويق الرقمي، وإدارة الحسابات الاجتماعية للشركات المغربية."
               : "Découvrez une sélection de nos projets réussis en création de sites web, boutiques e-commerce, marketing digital et gestion des réseaux sociaux pour entreprises marocaines."
             }
@@ -312,11 +301,10 @@ export function Portfolio({ lang, t }) {
                     <span className="relative z-10 text-sm sm:text-base">
                       {filterBtn.label}
                     </span>
-                    <span className={`relative z-10 px-2 py-1 rounded-full text-xs ${
-                      filter === filterBtn.key 
-                        ? 'bg-white/20 text-white' 
+                    <span className={`relative z-10 px-2 py-1 rounded-full text-xs ${filter === filterBtn.key
+                        ? 'bg-white/20 text-white'
                         : 'bg-[var(--brand-primary)]/10 text-[var(--brand-primary)]'
-                    }`}>
+                      }`}>
                       {filterBtn.count}
                     </span>
                   </Button>
@@ -358,14 +346,14 @@ export function Portfolio({ lang, t }) {
               <AnimatePresence mode="popLayout">
                 {filteredProjects.map((project, index) => {
                   const PlatformIcon = project.platform ? getPlatformIcon(project.platform) : null
-                  
+
                   return (
                     <motion.div
                       key={project.id}
                       layout
                       variants={itemVariants}
-                      whileHover={{ 
-                        y: -8, 
+                      whileHover={{
+                        y: -8,
                         scale: 1.02,
                         transition: { duration: 0.3, ease: "easeOut" }
                       }}
@@ -377,7 +365,7 @@ export function Portfolio({ lang, t }) {
                       >
                         {/* Hover Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                        
+
                         {/* Image Container */}
                         <div className="relative h-60 sm:h-72 lg:h-80 overflow-hidden">
                           <Image
@@ -387,10 +375,10 @@ export function Portfolio({ lang, t }) {
                             className="object-cover transition-transform duration-700 group-hover:scale-110"
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
-                          
+
                           {/* Gradient Overlay */}
                           <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-light-bg)]/90 dark:from-[var(--brand-dark-bg)]/90 via-[var(--brand-light-bg)]/50 dark:via-[var(--brand-dark-bg)]/50 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
-                          
+
                           {/* Category Badge */}
                           <div className="absolute top-4 right-4 bg-[var(--brand-light-bg)]/80 dark:bg-[var(--brand-dark-bg)]/80 backdrop-blur-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] px-3 py-1 rounded-full text-xs font-semibold border border-[var(--brand-primary)]/20 shadow-lg">
                             {t.portfolio.filter[project.category]}
@@ -430,12 +418,12 @@ export function Portfolio({ lang, t }) {
                           <p className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 text-sm sm:text-base mb-4 line-clamp-2 leading-relaxed font-light">
                             {project.challenge[lang]}
                           </p>
-                          
+
                           {/* Technologies Used */}
                           {project.technologies && (
                             <div className="flex flex-wrap gap-1 mb-3">
                               {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                                <span 
+                                <span
                                   key={techIndex}
                                   className="text-xs bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] px-2 py-1 rounded-full"
                                 >
@@ -544,7 +532,6 @@ export function Portfolio({ lang, t }) {
           </div>
         </motion.div>
       </div>
-
       {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
@@ -581,7 +568,7 @@ export function Portfolio({ lang, t }) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] via-[var(--brand-light-bg)]/50 dark:via-[var(--brand-dark-bg)]/50 to-transparent rounded-t-2xl" />
-                
+
                 {/* Platform and Duration Info */}
                 <div className="absolute top-6 left-6 flex flex-col gap-2">
                   {selectedProject.platform && (
@@ -665,7 +652,7 @@ export function Portfolio({ lang, t }) {
                     >
                       <h2 className="text-[var(--brand-primary)] dark:text-[var(--brand-primary)] font-bold mb-3 text-lg flex items-center gap-3">
                         <span className="text-xl">{section.icon}</span>
-                        {isRTL 
+                        {isRTL
                           ? section.key === "challenge" ? "التحدي" : section.key === "solution" ? "الحل" : "النتائج"
                           : section.key === "challenge" ? "Défi" : section.key === "solution" ? "Solution" : "Résultats"
                         }

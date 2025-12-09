@@ -197,5 +197,27 @@
     "fr": "Augmentation des réservations via le site et amélioration de la note moyenne des avis clients en ligne"
   },
   "liveUrl": "https://laburratinagroupe.com/"
+},
+{
+  "id": "Sou9-Al-Maghreb",
+  "title": {
+    "ar": "",
+    "fr": "Sou9 Al Maghreb"
+  },
+  "category": "vitrine",
+  "image": "/sou9.png",
+  "challenge": {
+    "ar": "",
+    "fr": ""
+  },
+  "solution": {
+    "ar": "",
+    "fr": ""
+  },
+  "results": {
+    "ar": "",
+    "fr": ""
+  },
+  "liveUrl": "https://sou9maghrib.netlify.app/"
 }
 ]
