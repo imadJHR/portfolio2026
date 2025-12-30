@@ -109,6 +109,7 @@ export const metadata = {
     },
   },
 
+  // ✅ هنا فين ضفنا كود التحقق ديال جوجل بالطريقة الصحيحة في Next.js
   verification: {
     google: "ETtJY6sKr6Hwt5T63gjP5T3LKfdi2JHz3qBplCim6Mw",
   },
@@ -140,6 +141,7 @@ export const metadata = {
     images: ["/twitter-image.jpg"],
   },
 
+  // ✅ تأكد أن هاد الملفات كاينين ف dossier 'public'
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -163,7 +165,6 @@ export const metadata = {
 };
 
 /* -------------------- SCHEMA / STRUCTURED DATA -------------------- */
-/* (Tu avais déjà les objets organizationSchema et serviceSchema — gardés.) */
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -201,11 +202,10 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
 
-        {/* Search Console Verification */}
-        <meta
-          name="google-site-verification"
-          content="ETtJY6sKr6Hwt5T63gjP5T3LKfdi2JHz3qBplCim6Mw"
-        />
+        {/* 
+          ملاحظة: حيدت الـ meta tag اليدوية ديال google-site-verification من هنا 
+          حيت درناها الفوق ف الـ metadata object، وهكا أحسن لـ Next.js 
+        */}
 
         {/* ---------------- GOOGLE ANALYTICS (G-HHESPWMXQF) ---------------- */}
         <Script
