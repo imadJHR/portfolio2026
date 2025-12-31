@@ -180,11 +180,11 @@ export function Hero({ lang, t }) {
             transition={{ duration: 0.7 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="block text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+              <span className="block text-[var(--brand-light-text)] font-serif dark:text-[var(--brand-dark-text)]">
                 {isRTL ? "ارتقِ بأعمالك" : "Boostez Votre"}
               </span>
 
-              <span className="block mt-3 bg-gradient-to-r 
+              <span className="block mt-3 bg-gradient-to-r font-serif
                   from-[var(--brand-primary)] 
                   via-[var(--brand-light-accent)] 
                   to-[var(--brand-primary)] 
