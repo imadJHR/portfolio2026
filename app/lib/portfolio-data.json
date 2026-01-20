@@ -1,5 +1,27 @@
 
 [
+  {
+  "id": "fadllo-car",
+  "title": {
+    "ar": "فادلو كار - كراء السيارات",
+    "fr": "FadlloCar - Location de Voitures"
+  },
+  "category": "service",
+  "image": "/fadllocar.png",
+  "challenge": {
+    "ar": "إنشاء منصة رقمية لوكالة تأجير السيارات لتسهيل عرض الأسطول وجذب العملاء المحليين والسياح في المغرب.",
+    "fr": "Créer une plateforme numérique pour une agence de location de voitures afin de faciliter la présentation de la flotte et d'attirer une clientèle locale et touristique au Maroc."
+  },
+  "solution": {
+    "ar": "تصميم موقع سريع ومتجاوب مع الهواتف، يتيح للزوار تصفح السيارات وحجزها بسهولة عبر واتساب أو الهاتف.",
+    "fr": "Conception d'un site rapide et responsive (adapté aux mobiles), permettant aux visiteurs de parcourir les véhicules et de réserver facilement via WhatsApp ou téléphone."
+  },
+  "results": {
+    "ar": "تحسين صورة الوكالة وزيادة عدد الاستفسارات والحجوزات اليومية.",
+    "fr": "Amélioration de l'image de marque de l'agence et augmentation des demandes de renseignements et réservations."
+  },
+  "liveUrl": "https://fadllocar.ma"
+},
 {
   "id": "ironz-equipement",
   "title": {
