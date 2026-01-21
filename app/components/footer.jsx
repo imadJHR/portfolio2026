@@ -61,7 +61,7 @@ export default function Footer({ lang, t }) {
     },
     {
       icon: Mail,
-      href: "mailto:imadjohar4@gmail.com",
+      href: "mailto:contact@nemsimedia.ma",
       label: "Email",
       color: "hover:bg-[var(--brand-primary)] hover:text-white"
     },
@@ -137,7 +137,7 @@ export default function Footer({ lang, t }) {
               className="inline-block"
             >
               <h3 className="text-2xl sm:text-3xl font-bold font-serif bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent">
-                {isRTL ? "مطور مواقع" : "DevWeb Maroc"}
+                {isRTL ? "Nemsi Media" : "Nemsi Media Maroc"}
               </h3>
             </motion.div>
             
@@ -151,11 +151,11 @@ export default function Footer({ lang, t }) {
             <div className="space-y-2 pt-4">
               <div className="flex items-center gap-3 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80">
                 <Mail className="w-4 h-4 text-[var(--brand-primary)]" />
-                <span>imadjohar4@gmail.com</span>
+                <span>contact@nemsimedia.ma</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80">
                 <MessageCircle className="w-4 h-4 text-green-500" />
-                <span>+212 645-288-216</span>
+                <span>+212 645 288 216</span>
               </div>
             </div>
           </motion.div>

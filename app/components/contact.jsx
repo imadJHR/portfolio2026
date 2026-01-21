@@ -113,8 +113,8 @@ export function Contact({ lang, t }) {
     {
       icon: Mail,
       label: isRTL ? "البريد الإلكتروني" : "Email",
-      value: "imadjohar4@gmail.com",
-      href: "mailto:imadjohar4@gmail.com"
+      value: "contact@nemsimedia.ma",
+      href: "mailto:contact@nemsimedia.ma"
     },
     {
       icon: MapPin,
