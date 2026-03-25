@@ -7,41 +7,40 @@ import { Quote, Star, Sparkles, Heart, ThumbsUp } from "lucide-react"
 export function Testimonials({ lang, t }) {
   const isRTL = lang === "ar"
 
-  // Updated Color Definitions
   const colors = {
-    primary: "#520371",      // Deep Plum
-    lightBg: "#fdf7fd",      // Light Lavender
-    darkBg: "#2a002d",       // Deep Dark Plum
-    lightAccent: "#8a05c2",  // Lighter Plum for light mode
-    darkAccent: "#a832e0",   // Brighter Plum for dark mode
-    lightText: "#2a002d",    // Dark text for light mode
-    darkText: "#fdf7fd",     // Light text for dark mode
+    primary: "#520371",
+    secondary: "#7c3aed",
+    lightBg: "#fdfaff",
+    darkBg: "#0f0a1a",
+    lightAccent: "#9333ea",
+    darkAccent: "#c084fc",
+    lightText: "#1a0525",
+    darkText: "#f5f0ff",
   }
 
-  // CSS Variables for dynamic styling
   const cssVariables = {
-    '--brand-primary': colors.primary,
-    '--brand-light-bg': colors.lightBg,
-    '--brand-dark-bg': colors.darkBg,
-    '--brand-light-accent': colors.lightAccent,
-    '--brand-dark-accent': colors.darkAccent,
-    '--brand-light-text': colors.lightText,
-    '--brand-dark-text': colors.darkText,
+    "--brand-primary": colors.primary,
+    "--brand-secondary": colors.secondary,
+    "--brand-light-bg": colors.lightBg,
+    "--brand-dark-bg": colors.darkBg,
+    "--brand-light-accent": colors.lightAccent,
+    "--brand-dark-accent": colors.darkAccent,
+    "--brand-light-text": colors.lightText,
+    "--brand-dark-text": colors.darkText,
   }
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.15
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.9 },
+    hidden: { opacity: 0, y: 35, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
@@ -53,21 +52,9 @@ export function Testimonials({ lang, t }) {
     }
   }
 
-  const floatingAnimation = {
-    animate: {
-      y: [0, -15, 0],
-      transition: {
-        duration: 6,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut"
-      }
-    }
-  }
-
-  // Rating stars component
   const RatingStars = ({ rating }) => {
     return (
-      <div className="flex gap-1 mb-4">
+      <div className="flex gap-1 mb-4 drop-shadow-[0_0_8px_rgba(234,179,8,0.3)]">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
@@ -78,8 +65,8 @@ export function Testimonials({ lang, t }) {
             <Star
               className={`w-4 h-4 ${
                 i < rating 
-                  ? "text-yellow-500 fill-yellow-500" 
-                  : "text-gray-300 dark:text-gray-600"
+                  ? "text-amber-400 fill-amber-400" 
+                  : "text-[var(--brand-light-text)]/15 dark:text-[var(--brand-dark-text)]/15"
               }`}
             />
           </motion.div>
@@ -92,44 +79,72 @@ export function Testimonials({ lang, t }) {
     <section 
       id="testimonials" 
       style={cssVariables}
-      className={`relative py-16 sm:py-20 lg:py-24 xl:py-28 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
+      className={`relative py-20 sm:py-24 lg:py-32 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
     >
-      {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-[var(--brand-light-bg)] to-[var(--brand-light-accent)]/5 dark:from-[var(--brand-primary)]/10 dark:via-[var(--brand-dark-bg)] dark:to-[var(--brand-dark-accent)]/10" />
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Shapes */}
+
+      {/* ══════════════ BACKGROUND SYSTEM ══════════════ */}
+      <div className="absolute inset-0 bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)]" />
+
+      {/* Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
+        style={{
+          backgroundImage: `linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Radial Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          {...floatingAnimation}
-          className="absolute top-10 left-5 sm:left-10 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-light-accent)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-2xl"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.18, 0.08], x: [0, 40, 0], y: [0, -25, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-light-accent) 0%, transparent 70%)` }}
         />
         <motion.div
-          {...floatingAnimation}
-          transition={{ delay: 2, duration: 8 }}
-          className="absolute top-1/3 right-5 sm:right-10 w-16 h-16 sm:w-28 sm:h-28 bg-gradient-to-br from-[var(--brand-light-accent)]/10 to-[var(--brand-primary)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-2xl"
-        />
-        <motion.div
-          {...floatingAnimation}
-          transition={{ delay: 1, duration: 7 }}
-          className="absolute bottom-20 left-1/4 w-12 h-12 sm:w-24 sm:h-24 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-light-accent)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-2xl"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.14, 0.06], x: [0, -30, 0], y: [0, 35, 0] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-secondary) 0%, transparent 70%)` }}
         />
 
-        {/* Geometric Patterns */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute top-1/4 right-1/4 w-40 h-40 border-2 border-[var(--brand-primary)]/5 rounded-full"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 35, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute bottom-1/4 left-1/4 w-32 h-32 border-2 border-[var(--brand-light-accent)]/5 dark:border-[var(--brand-dark-accent)]/5 rounded-full"
-        />
+        {/* Floating Particles */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute"
+            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+            animate={{
+              y: [0, -(Math.random() * 60 + 20), 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              rotate: [0, Math.random() * 360, 0],
+              opacity: [0, 0.3, 0],
+              scale: [0.4, 1, 0.4],
+            }}
+            transition={{
+              duration: Math.random() * 14 + 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 6,
+            }}
+          >
+            {i % 3 === 0 ? (
+              <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)]/20 dark:bg-[var(--brand-dark-accent)]/15" />
+            ) : i % 3 === 1 ? (
+              <div className="w-3 h-3 rotate-45 bg-[var(--brand-light-accent)]/15 dark:bg-[var(--brand-dark-accent)]/10" />
+            ) : (
+              <div className="w-2.5 h-2.5 border border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/15 rounded-full" />
+            )}
+          </motion.div>
+        ))}
       </div>
 
+      {/* ══════════════ CONTENT ══════════════ */}
+
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
+
+        {/* ── Header Section ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,27 +154,24 @@ export function Testimonials({ lang, t }) {
         >
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 bg-[var(--brand-light-bg)]/60 dark:bg-[var(--brand-dark-bg)]/60 backdrop-blur-md border border-[var(--brand-primary)]/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 shadow-lg"
+            transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
+            className="inline-flex items-center gap-2.5 mb-8"
           >
-            <motion.div
-              animate={{ rotate: [0, 180, 360] }}
-              transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            >
-              <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
-            </motion.div>
-            <span className="text-sm sm:text-base font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent uppercase tracking-wider">
-              {isRTL ? "آراء العملاء" : "Témoignages"}
-            </span>
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--brand-primary)] dark:text-[var(--brand-primary)]" />
-            </motion.div>
+            <div className="flex items-center gap-2 bg-white/70 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/20 rounded-full px-5 py-2.5 shadow-[0_4px_24px_rgba(82,3,113,0.08)] dark:shadow-[0_4px_24px_rgba(192,132,252,0.08)]">
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Heart className="w-4 h-4 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
+              </motion.div>
+              <span className="text-sm font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] bg-clip-text text-transparent uppercase tracking-wider">
+                {isRTL ? "آراء العملاء" : "Nos Clients Parlent"}
+              </span>
+              <Sparkles className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+            </div>
           </motion.div>
 
           {/* Title */}
@@ -167,10 +179,20 @@ export function Testimonials({ lang, t }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-4 sm:mb-6 font-serif text-balance"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6"
           >
-            {t.testimonials.title}
+            <span className="block text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+              {isRTL ? "هم يثقون بنا" : "Ils Nous Font Confiance"}
+            </span>
+            <motion.span
+              className="block mt-2 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent"
+              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              style={{ backgroundSize: "200% auto" }}
+            >
+              {t.testimonials.title}
+            </motion.span>
           </motion.h2>
 
           {/* Subtitle */}
@@ -179,48 +201,47 @@ export function Testimonials({ lang, t }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 max-w-3xl mx-auto leading-relaxed font-light"
           >
             {t.testimonials.subtitle}
           </motion.p>
         </motion.div>
 
-        {/* Testimonials Grid */}
+        {/* ── Testimonials Grid ── */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7"
         >
           {t.testimonials.items.map((testimonial, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ 
-                y: -8, 
+                y: -10, 
                 scale: 1.02,
-                transition: { duration: 0.3, ease: "easeOut" }
+                transition: { duration: 0.35, ease: "easeOut" }
               }}
               className="h-full"
             >
-              <Card className="h-full bg-[var(--brand-light-bg)]/50 dark:bg-[var(--brand-dark-bg)]/50 backdrop-blur-sm border-[var(--brand-primary)]/20 shadow-lg hover:shadow-2xl hover:border-[var(--brand-primary)]/50 transition-all duration-500 group relative overflow-hidden">
+              <Card className="h-full relative overflow-hidden border-0 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl shadow-[0_2px_20px_rgba(82,3,113,0.04)] hover:shadow-[0_12px_40px_rgba(82,3,113,0.12)] dark:shadow-[0_2px_20px_rgba(192,132,252,0.03)] dark:hover:shadow-[0_12px_40px_rgba(192,132,252,0.1)] transition-all duration-500 rounded-2xl group">
                 
-                {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-transparent to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Animated Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                <div className="absolute inset-[2px] bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)] rounded-lg z-0" />
+                {/* Top Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <CardContent className="p-4 sm:p-6 relative z-10">
+                {/* Hover Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/[0.02] to-[var(--brand-light-accent)]/[0.02] dark:from-[var(--brand-dark-accent)]/[0.03] dark:to-[var(--brand-secondary)]/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+
+                <CardContent className="p-5 sm:p-6 relative z-10">
                   {/* Quote Icon */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
-                    className="w-12 h-12 bg-gradient-to-br from-[var(--brand-primary)]/20 to-[var(--brand-light-accent)]/20 dark:from-[var(--brand-primary)]/15 dark:to-[var(--brand-dark-accent)]/15 rounded-xl flex items-center justify-center mb-4 group-hover:shadow-lg group-hover:shadow-[var(--brand-primary)]/20 transition-all duration-300"
+                    className="inline-flex p-3 rounded-xl bg-gradient-to-br from-[var(--brand-primary)] to-[var(--brand-light-accent)] mb-5 shadow-lg"
                   >
-                    <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--brand-primary)] dark:text-[var(--brand-primary)] group-hover:scale-110 transition-transform duration-300" />
+                    <Quote className="w-5 h-5 text-white" />
                   </motion.div>
 
                   {/* Rating Stars */}
@@ -231,11 +252,9 @@ export function Testimonials({ lang, t }) {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                    className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 mb-4 sm:mb-6 leading-relaxed font-light text-sm sm:text-base italic relative"
+                    className="text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 mb-6 leading-relaxed font-light text-sm sm:text-base italic"
                   >
-                    <span className="absolute -top-2 -left-2 text-2xl text-[var(--brand-primary)]/20">"</span>
-                    {testimonial.text}
-                    <span className="absolute -bottom-2 -right-2 text-2xl text-[var(--brand-light-accent)]/20 dark:text-[var(--brand-dark-accent)]/20">"</span>
+                    « {testimonial.text} »
                   </motion.p>
 
                   {/* Client Info */}
@@ -243,10 +262,10 @@ export function Testimonials({ lang, t }) {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-3 pt-4 border-t border-[var(--brand-primary)]/20"
+                    className="flex items-center gap-3 pt-4 border-t border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10"
                   >
-                    {/* Avatar Placeholder */}
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base shadow-lg">
+                    {/* Avatar */}
+                    <div className="w-12 h-12 bg-gradient-to-br from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                       {testimonial.name.charAt(0)}
                     </div>
                     
@@ -254,7 +273,7 @@ export function Testimonials({ lang, t }) {
                       <p className="font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-sm sm:text-base truncate">
                         {testimonial.name}
                       </p>
-                      <p className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 text-xs sm:text-sm truncate">
+                      <p className="text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55 text-xs sm:text-sm truncate">
                         {testimonial.role}
                       </p>
                     </div>
@@ -262,16 +281,16 @@ export function Testimonials({ lang, t }) {
                     {/* Verified Badge */}
                     <motion.div
                       whileHover={{ scale: 1.2 }}
-                      className="text-green-500"
+                      className="text-emerald-500"
                       title={isRTL ? "عميل موثوق" : "Client vérifié"}
                     >
-                      <ThumbsUp className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <ThumbsUp className="w-5 h-5" />
                     </motion.div>
                   </motion.div>
 
                   {/* Decorative Element */}
-                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--brand-primary)]/20 dark:text-[var(--brand-primary)]/20" />
+                  <div className="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <Sparkles className="w-8 h-8 text-[var(--brand-primary)]/10 dark:text-[var(--brand-dark-accent)]/10" />
                   </div>
                 </CardContent>
               </Card>
@@ -279,36 +298,40 @@ export function Testimonials({ lang, t }) {
           ))}
         </motion.div>
 
-        {/* Stats Section */}
+        {/* ── Stats Section ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16 sm:mt-20 lg:mt-24"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-20 sm:mt-24 lg:mt-28"
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-4xl mx-auto">
             {[
-              { number: "50+", label: isRTL ? "عميل راض" : "Clients Satisfaits" },
-              { number: "4.9/5", label: isRTL ? "تقييم متوسط" : "Note Moyenne" },
-              { number: "100%", label: isRTL ? "مشروع مكتمل" : "Projets Terminés" },
-              { number: "24/7", label: isRTL ? "دعم فني" : "Support Technique" }
+              { number: "50+", label: isRTL ? "عملاء راضون" : "Clients Satisfaits", gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]" },
+              { number: "4.9/5", label: isRTL ? "تقييم متوسط" : "Note Moyenne", gradient: "from-[var(--brand-light-accent)] to-[var(--brand-secondary)]" },
+              { number: "100%", label: isRTL ? "مشاريع منجزة" : "Projets Livrés", gradient: "from-[var(--brand-secondary)] to-[var(--brand-primary)]" },
+              { number: "24/7", label: isRTL ? "دعم مستمر" : "Support Continu", gradient: "from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)]" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="text-center p-4 bg-[var(--brand-light-bg)]/40 dark:bg-[var(--brand-dark-bg)]/40 backdrop-blur-sm border border-[var(--brand-primary)]/20 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="group relative text-center p-5 sm:p-6 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 rounded-2xl shadow-[0_2px_16px_rgba(82,3,113,0.04)] hover:shadow-[0_8px_32px_rgba(82,3,113,0.1)] dark:hover:shadow-[0_8px_32px_rgba(192,132,252,0.1)] transition-all duration-500 overflow-hidden"
               >
+                {/* Hover Glow */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-[0.03] dark:group-hover:opacity-[0.05] transition-opacity duration-500 rounded-2xl`} />
+
                 <motion.p
-                  className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent mb-2"
-                  whileHover={{ scale: 1.1 }}
+                  className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent mb-1.5"
+                  whileHover={{ scale: 1.08 }}
                 >
                   {stat.number}
                 </motion.p>
-                <p className="text-xs sm:text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 font-medium">
+                <p className="text-xs sm:text-sm text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55 font-medium">
                   {stat.label}
                 </p>
               </motion.div>
@@ -317,8 +340,8 @@ export function Testimonials({ lang, t }) {
         </motion.div>
       </div>
 
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-b from-transparent to-[var(--brand-light-bg)]/80 dark:to-[var(--brand-dark-bg)]/80" />
+      {/* ══════════════ BOTTOM FADE ══════════════ */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-t from-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] to-transparent z-[5] pointer-events-none" />
     </section>
   )
 }

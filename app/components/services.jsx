@@ -2,183 +2,244 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code, ShoppingCart, Search, Rocket, ArrowRight, Zap, Sparkles, Target, Smartphone, CreditCard, TrendingUp } from "lucide-react"
+import { Code, ShoppingCart, Search, Rocket, ArrowRight, Zap, Sparkles, Target, Smartphone, CreditCard, TrendingUp, Globe, Palette, BarChart3, MessageCircle } from "lucide-react"
 
 export function Services({ lang, t }) {
   const isRTL = lang === "ar"
 
-  // Updated Color Definitions
   const colors = {
-    primary: "#520371",      // Deep Plum
-    lightBg: "#fdf7fd",      // Light Lavender
-    darkBg: "#2a002d",       // Deep Dark Plum
-    lightAccent: "#8a05c2",  // Lighter Plum for light mode
-    darkAccent: "#a832e0",   // Brighter Plum for dark mode
-    lightText: "#2a002d",    // Dark text for light mode
-    darkText: "#fdf7fd",     // Light text for dark mode
+    primary: "#520371",
+    secondary: "#7c3aed",
+    lightBg: "#fdfaff",
+    darkBg: "#0f0a1a",
+    lightAccent: "#9333ea",
+    darkAccent: "#c084fc",
+    lightText: "#1a0525",
+    darkText: "#f5f0ff",
   }
 
-  // CSS Variables for dynamic styling
   const cssVariables = {
-    '--brand-primary': colors.primary,
-    '--brand-light-bg': colors.lightBg,
-    '--brand-dark-bg': colors.darkBg,
-    '--brand-light-accent': colors.lightAccent,
-    '--brand-dark-accent': colors.darkAccent,
-    '--brand-light-text': colors.lightText,
-    '--brand-dark-text': colors.darkText,
+    "--brand-primary": colors.primary,
+    "--brand-secondary": colors.secondary,
+    "--brand-light-bg": colors.lightBg,
+    "--brand-dark-bg": colors.darkBg,
+    "--brand-light-accent": colors.lightAccent,
+    "--brand-dark-accent": colors.darkAccent,
+    "--brand-light-text": colors.lightText,
+    "--brand-dark-text": colors.darkText,
   }
 
-  // WhatsApp contact information
   const whatsappInfo = {
-    phone: "+212645288216",
+    phone: "212645288216",
     preMessage: {
-      fr: "Bonjour ! Je suis intéressé(e) par vos services de ",
-      ar: "مرحبا! أنا مهتم بخدماتكم في "
-    }
+      fr: "Bonjour ! Je souhaite en savoir plus sur votre service : ",
+      ar: "مرحبا! أود معرفة المزيد عن خدمتكم: ",
+    },
   }
 
-  // Function to handle WhatsApp redirection
   const handleWhatsAppClick = (serviceTitle) => {
     const message = encodeURIComponent(
-      `${whatsappInfo.preMessage[lang]}${serviceTitle}. Pouvez-vous me donner plus d'informations ?`
+      `${whatsappInfo.preMessage[lang]}${serviceTitle}. ${lang === "ar" ? "هل يمكنكم اقتراح موعد؟" : "Pouvez-vous me proposer un rendez-vous ?"}`
     )
-    const whatsappUrl = `https://wa.me/${whatsappInfo.phone}?text=${message}`
-    window.open(whatsappUrl, '_blank')
+    window.open(`https://wa.me/${whatsappInfo.phone}?text=${message}`, "_blank")
   }
 
-  // Floating animation for background elements
-  const floatingAnimation = {
-    animate: {
-      y: [0, -15, 0],
-      transition: {
-        duration: 6,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut"
-      }
-    }
-  }
-
-  // Stagger animation for cards
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
+      transition: { staggerChildren: 0.12 },
+    },
   }
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   }
 
-  // SEO-optimized services data for Morocco
   const servicesData = [
     {
       id: "web-design",
       title: isRTL ? "تصميم مواقع الويب" : "Création de Sites Web",
       description: isRTL
-        ? "تصميم مواقع ويب احترافية متجاوبة مع محركات البحث SEO، مخصصة للشركات المغربية لزيادة الظهور الرقمي وجذب العملاء"
-        : "Conception de sites web professionnels responsifs optimisés SEO, spécialisés pour les entreprises marocaines pour augmenter la visibilité digitale et attirer des clients",
+        ? "نبني مواقع ويب احترافية ومتجاوبة محسّنة لمحركات البحث، مصممة خصيصاً للشركات المغربية لتعزيز حضورها الرقمي واستقطاب عملاء جدد"
+        : "Nous concevons des sites web professionnels et responsifs optimisés SEO, conçus sur mesure pour les entreprises marocaines afin de renforcer leur présence digitale",
       icon: Code,
-      features: isRTL ? ["تصميم متجاوب", "تحسين SEO", "سرعة التحميل", "تجربة مستخدم"] : ["Design Responsive", "Optimisation SEO", "Chargement Rapide", "UX Optimale"],
-      keywords: isRTL ? ["موقع ويب المغرب", "تصميم مواقع الدار البيضاء", "شركة مواقع إنترنت المغرب"] : ["site web Maroc", "création site Casablanca", "entreprise site internet Maroc"]
+      gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]",
+      features: isRTL
+        ? ["تصميم متجاوب", "تحسين SEO", "سرعة فائقة", "تجربة مستخدم مميزة"]
+        : ["Design Responsive", "Optimisation SEO", "Ultra Rapide", "Expérience Utilisateur"],
     },
     {
       id: "digital-marketing",
-      title: isRTL ? "التسويق الرقمي SEO" : "Marketing Digital & SEO",
+      title: isRTL ? "التسويق الرقمي و SEO" : "Marketing Digital & SEO",
       description: isRTL
-        ? "استراتيجيات تسويق رقمي متكاملة وتهيئة محركات البحث SEO لزيادة ظهور موقعك في الصفحة الأولى على جوجل في المغرب"
-        : "Stratégies de marketing digital intégrées et optimisation SEO pour augmenter la visibilité de votre site en première page sur Google au Maroc",
+        ? "نضع استراتيجيات تسويق رقمي شاملة وتهيئة محركات البحث لضمان ظهور موقعك في الصفحة الأولى على جوجل بالمغرب"
+        : "Nous élaborons des stratégies de marketing digital complètes et d'optimisation SEO pour garantir votre visibilité en première page Google au Maroc",
       icon: Search,
-      features: isRTL ? ["الظهور الأولى", "زيادة الزوار", "تحليلات متقدمة", "كلمات مفتاحية"] : ["Première Page Google", "Trafic Qualifié", "Analytics Avancés", "Mots-clés Optimisés"],
-      keywords: isRTL ? ["سيو المغرب", "تسويق رقمي الدار البيضاء", "تحسين محركات البحث المغرب"] : ["SEO Maroc", "marketing digital Casablanca", "référencement naturel Maroc"]
+      gradient: "from-[var(--brand-light-accent)] to-[var(--brand-secondary)]",
+      features: isRTL
+        ? ["الصفحة الأولى جوجل", "زيارات مؤهلة", "تحليلات دقيقة", "كلمات مفتاحية"]
+        : ["1ère Page Google", "Trafic Qualifié", "Analytics Précis", "Mots-clés Ciblés"],
     },
     {
       id: "ecommerce",
       title: isRTL ? "متاجر إلكترونية" : "Boutiques E-commerce",
       description: isRTL
-        ? "إنشاء متاجر إلكترونية متكاملة مع أنظمة دفع مغربية آمنة وإدارة المخزون وتحسين تجربة المستخدم لزيادة المبيعات"
-        : "Création de boutiques en ligne complètes avec systèmes de paiement marocains sécurisés, gestion de stock et optimisation de l'expérience utilisateur pour augmenter les ventes",
+        ? "ننشئ متاجر إلكترونية متكاملة بأنظمة دفع مغربية آمنة وإدارة مخزون ذكية لمضاعفة مبيعاتك عبر الإنترنت"
+        : "Nous créons des boutiques en ligne complètes avec paiement marocain sécurisé et gestion de stock intelligente pour multiplier vos ventes en ligne",
       icon: ShoppingCart,
-      features: isRTL ? ["دفع مغربي آمن", "إدارة المخزون", "تحويل عالي", "تسويق متكامل"] : ["Paiement Marocain Sécurisé", "Gestion Stock", "Taux Conversion Élevé", "Marketing Intégré"],
-      keywords: isRTL ? ["متجر إلكتروني المغرب", "موقع بيع онлайн الدار البيضاء", "ecommerce المغرب"] : ["boutique en ligne Maroc", "site e-commerce Casablanca", "ecommerce Maroc"]
+      gradient: "from-[var(--brand-secondary)] to-[var(--brand-primary)]",
+      features: isRTL
+        ? ["دفع مغربي آمن", "إدارة مخزون", "تحويل مرتفع", "تسويق مدمج"]
+        : ["Paiement Sécurisé", "Gestion Stock", "Conversion Élevée", "Marketing Intégré"],
     },
     {
       id: "social-media",
       title: isRTL ? "إدارة وسائل التواصل" : "Gestion Réseaux Sociaux",
       description: isRTL
-        ? "إدارة احترافية لحسابات وسائل التواصل الاجتماعي مع استراتيجيات محتوى مخصصة للجمهور المغربي لزيادة التفاعل والمبيعات"
-        : "Gestion professionnelle des réseaux sociaux avec stratégies de contenu personnalisées pour le public marocain pour augmenter l'engagement et les ventes",
+        ? "ندير حساباتك على وسائل التواصل الاجتماعي باحترافية مع محتوى مخصص للجمهور المغربي لزيادة التفاعل وتحقيق المبيعات"
+        : "Nous gérons vos réseaux sociaux avec du contenu personnalisé pour le public marocain afin de maximiser l'engagement et générer des ventes",
       icon: TrendingUp,
-      features: isRTL ? ["إدارة محتوى", "تفاعل الجمهور", "تحليل أداء", "حملات إعلانية"] : ["Gestion Contenu", "Engagement Audience", "Analyse Performance", "Campagnes Publicitaires"],
-      keywords: isRTL ? ["إدارة سوشيال ميديا المغرب", "تسويق إنستغرام الدار البيضاء", "إدارة فيسبوك المغرب"] : ["gestion réseaux sociaux Maroc", "marketing Instagram Casablanca", "gestion Facebook Maroc"]
+      gradient: "from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)]",
+      features: isRTL
+        ? ["محتوى إبداعي", "تفاعل عالي", "تقارير أداء", "حملات إعلانية"]
+        : ["Contenu Créatif", "Engagement Fort", "Rapports Détaillés", "Campagnes Ads"],
     },
     {
       id: "nfc-cards",
       title: isRTL ? "بطاقات NFC الذكية" : "Cartes NFC Intelligentes",
       description: isRTL
-        ? "تصميم بطاقات NFC ذكية مخصصة للشركات المغربية مع إمكانيات رقمية متقدمة لتحديث المعلومات بسهولة وتجارب تفاعلية"
-        : "Conception de cartes NFC intelligentes personnalisées pour entreprises marocaines avec capacités digitales avancées pour mettre à jour les informations facilement",
+        ? "نصمم بطاقات أعمال NFC ذكية للمهنيين والشركات المغربية، قابلة للتحديث فوراً مع تجربة تفاعلية متقدمة"
+        : "Nous concevons des cartes de visite NFC intelligentes pour les professionnels et entreprises marocaines, actualisables instantanément avec une expérience interactive",
       icon: CreditCard,
-      features: isRTL ? ["قابلة للتحديث", "تفاعلية", "تتبع البيانات", "تكنولوجيا حديثة"] : ["Mise à Jour Facile", "Interactive", "Tracking Données", "Technologie Innovante"],
-      keywords: isRTL ? ["بطاقات nfc المغرب", "كروت ذكية الدار البيضاء", "تكنولوجيا nfc المغرب"] : ["cartes NFC Maroc", "cartes intelligentes Casablanca", "technologie NFC Maroc"]
-    }
+      gradient: "from-[var(--brand-light-accent)] to-[var(--brand-primary)]",
+      features: isRTL
+        ? ["تحديث فوري", "تفاعلية", "تتبع ذكي", "تقنية متطورة"]
+        : ["Mise à Jour Instantanée", "Interactive", "Tracking Intelligent", "Tech Avancée"],
+    },
   ]
 
   return (
     <section
       id="services"
       style={cssVariables}
-      className={`relative py-16 sm:py-20 lg:py-24 xl:py-28 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
+      className={`relative py-20 sm:py-24 lg:py-32 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
     >
-      {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--brand-light-bg)] via-[var(--brand-primary)]/5 to-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] dark:via-[var(--brand-primary)]/10 dark:to-[var(--brand-dark-bg)]" />
+      {/* ══════════════ BACKGROUND SYSTEM ══════════════ */}
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Orbs */}
+      {/* Base */}
+      <div className="absolute inset-0 bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)]" />
+
+      {/* Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
+        style={{
+          backgroundImage: `linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+
+      {/* Radial Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          {...floatingAnimation}
-          className="absolute top-10 left-5 sm:left-10 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-light-accent)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-2xl"
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.08, 0.18, 0.08],
+            x: [0, 40, 0],
+            y: [0, -25, 0],
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-light-accent) 0%, transparent 70%)` }}
         />
         <motion.div
-          {...floatingAnimation}
-          transition={{ delay: 2, duration: 8 }}
-          className="absolute top-1/3 right-5 sm:right-10 w-16 h-16 sm:w-28 sm:h-28 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-light-accent)]/15 dark:to-[var(--brand-dark-accent)]/15 rounded-full blur-2xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.06, 0.14, 0.06],
+            x: [0, -30, 0],
+            y: [0, 35, 0],
+          }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-secondary) 0%, transparent 70%)` }}
         />
         <motion.div
-          {...floatingAnimation}
-          transition={{ delay: 1, duration: 7 }}
-          className="absolute bottom-20 left-1/4 w-12 h-12 sm:w-24 sm:h-24 bg-gradient-to-br from-[var(--brand-light-accent)]/10 to-[var(--brand-primary)]/10 dark:from-[var(--brand-dark-accent)]/10 dark:to-[var(--brand-primary)]/10 rounded-full blur-2xl"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.12, 0.05] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 8 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)` }}
         />
 
-        {/* Geometric Patterns */}
+        {/* Floating Particles */}
+        {Array.from({ length: 12 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute"
+            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+            animate={{
+              y: [0, -(Math.random() * 80 + 20), 0],
+              x: [0, Math.random() * 40 - 20, 0],
+              rotate: [0, Math.random() * 360, 0],
+              opacity: [0, 0.35, 0],
+              scale: [0.4, 1, 0.4],
+            }}
+            transition={{
+              duration: Math.random() * 12 + 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 6,
+            }}
+          >
+            {i % 3 === 0 ? (
+              <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)]/20 dark:bg-[var(--brand-dark-accent)]/15" />
+            ) : i % 3 === 1 ? (
+              <div className="w-3 h-3 rotate-45 bg-[var(--brand-light-accent)]/15 dark:bg-[var(--brand-dark-accent)]/10" />
+            ) : (
+              <div className="w-2.5 h-2.5 border border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/15 rounded-full" />
+            )}
+          </motion.div>
+        ))}
+
+        {/* Floating Decorative Icons */}
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute top-1/4 right-1/4 w-40 h-40 border-2 border-[var(--brand-primary)]/5 rounded-full"
-        />
+          animate={{ y: [0, -20, 0], rotate: [0, 8, -8, 0] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[15%] right-[8%] hidden lg:block"
+        >
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/[0.04] backdrop-blur-sm border border-[var(--brand-primary)]/10 shadow-lg">
+            <Globe className="w-6 h-6 text-[var(--brand-primary)]/30 dark:text-[var(--brand-dark-accent)]/30" />
+          </div>
+        </motion.div>
         <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 35, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute bottom-1/4 left-1/4 w-32 h-32 border-2 border-[var(--brand-light-accent)]/5 dark:border-[var(--brand-dark-accent)]/5 rounded-full"
-        />
+          animate={{ y: [0, 18, 0], rotate: [0, -6, 6, 0] }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute bottom-[20%] left-[6%] hidden lg:block"
+        >
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/[0.04] backdrop-blur-sm border border-[var(--brand-light-accent)]/10 shadow-lg">
+            <BarChart3 className="w-6 h-6 text-[var(--brand-light-accent)]/30 dark:text-[var(--brand-dark-accent)]/30" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+          className="absolute top-[55%] right-[5%] hidden xl:block"
+        >
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/[0.04] backdrop-blur-sm border border-[var(--brand-secondary)]/10 shadow-lg">
+            <Palette className="w-6 h-6 text-[var(--brand-secondary)]/30 dark:text-[var(--brand-dark-accent)]/30" />
+          </div>
+        </motion.div>
       </div>
 
+      {/* ══════════════ CONTENT ══════════════ */}
+
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section - SEO Optimized */}
+        {/* ── Header ── */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -188,65 +249,68 @@ export function Services({ lang, t }) {
         >
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 bg-[var(--brand-light-bg)]/60 dark:bg-[var(--brand-dark-bg)]/60 backdrop-blur-md border border-[var(--brand-primary)]/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 shadow-lg"
+            transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
+            className="inline-flex items-center gap-2.5 mb-8"
           >
-            <motion.div
-              animate={{ rotate: [0, 180, 360] }}
-              transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            >
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
-            </motion.div>
-            <span className="text-sm sm:text-base font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent uppercase tracking-wider">
-              {isRTL ? "خدماتنا المتكاملة" : "Nos Services Intégrés"}
-            </span>
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--brand-primary)] dark:text-[var(--brand-primary)]" />
-            </motion.div>
+            <div className="flex items-center gap-2 bg-white/70 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/20 rounded-full px-5 py-2.5 shadow-[0_4px_24px_rgba(82,3,113,0.08)] dark:shadow-[0_4px_24px_rgba(192,132,252,0.08)]">
+              <motion.div
+                animate={{ rotate: [0, 180, 360] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              >
+                <Zap className="w-4 h-4 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
+              </motion.div>
+              <span className="text-sm font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] bg-clip-text text-transparent uppercase tracking-wider">
+                {isRTL ? "ما نقدّمه لك" : "Ce Que Nous Proposons"}
+              </span>
+              <Sparkles className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+            </div>
           </motion.div>
 
-          {/* SEO Optimized Title */}
-          <motion.h1
+          {/* Title */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-4 sm:mb-6 font-serif text-balance"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6"
           >
-            {isRTL
-              ? "شركة تصميم مواقع وتسويق رقمي في المغرب"
-              : "Agence Création Sites Web & Marketing Digital au Maroc"
-            }
-          </motion.h1>
+            <span className="block text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+              {isRTL ? "حلول رقمية" : "Des Solutions"}
+            </span>
+            <motion.span
+              className="block mt-2 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent"
+              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              style={{ backgroundSize: "200% auto" }}
+            >
+              {isRTL ? "متكاملة لنجاحك" : "Digitales Sur Mesure"}
+            </motion.span>
+          </motion.h2>
 
-          {/* SEO Optimized Subtitle */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 max-w-3xl sm:max-w-4xl mx-auto leading-relaxed font-light"
+            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 max-w-3xl mx-auto leading-relaxed font-light"
           >
             {isRTL
-              ? "شركة متخصصة في تصميم مواقع الويب، التسويق الرقمي SEO، تطبيقات الجوال، وإدارة وسائل التواصل الاجتماعي للشركات في المغرب. نضمن ظهورك في الصفحة الأولى على جوجل."
-              : "Agence spécialisée en création de sites web, marketing digital SEO, applications mobiles et gestion des réseaux sociaux pour entreprises au Maroc. Nous garantissons votre apparition en première page sur Google."
-            }
+              ? "نرافقك من الفكرة إلى النتيجة — تصميم مواقع، تسويق رقمي، تحسين محركات البحث وإدارة الشبكات الاجتماعية — كل ما تحتاجه لتنمية أعمالك في المغرب"
+              : "Nous vous accompagnons de l'idée au résultat — création de sites, marketing digital, SEO et gestion des réseaux sociaux — tout ce qu'il faut pour développer votre activité au Maroc"}
           </motion.p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* ── Services Grid ── */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 lg:gap-7"
         >
           {servicesData.map((service, index) => {
             const Icon = service.icon
@@ -254,83 +318,81 @@ export function Services({ lang, t }) {
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                whileHover={{
-                  y: -8,
-                  scale: 1.02,
-                  transition: { duration: 0.3, ease: "easeOut" }
-                }}
+                whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.35, ease: "easeOut" } }}
                 className="h-full"
               >
-                <Card className="group h-full border-[var(--brand-primary)]/20 bg-[var(--brand-light-bg)]/50 dark:bg-[var(--brand-dark-bg)]/50 backdrop-blur-sm shadow-lg hover:shadow-2xl shadow-[var(--brand-primary)]/5 dark:shadow-[var(--brand-primary)]/10 transition-all duration-500 relative overflow-hidden">
+                <Card className="group h-full relative overflow-hidden border-0 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl shadow-[0_2px_20px_rgba(82,3,113,0.04)] hover:shadow-[0_12px_40px_rgba(82,3,113,0.12)] dark:shadow-[0_2px_20px_rgba(192,132,252,0.03)] dark:hover:shadow-[0_12px_40px_rgba(192,132,252,0.1)] transition-all duration-500 rounded-2xl">
+                  {/* Hover Gradient Overlay */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.03] dark:group-hover:opacity-[0.06] transition-opacity duration-500 rounded-2xl`}
+                  />
 
-                  {/* Animated Background Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-transparent to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Top Accent Line */}
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  />
 
-                  {/* Animated Border */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                  <div className="absolute inset-[2px] bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)] rounded-lg z-0" />
-
-                  <CardHeader className="relative z-10 pt-6 sm:pt-8 px-4 sm:px-6">
-                    {/* Icon Container */}
+                  <CardHeader className="relative z-10 pt-7 sm:pt-8 px-5 sm:px-7">
+                    {/* Icon */}
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
-                      className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[var(--brand-primary)]/20 to-[var(--brand-light-accent)]/20 dark:from-[var(--brand-primary)]/15 dark:to-[var(--brand-dark-accent)]/15 rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:shadow-lg group-hover:shadow-[var(--brand-primary)]/20 transition-all duration-300"
+                      className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.gradient} mb-5 shadow-lg`}
                     >
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--brand-primary)] dark:text-[var(--brand-primary)] group-hover:scale-110 transition-transform duration-300" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </motion.div>
 
                     {/* Title */}
-                    <CardTitle className="text-lg sm:text-xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-2 sm:mb-3 group-hover:bg-gradient-to-r group-hover:from-[var(--brand-primary)] group-hover:to-[var(--brand-light-accent)] dark:group-hover:from-[var(--brand-primary)] dark:group-hover:to-[var(--brand-dark-accent)] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    <CardTitle className="text-lg sm:text-xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] group-hover:bg-gradient-to-r group-hover:from-[var(--brand-primary)] group-hover:to-[var(--brand-light-accent)] dark:group-hover:from-[var(--brand-dark-accent)] dark:group-hover:to-[var(--brand-secondary)] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
 
-                  <CardContent className="relative z-10 pb-6 sm:pb-8 px-4 sm:px-6">
+                  <CardContent className="relative z-10 pb-7 sm:pb-8 px-5 sm:px-7">
                     {/* Description */}
-                    <CardDescription className="text-sm sm:text-base text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 leading-relaxed mb-4 sm:mb-6 font-light">
+                    <CardDescription className="text-sm sm:text-[15px] text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 leading-relaxed mb-5 font-light">
                       {service.description}
                     </CardDescription>
 
                     {/* Features */}
-                    <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
-                      {service.features.map((feature, featureIndex) => (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {service.features.map((feature, fi) => (
                         <motion.span
-                          key={featureIndex}
-                          initial={{ opacity: 0, scale: 0.8 }}
+                          key={fi}
+                          initial={{ opacity: 0, scale: 0.85 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
-                          className="text-xs font-medium px-2 py-1 rounded-full bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] dark:text-[var(--brand-primary)] border border-[var(--brand-primary)]/20"
+                          transition={{ duration: 0.3, delay: fi * 0.08 }}
+                          className="text-xs font-medium px-3 py-1.5 rounded-full bg-[var(--brand-primary)]/[0.06] dark:bg-[var(--brand-dark-accent)]/[0.08] text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)] border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/15"
                         >
                           {feature}
                         </motion.span>
                       ))}
                     </div>
 
-                    {/* CTA Link - Now with WhatsApp functionality */}
+                    {/* CTA */}
                     <motion.div
-                      initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      whileHover={{ x: isRTL ? -5 : 5 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex items-center gap-2 text-[var(--brand-primary)] dark:text-[var(--brand-primary)] text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer"
+                      whileHover={{ x: isRTL ? -6 : 6 }}
+                      transition={{ duration: 0.25 }}
+                      className="flex items-center gap-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300"
                       onClick={() => handleWhatsAppClick(service.title)}
                     >
-                      <span className="bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent font-semibold">
-                        {isRTL ? "اطلب الخدمة" : "Commander Maintenant"}
+                      <span className="text-sm font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] bg-clip-text text-transparent">
+                        {isRTL ? "اطلب هذه الخدمة" : "Demander Ce Service"}
                       </span>
                       <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
                       >
-                        <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
+                        <ArrowRight
+                          className={`w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)] ${isRTL ? "rotate-180" : ""}`}
+                        />
                       </motion.div>
                     </motion.div>
                   </CardContent>
 
-                  {/* Decorative Element */}
-                  <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--brand-primary)]/20 dark:text-[var(--brand-primary)]/20" />
+                  {/* Decorative Corner */}
+                  <div className="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <Target className="w-8 h-8 text-[var(--brand-primary)]/10 dark:text-[var(--brand-dark-accent)]/10" />
                   </div>
                 </Card>
               </motion.div>
@@ -338,53 +400,63 @@ export function Services({ lang, t }) {
           })}
         </motion.div>
 
-        {/* Bottom CTA - SEO Optimized */}
+        {/* ── Bottom CTA ── */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-16 sm:mt-20 lg:mt-24"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="text-center mt-20 sm:mt-24 lg:mt-28"
         >
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-lg sm:text-xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 mb-8 font-light"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 mb-8 sm:mb-10 font-light max-w-2xl mx-auto"
           >
             {isRTL
-              ? "🚀 احصل على موقع ويب محسن لتحسين محركات البحث SEO وارفع مبيعاتك في المغرب. تواصل معنا للحصول على استشارة مجانية."
-              : "🚀 Obtenez un site web optimisé SEO et augmentez vos ventes au Maroc. Contactez-nous pour une consultation gratuite."
-            }
+              ? "مستعد لتطوير أعمالك رقمياً؟ تواصل معنا اليوم وابدأ رحلة النمو"
+              : "Prêt à développer votre activité en ligne ? Contactez-nous aujourd'hui et commencez votre croissance digitale"}
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] hover:from-[var(--brand-primary)] hover:to-[var(--brand-primary)]/90 text-white font-semibold px-8 sm:px-10 py-4 sm:py-5 rounded-full shadow-2xl shadow-[var(--brand-primary)]/30 transition-all duration-300 cursor-pointer"
-              onClick={() => handleWhatsAppClick("Consultation Gratuite")}
-            >
-              <span className="text-base sm:text-lg">{isRTL ? "استشارة SEO مجانية" : "Consultation SEO Gratuite"}</span>
-              <Rocket className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
+            {/* Primary CTA */}
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+              <button
+                onClick={() =>
+                  handleWhatsAppClick(isRTL ? "استشارة مجانية" : "Consultation Gratuite")
+                }
+                className="relative group inline-flex items-center gap-2.5 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white font-semibold px-8 sm:px-10 py-4 sm:py-5 rounded-2xl shadow-[0_8px_32px_rgba(82,3,113,0.25)] dark:shadow-[0_8px_32px_rgba(192,132,252,0.2)] hover:shadow-[0_12px_48px_rgba(82,3,113,0.35)] dark:hover:shadow-[0_12px_48px_rgba(192,132,252,0.3)] transition-all duration-500 overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                <MessageCircle className="w-5 h-5 relative z-10" />
+                <span className="text-base sm:text-lg relative z-10">
+                  {isRTL ? "تواصل معنا الآن" : "Parlons de Votre Projet"}
+                </span>
+                <Rocket className="w-5 h-5 relative z-10" />
+              </button>
             </motion.div>
 
-            <a href={`/${lang}#portfolio`}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 border-2 border-[var(--brand-primary)]/30 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/10 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 cursor-pointer"
+            {/* Secondary CTA */}
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+              <a
+                href={`/${lang}#portfolio`}
+                className="group inline-flex items-center gap-2.5 border-2 border-[var(--brand-primary)]/25 dark:border-[var(--brand-dark-accent)]/25 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.06] dark:hover:bg-[var(--brand-dark-accent)]/[0.08] hover:border-[var(--brand-primary)]/40 dark:hover:border-[var(--brand-dark-accent)]/40 font-semibold px-7 sm:px-9 py-3.5 sm:py-4.5 rounded-2xl backdrop-blur-sm transition-all duration-300"
               >
-                <span className="text-sm sm:text-base">{isRTL ? "شاهد أعمالنا السابقة" : "Voir Nos Réalisations"}</span>
-                <ArrowRight className={`w-4 h-4 ${isRTL ? "rotate-180" : ""}`} />
-              </motion.div>
-            </a>
+                <span className="text-sm sm:text-base">
+                  {isRTL ? "اكتشف إنجازاتنا" : "Découvrir Nos Réalisations"}
+                </span>
+                <ArrowRight
+                  className={`w-4 h-4 group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5 transition-transform duration-300 ${isRTL ? "rotate-180" : ""}`}
+                />
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-b from-transparent to-[var(--brand-light-bg)]/80 dark:to-[var(--brand-dark-bg)]/80" />
+      {/* ══════════════ BOTTOM FADE ══════════════ */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-t from-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] to-transparent z-[5]" />
     </section>
   )
 }

@@ -2,24 +2,25 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, MessageCircle, Sparkles, Star, Zap, Globe, TrendingUp, Search } from "lucide-react"
+import { ArrowRight, MessageCircle, Sparkles, Star, Zap, Globe, TrendingUp, Search, Code, Palette, Rocket, ChevronDown, Shield, Award, Users } from "lucide-react"
 
 export function Hero({ lang, t }) {
   const isRTL = lang === "ar"
 
-  // Updated Color Definitions (BG FIX)
   const colors = {
-    primary: "#520371",       // Deep Plum
-    lightBg: "#faf2fc",        // Improved light mode background (fix)
-    darkBg: "#2a002d",         // Deep Dark Plum
-    lightAccent: "#9a21d6",    // More vivid for light mode
-    darkAccent: "#a832e0",     // Brighter plum for dark mode
-    lightText: "#2a002d",
-    darkText: "#fdf7fd",
+    primary: "#520371",
+    secondary: "#7c3aed",
+    lightBg: "#fdfaff",
+    darkBg: "#0f0a1a",
+    lightAccent: "#9333ea",
+    darkAccent: "#c084fc",
+    lightText: "#1a0525",
+    darkText: "#f5f0ff",
   }
 
   const cssVariables = {
     "--brand-primary": colors.primary,
+    "--brand-secondary": colors.secondary,
     "--brand-light-bg": colors.lightBg,
     "--brand-dark-bg": colors.darkBg,
     "--brand-light-accent": colors.lightAccent,
@@ -28,31 +29,17 @@ export function Hero({ lang, t }) {
     "--brand-dark-text": colors.darkText,
   }
 
-  // WhatsApp config
   const whatsappInfo = {
     phone: "212645288216",
     messages: {
-      fr: "Bonjour ! Je suis intéressé(e) par une consultation gratuite pour mes projets digitaux. Pouvez-vous me donner plus d'informations ?",
-      ar: "مرحبا! أنا مهتم باستشارة مجانية لمشاريعي الرقمية. هل يمكنكم إعطائي المزيد من المعلومات؟"
+      fr: "Bonjour ! Je souhaite discuter de mon projet digital avec votre équipe. Pouvez-vous me proposer un rendez-vous ?",
+      ar: "مرحبا! أود مناقشة مشروعي الرقمي مع فريقكم. هل يمكنكم اقتراح موعد؟"
     }
   }
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(whatsappInfo.messages[lang])
-    const whatsappUrl = `https://wa.me/${whatsappInfo.phone}?text=${message}`
-    window.open(whatsappUrl, "_blank")
-  }
-
-  const pulseAnimation = {
-    animate: {
-      scale: [1, 1.05, 1],
-      opacity: [0.8, 1, 0.8],
-      transition: {
-        duration: 4,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut"
-      }
-    }
+    window.open(`https://wa.me/${whatsappInfo.phone}?text=${message}`, "_blank")
   }
 
   return (
@@ -61,265 +48,367 @@ export function Hero({ lang, t }) {
       style={cssVariables}
       className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ${isRTL ? "rtl" : "ltr"}`}
     >
+      {/* ══════════════ BACKGROUND SYSTEM ══════════════ */}
 
-      {/* ------------------------ FIX: BACKGROUND LAYERS ORDER ------------------------ */}
-
-      {/* 1️⃣ Solid Main Background */}
+      {/* Base Background */}
       <div className="absolute inset-0 bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)]" />
 
-      {/* 2️⃣ Gradient Overlay (visible in light mode now) */}
-      <div className="absolute inset-0 bg-gradient-to-br 
-          from-[var(--brand-primary)]/15 
-          via-transparent 
-          to-[var(--brand-light-accent)]/15
-          dark:from-[var(--brand-primary)]/30 
-          dark:via-transparent 
-          dark:to-[var(--brand-dark-accent)]/25
-      " />
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+        style={{
+          backgroundImage: `linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
 
-      {/* 3️⃣ Floating Shapes + Blobs */}
+      {/* Radial Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-8 h-8 border-l-2 border-t-2 border-[var(--brand-primary)]/50"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.12, 0.25, 0.12],
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full"
+          style={{
+            background: `radial-gradient(circle, var(--brand-light-accent) 0%, transparent 70%)`,
+          }}
         />
-        <motion.div
-          className="absolute bottom-40 right-20 w-12 h-12 border-r-2 border-b-2 border-[var(--brand-light-accent)]/50 dark:border-[var(--brand-dark-accent)]/50"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-        />
-
-        {/* Blobs */}
         <motion.div
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.6, 0.3],
-            rotate: [0, 90, 0],
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+            x: [0, -40, 0],
+            y: [0, 40, 0],
           }}
-          transition={{
-            duration: 12,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute -bottom-48 -right-32 w-[700px] h-[700px] rounded-full"
+          style={{
+            background: `radial-gradient(circle, var(--brand-secondary) 0%, transparent 70%)`,
           }}
-          className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 
-              bg-gradient-to-br 
-              from-[var(--brand-light-accent)]/40 
-              via-[var(--brand-primary)]/40 
-              to-[var(--brand-primary)]/40 
-              dark:from-[var(--brand-dark-accent)]/30 
-              dark:via-[var(--brand-primary)]/30 
-              dark:to-[var(--brand-primary)]/30 
-              rounded-full blur-3xl"
         />
-
         <motion.div
           animate={{
-            scale: [1, 1.4, 1],
-            opacity: [0.2, 0.5, 0.2],
-            rotate: [0, -60, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.08, 0.15, 0.08],
           }}
-          transition={{
-            duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 3,
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 6 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full"
+          style={{
+            background: `radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)`,
           }}
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 md:w-[500px] md:h-[500px] 
-              bg-gradient-to-br 
-              from-[var(--brand-primary)]/30 
-              via-[var(--brand-light-accent)]/30 
-              to-[var(--brand-dark-accent)]/30 
-              dark:from-[var(--brand-primary)]/20 
-              dark:via-[var(--brand-dark-accent)]/20 
-              dark:to-[var(--brand-primary)]/20 
-              rounded-full blur-3xl"
         />
 
-        {/* SEO Icons */}
+        {/* Floating Geometric Elements */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -(Math.random() * 120 + 30), 0],
+              x: [0, Math.random() * 60 - 30, 0],
+              rotate: [0, Math.random() * 360, 0],
+              opacity: [0, 0.4, 0],
+              scale: [0.3, 1, 0.3],
+            }}
+            transition={{
+              duration: Math.random() * 15 + 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 8,
+            }}
+          >
+            {i % 3 === 0 ? (
+              <div className="w-3 h-3 rounded-full bg-[var(--brand-primary)]/20 dark:bg-[var(--brand-dark-accent)]/15" />
+            ) : i % 3 === 1 ? (
+              <div className="w-4 h-4 rotate-45 bg-[var(--brand-light-accent)]/15 dark:bg-[var(--brand-dark-accent)]/10" />
+            ) : (
+              <div className="w-3 h-3 border border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/15 rounded-full" />
+            )}
+          </motion.div>
+        ))}
+
+        {/* Floating Tech Icons */}
         <motion.div
-          animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute top-1/3 right-1/4"
+          animate={{ y: [0, -25, 0], rotate: [0, 10, -10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[20%] right-[15%] hidden md:block"
         >
-          <Search className="w-8 h-8 text-[var(--brand-primary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-primary)]/10 shadow-lg">
+            <Code className="w-7 h-7 text-[var(--brand-primary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
+          </div>
         </motion.div>
-
         <motion.div
-          animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-          transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear", delay: 2 }}
-          className="absolute bottom-1/3 left-1/4"
+          animate={{ y: [0, 20, 0], rotate: [0, -8, 8, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[25%] left-[12%] hidden md:block"
         >
-          <TrendingUp className="w-10 h-10 text-[var(--brand-light-accent)]/40 dark:text-[var(--brand-dark-accent)]/40" />
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-light-accent)]/10 shadow-lg">
+            <Palette className="w-7 h-7 text-[var(--brand-light-accent)]/40 dark:text-[var(--brand-dark-accent)]/40" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -18, 0], x: [0, 12, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute top-[60%] right-[10%] hidden lg:block"
+        >
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-secondary)]/10 shadow-lg">
+            <Rocket className="w-7 h-7 text-[var(--brand-secondary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
+          </div>
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-[15%] left-[18%] hidden lg:block"
+        >
+          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-primary)]/10 shadow-lg">
+            <Search className="w-7 h-7 text-[var(--brand-primary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
+          </div>
         </motion.div>
       </div>
 
-      {/* ------------------------ MAIN CONTENT ------------------------ */}
+      {/* ══════════════ MAIN CONTENT ══════════════ */}
 
-      <div className="container relative z-[5] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-4xl lg:max-w-6xl mx-auto text-center">
+      <motion.div
+        className="container relative z-[5] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24"
+      >
+        <div className="max-w-5xl mx-auto text-center">
 
-          {/* Badge */}
+          {/* ── Top Badge ── */}
           <motion.div
-            initial={{ opacity: 0, y: -30, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            className="inline-flex items-center gap-2 bg-white/60 dark:bg-[var(--brand-dark-bg)]/60 backdrop-blur-md border border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/30 rounded-full px-6 py-3 mb-10 shadow-lg"
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
+            className="inline-flex items-center gap-2.5 mb-8"
           >
-            <Sparkles className="w-5 h-5 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
-            <span className="font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent">
-              {isRTL ? "تسويق رقمي و تصميم مواقع" : "Marketing Digital & Création de Sites Web"}
-            </span>
-            <Zap className="w-5 h-5 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+            <motion.div
+              whileHover={{ scale: 1.08, y: -3 }}
+              className="flex items-center gap-2 bg-white/70 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/20 rounded-full px-5 py-2.5 shadow-[0_4px_24px_rgba(82,3,113,0.08)] dark:shadow-[0_4px_24px_rgba(192,132,252,0.08)] cursor-default"
+            >
+              <motion.div
+                animate={{ rotate: [0, 180, 360] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="w-4 h-4 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
+              </motion.div>
+              <span className="text-sm font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] bg-clip-text text-transparent">
+                {isRTL ? "وكالة رقمية مبتكرة" : "Studio Créatif Digital"}
+              </span>
+              <Zap className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+            </motion.div>
           </motion.div>
 
-          {/* TITLE */}
+          {/* ── Main Title ── */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <span className="block text-[var(--brand-light-text)] font-serif dark:text-[var(--brand-dark-text)]">
-                {isRTL ? "ارتقِ بأعمالك" : "Boostez Votre"}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.1] tracking-tight">
+              <span className="block text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+                {isRTL ? "نُحوِّل أفكارك إلى" : "On Transforme"}
               </span>
-
-              <span className="block mt-3 bg-gradient-to-r font-serif
-                  from-[var(--brand-primary)] 
-                  via-[var(--brand-light-accent)] 
-                  to-[var(--brand-primary)] 
-                  dark:from-[var(--brand-primary)] 
-                  dark:via-[var(--brand-dark-accent)] 
-                  dark:to-[var(--brand-primary)] 
-                  bg-clip-text text-transparent"
-              >
-                {isRTL ? "بالحلول الرقمية" : "Business Digital"}
+              <span className="block mt-2 sm:mt-3">
+                <motion.span
+                  className="inline-block bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent"
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  style={{ backgroundSize: "200% auto" }}
+                >
+                  {isRTL ? "واقع رقمي مُبهر" : "Vos Idées en"}
+                </motion.span>
+              </span>
+              <span className="block mt-2 sm:mt-3 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+                {isRTL ? "" : "Succès Digital"}
               </span>
             </h1>
           </motion.div>
 
-          {/* SUBTITLE */}
+          {/* ── Subtitle ── */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-lg md:text-2xl text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 max-w-3xl mx-auto mt-6"
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 max-w-3xl mx-auto mt-6 sm:mt-8 leading-relaxed font-light"
           >
             {isRTL
-              ? "نحن نخلق حضورًا رقميًا قويًا للشركات المغربية عبر تصميم مواقع ويب احترافية وتطبيق استراتيجيات تسويق رقمية فعالة لتحقيق النمو المستدام"
-              : "Nous créons une présence digitale puissante pour les entreprises marocaines grâce à des sites web professionnels et des stratégies de marketing digital efficaces pour une croissance durable"}
+              ? "فريق من المحترفين يرافقك في بناء حضور رقمي استثنائي — من تصميم المواقع إلى استراتيجيات التسويق الرقمي — لتحقيق نتائج ملموسة وقابلة للقياس"
+              : "Une équipe de passionnés qui vous accompagne dans la création d'une présence en ligne exceptionnelle — du design web aux stratégies marketing — pour des résultats concrets et mesurables"}
           </motion.p>
 
-          {/* CTA BUTTONS */}
+          {/* ── CTA Buttons ── */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center mt-12"
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center mt-10 sm:mt-12"
           >
+            {/* Primary CTA */}
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+              <Button
+                size="lg"
+                onClick={handleWhatsAppClick}
+                className="relative group bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white px-8 sm:px-10 py-5 sm:py-6 rounded-2xl text-base sm:text-lg font-semibold shadow-[0_8px_32px_rgba(82,3,113,0.25)] dark:shadow-[0_8px_32px_rgba(192,132,252,0.2)] hover:shadow-[0_12px_48px_rgba(82,3,113,0.35)] dark:hover:shadow-[0_12px_48px_rgba(192,132,252,0.3)] transition-all duration-500 border-0 overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                <MessageCircle className={`w-5 h-5 ${isRTL ? "ml-2.5" : "mr-2.5"} relative z-10`} />
+                <span className="relative z-10">
+                  {isRTL ? "تواصل معنا الآن" : "Discutons de Votre Projet"}
+                </span>
+              </Button>
+            </motion.div>
 
-            {/* CONSULTATION BUTTON */}
-            <Button
-              size="lg"
-              className="group bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] text-white px-10 py-6 rounded-xl shadow-xl"
-              onClick={handleWhatsAppClick}
-            >
-              <MessageCircle className={`w-5 h-5 ${isRTL ? "ml-2" : "mr-2"}`} />
-              {isRTL ? "استشارة مجانية" : "Consultation Gratuite"}
-            </Button>
-
-            {/* PORTFOLIO BUTTON */}
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="group border-2 border-[var(--brand-primary)]/40 dark:border-[var(--brand-dark-accent)]/40 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/10 dark:hover:bg-[var(--brand-dark-accent)]/10 px-10 py-6 rounded-xl"
-            >
-              <a href={`/${lang}#portfolio`}>
-                {isRTL ? "شاهد مشاريعنا" : "Voir Nos Projets"}
-                <ArrowRight className={`w-5 h-5 inline-block ${isRTL ? "mr-2" : "ml-2"}`} />
-              </a>
-            </Button>
+            {/* Secondary CTA */}
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="group border-2 border-[var(--brand-primary)]/25 dark:border-[var(--brand-dark-accent)]/25 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.06] dark:hover:bg-[var(--brand-dark-accent)]/[0.08] hover:border-[var(--brand-primary)]/40 dark:hover:border-[var(--brand-dark-accent)]/40 px-8 sm:px-10 py-5 sm:py-6 rounded-2xl backdrop-blur-sm text-base sm:text-lg font-semibold transition-all duration-300"
+              >
+                <a href={`/${lang}#portfolio`}>
+                  {isRTL ? "اكتشف إنجازاتنا" : "Découvrir Nos Réalisations"}
+                  <ArrowRight className={`w-5 h-5 inline-block ${isRTL ? "mr-2.5 rotate-180" : "ml-2.5"} group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5 transition-transform duration-300`} />
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
 
-          {/* STATS */}
+          {/* ── Feature Cards ── */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto mt-16"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-3xl mx-auto mt-16 sm:mt-20"
           >
             {[
               {
                 icon: Globe,
-                text: isRTL ? "تصميم مواقع ويب متجاوبة" : "Sites Web Responsives",
-                description: isRTL ? "تعمل على جميع الأجهزة" : "Optimisés tous appareils",
+                title: isRTL ? "مواقع ويب عصرية" : "Sites Web Modernes",
+                desc: isRTL ? "تصاميم مبتكرة ومتجاوبة" : "Design innovant & responsive",
+                gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]",
               },
               {
                 icon: Search,
-                text: isRTL ? "تحسين محركات البحث SEO" : "Référencement SEO",
-                description: isRTL ? "الظهور في الصفحة الأولى" : "1ère page Google",
+                title: isRTL ? "تحسين محركات البحث" : "Visibilité Google",
+                desc: isRTL ? "تصدر نتائج البحث" : "Top résultats garantis",
+                gradient: "from-[var(--brand-light-accent)] to-[var(--brand-secondary)]",
               },
               {
                 icon: TrendingUp,
-                text: isRTL ? "استراتيجيات تسويق رقمي" : "Stratégies Marketing",
-                description: isRTL ? "زيادة المبيعات" : "Augmentation des ventes",
+                title: isRTL ? "نمو مستدام" : "Croissance Durable",
+                desc: isRTL ? "مضاعفة عائداتك" : "Multipliez vos revenus",
+                gradient: "from-[var(--brand-secondary)] to-[var(--brand-primary)]",
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                {...pulseAnimation}
-                className="p-5 bg-white/50 dark:bg-[var(--brand-dark-bg)]/40 backdrop-blur-sm border border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/20 rounded-2xl shadow-sm"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 + index * 0.15, duration: 0.6 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative p-6 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 rounded-2xl shadow-[0_2px_16px_rgba(82,3,113,0.04)] hover:shadow-[0_8px_32px_rgba(82,3,113,0.1)] dark:hover:shadow-[0_8px_32px_rgba(192,132,252,0.1)] transition-all duration-500 cursor-default overflow-hidden"
               >
-                <item.icon className="w-6 h-6 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)] mx-auto" />
-                <h3 className="mt-4 font-bold">{item.text}</h3>
-                <p className="text-sm opacity-70">{item.description}</p>
+                {/* Card Hover Glow */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.04] dark:group-hover:opacity-[0.06] transition-opacity duration-500 rounded-2xl`} />
+
+                <div className={`inline-flex p-2.5 rounded-xl bg-gradient-to-br ${item.gradient} mb-3`}>
+                  <item.icon className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-sm sm:text-base">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55 mt-1.5">
+                  {item.desc}
+                </p>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* TRUST BADGE */}
+          {/* ── Trust Section ── */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="mt-10 flex items-center justify-center gap-3 text-sm text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70"
+            transition={{ duration: 0.7, delay: 1 }}
+            className="mt-12 sm:mt-14"
           >
-            <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-            <span>4.9/5</span>
-            <span>•</span>
-            <span>{isRTL ? "+50 عميل في المغرب" : "+50 Clients au Maroc"}</span>
-            <span>•</span>
-            <span>{isRTL ? "ضمان 100%" : "Garantie 100%"}</span>
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              {/* Rating */}
+              <div className="flex items-center gap-2">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1.1 + i * 0.1 }}
+                    >
+                      <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    </motion.div>
+                  ))}
+                </div>
+                <span className="text-sm font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">4.9</span>
+              </div>
+
+              <span className="text-[var(--brand-light-text)]/20 dark:text-[var(--brand-dark-text)]/20">|</span>
+
+              {/* Clients */}
+              <div className="flex items-center gap-1.5">
+                <Users className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+                <span className="text-sm font-medium text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70">
+                  {isRTL ? "+50 شركة تثق بنا" : "+50 entreprises nous font confiance"}
+                </span>
+              </div>
+
+              <span className="text-[var(--brand-light-text)]/20 dark:text-[var(--brand-dark-text)]/20 hidden sm:block">|</span>
+
+              {/* Guarantee */}
+              <div className="flex items-center gap-1.5">
+                <Shield className="w-4 h-4 text-emerald-500" />
+                <span className="text-sm font-medium text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70">
+                  {isRTL ? "رضا مضمون" : "Satisfaction garantie"}
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* BOTTOM GRADIENT FADE */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t 
-          from-[var(--brand-light-bg)] 
-          dark:from-[var(--brand-dark-bg)] 
-          to-transparent"
-      />
+      {/* ══════════════ BOTTOM FADE ══════════════ */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] to-transparent z-[10]" />
 
-      {/* SCROLL INDICATOR */}
+      {/* ══════════════ SCROLL INDICATOR ══════════════ */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        transition={{ duration: 0.8, delay: 1.2 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[20]"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-          className="w-6 h-10 border-2 border-[var(--brand-primary)]/30 dark:border-[var(--brand-dark-accent)]/30 rounded-full flex justify-center"
+        <motion.a
+          href={`/${lang}#services`}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2 cursor-pointer group"
         >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            className="w-1 h-3 bg-[var(--brand-primary)]/60 dark:bg-[var(--brand-dark-accent)]/60 rounded-full mt-2"
-          />
-        </motion.div>
+          <span className="text-xs font-medium text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 group-hover:text-[var(--brand-primary)] dark:group-hover:text-[var(--brand-dark-accent)] transition-colors">
+            {isRTL ? "اكتشف المزيد" : "Explorer"}
+          </span>
+          <div className="w-8 h-12 border-2 border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/20 rounded-full flex justify-center group-hover:border-[var(--brand-primary)]/40 dark:group-hover:border-[var(--brand-dark-accent)]/40 transition-colors">
+            <motion.div
+              animate={{ y: [2, 14, 2], opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-1.5 h-3 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] rounded-full mt-2"
+            />
+          </div>
+        </motion.a>
       </motion.div>
     </section>
   )

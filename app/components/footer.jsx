@@ -2,36 +2,25 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Instagram, Mail, MessageCircle, Heart, Sparkles, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Twitter, Instagram, Mail, MessageCircle, Heart, Sparkles, ArrowUp, MapPin, Phone } from "lucide-react"
 
 export default function Footer({ lang, t }) {
   const isRTL = lang === "ar"
   const currentYear = new Date().getFullYear()
 
-  // Updated Color Definitions
-  const colors = {
-    primary: "#520371",      // Deep Plum
-    lightBg: "#fdf7fd",      // Light Lavender
-    darkBg: "#2a002d",       // Deep Dark Plum
-    lightAccent: "#8a05c2",  // Lighter Plum for light mode
-    darkAccent: "#a832e0",   // Brighter Plum for dark mode
-    lightText: "#2a002d",    // Dark text for light mode
-    darkText: "#fdf7fd",     // Light text for dark mode
-  }
-
-  // CSS Variables for dynamic styling
   const cssVariables = {
-    '--brand-primary': colors.primary,
-    '--brand-light-bg': colors.lightBg,
-    '--brand-dark-bg': colors.darkBg,
-    '--brand-light-accent': colors.lightAccent,
-    '--brand-dark-accent': colors.darkAccent,
-    '--brand-light-text': colors.lightText,
-    '--brand-dark-text': colors.darkText,
+    "--brand-primary": "#520371",
+    "--brand-secondary": "#7c3aed",
+    "--brand-light-bg": "#fdfaff",
+    "--brand-dark-bg": "#0f0a1a",
+    "--brand-light-accent": "#9333ea",
+    "--brand-dark-accent": "#c084fc",
+    "--brand-light-text": "#1a0525",
+    "--brand-dark-text": "#f5f0ff",
   }
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   const socialLinks = [
@@ -39,205 +28,245 @@ export default function Footer({ lang, t }) {
       icon: Github,
       href: "https://github.com/imadJHR",
       label: "GitHub",
-      color: "hover:bg-gray-700 hover:text-white"
+      gradient: "from-gray-600 to-gray-800",
     },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/company/nemsi-media/?trk=similar-pages",
       label: "LinkedIn",
-      color: "hover:bg-blue-600 hover:text-white"
+      gradient: "from-blue-500 to-blue-700",
     },
     {
       icon: Twitter,
       href: "https://twitter.com/yourprofile",
       label: "Twitter",
-      color: "hover:bg-sky-500 hover:text-white"
+      gradient: "from-sky-400 to-sky-600",
     },
     {
       icon: Instagram,
       href: "https://www.instagram.com/nemsimedia/",
       label: "Instagram",
-      color: "hover:bg-gradient-to-br hover:from-[var(--brand-primary)] hover:to-[var(--brand-light-accent)] dark:hover:to-[var(--brand-dark-accent)] hover:text-white"
+      gradient: "from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)]",
     },
     {
       icon: Mail,
       href: "mailto:contact@nemsimedia.ma",
       label: "Email",
-      color: "hover:bg-[var(--brand-primary)] hover:text-white"
+      gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]",
     },
     {
       icon: MessageCircle,
       href: "https://wa.me/212645288216",
       label: "WhatsApp",
-      color: "hover:bg-green-500 hover:text-white"
-    }
+      gradient: "from-emerald-500 to-green-600",
+    },
   ]
 
   const quickLinks = [
     { href: `/${lang}#home`, label: t.footer.links.home || "Home" },
     { href: `/${lang}#portfolio`, label: t.footer.links.portfolio },
     { href: `/${lang}#services`, label: t.footer.links.services },
-    { href: `/${lang}#contact`, label: t.footer.links.contact }
+    { href: `/${lang}#contact`, label: t.footer.links.contact },
   ]
 
   const serviceLinks = [
     { href: `/${lang}#services`, label: isRTL ? "تصميم مواقع" : "Sites Web" },
     { href: `/${lang}#services`, label: isRTL ? "متاجر إلكترونية" : "E-commerce" },
     { href: `/${lang}#services`, label: isRTL ? "تحسين SEO" : "SEO" },
-    { href: `/${lang}#services`, label: isRTL ? "صيانة مواقع" : "Maintenance" }
+    { href: `/${lang}#services`, label: isRTL ? "إدارة الشبكات" : "Réseaux Sociaux" },
+  ]
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      value: "contact@nemsimedia.ma",
+      href: "mailto:contact@nemsimedia.ma",
+      gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]",
+    },
+    {
+      icon: Phone,
+      value: "+212 645 288 216",
+      href: "tel:+212645288216",
+      gradient: "from-[var(--brand-light-accent)] to-[var(--brand-secondary)]",
+    },
+    {
+      icon: MapPin,
+      value: isRTL ? "الدار البيضاء، المغرب" : "Casablanca, Maroc",
+      gradient: "from-[var(--brand-secondary)] to-[var(--brand-primary)]",
+    },
   ]
 
   return (
-    <footer 
+    <footer
       style={cssVariables}
-      className={`relative bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)] border-t border-[var(--brand-primary)]/20 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
+      className={`relative bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)] text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-primary)]/5 via-transparent to-[var(--brand-light-accent)]/5 dark:to-[var(--brand-dark-accent)]/5" />
-      
-      {/* Animated Orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
+      {/* ══════════════ BACKGROUND SYSTEM ══════════════ */}
+      <div className="absolute inset-0 bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)]" />
+
+      {/* Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
         }}
-        transition={{
-          duration: 8,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-        className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-[var(--brand-primary)]/10 to-[var(--brand-light-accent)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.05, 0.15, 0.05],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-          delay: 2,
-        }}
-        className="absolute -bottom-20 -right-20 w-48 h-48 bg-gradient-to-br from-[var(--brand-light-accent)]/10 to-[var(--brand-primary)]/10 dark:to-[var(--brand-dark-accent)]/10 rounded-full blur-3xl"
       />
 
+      {/* Radial Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{ scale: [1, 1.15, 1], opacity: [0.06, 0.14, 0.06] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-light-accent) 0%, transparent 70%)` }}
+        />
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.04, 0.1, 0.04] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute -bottom-32 -right-32 w-[450px] h-[450px] rounded-full"
+          style={{ background: `radial-gradient(circle, var(--brand-secondary) 0%, transparent 70%)` }}
+        />
+      </div>
+
+      {/* Top Border Gradient */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--brand-primary)]/20 dark:via-[var(--brand-dark-accent)]/20 to-transparent" />
+
+      {/* ══════════════ CONTENT ══════════════ */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 py-12 sm:py-16">
-          {/* Brand Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 py-14 sm:py-18 lg:py-20">
+          {/* ── Brand Section ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            transition={{ duration: 0.6 }}
+            className="space-y-5 lg:col-span-1"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="inline-block"
-            >
-              <h3 className="text-2xl sm:text-3xl font-bold font-serif bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent">
-                {isRTL ? "Nemsi Media" : "Nemsi Media Maroc"}
+            <Link href={`/${lang}#home`} className="inline-block group">
+              <h3 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent tracking-tight group-hover:opacity-80 transition-opacity">
+                {isRTL ? "نمسي ميديا" : "Nemsi Media"}
               </h3>
-            </motion.div>
-            
-            <p className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 leading-relaxed text-sm sm:text-base">
+            </Link>
+
+            <p className="text-sm sm:text-[15px] text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55 leading-relaxed font-light">
               {isRTL
-                ? "نصمم مواقع إلكترونية احترافية للشركات في المغرب بأسعار تنافسية وجودة عالية"
-                : "Création de sites web professionnels pour entreprises au Maroc avec des prix compétitifs et une qualité supérieure"}
+                ? "نرافقك في بناء حضور رقمي استثنائي — تصميم مواقع احترافية واستراتيجيات تسويق فعالة للشركات المغربية"
+                : "Nous vous accompagnons dans la création d'une présence digitale exceptionnelle — sites web professionnels et stratégies marketing pour les entreprises marocaines"}
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-2 pt-4">
-              <div className="flex items-center gap-3 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80">
-                <Mail className="w-4 h-4 text-[var(--brand-primary)]" />
-                <span>contact@nemsimedia.ma</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80">
-                <MessageCircle className="w-4 h-4 text-green-500" />
-                <span>+212 645 288 216</span>
-              </div>
+            <div className="space-y-3 pt-2">
+              {contactInfo.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: isRTL ? 15 : -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 + i * 0.08 }}
+                  className="flex items-center gap-3 group"
+                >
+                  <div className={`inline-flex p-1.5 rounded-lg bg-gradient-to-br ${item.gradient}`}>
+                    <item.icon className="w-3 h-3 text-white" />
+                  </div>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-sm text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 hover:text-[var(--brand-primary)] dark:hover:text-[var(--brand-dark-accent)] transition-colors duration-300 font-medium"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <span className="text-sm text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 font-medium">
+                      {item.value}
+                    </span>
+                  )}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Quick Links */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+          {/* ── Quick Links ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
           >
-            <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-lg flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-full" />
-              {isRTL ? "روابط سريعة" : "Liens rapides"}
+            <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-base flex items-center gap-2.5">
+              <div className="w-[3px] h-4 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] rounded-full" />
+              {isRTL ? "روابط سريعة" : "Liens Rapides"}
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {quickLinks.map((link, index) => (
                 <motion.li
                   key={link.label}
-                  initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
+                  initial={{ opacity: 0, x: isRTL ? 15 : -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
                 >
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-primary)] transition-all duration-300"
+                    className="group flex items-center gap-2.5 text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55 hover:text-[var(--brand-primary)] dark:hover:text-[var(--brand-dark-accent)] transition-all duration-300 py-0.5"
                   >
-                    <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="text-sm sm:text-base">{link.label}</span>
+                    <div className="w-1 h-1 rounded-full bg-[var(--brand-primary)]/30 dark:bg-[var(--brand-dark-accent)]/30 group-hover:bg-[var(--brand-primary)] dark:group-hover:bg-[var(--brand-dark-accent)] group-hover:scale-150 transition-all duration-300" />
+                    <span className="text-sm font-medium">{link.label}</span>
                   </Link>
                 </motion.li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Services */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+          {/* ── Services ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-lg flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-[var(--brand-light-accent)] to-[var(--brand-primary)] dark:to-[var(--brand-dark-accent)] rounded-full" />
+            <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-base flex items-center gap-2.5">
+              <div className="w-[3px] h-4 bg-gradient-to-b from-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] rounded-full" />
               {isRTL ? "خدماتنا" : "Nos Services"}
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {serviceLinks.map((link, index) => (
                 <motion.li
                   key={link.label}
-                  initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
+                  initial={{ opacity: 0, x: isRTL ? 15 : -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
                 >
                   <Link
                     href={link.href}
-                    className="group flex items-center gap-2 text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-light-accent)] dark:hover:text-[var(--brand-dark-accent)] transition-all duration-300"
+                    className="group flex items-center gap-2.5 text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55 hover:text-[var(--brand-light-accent)] dark:hover:text-[var(--brand-dark-accent)] transition-all duration-300 py-0.5"
                   >
-                    <div className="w-1.5 h-1.5 bg-current rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="text-sm sm:text-base">{link.label}</span>
+                    <div className="w-1 h-1 rounded-full bg-[var(--brand-light-accent)]/30 dark:bg-[var(--brand-dark-accent)]/30 group-hover:bg-[var(--brand-light-accent)] dark:group-hover:bg-[var(--brand-dark-accent)] group-hover:scale-150 transition-all duration-300" />
+                    <span className="text-sm font-medium">{link.label}</span>
                   </Link>
                 </motion.li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Social & Newsletter */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+          {/* ── Social & CTA ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
             className="space-y-6"
           >
             <div>
-              <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-lg flex items-center gap-2">
-                <div className="w-1 h-4 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] rounded-full" />
+              <h4 className="font-bold mb-6 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-base flex items-center gap-2.5">
+                <div className="w-[3px] h-4 bg-gradient-to-b from-[var(--brand-secondary)] to-[var(--brand-primary)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] rounded-full" />
                 {isRTL ? "تابعنا" : "Suivez-nous"}
               </h4>
-              
-              {/* Social Links */}
-              <div className="flex flex-wrap gap-3">
+
+              {/* Social Grid */}
+              <div className="flex flex-wrap gap-2.5">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -246,56 +275,67 @@ export default function Footer({ lang, t }) {
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.08, type: "spring", stiffness: 200 }}
+                    whileHover={{ scale: 1.12, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`w-10 h-10 bg-[var(--brand-light-bg)]/50 dark:bg-[var(--brand-dark-bg)]/50 backdrop-blur-sm rounded-xl flex items-center justify-center border border-[var(--brand-primary)]/20 transition-all duration-300 ${social.color} group`}
+                    className="group relative"
                     aria-label={social.label}
                   >
-                    <social.icon className="w-4 h-4 text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 group-hover:text-white transition-colors duration-300" />
+                    {/* Glow */}
+                    <div className={`absolute inset-[-3px] rounded-xl bg-gradient-to-br ${social.gradient} opacity-0 group-hover:opacity-30 blur-lg transition-all duration-400`} />
+
+                    {/* Button */}
+                    <div className="relative w-10 h-10 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center overflow-hidden transition-all duration-400 group-hover:border-transparent group-hover:shadow-lg">
+                      {/* Gradient Fill */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${social.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-400`} />
+                      {/* Shine */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                      {/* Icon */}
+                      <social.icon className="w-4 h-4 text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 group-hover:text-white transition-all duration-300 relative z-10" />
+                    </div>
                   </motion.a>
                 ))}
               </div>
             </div>
 
-            {/* Back to Top Button */}
+            {/* Back to Top */}
             <motion.button
               onClick={scrollToTop}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:to-[var(--brand-dark-accent)] hover:from-[var(--brand-primary)] hover:to-[var(--brand-primary)]/90 text-white py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg shadow-[var(--brand-primary)]/30 group"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="relative overflow-hidden group w-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white py-3.5 px-5 rounded-xl flex items-center justify-center gap-2.5 transition-all duration-500 shadow-[0_4px_20px_rgba(82,3,113,0.2)] dark:shadow-[0_4px_20px_rgba(192,132,252,0.15)] hover:shadow-[0_8px_28px_rgba(82,3,113,0.3)] border-0"
             >
-              <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
-              <span className="text-sm font-medium">
-                {isRTL ? "العودة للأعلى" : "Back to Top"}
+              <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+              <ArrowUp className="w-4 h-4 relative z-10 transition-transform group-hover:-translate-y-0.5" />
+              <span className="text-sm font-semibold relative z-10">
+                {isRTL ? "العودة للأعلى" : "Retour en Haut"}
               </span>
             </motion.button>
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* ── Bottom Bar ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="border-t border-[var(--brand-primary)]/20 pt-8 pb-6"
+          className="border-t border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8 py-6 sm:py-8"
         >
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 text-sm flex items-center gap-2"
+              transition={{ delay: 0.15 }}
+              className="text-[var(--brand-light-text)]/45 dark:text-[var(--brand-dark-text)]/45 text-sm flex items-center gap-2 font-medium"
             >
-              <span>© {currentYear} {isRTL ? "مطور مواقع المغرب" : "DevWeb Maroc"}</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <Heart className="w-4 h-4 text-red-500 fill-current" />
-              </motion.span>
+              <span>© {currentYear}</span>
+              <span className="font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] bg-clip-text text-transparent">
+                Nemsi Media
+              </span>
+              <span>•</span>
               <span>{t.footer.copyright}</span>
             </motion.p>
 
@@ -303,31 +343,36 @@ export default function Footer({ lang, t }) {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 text-sm text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80"
+              transition={{ delay: 0.25 }}
+              className="flex items-center gap-2 text-sm text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 font-medium"
             >
-              <Sparkles className="w-4 h-4 text-[var(--brand-primary)]" />
-              <span>
-                {isRTL ? "مصنوع بحب في المغرب" : "Fabriqué avec amour au Maroc"}
-              </span>
+              <span>{isRTL ? "صُنع بـ" : "Fait avec"}</span>
+              <motion.span
+                animate={{ scale: [1, 1.25, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" />
+              </motion.span>
+              <span>{isRTL ? "في المغرب" : "au Maroc"}</span>
+              <Sparkles className="w-3.5 h-3.5 text-[var(--brand-primary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
             </motion.div>
 
-            {/* Additional Links */}
+            {/* Legal Links */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex gap-6 text-sm"
+              transition={{ delay: 0.35 }}
+              className="flex gap-5 text-sm"
             >
               <Link
                 href={`/${lang}/privacy`}
-                className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] transition-colors"
+                className="text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 hover:text-[var(--brand-primary)] dark:hover:text-[var(--brand-dark-accent)] transition-colors duration-300 font-medium"
               >
                 {isRTL ? "الخصوصية" : "Confidentialité"}
               </Link>
               <Link
                 href={`/${lang}/terms`}
-                className="text-[var(--brand-light-text)]/80 dark:text-[var(--brand-dark-text)]/80 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] transition-colors"
+                className="text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 hover:text-[var(--brand-primary)] dark:hover:text-[var(--brand-dark-accent)] transition-colors duration-300 font-medium"
               >
                 {isRTL ? "الشروط" : "Conditions"}
               </Link>
