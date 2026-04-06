@@ -7,8 +7,20 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import {
-  MessageCircle, Send, Mail, Phone, MapPin, Sparkles,
-  CheckCircle, Zap, Rocket, ArrowRight, Globe, Clock
+  MessageCircle,
+  Send,
+  Mail,
+  Phone,
+  MapPin,
+  Sparkles,
+  CheckCircle,
+  Zap,
+  Rocket,
+  ArrowRight,
+  Globe,
+  Clock,
+  Shield,
+  Briefcase,
 } from "lucide-react"
 
 export function Contact({ lang, t }) {
@@ -38,49 +50,56 @@ export function Contact({ lang, t }) {
     "--brand-dark-text": colors.darkText,
   }
 
+  const particles = [
+    { left: "8%", top: "16%" },
+    { left: "20%", top: "68%" },
+    { left: "34%", top: "24%" },
+    { left: "47%", top: "80%" },
+    { left: "61%", top: "20%" },
+    { left: "74%", top: "62%" },
+    { left: "86%", top: "30%" },
+    { left: "92%", top: "74%" },
+  ]
+
   const whatsappInfo = {
     phone: "212645288216",
     messages: {
       consultation: {
-        fr: "Bonjour ! Je souhaite discuter de mon projet digital avec votre équipe. Pouvez-vous me proposer un rendez-vous ?",
-        ar: "مرحبا! أود مناقشة مشروعي الرقمي مع فريقكم. هل يمكنكم اقتراح موعد؟",
+        fr: "Bonjour, je souhaite discuter de mon projet digital et recevoir plus d'informations.",
+        ar: "مرحبا، أود مناقشة مشروعي الرقمي والحصول على مزيد من المعلومات.",
       },
       general: {
-        fr: "Bonjour ! J'aimerais en savoir plus sur vos services. Pouvez-vous me recontacter ?",
-        ar: "مرحبا! أود معرفة المزيد عن خدماتكم. هل يمكنكم الاتصال بي؟",
+        fr: "Bonjour, je souhaite en savoir plus sur vos services.",
+        ar: "مرحبا، أود معرفة المزيد عن خدماتكم.",
       },
     },
   }
 
   const handleWhatsAppClick = (messageType = "general") => {
-    const message = encodeURIComponent(whatsappInfo.messages[messageType][lang])
+    const message = encodeURIComponent(
+      whatsappInfo.messages[messageType]?.[lang] ||
+        whatsappInfo.messages[messageType]?.fr
+    )
     window.open(`https://wa.me/${whatsappInfo.phone}?text=${message}`, "_blank")
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    // هنا من بعد تقدر تربط API / email service / backend
+    await new Promise((resolve) => setTimeout(resolve, 1800))
+
     setSubmitted(true)
     setIsLoading(false)
     setTimeout(() => setSubmitted(false), 5000)
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   }
 
   const contactMethods = [
     {
       icon: Phone,
       label: isRTL ? "الهاتف" : "Téléphone",
-      value: "+212 645-288-216",
+      value: "+212 645 288 216",
       href: "tel:+212645288216",
       gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]",
     },
@@ -95,8 +114,18 @@ export function Contact({ lang, t }) {
       icon: MapPin,
       label: isRTL ? "الموقع" : "Localisation",
       value: isRTL ? "الدار البيضاء، المغرب" : "Casablanca, Maroc",
+      href: null,
       gradient: "from-[var(--brand-secondary)] to-[var(--brand-primary)]",
     },
+  ]
+
+  const services = [
+    isRTL ? "موقع تعريفي" : "Site vitrine",
+    isRTL ? "متجر إلكتروني" : "E-commerce",
+    isRTL ? "إعادة تصميم موقع" : "Refonte de site",
+    isRTL ? "Landing page" : "Landing page",
+    isRTL ? "SEO / Visibilité" : "SEO / Visibilité",
+    isRTL ? "صيانة ودعم" : "Maintenance & support",
   ]
 
   return (
@@ -105,10 +134,9 @@ export function Contact({ lang, t }) {
       style={cssVariables}
       className={`relative py-20 sm:py-24 lg:py-32 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}
     >
-      {/* ══════════════ BACKGROUND SYSTEM ══════════════ */}
+      {/* Background */}
       <div className="absolute inset-0 bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)]" />
 
-      {/* Grid Pattern */}
       <div
         className="absolute inset-0 opacity-[0.025] dark:opacity-[0.04]"
         style={{
@@ -117,58 +145,53 @@ export function Contact({ lang, t }) {
         }}
       />
 
-      {/* Radial Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.18, 0.08], x: [0, 35, 0], y: [0, -20, 0] }}
+          animate={{
+            scale: [1, 1.12, 1],
+            opacity: [0.08, 0.18, 0.08],
+            x: [0, 35, 0],
+            y: [0, -20, 0],
+          }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-32 -right-32 w-[550px] h-[550px] rounded-full"
           style={{ background: `radial-gradient(circle, var(--brand-light-accent) 0%, transparent 70%)` }}
         />
+
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.06, 0.14, 0.06], x: [0, -25, 0], y: [0, 30, 0] }}
+          animate={{
+            scale: [1, 1.16, 1],
+            opacity: [0.06, 0.14, 0.06],
+            x: [0, -25, 0],
+            y: [0, 30, 0],
+          }}
           transition={{ duration: 24, repeat: Infinity, ease: "easeInOut", delay: 5 }}
           className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full"
           style={{ background: `radial-gradient(circle, var(--brand-secondary) 0%, transparent 70%)` }}
         />
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.04, 0.1, 0.04] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 8 }}
-          className="absolute top-1/3 left-1/4 w-[350px] h-[350px] rounded-full"
-          style={{ background: `radial-gradient(circle, var(--brand-primary) 0%, transparent 70%)` }}
-        />
 
-        {/* Floating Particles */}
-        {Array.from({ length: 10 }).map((_, i) => (
+        {particles.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute"
-            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+            style={{ left: particle.left, top: particle.top }}
             animate={{
-              y: [0, -(Math.random() * 70 + 20), 0],
-              x: [0, Math.random() * 30 - 15, 0],
-              rotate: [0, Math.random() * 360, 0],
-              opacity: [0, 0.3, 0],
-              scale: [0.4, 1, 0.4],
+              y: [0, -28, 0],
+              x: [0, i % 2 === 0 ? 10 : -10, 0],
+              opacity: [0.1, 0.3, 0.1],
+              scale: [0.8, 1, 0.8],
             }}
             transition={{
-              duration: Math.random() * 12 + 10,
+              duration: 8 + i,
               repeat: Infinity,
               ease: "easeInOut",
-              delay: Math.random() * 6,
+              delay: i * 0.4,
             }}
           >
-            {i % 3 === 0 ? (
-              <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)]/20 dark:bg-[var(--brand-dark-accent)]/15" />
-            ) : i % 3 === 1 ? (
-              <div className="w-3 h-3 rotate-45 bg-[var(--brand-light-accent)]/15 dark:bg-[var(--brand-dark-accent)]/10" />
-            ) : (
-              <div className="w-2.5 h-2.5 border border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/15 rounded-full" />
-            )}
+            <div className="w-2.5 h-2.5 rounded-full bg-[var(--brand-primary)]/15 dark:bg-[var(--brand-dark-accent)]/15" />
           </motion.div>
         ))}
 
-        {/* Floating Decorative Icons */}
         <motion.div
           animate={{ y: [0, -18, 0], rotate: [0, 8, -8, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
@@ -178,6 +201,7 @@ export function Contact({ lang, t }) {
             <Globe className="w-6 h-6 text-[var(--brand-primary)]/30 dark:text-[var(--brand-dark-accent)]/30" />
           </div>
         </motion.div>
+
         <motion.div
           animate={{ y: [0, 15, 0], rotate: [0, -6, 6, 0] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 3 }}
@@ -189,117 +213,90 @@ export function Contact({ lang, t }) {
         </motion.div>
       </div>
 
-      {/* ══════════════ CONTENT ══════════════ */}
+      {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ── Header ── */}
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7 }}
           className="text-center mb-16 sm:mb-20 lg:mb-24"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 80 }}
-            className="inline-flex items-center gap-2.5 mb-8"
-          >
-            <div className="flex items-center gap-2 bg-white/70 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/20 rounded-full px-5 py-2.5 shadow-[0_4px_24px_rgba(82,3,113,0.08)] dark:shadow-[0_4px_24px_rgba(192,132,252,0.08)]">
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <MessageCircle className="w-4 h-4 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
-              </motion.div>
+          <div className="inline-flex items-center gap-2.5 mb-8">
+            <div className="flex items-center gap-2 bg-white/70 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/20 rounded-full px-5 py-2.5 shadow-[0_4px_24px_rgba(82,3,113,0.08)]">
+              <MessageCircle className="w-4 h-4 text-[var(--brand-light-accent)] dark:text-[var(--brand-dark-accent)]" />
               <span className="text-sm font-semibold bg-gradient-to-r from-[var(--brand-primary)] to-[var(--brand-light-accent)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] bg-clip-text text-transparent uppercase tracking-wider">
-                {isRTL ? "تواصل معنا" : "Parlons Ensemble"}
+                {isRTL ? "تواصل معنا" : "Contact"}
               </span>
               <Sparkles className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
             </div>
-          </motion.div>
+          </div>
 
-          {/* Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6"
-          >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-6">
             <span className="block text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-              {isRTL ? "لديك مشروع؟" : "Vous Avez Un Projet ?"}
+              {isRTL ? "هل لديك مشروع؟" : "Vous avez un projet ?"}
             </span>
-            <motion.span
-              className="block mt-2 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent"
-              animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              style={{ backgroundSize: "200% auto" }}
-            >
-              {isRTL ? "دعنا نحققه معاً" : "Réalisons-Le Ensemble"}
-            </motion.span>
-          </motion.h2>
+            <span className="block mt-2 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] bg-clip-text text-transparent">
+              {isRTL ? "دعنا نتحدث عنه" : "Parlons-en ensemble"}
+            </span>
+          </h2>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 max-w-3xl mx-auto leading-relaxed font-light"
-          >
-            {t.contact.subtitle}
-          </motion.p>
+          <p className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 max-w-3xl mx-auto leading-relaxed font-light">
+            {t?.contact?.subtitle ||
+              (isRTL
+                ? "أخبرنا عن مشروعك وسنقترح عليك الحل المناسب حسب أهدافك وميزانيتك."
+                : "Parlez-nous de votre besoin et nous vous proposerons une solution adaptée à vos objectifs et à votre budget.")}
+          </p>
         </motion.div>
 
-        {/* ── Main Grid ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 max-w-7xl mx-auto">
-          {/* ── Left: Contact Info ── */}
+        {/* Main layout */}
+        <div className="grid grid-cols-1 xl:grid-cols-[0.95fr_1.05fr] gap-8 sm:gap-10 lg:gap-14 max-w-7xl mx-auto">
+          {/* Left side */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: isRTL ? 30 : -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <motion.h3
-              variants={itemVariants}
-              className="text-xl sm:text-2xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-6"
-            >
-              {isRTL ? "كيف يمكننا مساعدتك؟" : "Comment pouvons-nous vous aider ?"}
-            </motion.h3>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+                {isRTL ? "كيف يمكننا مساعدتك؟" : "Comment pouvons-nous vous aider ?"}
+              </h3>
+              <p className="mt-3 text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 leading-relaxed">
+                {isRTL
+                  ? "يمكنك التواصل معنا مباشرة عبر الهاتف أو البريد أو واتساب، أو ملء النموذج وسنعود إليك بسرعة."
+                  : "Vous pouvez nous contacter directement par téléphone, email ou WhatsApp, ou remplir le formulaire et nous reviendrons vers vous rapidement."}
+              </p>
+            </div>
 
-            {/* Contact Methods */}
+            {/* Contact methods */}
             <div className="space-y-4">
               {contactMethods.map((method, index) => (
                 <motion.div
                   key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -4, scale: 1.01, transition: { duration: 0.3 } }}
+                  whileHover={{ y: -4, scale: 1.01 }}
                   className="group"
                 >
-                  <Card className="relative overflow-hidden border-0 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl shadow-[0_2px_16px_rgba(82,3,113,0.04)] hover:shadow-[0_8px_32px_rgba(82,3,113,0.1)] dark:hover:shadow-[0_8px_32px_rgba(192,132,252,0.08)] transition-all duration-500 rounded-2xl">
-                    {/* Top Accent Line */}
-                    <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${method.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-
-                    {/* Hover Glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${method.gradient} opacity-0 group-hover:opacity-[0.02] dark:group-hover:opacity-[0.04] transition-opacity duration-500 rounded-2xl`} />
+                  <Card className="relative overflow-hidden border border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl rounded-2xl shadow-[0_2px_16px_rgba(82,3,113,0.04)] hover:shadow-[0_8px_28px_rgba(82,3,113,0.08)] transition-all duration-500">
+                    <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${method.gradient} opacity-80`} />
 
                     <CardContent className="p-5 sm:p-6">
                       <div className="flex items-center gap-4">
-                        <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${method.gradient} shadow-lg`}>
+                        <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${method.gradient} shadow-lg shrink-0`}>
                           <method.icon className="w-5 h-5 text-white" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="text-xs font-medium text-[var(--brand-light-text)]/50 dark:text-[var(--brand-dark-text)]/50 uppercase tracking-wider mb-0.5">
+
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs font-medium text-[var(--brand-light-text)]/50 dark:text-[var(--brand-dark-text)]/50 uppercase tracking-wider mb-1">
                             {method.label}
                           </p>
+
                           {method.href ? (
                             <a
                               href={method.href}
-                              className="text-base sm:text-lg font-semibold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-gradient-to-r hover:from-[var(--brand-primary)] hover:to-[var(--brand-light-accent)] dark:hover:from-[var(--brand-dark-accent)] dark:hover:to-[var(--brand-secondary)] hover:bg-clip-text hover:text-transparent transition-all duration-300 block truncate"
+                              className="text-base sm:text-lg font-semibold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:text-[var(--brand-primary)] dark:hover:text-[var(--brand-dark-accent)] transition-colors truncate block"
                             >
                               {method.value}
                             </a>
@@ -316,145 +313,107 @@ export function Contact({ lang, t }) {
               ))}
             </div>
 
-            {/* Quick Action Buttons */}
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {/* Consultation Button */}
-              <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
-                <Button
-                  className="relative overflow-hidden group w-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white shadow-[0_8px_28px_rgba(82,3,113,0.25)] dark:shadow-[0_8px_28px_rgba(192,132,252,0.2)] hover:shadow-[0_12px_40px_rgba(82,3,113,0.35)] transition-all duration-500 rounded-xl border-0"
-                  size="lg"
-                  onClick={() => handleWhatsAppClick("consultation")}
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  <Rocket className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"} relative z-10`} />
-                  <span className="relative z-10">
-                    {isRTL ? "استشارة مجانية" : "Consultation Gratuite"}
-                  </span>
-                </Button>
-              </motion.div>
+            {/* Benefits */}
+            <Card className="border border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl rounded-2xl shadow-[0_2px_16px_rgba(82,3,113,0.04)]">
+              <CardContent className="p-5 sm:p-6">
+                <h4 className="text-lg font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-4">
+                  {isRTL ? "ما الذي ستحصل عليه؟" : "Ce que vous obtenez"}
+                </h4>
 
-              {/* WhatsApp Button */}
-              <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
-                <Button
-                  className="relative overflow-hidden group w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-[0_8px_28px_rgba(16,185,129,0.25)] hover:shadow-[0_12px_40px_rgba(16,185,129,0.35)] transition-all duration-500 rounded-xl border-0"
-                  size="lg"
-                  onClick={() => handleWhatsAppClick("general")}
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  <MessageCircle className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"} relative z-10`} />
-                  <span className="relative z-10">{t.contact.whatsapp}</span>
-                </Button>
-              </motion.div>
-            </motion.div>
+                <div className="space-y-3">
+                  {[
+                    isRTL ? "رد سريع خلال أقل من 24 ساعة" : "Réponse rapide sous 24h",
+                    isRTL ? "توجيه واضح حسب مشروعك" : "Conseils adaptés à votre besoin",
+                    isRTL ? "عرض مناسب حسب الميزانية" : "Proposition adaptée à votre budget",
+                    isRTL ? "بدون أي التزام في البداية" : "Sans engagement au départ",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="inline-flex p-1.5 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600 shrink-0">
+                        <CheckCircle className="w-3.5 h-3.5 text-white" />
+                      </div>
+                      <span className="text-sm text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-            {/* Email Button */}
-            <motion.div variants={itemVariants}>
-              <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.97 }}>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="w-full border-2 border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/20 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.06] dark:hover:bg-[var(--brand-dark-accent)]/[0.06] hover:border-[var(--brand-primary)]/35 dark:hover:border-[var(--brand-dark-accent)]/35 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl rounded-xl transition-all duration-300 group"
-                  size="lg"
-                >
-                  <a href="mailto:contact@nemsimedia.ma">
-                    <Mail className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"} group-hover:text-[var(--brand-primary)] dark:group-hover:text-[var(--brand-dark-accent)] transition-colors`} />
-                    {isRTL ? "إرسال بريد إلكتروني" : "Envoyer un Email"}
-                    <ArrowRight className={`w-4 h-4 ${isRTL ? "mr-2 rotate-180" : "ml-2"} group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform`} />
-                  </a>
-                </Button>
-              </motion.div>
-            </motion.div>
+            {/* Quick CTAs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Button
+                className="relative overflow-hidden group w-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white rounded-xl border-0"
+                size="lg"
+                onClick={() => handleWhatsAppClick("consultation")}
+              >
+                <Rocket className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"}`} />
+                {isRTL ? "استشارة مجانية" : "Consultation gratuite"}
+              </Button>
 
-            {/* Response Time */}
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center gap-3 p-4 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 rounded-2xl"
-            >
-              <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-emerald-500 to-green-600">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
-              <p className="text-sm text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 font-medium">
-                {isRTL ? "نرد عليك في أقل من 24 ساعة" : "Réponse garantie en moins de 24h"}
-              </p>
-            </motion.div>
+              <Button
+                className="relative overflow-hidden group w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-xl border-0"
+                size="lg"
+                onClick={() => handleWhatsAppClick("general")}
+              >
+                <MessageCircle className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"}`} />
+                {t?.contact?.whatsapp || "WhatsApp"}
+              </Button>
+            </div>
           </motion.div>
 
-          {/* ── Right: Contact Form ── */}
+          {/* Right side / form */}
           <motion.div
-            initial={{ opacity: 0, x: isRTL ? -40 : 40 }}
+            initial={{ opacity: 0, x: isRTL ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <Card className="relative overflow-hidden border-0 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl shadow-[0_4px_24px_rgba(82,3,113,0.06)] hover:shadow-[0_12px_48px_rgba(82,3,113,0.1)] dark:shadow-[0_4px_24px_rgba(192,132,252,0.04)] dark:hover:shadow-[0_12px_48px_rgba(192,132,252,0.08)] transition-all duration-500 rounded-2xl">
-              {/* Top Accent Line */}
+            <Card className="relative overflow-hidden border border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/10 bg-white/70 dark:bg-white/[0.04] backdrop-blur-xl rounded-2xl shadow-[0_4px_24px_rgba(82,3,113,0.06)]">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)]" />
 
-              <CardContent className="p-6 sm:p-8 relative z-10">
+              <CardContent className="p-6 sm:p-8">
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div
                       key="success"
-                      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                      initial={{ opacity: 0, scale: 0.96, y: 18 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                      className="text-center py-10 sm:py-14"
+                      exit={{ opacity: 0, scale: 0.96, y: -18 }}
+                      className="text-center py-8 sm:py-12"
                     >
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                        className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg"
-                      >
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                      </motion.div>
+                      </div>
 
-                      <motion.h3
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-3"
-                      >
-                        {isRTL ? "تم الإرسال بنجاح!" : "Message Envoyé !"}
-                      </motion.h3>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] mb-3">
+                        {isRTL ? "تم إرسال رسالتك!" : "Votre message a été envoyé !"}
+                      </h3>
 
-                      <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 mb-8 leading-relaxed font-light"
-                      >
-                        {t.contact.form.success}
-                      </motion.p>
+                      <p className="text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 mb-8 leading-relaxed font-light max-w-md mx-auto">
+                        {t?.contact?.form?.success ||
+                          (isRTL
+                            ? "شكراً لتواصلك معنا. سنعود إليك في أقرب وقت ممكن."
+                            : "Merci pour votre message. Nous reviendrons vers vous très rapidement.")}
+                      </p>
 
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="flex flex-col sm:flex-row gap-3 justify-center"
-                      >
-                        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                          <Button
-                            onClick={() => setSubmitted(false)}
-                            variant="outline"
-                            className="border-2 border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/20 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.06] rounded-xl"
-                          >
-                            {isRTL ? "إرسال رسالة أخرى" : "Nouveau Message"}
-                          </Button>
-                        </motion.div>
-                        <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                          <Button
-                            onClick={() => handleWhatsAppClick("general")}
-                            className="relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-xl border-0"
-                          >
-                            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                            <MessageCircle className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"} relative z-10`} />
-                            <span className="relative z-10">
-                              {isRTL ? "محادثة فورية" : "Chat Instantané"}
-                            </span>
-                          </Button>
-                        </motion.div>
-                      </motion.div>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <Button
+                          onClick={() => setSubmitted(false)}
+                          variant="outline"
+                          className="border-2 border-[var(--brand-primary)]/20 dark:border-[var(--brand-dark-accent)]/20 rounded-xl"
+                        >
+                          {isRTL ? "إرسال رسالة أخرى" : "Envoyer un autre message"}
+                        </Button>
+
+                        <Button
+                          onClick={() => handleWhatsAppClick("general")}
+                          className="bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-xl border-0"
+                        >
+                          <MessageCircle className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"}`} />
+                          {isRTL ? "الانتقال إلى واتساب" : "Continuer sur WhatsApp"}
+                        </Button>
+                      </div>
                     </motion.div>
                   ) : (
                     <motion.form
@@ -465,98 +424,121 @@ export function Contact({ lang, t }) {
                       onSubmit={handleSubmit}
                       className="space-y-5"
                     >
-                      {/* Form Header */}
-                      <div className="mb-2">
-                        <h3 className="text-lg font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-                          {isRTL ? "أرسل لنا رسالة" : "Envoyez-nous un message"}
+                      <div>
+                        <h3 className="text-xl sm:text-2xl font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+                          {isRTL ? "أخبرنا عن مشروعك" : "Parlez-nous de votre projet"}
                         </h3>
-                        <p className="text-sm text-[var(--brand-light-text)]/50 dark:text-[var(--brand-dark-text)]/50 font-light mt-1">
-                          {isRTL ? "جميع الحقول مطلوبة" : "Tous les champs sont requis"}
+                        <p className="text-sm text-[var(--brand-light-text)]/50 dark:text-[var(--brand-dark-text)]/50 mt-1">
+                          {isRTL
+                            ? "املأ النموذج وسنقترح عليك أفضل حل"
+                            : "Remplissez ce formulaire et nous vous répondrons rapidement"}
                         </p>
                       </div>
 
-                      <div className="space-y-4">
-                        {/* Name */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-semibold text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 mb-2">
-                            {t.contact.form.name}
+                            {t?.contact?.form?.name || (isRTL ? "الاسم" : "Nom")}
                           </label>
                           <Input
                             required
-                            className="bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15 focus:border-[var(--brand-primary)] dark:focus:border-[var(--brand-dark-accent)] transition-all duration-300 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] rounded-xl h-12 focus:shadow-[0_0_0_3px_rgba(82,3,113,0.08)] dark:focus:shadow-[0_0_0_3px_rgba(192,132,252,0.08)]"
-                            placeholder={t.contact.form.name}
+                            placeholder={t?.contact?.form?.name || (isRTL ? "الاسم" : "Nom")}
+                            className="h-12 rounded-xl bg-white/60 dark:bg-white/[0.04] border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15"
                           />
                         </div>
 
-                        {/* Email */}
                         <div>
                           <label className="block text-sm font-semibold text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 mb-2">
-                            {t.contact.form.email}
+                            {isRTL ? "الهاتف" : "Téléphone"}
                           </label>
                           <Input
-                            type="email"
+                            type="tel"
                             required
-                            className="bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15 focus:border-[var(--brand-primary)] dark:focus:border-[var(--brand-dark-accent)] transition-all duration-300 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] rounded-xl h-12 focus:shadow-[0_0_0_3px_rgba(82,3,113,0.08)] dark:focus:shadow-[0_0_0_3px_rgba(192,132,252,0.08)]"
-                            placeholder={t.contact.form.email}
-                          />
-                        </div>
-
-                        {/* Message */}
-                        <div>
-                          <label className="block text-sm font-semibold text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 mb-2">
-                            {t.contact.form.message}
-                          </label>
-                          <Textarea
-                            required
-                            rows={5}
-                            className="bg-white/60 dark:bg-white/[0.04] backdrop-blur-sm border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15 focus:border-[var(--brand-primary)] dark:focus:border-[var(--brand-dark-accent)] transition-all duration-300 resize-none text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] rounded-xl focus:shadow-[0_0_0_3px_rgba(82,3,113,0.08)] dark:focus:shadow-[0_0_0_3px_rgba(192,132,252,0.08)]"
-                            placeholder={t.contact.form.message}
+                            placeholder={isRTL ? "رقم الهاتف" : "Votre téléphone"}
+                            className="h-12 rounded-xl bg-white/60 dark:bg-white/[0.04] border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15"
                           />
                         </div>
                       </div>
 
-                      {/* Submit */}
-                      <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.97 }}>
-                        <Button
-                          type="submit"
-                          disabled={isLoading}
-                          className="relative overflow-hidden group w-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white shadow-[0_8px_32px_rgba(82,3,113,0.25)] dark:shadow-[0_8px_32px_rgba(192,132,252,0.2)] hover:shadow-[0_12px_48px_rgba(82,3,113,0.35)] transition-all duration-500 rounded-xl border-0 py-6 text-base font-semibold"
-                          size="lg"
-                        >
-                          {/* Spinner */}
-                          {isLoading && (
-                            <motion.div
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              className="absolute inset-0 flex items-center justify-center z-20"
-                            >
-                              <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                              />
-                            </motion.div>
-                          )}
-
-                          {/* Shine Sweep */}
-                          <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 z-10" />
-
-                          <Send className={`w-5 h-5 ${isLoading ? "opacity-0" : "opacity-100"} ${isRTL ? "ml-2" : "mr-2"} relative z-10 transition-opacity`} />
-                          <span className={`${isLoading ? "opacity-0" : "opacity-100"} relative z-10 transition-opacity`}>
-                            {t.contact.form.submit}
-                          </span>
-                        </Button>
-                      </motion.div>
-
-                      {/* Note */}
-                      <div className="flex items-center justify-center gap-2 pt-1">
-                        <div className="inline-flex p-1 rounded-md bg-gradient-to-br from-[var(--brand-primary)] to-[var(--brand-light-accent)]">
-                          <Zap className="w-3 h-3 text-white" />
-                        </div>
-                        <p className="text-xs text-[var(--brand-light-text)]/50 dark:text-[var(--brand-dark-text)]/50 font-medium">
-                          {isRTL ? "نرد عليك في أقل من 24 ساعة" : "Réponse garantie sous 24h"}
-                        </p>
+                      <div>
+                        <label className="block text-sm font-semibold text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 mb-2">
+                          {t?.contact?.form?.email || "Email"}
+                        </label>
+                        <Input
+                          type="email"
+                          required
+                          placeholder={t?.contact?.form?.email || "Email"}
+                          className="h-12 rounded-xl bg-white/60 dark:bg-white/[0.04] border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15"
+                        />
                       </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 mb-2">
+                          {isRTL ? "الخدمة المطلوبة" : "Service recherché"}
+                        </label>
+                        <select className="w-full h-12 rounded-xl bg-white/60 dark:bg-white/[0.04] border border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15 px-3 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] outline-none focus:border-[var(--brand-primary)] dark:focus:border-[var(--brand-dark-accent)]">
+                          <option value="">
+                            {isRTL ? "اختر الخدمة" : "Choisir un service"}
+                          </option>
+                          {services.map((service, idx) => (
+                            <option key={idx} value={service} className="dark:bg-white/[0.04] dark:text-black">
+                              {service}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-sm font-semibold text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 mb-2">
+                          {t?.contact?.form?.message || (isRTL ? "الرسالة" : "Message")}
+                        </label>
+                        <Textarea
+                          required
+                          rows={6}
+                          placeholder={
+                            t?.contact?.form?.message ||
+                            (isRTL ? "أخبرنا عن مشروعك، أهدافك، وما تحتاجه" : "Décrivez votre projet, vos objectifs et vos besoins")
+                          }
+                          className="rounded-xl resize-none bg-white/60 dark:bg-white/[0.04] border-[var(--brand-primary)]/15 dark:border-[var(--brand-dark-accent)]/15"
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55">
+                          <Clock className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+                          {isRTL ? "رد خلال 24 ساعة" : "Réponse sous 24h"}
+                        </div>
+
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-[var(--brand-light-text)]/55 dark:text-[var(--brand-dark-text)]/55">
+                          <Shield className="w-4 h-4 text-emerald-500" />
+                          {isRTL ? "بدون التزام" : "Sans engagement"}
+                        </div>
+                      </div>
+
+                      <Button
+                        type="submit"
+                        disabled={isLoading}
+                        className="relative overflow-hidden group w-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white shadow-[0_8px_32px_rgba(82,3,113,0.25)] hover:shadow-[0_12px_48px_rgba(82,3,113,0.35)] transition-all duration-500 rounded-xl border-0 py-6 text-base font-semibold"
+                      >
+                        {isLoading ? (
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                            className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                          />
+                        ) : (
+                          <>
+                            <Send className={`w-5 h-5 ${isRTL ? "ml-2" : "mr-2"}`} />
+                            {t?.contact?.form?.submit || (isRTL ? "إرسال الرسالة" : "Envoyer le message")}
+                          </>
+                        )}
+                      </Button>
+
+                      <p className="text-center text-xs text-[var(--brand-light-text)]/50 dark:text-[var(--brand-dark-text)]/50">
+                        {isRTL
+                          ? "بإرسالك لهذا النموذج، فأنت توافق على أن نتواصل معك بخصوص مشروعك."
+                          : "En envoyant ce formulaire, vous acceptez d’être recontacté au sujet de votre projet."}
+                      </p>
                     </motion.form>
                   )}
                 </AnimatePresence>
@@ -566,7 +548,6 @@ export function Contact({ lang, t }) {
         </div>
       </div>
 
-      {/* ══════════════ BOTTOM FADE ══════════════ */}
       <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-t from-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] to-transparent z-[5] pointer-events-none" />
     </section>
   )

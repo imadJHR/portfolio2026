@@ -1,12 +1,20 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, Globe, Sun, Moon, Sparkles, ArrowRight, MessageCircle } from "lucide-react"
-import Image from "next/image"
+import {
+  Menu,
+  X,
+  Globe,
+  Sun,
+  Moon,
+  ArrowRight,
+  MessageCircle,
+} from "lucide-react"
 import logoLight from "@/public/light.png"
 import logoDark from "@/public/dark.png"
 
@@ -16,6 +24,7 @@ export default function Navbar({ lang, t }) {
   const [theme, setTheme] = useState("light")
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
+
   const isRTL = lang === "ar"
 
   const colors = {
@@ -40,45 +49,66 @@ export default function Navbar({ lang, t }) {
     "--brand-dark-text": colors.darkText,
   }
 
+  const whatsappInfo = {
+    phone: "212645288216",
+    message: {
+      fr: "Bonjour, je souhaite discuter de mon projet avec vous.",
+      ar: "مرحبا، أود مناقشة مشروعي معكم.",
+    },
+  }
+
+  const handleWhatsAppClick = () => {
+    const text = encodeURIComponent(
+      whatsappInfo.message[lang] || whatsappInfo.message.fr
+    )
+    window.open(`https://wa.me/${whatsappInfo.phone}?text=${text}`, "_blank")
+  }
+
   useEffect(() => {
     setIsMounted(true)
   }, [])
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-      const winHeight = window.innerHeight
-      const docHeight = document.documentElement.scrollHeight
       const scrollTop = window.pageYOffset
-      const trackLength = docHeight - winHeight
-      const progress = Math.floor((scrollTop / trackLength) * 100)
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress =
+        docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0
+
+      setIsScrolled(scrollTop > 10)
       setScrollProgress(progress)
     }
+
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
     if (!isMounted) return
+
     const savedTheme = localStorage.getItem("theme") || "light"
     setTheme(savedTheme)
-    document.documentElement.className = savedTheme
+    document.documentElement.classList.remove("light", "dark")
+    document.documentElement.classList.add(savedTheme)
   }, [isMounted])
 
   const toggleTheme = () => {
     if (!isMounted) return
+
     const newTheme = theme === "light" ? "dark" : "light"
     setTheme(newTheme)
     localStorage.setItem("theme", newTheme)
-    document.documentElement.className = newTheme
+    document.documentElement.classList.remove("light", "dark")
+    document.documentElement.classList.add(newTheme)
   }
 
   const navItems = [
-    { href: `/${lang}#home`, label: t.nav.home || "Home" },
-    { href: `/${lang}#services`, label: t.nav.services },
-    { href: `/${lang}#portfolio`, label: t.nav.portfolio },
-    { href: `/${lang}#testimonials`, label: t.nav.testimonials || "Témoignages" },
-    { href: `/${lang}#contact`, label: t.nav.contact },
+    { href: `/${lang}#home`, label: t?.nav?.home || (isRTL ? "الرئيسية" : "Accueil") },
+    { href: `/${lang}#services`, label: t?.nav?.services || (isRTL ? "الخدمات" : "Services") },
+    { href: `/${lang}#portfolio`, label: t?.nav?.portfolio || (isRTL ? "الأعمال" : "Portfolio") },
+    { href: `/${lang}#testimonials`, label: t?.nav?.testimonials || (isRTL ? "الآراء" : "Témoignages") },
+    { href: `/${lang}#contact`, label: t?.nav?.contact || (isRTL ? "التواصل" : "Contact") },
   ]
 
   const getLogo = () => (theme === "light" ? logoLight : logoDark)
@@ -87,16 +117,14 @@ export default function Navbar({ lang, t }) {
     return (
       <nav
         style={cssVariables}
-        className="fixed top-0 left-0 right-0 z-50 bg-[var(--brand-light-bg)]/95 dark:bg-[var(--brand-dark-bg)]/95 backdrop-blur-xl border-b border-[var(--brand-primary)]/10 h-16 sm:h-20"
+        className="fixed top-0 left-0 right-0 z-50 h-16 sm:h-20 bg-[var(--brand-light-bg)]/95 dark:bg-[var(--brand-dark-bg)]/95 backdrop-blur-xl border-b border-[var(--brand-primary)]/10"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[var(--brand-primary)]/10 rounded-xl animate-pulse" />
-              <div className="flex flex-col gap-1.5">
-                <div className="h-5 w-24 bg-[var(--brand-primary)]/10 rounded-lg animate-pulse" />
-                <div className="h-3 w-14 bg-[var(--brand-primary)]/10 rounded-lg animate-pulse" />
-              </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[var(--brand-primary)]/10 animate-pulse" />
+            <div className="space-y-2">
+              <div className="h-4 w-28 rounded bg-[var(--brand-primary)]/10 animate-pulse" />
+              <div className="h-3 w-16 rounded bg-[var(--brand-primary)]/10 animate-pulse" />
             </div>
           </div>
         </div>
@@ -109,85 +137,72 @@ export default function Navbar({ lang, t }) {
       style={cssVariables}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/80 dark:bg-[#0f0a1a]/80 backdrop-blur-2xl border-b border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 shadow-[0_4px_24px_rgba(82,3,113,0.06)] dark:shadow-[0_4px_24px_rgba(192,132,252,0.04)]"
+          ? "bg-white/80 dark:bg-[#0f0a1a]/80 backdrop-blur-2xl border-b border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 shadow-[0_4px_24px_rgba(82,3,113,0.06)]"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 xl:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
-          {/* ── Logo ── */}
+        <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
+          {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, x: isRTL ? 40 : -40 }}
+            initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+            transition={{ duration: 0.45 }}
+            className="flex-shrink-0"
           >
-            <Link
-              href={`/${lang}#home`}
-              className="flex items-center gap-2 sm:gap-3 group min-w-0"
-            >
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex-shrink-0">
+            <Link href={`/${lang}#home`} className="flex items-center gap-2.5 sm:gap-3 group">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14">
                 <Image
                   src={getLogo()}
-                  alt={isRTL ? "نمسي ميديا" : "NemsiMedia"}
+                  alt={isRTL ? "نمسي ميديا" : "Nemsi Media"}
                   width={80}
                   height={80}
-                  className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                   priority
                 />
               </div>
 
-              <div className="flex flex-col min-w-0">
+              <div className="min-w-0 hidden xs:flex flex-col">
                 <span className="text-lg sm:text-xl md:text-2xl font-extrabold bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent leading-tight whitespace-nowrap tracking-tight">
                   {isRTL ? "نمسي ميديا" : "Nemsi Media"}
                 </span>
-                <span className="text-[10px] sm:text-xs text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 -mt-0.5 hidden xs:block whitespace-nowrap font-medium uppercase tracking-widest">
+                <span className="text-[10px] sm:text-xs text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 -mt-0.5 font-medium uppercase tracking-widest">
                   {isRTL ? "المغرب" : "Maroc"}
                 </span>
               </div>
             </Link>
           </motion.div>
 
-          {/* ── Desktop Navigation ── */}
+          {/* Desktop nav */}
           <motion.div
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:flex items-center gap-0.5 flex-1 justify-center mx-4"
+            transition={{ duration: 0.45, delay: 0.1 }}
+            className="hidden lg:flex items-center justify-center flex-1 px-6"
           >
-            <div className="flex items-center gap-1 bg-white/50 dark:bg-white/[0.04] backdrop-blur-xl border border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8 rounded-2xl px-2 py-1.5 shadow-[0_2px_12px_rgba(82,3,113,0.03)]">
-              {navItems.map((item, index) => (
-                <motion.div
+            <div className="flex items-center gap-1 rounded-2xl border border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8 bg-white/55 dark:bg-white/[0.04] backdrop-blur-xl px-2 py-1.5 shadow-[0_2px_12px_rgba(82,3,113,0.03)]">
+              {navItems.map((item) => (
+                <Link
                   key={item.href}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.08 }}
+                  href={item.href}
+                  className="relative px-3.5 py-2 text-sm font-medium text-[var(--brand-light-text)]/68 dark:text-[var(--brand-dark-text)]/68 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] transition-all duration-300 rounded-xl hover:bg-[var(--brand-primary)]/[0.05] dark:hover:bg-[var(--brand-dark-accent)]/[0.06]"
                 >
-                  <Link
-                    href={item.href}
-                    className="relative px-3.5 py-2 text-sm text-[var(--brand-light-text)]/65 dark:text-[var(--brand-dark-text)]/65 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] transition-all duration-300 group font-medium whitespace-nowrap rounded-xl hover:bg-[var(--brand-primary)]/[0.05] dark:hover:bg-[var(--brand-dark-accent)]/[0.06]"
-                  >
-                    {item.label}
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:to-[var(--brand-secondary)] transition-all duration-300 group-hover:w-3/5 rounded-full" />
-                  </Link>
-                </motion.div>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </motion.div>
 
-          {/* ── Desktop Actions ── */}
+          {/* Desktop actions */}
           <motion.div
-            initial={{ opacity: 0, x: isRTL ? -40 : 40 }}
+            initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.45, delay: 0.15 }}
             className="hidden lg:flex items-center gap-2 flex-shrink-0"
           >
-            {/* Theme Toggle */}
-            <motion.button
-              whileHover={{ scale: 1.08, y: -1 }}
-              whileTap={{ scale: 0.92 }}
+            <button
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center hover:bg-[var(--brand-primary)]/[0.08] dark:hover:bg-[var(--brand-dark-accent)]/[0.08] transition-all duration-300 shadow-[0_2px_8px_rgba(82,3,113,0.04)]"
+              className="w-10 h-10 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center hover:bg-[var(--brand-primary)]/[0.08] dark:hover:bg-[var(--brand-dark-accent)]/[0.08] transition-all duration-300"
               aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
             >
               {theme === "light" ? (
@@ -195,60 +210,39 @@ export default function Navbar({ lang, t }) {
               ) : (
                 <Sun className="w-4 h-4 text-[var(--brand-dark-accent)]" />
               )}
-            </motion.button>
+            </button>
 
-            {/* Language Switcher */}
-            <motion.div whileHover={{ scale: 1.05, y: -1 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="gap-2 border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl hover:bg-[var(--brand-primary)]/[0.06] dark:hover:bg-[var(--brand-dark-accent)]/[0.06] transition-all duration-300 h-10 px-3.5 rounded-xl shadow-[0_2px_8px_rgba(82,3,113,0.04)]"
-              >
-                <Link href={lang === "ar" ? "/fr" : "/ar"}>
-                  <Globe className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
-                  <span className="font-semibold text-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-                    {lang === "ar" ? "FR" : "AR"}
-                  </span>
-                </Link>
-              </Button>
-            </motion.div>
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="h-10 px-3.5 rounded-xl border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl"
+            >
+              <Link href={lang === "ar" ? "/fr" : "/ar"}>
+                <Globe className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
+                <span className="ml-2 font-semibold text-sm text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
+                  {lang === "ar" ? "FR" : "AR"}
+                </span>
+              </Link>
+            </Button>
 
-            {/* CTA Button */}
-            <motion.div whileHover={{ scale: 1.05, y: -1 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                asChild
-                size="sm"
-                className="relative overflow-hidden group bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white shadow-[0_4px_20px_rgba(82,3,113,0.25)] dark:shadow-[0_4px_20px_rgba(192,132,252,0.2)] hover:shadow-[0_8px_28px_rgba(82,3,113,0.35)] transition-all duration-500 h-10 px-5 text-sm font-semibold rounded-xl border-0"
-              >
-                <Link href={`/${lang}#contact`}>
-                  <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  <span className="relative z-10">
-                    {t.nav.cta || (isRTL ? "ابدأ مشروعك" : "Démarrer")}
-                  </span>
-                  <ArrowRight
-                    className={`w-4 h-4 relative z-10 ${
-                      isRTL ? "mr-1.5 rotate-180" : "ml-1.5"
-                    } group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 transition-transform`}
-                  />
-                </Link>
-              </Button>
-            </motion.div>
+            <Button
+              onClick={handleWhatsAppClick}
+              size="sm"
+              className="h-10 px-5 rounded-xl bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white border-0 shadow-[0_4px_20px_rgba(82,3,113,0.25)]"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span className={`${isRTL ? "mr-2" : "ml-2"} font-semibold`}>
+                {t?.nav?.cta || (isRTL ? "ابدأ مشروعك" : "Parler de votre projet")}
+              </span>
+            </Button>
           </motion.div>
 
-          {/* ── Mobile Actions ── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center gap-1.5 sm:gap-2 lg:hidden"
-          >
-            {/* Theme Toggle - Mobile */}
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.92 }}
+          {/* Mobile actions */}
+          <div className="flex lg:hidden items-center gap-2">
+            <button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center transition-all duration-300 flex-shrink-0 shadow-[0_2px_8px_rgba(82,3,113,0.04)]"
+              className="w-9 h-9 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center"
               aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
             >
               {theme === "light" ? (
@@ -256,91 +250,69 @@ export default function Navbar({ lang, t }) {
               ) : (
                 <Sun className="w-4 h-4 text-[var(--brand-dark-accent)]" />
               )}
-            </motion.button>
+            </button>
 
-            {/* Language Switcher - Mobile */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden xs:block">
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="gap-1.5 border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl h-9 px-2.5 flex-shrink-0 rounded-xl shadow-[0_2px_8px_rgba(82,3,113,0.04)]"
-              >
-                <Link href={lang === "ar" ? "/fr" : "/ar"}>
-                  <Globe className="w-3.5 h-3.5 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
-                  <span className="font-semibold text-xs text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-                    {lang === "ar" ? "FR" : "AR"}
-                  </span>
-                </Link>
-              </Button>
-            </motion.div>
-
-            {/* Mobile Menu Trigger */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <motion.button
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.92 }}
-                  className="w-9 h-9 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center transition-all duration-300 flex-shrink-0 shadow-[0_2px_8px_rgba(82,3,113,0.04)]"
-                >
+                <button className="w-9 h-9 rounded-xl bg-white/60 dark:bg-white/[0.06] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 flex items-center justify-center">
                   {isOpen ? (
                     <X className="w-4 h-4 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]" />
                   ) : (
                     <Menu className="w-4 h-4 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]" />
                   )}
-                </motion.button>
+                </button>
               </SheetTrigger>
 
               <SheetContent
                 side={isRTL ? "right" : "left"}
-                className="w-[85vw] max-w-sm border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8 bg-white/95 dark:bg-[#0f0a1a]/95 backdrop-blur-2xl p-0"
+                className="w-[88vw] max-w-sm border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8 bg-white/95 dark:bg-[#0f0a1a]/95 backdrop-blur-2xl p-0"
               >
                 <div className="flex flex-col h-full">
-                  {/* Mobile Sheet Header */}
-                  <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8">
+                  {/* top */}
+                  <div className="flex items-center justify-between p-5 border-b border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8">
                     <Link
                       href={`/${lang}#home`}
                       className="flex items-center gap-3"
                       onClick={() => setIsOpen(false)}
                     >
-                      <div className="relative w-9 h-9 sm:w-10 sm:h-10 flex-shrink-0">
+                      <div className="relative w-10 h-10">
                         <Image
                           src={getLogo()}
-                          alt={isRTL ? "نمسي ميديا" : "NemsiMedia"}
+                          alt={isRTL ? "نمسي ميديا" : "Nemsi Media"}
                           width={40}
                           height={40}
                           className="w-full h-full object-contain"
                         />
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent tracking-tight">
+                        <span className="text-lg font-extrabold bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] bg-clip-text text-transparent tracking-tight">
                           {isRTL ? "نمسي ميديا" : "Nemsi Media"}
                         </span>
-                        <span className="text-[10px] text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 -mt-0.5 font-medium uppercase tracking-widest">
+                        <span className="text-[10px] text-[var(--brand-light-text)]/40 dark:text-[var(--brand-dark-text)]/40 uppercase tracking-widest">
                           {isRTL ? "المغرب" : "Maroc"}
                         </span>
                       </div>
                     </Link>
                   </div>
 
-                  {/* Mobile Navigation Links */}
-                  <div className="flex-1 p-5 sm:p-6 overflow-y-auto">
-                    <div className="space-y-1.5">
+                  {/* nav links */}
+                  <div className="flex-1 overflow-y-auto p-5">
+                    <div className="space-y-2">
                       {navItems.map((item, index) => (
                         <motion.div
                           key={item.href}
-                          initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
+                          initial={{ opacity: 0, x: isRTL ? 14 : -14 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: index * 0.08 }}
+                          transition={{ duration: 0.25, delay: index * 0.06 }}
                         >
                           <Link
                             href={item.href}
-                            className="group flex items-center justify-between py-3 px-4 text-base sm:text-lg font-medium text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.04] dark:hover:bg-[var(--brand-dark-accent)]/[0.06] rounded-xl transition-all duration-300"
+                            className="group flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-[var(--brand-light-text)]/72 dark:text-[var(--brand-dark-text)]/72 hover:text-[var(--brand-light-text)] dark:hover:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.05] dark:hover:bg-[var(--brand-dark-accent)]/[0.06] transition-all"
                             onClick={() => setIsOpen(false)}
                           >
                             <span>{item.label}</span>
                             <ArrowRight
-                              className={`w-4 h-4 text-[var(--brand-primary)]/30 dark:text-[var(--brand-dark-accent)]/30 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
+                              className={`w-4 h-4 opacity-0 group-hover:opacity-100 transition-all ${
                                 isRTL ? "rotate-180" : ""
                               }`}
                             />
@@ -350,61 +322,45 @@ export default function Navbar({ lang, t }) {
                     </div>
                   </div>
 
-                  {/* Mobile Sheet Footer */}
-                  <div className="p-5 sm:p-6 border-t border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.5 }}
-                      className="space-y-3"
+                  {/* footer */}
+                  <div className="p-5 border-t border-[var(--brand-primary)]/8 dark:border-[var(--brand-dark-accent)]/8 space-y-3">
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full rounded-xl border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.04]"
                     >
-                      {/* Language for xs screens */}
-                      <div className="xs:hidden">
-                        <Button
-                          asChild
-                          variant="outline"
-                          size="sm"
-                          className="w-full gap-2 border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl h-11 rounded-xl"
-                        >
-                          <Link href={lang === "ar" ? "/fr" : "/ar"} onClick={() => setIsOpen(false)}>
-                            <Globe className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
-                            <span className="font-medium text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-                              {lang === "ar" ? "Passer au Français" : "التغيير إلى العربية"}
-                            </span>
-                          </Link>
-                        </Button>
-                      </div>
+                      <Link href={lang === "ar" ? "/fr" : "/ar"} onClick={() => setIsOpen(false)}>
+                        <Globe className="w-4 h-4" />
+                        <span className={`${isRTL ? "mr-2" : "ml-2"}`}>
+                          {lang === "ar" ? "Passer au Français" : "التغيير إلى العربية"}
+                        </span>
+                      </Link>
+                    </Button>
 
-                      {/* Mobile CTA */}
-                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}>
-                        <Button
-                          asChild
-                          size="lg"
-                          className="relative overflow-hidden group w-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white shadow-[0_8px_28px_rgba(82,3,113,0.25)] dark:shadow-[0_8px_28px_rgba(192,132,252,0.2)] h-12 text-base font-semibold rounded-xl border-0"
-                        >
-                          <Link href={`/${lang}#contact`} onClick={() => setIsOpen(false)}>
-                            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                            <MessageCircle className="w-4 h-4 mr-2 relative z-10" />
-                            <span className="relative z-10">
-                              {t.nav.cta || (isRTL ? "ابدأ مشروعك" : "Démarrer Votre Projet")}
-                            </span>
-                          </Link>
-                        </Button>
-                      </motion.div>
-                    </motion.div>
+                    <Button
+                      onClick={() => {
+                        setIsOpen(false)
+                        handleWhatsAppClick()
+                      }}
+                      className="w-full rounded-xl bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white border-0 h-11"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span className={`${isRTL ? "mr-2" : "ml-2"}`}>
+                        {t?.nav?.cta || (isRTL ? "ابدأ مشروعك" : "Parler de votre projet")}
+                      </span>
+                    </Button>
                   </div>
                 </div>
               </SheetContent>
             </Sheet>
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* ── Progress Bar ── */}
+      {/* progress bar */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[var(--brand-primary)]/5 dark:bg-[var(--brand-dark-accent)]/5">
         <motion.div
           className="h-full bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)]"
-          initial={{ width: 0 }}
           animate={{ width: `${scrollProgress}%` }}
           transition={{ duration: 0.1 }}
         />
