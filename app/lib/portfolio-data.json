@@ -23,6 +23,50 @@
   "liveUrl": "https://fadllocar.ma"
 },
 {
+  "id": "la-burratina-trattoria-pizzeria",
+  "title": {
+    "ar": "مطعم وبيتزا البوراتا - القنيطرة",
+    "fr": "LA BURRATINA – TRATTORIA & PIZZERIA"
+  },
+  "category": "vitrine",
+  "image": "/burratina.png",
+  "challenge": {
+    "ar": "إيصال أصالة المطبخ الإيطالي الدافئ وتسهيل الحجز المباشر عبر الإنترنت",
+    "fr": "Communiquer l'authenticité de la cuisine italienne et faciliter la réservation directe en ligne"
+  },
+  "solution": {
+    "ar": "عرض مفصل لقائمة الطعام (بما في ذلك الأسعار)، شهادات العملاء، ونظام حجز مدمج وواضح",
+    "fr": "Présentation détaillée du menu (incluant les prix), témoignages clients, et système de réservation clair et intégré"
+  },
+  "results": {
+    "ar": "زيادة الحجوزات عبر الموقع وتحسين تقييمات العملاء عبر الإنترنت",
+    "fr": "Augmentation des réservations via le site et amélioration de la note moyenne des avis clients en ligne"
+  },
+  "liveUrl": "https://laburratinagroupe.com/"
+},
+{
+  "id": "cafe-bianca",
+  "title": {
+    "ar": "مقهى بيانكا - الدار البيضاء",
+    "fr": "CAFÉ BIANCA - CASABLANCA"
+  },
+  "category": "vitrine",
+  "image": "/bianca.png",
+  "challenge": {
+    "ar": "تقديم تجربة طهوية فريدة وعصرية، وتسهيل عملية الحجز المباشر عبر الإنترنت.",
+    "fr": "Présenter une expérience culinaire unique et moderne, et faciliter le processus de réservation en ligne."
+  },
+  "solution": {
+    "ar": "تصميم أنيق يعرض صورًا عالية الجودة، مع عرض لقائمة الطعام الكاملة ودمج نظام حجز بسيط وفعال للطاولات.",
+    "fr": "Un design élégant avec des visuels de haute qualité, une présentation complète du menu, et l'intégration d'un système de réservation de table simple et efficace."
+  },
+  "results": {
+    "ar": "زيادة ملحوظة في الحجوزات عبر الموقع الإلكتروني وتعزيز الصورة الرقمية للعلامة التجارية.",
+    "fr": "Augmentation significative des réservations via le site web et renforcement de l'image de marque en ligne."
+  },
+  "liveUrl": "https://demo-cafe-bianca.netlify.app/"
+},
+{
   "id": "ironz-equipement",
   "title": {
     "ar": "معدات الحديد",
@@ -133,28 +177,6 @@
   "liveUrl": "https://labrioche.netlify.app/"
 },
 {
-  "id": "demo-cafe-bianca",
-  "title": {
-    "ar": "كافيه بيانكا",
-    "fr": "Café Bianca"
-  },
-  "category": "vitrine",
-  "image": "/bianca.png",
-  "challenge": {
-    "ar": "جذب الزبائن الجدد وإيصال الأجواء المميزة والمريحة للمقهى عبر الإنترنت",
-    "fr": "Attirer une nouvelle clientèle et communiquer l'atmosphère unique et confortable du café en ligne"
-  },
-  "solution": {
-    "ar": "تصميم مرئي يركز على المنتجات (قهوة، حلويات)، وموقع للمحل، وخيارات اتصال سريعة",
-    "fr": "Conception visuelle axée sur les produits (café, pâtisseries), localisation du lieu et options de contact rapide"
-  },
-  "results": {
-    "ar": "زيادة حركة الزبائن نحو المحل وزيادة الوعي بالعلامة التجارية المحلية",
-    "fr": "Augmentation du trafic piéton vers le lieu physique et amélioration de la notoriété de la marque locale"
-  },
-  "liveUrl": "https://demo-cafe-bianca.netlify.app/"
-},
-{
   "id": "marque-copine",
   "title": {
     "ar": "ماركة كوبين (للصديقات)",
@@ -197,28 +219,6 @@
     "fr": "Augmentation des ventes de produits premium et renforcement de l'image de marque comme référence en chocolaterie"
   },
   "liveUrl": "https://tonka-atelier.netlify.app/"
-},
-{
-  "id": "la-burratina-trattoria-pizzeria",
-  "title": {
-    "ar": "مطعم وبيتزا البوراتا - القنيطرة",
-    "fr": "LA BURRATINA – TRATTORIA & PIZZERIA"
-  },
-  "category": "vitrine",
-  "image": "/burratina.png",
-  "challenge": {
-    "ar": "إيصال أصالة المطبخ الإيطالي الدافئ وتسهيل الحجز المباشر عبر الإنترنت",
-    "fr": "Communiquer l'authenticité de la cuisine italienne et faciliter la réservation directe en ligne"
-  },
-  "solution": {
-    "ar": "عرض مفصل لقائمة الطعام (بما في ذلك الأسعار)، شهادات العملاء، ونظام حجز مدمج وواضح",
-    "fr": "Présentation détaillée du menu (incluant les prix), témoignages clients, et système de réservation clair et intégré"
-  },
-  "results": {
-    "ar": "زيادة الحجوزات عبر الموقع وتحسين تقييمات العملاء عبر الإنترنت",
-    "fr": "Augmentation des réservations via le site et amélioration de la note moyenne des avis clients en ligne"
-  },
-  "liveUrl": "https://laburratinagroupe.com/"
 },
 {
   "id": "Sou9-Al-Maghreb",
