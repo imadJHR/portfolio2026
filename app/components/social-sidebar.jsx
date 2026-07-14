@@ -23,7 +23,7 @@ export function SocialSidebar({ isRTL = false }) {
   }
 
   return (
-    <div className={`fixed top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-2 ${isRTL ? "left-6" : "right-6"}`}>
+    <div className={`fixed top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-2 xl:flex ${isRTL ? "left-6" : "right-6"}`}>
       <div className="w-px h-12 bg-gradient-to-b from-transparent via-[var(--border-strong)] to-transparent" />
       {links.map((link, i) => (
         <motion.a

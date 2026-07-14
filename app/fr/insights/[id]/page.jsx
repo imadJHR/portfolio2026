@@ -70,9 +70,9 @@ export default async function ArticlePage({ params }) {
     <div className="ltr" dir="ltr">
       <Navbar lang="fr" t={t} />
 
-      <article className="pt-28 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
+      <article className="pb-16 pt-24 sm:pb-20 sm:pt-28">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
             {/* Back */}
             <Link
               href="/fr/insights"
@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }) {
             </Link>
 
             {/* Meta */}
-            <div className="flex items-center gap-3 text-sm text-[var(--text-muted)] mb-4">
+            <div className="mb-4 flex flex-wrap items-center gap-2 text-sm text-[var(--text-muted)] sm:gap-3">
               <span className="px-3 py-1 rounded-full text-xs font-medium border border-[var(--brand)]/30 text-[var(--brand)]">
                 {article.category.fr}
               </span>
@@ -92,7 +92,7 @@ export default async function ArticlePage({ params }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8">
+            <h1 className="mb-8 text-[clamp(2rem,8vw,3rem)] font-bold">
               {article.title.fr}
             </h1>
 
@@ -117,7 +117,7 @@ export default async function ArticlePage({ params }) {
             </div>
 
             {/* Share / CTA */}
-            <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-[var(--bg-surface)] border border-[var(--border)] text-center">
+            <div className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--bg-surface)] p-5 text-center sm:p-8">
               <p className="text-lg font-bold mb-2">Vous avez aimé cet article ?</p>
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 Contactez-nous pour discuter de votre projet web.
@@ -127,6 +127,7 @@ export default async function ArticlePage({ params }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 size="sm"
+                className="w-full sm:w-auto"
               >
                 Discuter sur WhatsApp
               </SpecularLink>

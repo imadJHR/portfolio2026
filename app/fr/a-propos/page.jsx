@@ -63,13 +63,13 @@ export default function AboutPage() {
       <Navbar lang="fr" t={t} />
 
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
+      <section className="relative flex min-h-[50svh] items-center justify-center overflow-hidden px-0 pb-12 pt-24 sm:pb-16 sm:pt-28">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[var(--brand)]/5 blur-[120px] rounded-full" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-[2] text-center">
+        <div className="container relative z-[2] text-center">
           <div className="badge mx-auto mb-6">À PROPOS</div>
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="mb-6 text-[clamp(2.35rem,11vw,3.75rem)] font-bold">
               L&apos;agence qui fait rimer{" "}
               <span className="gradient-text">digital et luxe</span>
             </h1>
@@ -86,12 +86,12 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <section className="section relative">
+        <div className="container">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
             {values.map((v, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="card-accent p-8">
+                <div className="card-accent h-full p-5 sm:p-8">
                   <span className="text-4xl font-bold text-[var(--brand)]/20 font-serif">{v.number}</span>
                   <h3 className="text-xl font-bold mt-2 mb-3">{v.title}</h3>
                   <p className="text-[var(--text-secondary)] leading-relaxed">{v.desc}</p>
@@ -104,13 +104,13 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section className="pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="divider mb-16" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:grid-cols-4">
             {stats.map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="text-center">
-                  <div className="text-4xl sm:text-5xl font-bold font-serif gradient-text mb-2">{s.value}</div>
+                  <div className="mb-2 break-words font-serif text-3xl font-bold sm:text-5xl gradient-text">{s.value}</div>
                   <div className="divider mx-auto mb-2" />
                   <div className="text-sm text-[var(--text-muted)] uppercase tracking-wider">{s.label}</div>
                 </div>

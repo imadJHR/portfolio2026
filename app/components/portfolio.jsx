@@ -50,7 +50,7 @@ export function Portfolio({ lang }) {
                     <Image src={project.image || "/placeholder.png"} alt={project.title.fr} fill className="object-cover transition duration-700 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                     <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-bold text-white backdrop-blur-xl">{project.category === "ecommerce" ? (isRTL ? "متجر" : "E-commerce") : project.category === "service" ? (isRTL ? "خدمة" : "Service") : (isRTL ? "موقع" : "Vitrine")}</div>
-                    <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white opacity-0 backdrop-blur-xl transition group-hover:opacity-100"><ArrowUpRight className="h-4 w-4" /></div>
+                    <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white opacity-100 backdrop-blur-xl transition sm:opacity-0 sm:group-hover:opacity-100"><ArrowUpRight className="h-4 w-4" /></div>
                     <div className="absolute bottom-0 left-0 right-0 p-5">
                       <h3 className="text-2xl text-white">{lang === "ar" && project.title.ar ? project.title.ar : project.title.fr}</h3>
                       <p className="mt-2 line-clamp-2 text-sm text-white/76">{lang === "ar" && project.challenge.ar ? project.challenge.ar : project.challenge.fr}</p>
@@ -63,17 +63,17 @@ export function Portfolio({ lang }) {
         </StaggerSection>
       </div>
       <AnimatePresence>
-        {selected && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-md" onClick={() => setSelected(null)}>
-          <motion.div initial={{ opacity: 0, scale: .94, y: 22 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: .94, y: 22 }} className="glass-card max-h-[88vh] w-full max-w-3xl overflow-y-auto" onClick={e => e.stopPropagation()}>
+        {selected && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-2 backdrop-blur-md sm:p-4" onClick={() => setSelected(null)}>
+          <motion.div initial={{ opacity: 0, scale: .94, y: 22 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: .94, y: 22 }} className="glass-card max-h-[calc(100dvh-1rem)] w-full max-w-3xl overflow-y-auto overscroll-contain sm:max-h-[88dvh]" onClick={e => e.stopPropagation()}>
             <SpecularButton onClick={() => setSelected(null)} variant="ghost" size="icon" className="absolute right-4 top-4 z-10" aria-label={isRTL ? "إغلاق" : "Fermer"}><X className="h-4 w-4" /></SpecularButton>
-            <div className="relative h-64 sm:h-80"><Image src={selected.image || "/placeholder.png"} alt="" fill className="object-cover" sizes="768px" /><div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] to-transparent" /></div>
-            <div className="space-y-5 p-6 sm:p-8">
+            <div className="relative h-48 sm:h-80"><Image src={selected.image || "/placeholder.png"} alt="" fill className="object-cover" sizes="768px" /><div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] to-transparent" /></div>
+            <div className="space-y-5 p-4 sm:p-8">
               <div className="badge"><Sparkles className="h-3.5 w-3.5" />Case study</div>
-              <h3 className="text-3xl sm:text-4xl">{selected.title.fr}</h3>
-              {selected.challenge.fr && <div><p className="mb-2 text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{isRTL ? "التحدي" : "Le défi"}</p><p>{selected.challenge.fr}</p></div>}
-              {selected.solution.fr && <div><p className="mb-2 text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{isRTL ? "الحل" : "Notre solution"}</p><p>{selected.solution.fr}</p></div>}
-              {selected.results.fr && <div className="rounded-2xl border border-[rgba(6,182,122,0.25)] bg-[var(--success-soft)] p-4"><div className="flex items-start gap-3"><TrendingUp className="mt-1 h-5 w-5 text-[var(--success)]" /><div><p className="font-bold text-[var(--success)]">{isRTL ? "النتائج" : "Résultats"}</p><p className="text-sm">{selected.results.fr}</p></div></div></div>}
-              <div className="flex flex-col gap-3 pt-2 sm:flex-row">{selected.liveUrl && <SpecularLink href={selected.liveUrl} target="_blank" rel="noopener noreferrer"><ExternalLink className="h-4 w-4" />{isRTL ? "زيارة الموقع" : "Visiter le site"}</SpecularLink>}<SpecularButton onClick={() => handleWhatsApp(selected.title)} variant="ghost"><MessageCircle className="h-4 w-4" />{isRTL ? "استفسر" : "En savoir plus"}</SpecularButton></div>
+              <h3 className="text-2xl sm:text-4xl">{isRTL && selected.title.ar ? selected.title.ar : selected.title.fr}</h3>
+              {(isRTL ? selected.challenge.ar : selected.challenge.fr) && <div><p className="mb-2 text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{isRTL ? "التحدي" : "Le défi"}</p><p>{isRTL ? selected.challenge.ar : selected.challenge.fr}</p></div>}
+              {(isRTL ? selected.solution.ar : selected.solution.fr) && <div><p className="mb-2 text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{isRTL ? "الحل" : "Notre solution"}</p><p>{isRTL ? selected.solution.ar : selected.solution.fr}</p></div>}
+              {(isRTL ? selected.results.ar : selected.results.fr) && <div className="rounded-2xl border border-[rgba(6,182,122,0.25)] bg-[var(--success-soft)] p-4"><div className="flex items-start gap-3"><TrendingUp className="mt-1 h-5 w-5 shrink-0 text-[var(--success)]" /><div className="min-w-0"><p className="font-bold text-[var(--success)]">{isRTL ? "النتائج" : "Résultats"}</p><p className="text-sm">{isRTL ? selected.results.ar : selected.results.fr}</p></div></div></div>}
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row">{selected.liveUrl && <SpecularLink href={selected.liveUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto"><ExternalLink className="h-4 w-4" />{isRTL ? "زيارة الموقع" : "Visiter le site"}</SpecularLink>}<SpecularButton onClick={() => handleWhatsApp(selected.title)} variant="ghost" className="w-full sm:w-auto"><MessageCircle className="h-4 w-4" />{isRTL ? "استفسر" : "En savoir plus"}</SpecularButton></div>
             </div>
           </motion.div>
         </motion.div>}

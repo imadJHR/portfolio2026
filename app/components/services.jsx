@@ -120,9 +120,9 @@ export function Services({ lang }) {
           </div>
         </StaggerSection>
         <AnimatedSection className="mt-14 text-center" delay={0.2}>
-          <div className="glass-card inline-flex flex-col items-center gap-4 p-4 sm:flex-row sm:px-6">
+          <div className="glass-card inline-flex w-full flex-col items-center gap-4 p-4 sm:w-auto sm:flex-row sm:px-6">
             <span className="text-sm font-semibold text-[var(--text-secondary)]">{isRTL ? "نختار لك أفضل باقة حسب مشروعك" : "On choisit la meilleure architecture pour votre projet"}</span>
-            <SpecularButton onClick={() => handleWhatsApp("Conseil personnalisé")} size="sm"><MessageCircle className="h-3.5 w-3.5" />{isRTL ? "استشارة مجانية" : "Conseil gratuit"}</SpecularButton>
+            <SpecularButton onClick={() => handleWhatsApp("Conseil personnalisé")} size="sm" className="w-full sm:w-auto"><MessageCircle className="h-3.5 w-3.5" />{isRTL ? "استشارة مجانية" : "Conseil gratuit"}</SpecularButton>
           </div>
         </AnimatedSection>
       </div>

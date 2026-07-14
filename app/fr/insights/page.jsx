@@ -36,8 +36,8 @@ function ArticleCard({ article, index }) {
 
   return (
     <article className="card-accent overflow-hidden group">
-      <div className="p-6 sm:p-8">
-        <div className="flex items-center gap-3 mb-4">
+      <div className="p-5 sm:p-8">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
           <span className={`px-3 py-1 rounded-full text-xs font-medium border ${categoryStyle}`}>
             {article.category.fr}
           </span>
@@ -54,8 +54,8 @@ function ArticleCard({ article, index }) {
           {article.excerpt.fr}
         </p>
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3 text-xs text-[var(--text-muted)]">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex min-w-0 flex-wrap items-center gap-2 text-xs text-[var(--text-muted)] sm:gap-3">
             <span>{article.author}</span>
             <span className="w-1 h-1 rounded-full bg-[var(--text-muted)]" />
             <span>{article.date}</span>
@@ -79,12 +79,12 @@ export default function InsightsPage() {
     <div className="ltr" dir="ltr">
       <Navbar lang="fr" t={t} />
 
-      <section className="relative min-h-[40vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
+      <section className="relative flex min-h-[40svh] items-center justify-center overflow-hidden pb-12 pt-24 sm:pb-16 sm:pt-28">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[var(--brand)]/5 blur-[120px] rounded-full" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-[2] text-center">
+        <div className="container relative z-[2] text-center">
           <div className="badge mx-auto mb-6">INSIGHTS</div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="mb-6 text-[clamp(2.35rem,11vw,3.75rem)] font-bold">
             Articles, conseils et{" "}
             <span className="gradient-text">tendances digitales</span>
           </h1>
@@ -95,7 +95,7 @@ export default function InsightsPage() {
       </section>
 
       <section className="pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container">
           <div className="divider mb-12" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {insightsData.map((article, i) => (

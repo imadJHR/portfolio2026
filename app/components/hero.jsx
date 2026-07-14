@@ -45,7 +45,7 @@ export function Hero({ lang }) {
 
       <motion.div style={{ y, opacity }} className="container hero-layout relative z-10 grid items-center">
         <div className="hero-copy">
-          <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }} className="badge mb-7">
+          <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }} className="hero-badge badge mb-6 sm:mb-7">
             <Sparkles className="h-3.5 w-3.5" />
             {isRTL ? "استوديو رقمي مغربي بنَفَس عالمي" : "Studio digital marocain, rendu international"}
           </motion.div>
@@ -62,7 +62,7 @@ export function Hero({ lang }) {
             {isRTL ? "نحوّل فكرتك إلى تجربة رقمية فاخرة: واجهة زجاجية، حركة ناعمة، أداء سريع، ورسالة واضحة تقنع زبائنك من أول زيارة." : "On transforme votre marque en expérience digitale premium : glass UI, micro-interactions, performance rapide et parcours pensé pour convertir dès la première visite."}
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .34 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .34 }} className="hero-actions mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <SpecularButton onClick={handleWhatsApp}>
               <MessageCircle className="h-4 w-4" />
               {isRTL ? "ابدأ مشروعك عبر واتساب" : "Lancer mon projet WhatsApp"}
@@ -73,19 +73,19 @@ export function Hero({ lang }) {
             </SpecularLink>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .46 }} className="mt-9 flex flex-wrap gap-2">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .46 }} className="hero-chips mt-7 flex flex-wrap gap-2 sm:mt-9">
             {chips.map((chip) => <span key={chip} className="rounded-full border border-[var(--border)] bg-[var(--bg-surface)] px-3.5 py-2 text-xs font-semibold text-[var(--text-secondary)] backdrop-blur-xl">{chip}</span>)}
           </motion.div>
         </div>
 
         <motion.div initial={{ opacity: 0, scale: .96, y: 22 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: .82, delay: .18, ease: [0.22, 1, 0.36, 1] }} className="hero-preview relative mx-auto w-full">
-          <div className="glass-card p-3 sm:p-4">
-            <div className="rounded-[20px] border border-[var(--border)] bg-[var(--bg)]/70 p-4 shadow-2xl">
+          <div className="glass-card p-2.5 sm:p-4">
+            <div className="rounded-[18px] border border-[var(--border)] bg-[var(--bg)]/70 p-3 shadow-2xl sm:rounded-[20px] sm:p-4">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex gap-1.5"><span className="h-3 w-3 rounded-full bg-[#ff5f57]" /><span className="h-3 w-3 rounded-full bg-[#febc2e]" /><span className="h-3 w-3 rounded-full bg-[#28c840]" /></div>
                 <span className="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--text-muted)]">Live build</span>
               </div>
-              <div className="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--bg-surface)] to-transparent p-5 sm:p-6">
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--bg-surface)] to-transparent p-3.5 sm:p-6">
                 <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[var(--cyan-soft)] blur-3xl" />
                 <div className="absolute -bottom-12 left-10 h-44 w-44 rounded-full bg-[var(--pink-soft)] blur-3xl" />
                 <div className="hero-showcase relative">

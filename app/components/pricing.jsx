@@ -25,7 +25,7 @@ export function Pricing({ lang, t }) {
           <div className="divider mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">{t.pricing.title}</h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">{t.pricing.subtitle}</p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <span className={`text-sm font-medium ${period === "monthly" ? "text-[var(--text)]" : "text-[var(--text-muted)]"}`}>{isRTL ? "شهري" : "Mensuel"}</span>
             <SpecularButton
               onClick={() => setPeriod(period === "monthly" ? "yearly" : "monthly")}
@@ -47,10 +47,10 @@ export function Pricing({ lang, t }) {
           {t.pricing.plans.map((plan, i) => {
             const p = getPrice(plan)
             return (
-              <motion.div key={i} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} whileHover={{ y: -4 }} className={`card-accent h-full flex flex-col p-8 ${plan.popular ? "border-[rgba(124,58,237,0.2)] shadow-[var(--shadow-brand)]" : ""}`}>
+              <motion.div key={i} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} whileHover={{ y: -4 }} className={`card-accent h-full flex flex-col p-5 sm:p-8 ${plan.popular ? "border-[rgba(124,58,237,0.2)] shadow-[var(--shadow-brand)]" : ""}`}>
                 {plan.popular && <div className="absolute -top-3 right-6 bg-[var(--brand)] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-[var(--shadow-brand)]"><Crown className="w-3.5 h-3.5 fill-current" />{isRTL ? "الأكثر طلباً" : "Plus Populaire"}</div>}
                 <h3 className="text-xl font-semibold flex items-center gap-2">{plan.name}{plan.popular && <BadgeCheck className="w-5 h-5 text-[var(--brand-hover)]" />}</h3>
-                <div className="mt-4 mb-6"><span className="text-4xl lg:text-5xl font-bold">{p.price}</span><span className="text-lg text-[var(--text-muted)] ml-2">{plan.currency}{p.label}</span>{p.original && <p className="text-sm text-[var(--text-muted)] line-through mt-1">{p.original} {plan.currency}</p>}</div>
+                <div className="mt-4 mb-6 min-w-0"><span className="break-words text-4xl font-bold lg:text-5xl">{p.price}</span><span className="ms-2 text-base text-[var(--text-muted)] sm:text-lg">{plan.currency}{p.label}</span>{p.original && <p className="mt-1 text-sm text-[var(--text-muted)] line-through">{p.original} {plan.currency}</p>}</div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((f, j) => (
                     <li key={j} className="flex items-start gap-3">

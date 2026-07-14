@@ -20,7 +20,7 @@ export function Testimonials({ lang }) {
           <h2>{isRTL ? "تجربة يثق بها" : "Une expérience"} <span className="gradient-text">{isRTL ? "عملاؤنا" : "qui inspire confiance"}</span></h2>
         </AnimatedSection>
         <StaggerSection staggerAmount={0.09}>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {items.map((t, i) => <motion.div key={i} className="glass-card p-6 sm:p-7">
               <div className="mb-5 flex items-center justify-between"><Quote className="h-8 w-8 text-[var(--brand-hover)]" /><div className="flex gap-1">{[...Array(5)].map((_, j) => <Star key={j} className="h-3.5 w-3.5 fill-[var(--brand-2)] text-[var(--brand-2)]" />)}</div></div>
               <p className="text-base leading-relaxed">“{t.text}”</p>

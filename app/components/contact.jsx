@@ -55,7 +55,7 @@ export function Contact({ lang }) {
     return (
       <section id="contact" className="section" dir={isRTL ? "rtl" : "ltr"}>
         <div className="container">
-          <AnimatedSection className="glass-card mx-auto max-w-xl p-8 text-center">
+          <AnimatedSection className="glass-card mx-auto max-w-xl p-5 text-center sm:p-8">
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[var(--success-soft)] text-[var(--success)]">
               <CheckCircle className="h-10 w-10" />
             </div>
@@ -83,21 +83,21 @@ export function Contact({ lang }) {
           <p className="mx-auto mt-6 max-w-2xl">{isRTL ? "أرسل لنا فكرة مشروعك وسنقترح عليك المسار الأفضل." : "Décrivez votre objectif et recevez une première direction claire, design et technique."}</p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[.9fr_1.1fr] lg:gap-8">
-          <div className="space-y-5">
+        <div className="grid min-w-0 grid-cols-1 gap-6 lg:grid-cols-[.9fr_1.1fr] lg:gap-8">
+          <div className="min-w-0 space-y-5">
             <StaggerSection staggerAmount={0.08}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
                 {info.map((item) => (
-                  <div key={item.label} className="glass-card p-5">
+                  <div key={item.label} className="glass-card min-w-0 p-4 sm:p-5">
                     {item.href ? (
-                      <a href={item.href} className="flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-soft)] text-[var(--brand-hover)]"><item.icon className="h-5 w-5" /></div>
-                        <div><p className="text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{item.label}</p><p className="text-sm font-bold text-[var(--text)]">{item.value}</p></div>
+                      <a href={item.href} className="flex min-w-0 items-center gap-3 sm:gap-4">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--brand-soft)] text-[var(--brand-hover)] sm:h-12 sm:w-12"><item.icon className="h-5 w-5" /></div>
+                        <div className="min-w-0"><p className="text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{item.label}</p><p className="break-words text-sm font-bold text-[var(--text)]">{item.value}</p></div>
                       </a>
                     ) : (
-                      <div className="flex items-center gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--brand-soft)] text-[var(--brand-hover)]"><item.icon className="h-5 w-5" /></div>
-                        <div><p className="text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{item.label}</p><p className="text-sm font-bold text-[var(--text)]">{item.value}</p></div>
+                      <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--brand-soft)] text-[var(--brand-hover)] sm:h-12 sm:w-12"><item.icon className="h-5 w-5" /></div>
+                        <div className="min-w-0"><p className="text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{item.label}</p><p className="break-words text-sm font-bold text-[var(--text)]">{item.value}</p></div>
                       </div>
                     )}
                   </div>
@@ -113,7 +113,7 @@ export function Contact({ lang }) {
           </div>
 
           <AnimatedSection delay={0.15}>
-            <form onSubmit={handleSubmit} className="glass-card p-5 sm:p-7">
+            <form onSubmit={handleSubmit} className="glass-card min-w-0 p-4 sm:p-7">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor={`${lang}-lead-name`} className="mb-2 block text-xs font-black uppercase tracking-[.16em] text-[var(--text-muted)]">{isRTL ? "الاسم الكامل" : "Nom complet"}</label>

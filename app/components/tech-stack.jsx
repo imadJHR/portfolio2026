@@ -13,10 +13,10 @@ export function TechStack({ lang }) {
   return (
     <section className="relative overflow-hidden py-12 sm:py-16">
       <div className="container">
-        <AnimatedSection className="glass-card overflow-hidden p-5 sm:p-7">
+        <AnimatedSection className="glass-card min-w-0 overflow-hidden p-4 sm:p-7">
           <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div><p className="text-xs font-black uppercase tracking-[.2em] text-[var(--text-muted)]">{isRTL ? "تقنيات" : "Tech stack"}</p><h2 className="mt-2 text-3xl sm:text-4xl">{isRTL ? "أدوات حديثة" : "Stack moderne"} <span className="gradient-text">{isRTL ? "لأداء حقيقي" : "pour vraie performance"}</span></h2></div>
-            <p className="max-w-sm text-sm">{isRTL ? "نستخدم الأدوات المناسبة لبناء مواقع سريعة وقابلة للتطوير." : "Les bons outils pour livrer vite, propre et scalable."}</p>
+            <p className="max-w-sm text-sm md:text-end">{isRTL ? "نستخدم الأدوات المناسبة لبناء مواقع سريعة وقابلة للتطوير." : "Les bons outils pour livrer vite, propre et scalable."}</p>
           </div>
           <p className="sr-only">{`${isRTL ? "التقنيات المستخدمة" : "Technologies utilisées"}: ${techs.map((tech) => tech.name).join(", ")}`}</p>
           <div className="tech-marquee" aria-hidden="true">

@@ -73,7 +73,7 @@ export function LeadFaq({ lang }) {
             <div className="badge mb-5"><HelpCircle className="h-3.5 w-3.5" />{copy.eyebrow}</div>
             <h2 id="faq-title" className="text-3xl sm:text-5xl">{copy.title}</h2>
             <p className="mt-5 max-w-xl text-[var(--text-secondary)]">{copy.intro}</p>
-            <SpecularLink href={`/${lang}#contact`} className="mt-7">
+            <SpecularLink href={`/${lang}#contact`} className="mt-7 w-full sm:w-auto">
               <MessageCircle className="h-4 w-4" />{copy.cta}
             </SpecularLink>
           </div>
