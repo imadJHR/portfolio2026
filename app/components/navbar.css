@@ -1,0 +1,12 @@
+/* ── Navbar link ── */
+
+.nav-link {
+  position: relative;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 510;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  transition: all 200ms ease;
+}
+.nav-link:hover { color: var(--text); background: var(--bg-surface); }

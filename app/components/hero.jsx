@@ -1,376 +1,122 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import {
-  ArrowRight,
-  MessageCircle,
-  Sparkles,
-  Star,
-  Zap,
-  Globe,
-  TrendingUp,
-  Search,
-  Code,
-  Palette,
-  Rocket,
-  Shield,
-  Users,
-  CheckCircle,
-} from "lucide-react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { MessageCircle, ChevronDown, Sparkles, Play, CheckCircle2, MousePointer2, Gauge, Layers3, Zap } from "lucide-react"
+import { Strands } from "./react-bits/strands"
+import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
+import { openWhatsApp } from "../lib/leads"
+
+const HERO_STRAND_COLORS = ["#24d9ff", "#7567ff", "#ff5bd7"]
 
 export function Hero({ lang }) {
   const isRTL = lang === "ar"
-
-  const colors = {
-    primary: "#520371",
-    secondary: "#7c3aed",
-    lightBg: "#fdfaff",
-    darkBg: "#0f0a1a",
-    lightAccent: "#9333ea",
-    darkAccent: "#c084fc",
-    lightText: "#1a0525",
-    darkText: "#f5f0ff",
-  }
-
-  const cssVariables = {
-    "--brand-primary": colors.primary,
-    "--brand-secondary": colors.secondary,
-    "--brand-light-bg": colors.lightBg,
-    "--brand-dark-bg": colors.darkBg,
-    "--brand-light-accent": colors.lightAccent,
-    "--brand-dark-accent": colors.darkAccent,
-    "--brand-light-text": colors.lightText,
-    "--brand-dark-text": colors.darkText,
-  }
-
-  const whatsappInfo = {
-    phone: "212645288216",
-    messages: {
-      fr: "Bonjour, je souhaite obtenir plus d'informations sur vos services web et discuter de mon projet.",
-      ar: "مرحبا، أود الحصول على معلومات أكثر حول خدماتكم ومناقشة مشروعي.",
-    },
-  }
-
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      whatsappInfo.messages[lang] || whatsappInfo.messages.fr
+  const sectionRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] })
+  const y = useTransform(scrollYProgress, [0, 1], [0, 72])
+  const opacity = useTransform(scrollYProgress, [0, 0.72], [1, 0])
+  const handleWhatsApp = () => {
+    openWhatsApp(
+      isRTL ? "مرحبا، أود الحصول على تصميم موقع حديث." : "Bonjour, je veux un site web moderne pour mon projet.",
+      "hero_cta",
+      { language: lang },
     )
-    window.open(`https://wa.me/${whatsappInfo.phone}?text=${message}`, "_blank")
   }
+
+  const chips = isRTL ? ["تصميم واجهات", "تطوير Next.js", "هوية رقمية", "تحويلات"] : ["UI premium", "Next.js", "Brand system", "Conversion"]
 
   return (
-    <section
-      id="home"
-      style={cssVariables}
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden pt-16 ${
-        isRTL ? "rtl" : "ltr"
-      }`}
-    >
-      {/* Background */}
-      <div className="absolute inset-0 bg-[var(--brand-light-bg)] dark:bg-[var(--brand-dark-bg)]" />
+    <section ref={sectionRef} id="home" className="hero-section relative min-h-screen overflow-hidden pt-24 sm:pt-28" dir={isRTL ? "rtl" : "ltr"}>
+      <Strands colors={HERO_STRAND_COLORS} count={4} speed={0.38} amplitude={1.08} opacity={0.68} className="z-[1]" />
+      <div className="aurora" />
+      <div className="absolute inset-0 grid-pattern opacity-70" />
+      <div className="orb orb-cyan -left-32 top-16 h-[28rem] w-[28rem]" />
+      <div className="orb orb-violet right-[-10rem] top-28 h-[34rem] w-[34rem]" />
+      <div className="orb orb-pink bottom-[-12rem] left-1/2 h-[24rem] w-[24rem]" />
 
-      <div
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
-        style={{
-          backgroundImage: `linear-gradient(var(--brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--brand-primary) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      {/* Gradient Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.12, 1],
-            opacity: [0.12, 0.22, 0.12],
-            x: [0, 40, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full"
-          style={{
-            background: `radial-gradient(circle, var(--brand-light-accent) 0%, transparent 70%)`,
-          }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.18, 1],
-            opacity: [0.08, 0.18, 0.08],
-            x: [0, -30, 0],
-            y: [0, 35, 0],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute -bottom-40 -right-24 w-[620px] h-[620px] rounded-full"
-          style={{
-            background: `radial-gradient(circle, var(--brand-secondary) 0%, transparent 70%)`,
-          }}
-        />
-
-        {/* Floating icons */}
-        <motion.div
-          animate={{ y: [0, -20, 0], rotate: [0, 8, -8, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] right-[15%] hidden md:block"
-        >
-          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-primary)]/10 shadow-lg">
-            <Code className="w-6 h-6 text-[var(--brand-primary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, 16, 0], rotate: [0, -6, 6, 0] }}
-          transition={{
-            duration: 11,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          className="absolute bottom-[25%] left-[12%] hidden md:block"
-        >
-          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-light-accent)]/10 shadow-lg">
-            <Palette className="w-6 h-6 text-[var(--brand-light-accent)]/40 dark:text-[var(--brand-dark-accent)]/40" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4,
-          }}
-          className="absolute top-[60%] right-[10%] hidden lg:block"
-        >
-          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-secondary)]/10 shadow-lg">
-            <Rocket className="w-6 h-6 text-[var(--brand-secondary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ y: [0, 12, 0], x: [0, -10, 0] }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute top-[15%] left-[18%] hidden lg:block"
-        >
-          <div className="p-3 rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-sm border border-[var(--brand-primary)]/10 shadow-lg">
-            <Search className="w-6 h-6 text-[var(--brand-primary)]/40 dark:text-[var(--brand-dark-accent)]/40" />
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Main content */}
-      <motion.div className="container relative z-[5] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          
-
-          {/* Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-              <span className="block text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-                {isRTL
-                  ? "نصمم مواقع ويب عصرية"
-                  : "Nous créons des sites web modernes"}
-              </span>
-              <span className="block mt-2 sm:mt-3 bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] dark:from-[var(--brand-dark-accent)] dark:via-[var(--brand-secondary)] dark:to-[var(--brand-dark-accent)] bg-clip-text text-transparent">
-                {isRTL
-                  ? "تجذب العملاء وتبني الثقة"
-                  : "qui inspirent confiance et génèrent des clients"}
-              </span>
-            </h1>
+      <motion.div style={{ y, opacity }} className="container hero-layout relative z-10 grid items-center">
+        <div className="hero-copy">
+          <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }} className="badge mb-7">
+            <Sparkles className="h-3.5 w-3.5" />
+            {isRTL ? "استوديو رقمي مغربي بنَفَس عالمي" : "Studio digital marocain, rendu international"}
           </motion.div>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70 max-w-3xl mx-auto mt-6 sm:mt-8 leading-relaxed"
-          >
-            {isRTL
-              ? "نساعد الشركات وأصحاب المشاريع على إطلاق مواقع احترافية، سريعة، ومتوافقة مع الهاتف ومحركات البحث، بهدف تحويل الزوار إلى عملاء حقيقيين."
-              : "Nous aidons les entreprises et les entrepreneurs à lancer des sites rapides, professionnels et optimisés pour le mobile, le SEO et la conversion."}
+          <motion.h1 className="hero-title" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .78, delay: .08, ease: [0.22, 1, 0.36, 1] }}>
+            {isRTL ? (
+              <><span>مواقع ويب</span><span className="gradient-text">تتحرك، تبيع</span><span className="gradient-text">وتبهر</span></>
+            ) : (
+              <><span>Sites web</span><span className="gradient-text">qui bougent,</span><span className="gradient-text">vendent et marquent</span></>
+            )}
+          </motion.h1>
+
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .22 }} className="mt-7 max-w-2xl text-base sm:text-lg lg:text-xl">
+            {isRTL ? "نحوّل فكرتك إلى تجربة رقمية فاخرة: واجهة زجاجية، حركة ناعمة، أداء سريع، ورسالة واضحة تقنع زبائنك من أول زيارة." : "On transforme votre marque en expérience digitale premium : glass UI, micro-interactions, performance rapide et parcours pensé pour convertir dès la première visite."}
           </motion.p>
 
-          {/* CTA buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center mt-10 sm:mt-12"
-          >
-            <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                size="lg"
-                onClick={handleWhatsAppClick}
-                className="relative group bg-gradient-to-r from-[var(--brand-primary)] via-[var(--brand-light-accent)] to-[var(--brand-secondary)] text-white px-8 sm:px-10 py-5 sm:py-6 rounded-2xl text-base sm:text-lg font-semibold shadow-[0_8px_32px_rgba(82,3,113,0.25)] hover:shadow-[0_12px_48px_rgba(82,3,113,0.35)] transition-all duration-500 border-0 overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                <MessageCircle className={`w-5 h-5 ${isRTL ? "ml-2.5" : "mr-2.5"} relative z-10`} />
-                <span className="relative z-10">
-                  {isRTL ? "اطلب استشارة مجانية" : "Demander un audit gratuit"}
-                </span>
-              </Button>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="group border-2 border-[var(--brand-primary)]/25 dark:border-[var(--brand-dark-accent)]/25 text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] hover:bg-[var(--brand-primary)]/[0.06] dark:hover:bg-[var(--brand-dark-accent)]/[0.08] hover:border-[var(--brand-primary)]/40 dark:hover:border-[var(--brand-dark-accent)]/40 px-8 sm:px-10 py-5 sm:py-6 rounded-2xl backdrop-blur-sm text-base sm:text-lg font-semibold transition-all duration-300"
-              >
-                <a href={`/${lang}#portfolio`}>
-                  {isRTL ? "شاهد نماذج الأعمال" : "Voir nos réalisations"}
-                  <ArrowRight
-                    className={`w-5 h-5 inline-block ${
-                      isRTL ? "mr-2.5 rotate-180" : "ml-2.5"
-                    } group-hover:translate-x-1.5 rtl:group-hover:-translate-x-1.5 transition-transform duration-300`}
-                  />
-                </a>
-              </Button>
-            </motion.div>
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .34 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <SpecularButton onClick={handleWhatsApp}>
+              <MessageCircle className="h-4 w-4" />
+              {isRTL ? "ابدأ مشروعك عبر واتساب" : "Lancer mon projet WhatsApp"}
+            </SpecularButton>
+            <SpecularLink href="#portfolio" variant="ghost" className="px-7 py-4">
+              <Play className="h-4 w-4" />
+              {isRTL ? "شاهد التجربة" : "Voir l'expérience"}
+            </SpecularLink>
           </motion.div>
 
-          {/* Trust bullets */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8"
-          >
-            {[
-              isRTL ? "تصميم احترافي" : "Design professionnel",
-              isRTL ? "موقع سريع ومتجاوب" : "Site rapide & responsive",
-              isRTL ? "تحسين أساسي لـ SEO" : "Base SEO optimisée",
-              isRTL ? "دعم ومواكبة" : "Accompagnement personnalisé",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/70 dark:bg-white/[0.05] border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10"
-              >
-                <CheckCircle className="w-4 h-4 text-emerald-500" />
-                <span className="text-sm text-[var(--brand-light-text)]/75 dark:text-[var(--brand-dark-text)]/75">
-                  {item}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Feature cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-4xl mx-auto mt-16 sm:mt-20"
-          >
-            {[
-              {
-                icon: Globe,
-                title: isRTL ? "موقع احترافي" : "Image professionnelle",
-                desc: isRTL
-                  ? "موقع يعكس جودة مشروعك ويمنح الزوار انطباعاً قوياً"
-                  : "Un site qui renforce votre crédibilité dès la première visite",
-                gradient: "from-[var(--brand-primary)] to-[var(--brand-light-accent)]",
-              },
-              {
-                icon: Search,
-                title: isRTL ? "مهيأ لمحركات البحث" : "Pensé pour le SEO",
-                desc: isRTL
-                  ? "بنية واضحة تساعد موقعك على الظهور بشكل أفضل في Google"
-                  : "Une structure claire pour améliorer votre visibilité sur Google",
-                gradient: "from-[var(--brand-light-accent)] to-[var(--brand-secondary)]",
-              },
-              {
-                icon: TrendingUp,
-                title: isRTL ? "تحويل الزوار إلى عملاء" : "Orienté conversion",
-                desc: isRTL
-                  ? "صفحات ورسائل واضحة تشجع الزائر على التواصل معك"
-                  : "Des pages conçues pour transformer les visiteurs en demandes",
-                gradient: "from-[var(--brand-secondary)] to-[var(--brand-primary)]",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="group relative p-6 bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-[var(--brand-primary)]/10 dark:border-[var(--brand-dark-accent)]/10 rounded-2xl shadow-[0_2px_16px_rgba(82,3,113,0.04)] hover:shadow-[0_8px_32px_rgba(82,3,113,0.1)] transition-all duration-500"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 rounded-2xl`}
-                />
-                <div className={`inline-flex p-2.5 rounded-xl bg-gradient-to-br ${item.gradient} mb-3`}>
-                  <item.icon className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)] text-base">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-[var(--brand-light-text)]/60 dark:text-[var(--brand-dark-text)]/60 mt-2 leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Trust section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 1 }}
-            className="mt-12 sm:mt-14"
-          >
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-              <div className="flex items-center gap-2">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <span className="text-sm font-bold text-[var(--brand-light-text)] dark:text-[var(--brand-dark-text)]">
-                  4.9/5
-                </span>
-              </div>
-
-              <span className="text-[var(--brand-light-text)]/20 dark:text-[var(--brand-dark-text)]/20">|</span>
-
-              <div className="flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-[var(--brand-primary)] dark:text-[var(--brand-dark-accent)]" />
-                <span className="text-sm font-medium text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70">
-                  {isRTL ? "مشاريع لمجالات مختلفة" : "Des projets pour différents secteurs"}
-                </span>
-              </div>
-
-              <span className="text-[var(--brand-light-text)]/20 dark:text-[var(--brand-dark-text)]/20 hidden sm:block">|</span>
-
-              <div className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4 text-emerald-500" />
-                <span className="text-sm font-medium text-[var(--brand-light-text)]/70 dark:text-[var(--brand-dark-text)]/70">
-                  {isRTL ? "تواصل سريع ومتابعة مستمرة" : "Réponse rapide & accompagnement"}
-                </span>
-              </div>
-            </div>
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .72, delay: .46 }} className="mt-9 flex flex-wrap gap-2">
+            {chips.map((chip) => <span key={chip} className="rounded-full border border-[var(--border)] bg-[var(--bg-surface)] px-3.5 py-2 text-xs font-semibold text-[var(--text-secondary)] backdrop-blur-xl">{chip}</span>)}
           </motion.div>
         </div>
+
+        <motion.div initial={{ opacity: 0, scale: .96, y: 22 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: .82, delay: .18, ease: [0.22, 1, 0.36, 1] }} className="hero-preview relative mx-auto w-full">
+          <div className="glass-card p-3 sm:p-4">
+            <div className="rounded-[20px] border border-[var(--border)] bg-[var(--bg)]/70 p-4 shadow-2xl">
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex gap-1.5"><span className="h-3 w-3 rounded-full bg-[#ff5f57]" /><span className="h-3 w-3 rounded-full bg-[#febc2e]" /><span className="h-3 w-3 rounded-full bg-[#28c840]" /></div>
+                <span className="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] font-bold uppercase tracking-[.18em] text-[var(--text-muted)]">Live build</span>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-gradient-to-br from-[var(--bg-surface)] to-transparent p-5 sm:p-6">
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[var(--cyan-soft)] blur-3xl" />
+                <div className="absolute -bottom-12 left-10 h-44 w-44 rounded-full bg-[var(--pink-soft)] blur-3xl" />
+                <div className="hero-showcase relative">
+                  <div className="hero-showcase-heading">
+                    <div>
+                      <p>{isRTL ? "نظام رقمي متكامل" : "Digital experience system"}</p>
+                      <h3>{isRTL ? "علامتك، بتجربة أقوى." : "Votre marque, orchestrée."}</h3>
+                    </div>
+                    <span><Zap className="h-3.5 w-3.5" /> Live</span>
+                  </div>
+
+                  <div className="hero-showcase-metrics">
+                    <div><span><Layers3 className="h-4 w-4" /></span><strong>UI system</strong><small>{isRTL ? "متناسق" : "Cohérent"}</small></div>
+                    <div><span><Gauge className="h-4 w-4" /></span><strong>98/100</strong><small>Performance</small></div>
+                  </div>
+
+                  <div className="hero-showcase-flow" aria-label={isRTL ? "مراحل المشروع" : "Étapes du projet"}>
+                    {(isRTL ? ["استراتيجية", "تصميم", "تطوير"] : ["Stratégie", "Design", "Build"]).map((step, index) => (
+                      <div key={step}><span>0{index + 1}</span><strong>{step}</strong><CheckCircle2 className="h-4 w-4" /></div>
+                    ))}
+                  </div>
+                </div>
+                <div className={`relative z-10 mt-4 flex items-start gap-3 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-4 backdrop-blur-xl ${isRTL ? "text-right" : "text-left"}`}>
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--brand-soft)] text-[var(--brand-hover)]"><MousePointer2 className="h-4 w-4" /></div>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--brand-2)]">{isRTL ? "جاهز للتحويل" : "Pensé pour convertir"}</p>
+                    <h3 className="mt-1 text-base sm:text-lg">{isRTL ? "تجربة سريعة وواضحة" : "Clair, rapide, mémorable"}</h3>
+                    <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">{isRTL ? "كل تفاعل يخدم رسالة علامتك وأهداف مشروعك." : "Chaque interaction sert votre message et vos objectifs business."}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--brand-light-bg)] dark:from-[var(--brand-dark-bg)] to-transparent z-[10]" />
-
-      
+      <SpecularButton onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} variant="quiet" size="scroll" className="hero-scroll-cue" aria-label={isRTL ? "انتقل إلى الخدمات" : "Aller aux services"}>
+        <span className="hero-scroll-cue__text mb-1 block text-[10px] font-bold uppercase tracking-[.24em]">{isRTL ? "تابع" : "Scroll"}</span>
+        <ChevronDown className="mx-auto h-5 w-5 animate-bounce" />
+      </SpecularButton>
     </section>
   )
 }

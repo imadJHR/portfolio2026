@@ -267,54 +267,9 @@ export const translations = {
       },
     },
   },
-  // --- Données Structurées pour le SEO ---
-  structuredData: {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Votre Nom ou Nom de l'Entreprise",
-    "image": "URL_DE_VOTRE_LOGO.jpg",
-    "@id": "URL_DE_VOTRE_SITE_WEB",
-    "url": "URL_DE_VOTRE_SITE_WEB",
-    "telephone": "+212-XXX-XXXXXX",
-    "priceRange": "$$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Votre Adresse",
-      "addressLocality": "Casablanca",
-      "postalCode": "20000",
-      "addressCountry": "MA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 33.5731,
-      "longitude": -7.5898
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": [
-      "URL_DE_VOTRE_PAGE_FACEBOOK",
-      "URL_DE_VOTRE_PAGE_LINKEDIN",
-      "URL_DE_VOTRE_PAGE_INSTAGRAM"
-    ],
-    "servesCuisine": "",
-    "acceptsReservations": ""
-  },
 };
 
 export function getTranslation(lang) {
-  const langKey = lang && translations[lang] ? lang : 'ar';
-  return {
-    ...translations[langKey],
-    structuredData: translations.structuredData,
-  };
+  const langKey = lang && translations[lang] ? lang : 'fr';
+  return translations[langKey];
 }

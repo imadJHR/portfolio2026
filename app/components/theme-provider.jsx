@@ -13,29 +13,32 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     setMounted(true)
-    const savedTheme = localStorage.getItem("theme") || "dark"
-    setTheme(savedTheme)
-    document.documentElement.classList.toggle("dark", savedTheme === "dark")
+    const saved = localStorage.getItem("nemsi-theme") || "dark"
+    setTheme(saved)
+    document.documentElement.classList.toggle("dark", saved === "dark")
+    document.documentElement.classList.toggle("light", saved === "light")
+    document.documentElement.classList.remove("light")
+    if (saved === "light") document.documentElement.classList.add("light")
   }, [])
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark"
-    setTheme(newTheme)
-    localStorage.setItem("theme", newTheme)
-    document.documentElement.classList.toggle("dark", newTheme === "dark")
+    const next = theme === "dark" ? "light" : "dark"
+    setTheme(next)
+    localStorage.setItem("nemsi-theme", next)
+    document.documentElement.classList.toggle("dark", next === "dark")
+    document.documentElement.classList.toggle("light", next === "light")
+    // force both
+    if (next === "dark") document.documentElement.classList.remove("light")
+    if (next === "light") document.documentElement.classList.add("light")
   }
 
-  if (!mounted) {
-    return <>{children}</>
-  }
+  if (!mounted) return <>{children}</>
 
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
 
 export function useTheme() {
-  const context = useContext(ThemeContext)
-  if (!context) {
-    throw new Error("useTheme must be used within ThemeProvider")
-  }
-  return context
+  const ctx = useContext(ThemeContext)
+  if (!ctx) throw new Error("useTheme must be used within ThemeProvider")
+  return ctx
 }

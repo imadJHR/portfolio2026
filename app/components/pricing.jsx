@@ -1,370 +1,79 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Check, MessageCircle, Star, Zap, Crown, Sparkles, BadgeCheck } from "lucide-react"
+import { Check, MessageCircle, Crown, BadgeCheck, Sparkles } from "lucide-react"
 import { useState } from "react"
+import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 
 export function Pricing({ lang, t }) {
   const isRTL = lang === "ar"
-  const [billingPeriod, setBillingPeriod] = useState("monthly") // "monthly" or "yearly"
+  const [period, setPeriod] = useState("monthly")
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  }
-
-  const floatingAnimation = {
-    animate: {
-      y: [0, -15, 0],
-      transition: {
-        duration: 6,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut"
-      }
-    }
-  }
-
-  // Calculate yearly prices with discount
   const getPrice = (plan) => {
-    if (billingPeriod === "yearly") {
-      const monthlyPrice = parseFloat(plan.price)
-      const yearlyPrice = monthlyPrice * 12 * 0.8 // 20% discount
-      return {
-        price: Math.round(yearlyPrice),
-        originalPrice: Math.round(monthlyPrice * 12),
-        period: isRTL ? "سنوياً" : "/an"
-      }
+    if (period === "yearly") {
+      const monthly = parseFloat(plan.price.replace(/\s/g, ""))
+      return { price: Math.round(monthly * 12 * 0.8).toLocaleString(), original: (monthly * 12).toLocaleString(), label: isRTL ? "سنوياً" : "/an" }
     }
-    return {
-      price: plan.price,
-      originalPrice: null,
-      period: isRTL ? "شهرياً" : "/mois"
-    }
+    return { price: plan.price, original: null, label: isRTL ? "شهرياً" : "/mois" }
   }
 
   return (
-    <section id="pricing" className={`relative py-16 sm:py-20 lg:py-24 xl:py-28 overflow-hidden ${isRTL ? "rtl" : "ltr"}`}>
-      {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-background to-cyan-500/5 dark:from-purple-500/10 dark:via-background dark:to-cyan-500/10" />
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Orbs */}
-        <motion.div
-          {...floatingAnimation}
-          className="absolute top-10 left-5 sm:left-10 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-2xl"
-        />
-        <motion.div
-          {...floatingAnimation}
-          transition={{ delay: 2, duration: 8 }}
-          className="absolute top-1/3 right-5 sm:right-10 w-16 h-16 sm:w-28 sm:h-28 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-2xl"
-        />
-        <motion.div
-          {...floatingAnimation}
-          transition={{ delay: 1, duration: 7 }}
-          className="absolute bottom-20 left-1/4 w-12 h-12 sm:w-24 sm:h-24 bg-gradient-to-br from-orange-500/10 to-yellow-500/10 rounded-full blur-2xl"
-        />
-
-        {/* Geometric Patterns */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute top-1/4 right-1/4 w-40 h-40 border-2 border-purple-500/5 rounded-full"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 35, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute bottom-1/4 left-1/4 w-32 h-32 border-2 border-cyan-500/5 rounded-full"
-        />
-      </div>
-
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16 sm:mb-20 lg:mb-24"
-        >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 bg-background/60 backdrop-blur-md border border-border/50 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 shadow-lg"
-          >
-            <motion.div
-              animate={{ rotate: [0, 180, 360] }}
-              transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+    <section id="pricing" className={`section ${isRTL ? "rtl" : ""}`}>
+      <div className="container">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16 sm:mb-20">
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="badge mx-auto mb-6"><Sparkles className="w-3.5 h-3.5" />{isRTL ? "الأسعار" : "TARIFS"}</motion.div>
+          <div className="divider mb-6" />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">{t.pricing.title}</h2>
+          <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">{t.pricing.subtitle}</p>
+          <div className="flex items-center justify-center gap-4">
+            <span className={`text-sm font-medium ${period === "monthly" ? "text-[var(--text)]" : "text-[var(--text-muted)]"}`}>{isRTL ? "شهري" : "Mensuel"}</span>
+            <SpecularButton
+              onClick={() => setPeriod(period === "monthly" ? "yearly" : "monthly")}
+              variant="ghost"
+              size="toggle"
+              aria-label={isRTL ? "تغيير فترة الدفع" : "Changer la période de paiement"}
+              aria-pressed={period === "yearly"}
             >
-              <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-500 dark:text-cyan-400" />
-            </motion.div>
-            <span className="text-sm sm:text-base font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent uppercase tracking-wider">
-              {isRTL ? "الأسعار" : "Tarifs"}
-            </span>
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500 dark:text-purple-400" />
-            </motion.div>
-          </motion.div>
-
-          {/* Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 sm:mb-6 font-serif text-balance"
-          >
-            {t.pricing.title}
-          </motion.h2>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-light"
-          >
-            {t.pricing.subtitle}
-          </motion.p>
-
-          {/* Billing Toggle */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center justify-center gap-4 mt-8"
-          >
-            <span className={`text-sm font-medium ${billingPeriod === "monthly" ? "text-foreground" : "text-muted-foreground"}`}>
-              {isRTL ? "شهري" : "Mensuel"}
-            </span>
-            
-            <button
-              onClick={() => setBillingPeriod(billingPeriod === "monthly" ? "yearly" : "monthly")}
-              className="relative w-14 h-8 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full p-1 transition-all duration-300"
-            >
-              <motion.div
-                className="w-6 h-6 bg-white rounded-full shadow-lg"
-                animate={{ x: billingPeriod === "monthly" ? 0 : 26 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              />
-            </button>
-
+              <motion.div className="w-6 h-6 bg-[var(--text)] rounded-full shadow-sm" animate={{ x: period === "monthly" ? 0 : 26 }} transition={{ type: "spring", stiffness: 300, damping: 20 }} />
+            </SpecularButton>
             <div className="flex items-center gap-2">
-              <span className={`text-sm font-medium ${billingPeriod === "yearly" ? "text-foreground" : "text-muted-foreground"}`}>
-                {isRTL ? "سنوي" : "Annuel"}
-              </span>
-              {billingPeriod === "yearly" && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-2 py-1 rounded-full font-bold"
-                >
-                  {isRTL ? "٢٠٪ خصم" : "-20%"}
-                </motion.span>
-              )}
+              <span className={`text-sm font-medium ${period === "yearly" ? "text-[var(--text)]" : "text-[var(--text-muted)]"}`}>{isRTL ? "سنوي" : "Annuel"}</span>
+              {period === "yearly" && <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} className="bg-[var(--brand-soft)] text-[var(--brand-hover)] text-xs px-2 py-1 rounded-full font-bold">{isRTL ? "٢٠٪ خصم" : "-20%"}</motion.span>}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
-        {/* Pricing Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto"
-        >
-          {t.pricing.plans.map((plan, index) => {
-            const priceInfo = getPrice(plan)
-            
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15 } } }} className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {t.pricing.plans.map((plan, i) => {
+            const p = getPrice(plan)
             return (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-                whileHover={{ 
-                  y: plan.popular ? -12 : -8, 
-                  scale: plan.popular ? 1.03 : 1.01,
-                  transition: { duration: 0.3, ease: "easeOut" }
-                }}
-                className="h-full"
-              >
-                <Card className={`relative h-full overflow-hidden backdrop-blur-sm border-2 transition-all duration-500 ${
-                  plan.popular
-                    ? "border-transparent bg-gradient-to-br from-purple-500/10 via-card/80 to-cyan-500/10 shadow-2xl shadow-purple-500/20"
-                    : "border-border/60 bg-card/50 shadow-lg hover:shadow-xl"
-                }`}>
-                  
-                  {/* Popular Badge */}
-                  {plan.popular && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 via-cyan-600 to-purple-600 text-white text-xs font-bold px-4 sm:px-6 py-2 rounded-bl-2xl flex items-center gap-2 shadow-lg"
-                    >
-                      <Crown className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
-                      <span>{isRTL ? "الأكثر طلباً" : "Plus Populaire"}</span>
-                    </motion.div>
-                  )}
-
-                  {/* Recommended Badge for Basic Plan */}
-                  {index === 0 && (
-                    <div className="absolute top-4 left-4 bg-green-500/20 text-green-600 dark:text-green-400 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30">
-                      {isRTL ? "مبتدئ" : "Débutant"}
-                    </div>
-                  )}
-
-                  {/* Pro Badge for Pro Plan */}
-                  {index === 2 && (
-                    <div className="absolute top-4 left-4 bg-purple-500/20 text-purple-600 dark:text-purple-400 text-xs font-medium px-3 py-1 rounded-full border border-purple-500/30">
-                      {isRTL ? "محترف" : "Professionnel"}
-                    </div>
-                  )}
-
-                  <CardHeader className="pb-6 sm:pb-8 pt-8 sm:pt-12 px-4 sm:px-6">
-                    <CardTitle className="text-xl sm:text-2xl font-bold text-foreground flex items-center gap-2">
-                      {plan.name}
-                      {plan.popular && (
-                        <BadgeCheck className="w-5 h-5 text-cyan-500" />
-                      )}
-                    </CardTitle>
-                    
-                    <div className="mt-4 sm:mt-6">
-                      <div className="flex items-baseline gap-2">
-                        <CardDescription className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-                          {priceInfo.price}
-                          <span className="text-lg sm:text-xl font-normal text-muted-foreground">
-                            {plan.currency}{priceInfo.period}
-                          </span>
-                        </CardDescription>
-                      </div>
-                      
-                      {priceInfo.originalPrice && (
-                        <motion.p
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          className="text-sm text-muted-foreground line-through mt-1"
-                        >
-                          {priceInfo.originalPrice} {plan.currency}
-                          {isRTL ? " بدلاً من " : " au lieu de "}
-                          {Math.round(priceInfo.originalPrice / 12)} {plan.currency}
-                          {isRTL ? " شهرياً" : "/mois"}
-                        </motion.p>
-                      )}
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="px-4 sm:px-6 pb-6 sm:pb-8">
-                    <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                      {plan.features.map((feature, i) => (
-                        <motion.li
-                          key={i}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.4, delay: i * 0.1 }}
-                          className="flex items-start gap-3 group"
-                        >
-                          <div className="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300">
-                            <Check className="w-3 h-3 text-green-500" />
-                          </div>
-                          <span className="text-foreground/80 leading-relaxed text-sm sm:text-base font-light">
-                            {feature}
-                          </span>
-                        </motion.li>
-                      ))}
-                    </ul>
-
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Button
-                        asChild
-                        className={`w-full py-4 sm:py-6 rounded-xl transition-all duration-300 group relative overflow-hidden ${
-                          plan.popular
-                            ? "bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50"
-                            : "bg-foreground hover:bg-foreground/90 text-background shadow-lg hover:shadow-xl"
-                        }`}
-                      >
-                        <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">
-                          {/* Shimmer effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                          
-                          <MessageCircle className={`w-4 h-4 ${isRTL ? "ml-2" : "mr-2"} transition-transform group-hover:scale-110`} />
-                          {t.pricing.cta}
-                        </a>
-                      </Button>
-                    </motion.div>
-
-                    {/* Additional Info */}
-                    {plan.popular && (
-                      <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        className="text-center text-xs text-muted-foreground mt-3"
-                      >
-                        {isRTL ? "⭐ الأكثر اختياراً من قبل العملاء" : "⭐ Choix préféré des clients"}
-                      </motion.p>
-                    )}
-                  </CardContent>
-                </Card>
+              <motion.div key={i} variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} whileHover={{ y: -4 }} className={`card-accent h-full flex flex-col p-8 ${plan.popular ? "border-[rgba(124,58,237,0.2)] shadow-[var(--shadow-brand)]" : ""}`}>
+                {plan.popular && <div className="absolute -top-3 right-6 bg-[var(--brand)] text-white text-xs font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5 shadow-[var(--shadow-brand)]"><Crown className="w-3.5 h-3.5 fill-current" />{isRTL ? "الأكثر طلباً" : "Plus Populaire"}</div>}
+                <h3 className="text-xl font-semibold flex items-center gap-2">{plan.name}{plan.popular && <BadgeCheck className="w-5 h-5 text-[var(--brand-hover)]" />}</h3>
+                <div className="mt-4 mb-6"><span className="text-4xl lg:text-5xl font-bold">{p.price}</span><span className="text-lg text-[var(--text-muted)] ml-2">{plan.currency}{p.label}</span>{p.original && <p className="text-sm text-[var(--text-muted)] line-through mt-1">{p.original} {plan.currency}</p>}</div>
+                <ul className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((f, j) => (
+                    <li key={j} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[var(--success-soft)] flex items-center justify-center mt-0.5 flex-shrink-0"><Check className="w-3 h-3 text-[var(--success)]" /></div>
+                      <span className="text-sm text-[var(--text-secondary)]">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <SpecularLink href="https://wa.me/212645288216" target="_blank" rel="noopener noreferrer" variant={plan.popular ? "primary" : "ghost"} className="w-full">
+                  <MessageCircle className="w-4 h-4" />{t.pricing.cta}
+                </SpecularLink>
               </motion.div>
             )
           })}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-12 sm:mt-16 lg:mt-20"
-        >
-          <p className="text-muted-foreground mb-6 text-sm sm:text-base">
-            {isRTL ? "🔒 جميع الأسعار تشمل الضريبة والضمان" : "🔒 Tous les prix incluent taxes et garantie"}
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg shadow-purple-500/30 transition-all duration-300 cursor-pointer"
-          >
-            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span>{isRTL ? "استشارة مجانية" : "Consultation Gratuite"}</span>
-          </motion.div>
-        </motion.div>
+        <div className="text-center mt-12">
+          <p className="text-[var(--text-muted)] text-sm mb-6">{isRTL ? "جميع الأسعار تشمل الضريبة" : "Tous les prix incluent taxes et garantie"}</p>
+          <SpecularLink href="https://wa.me/212645288216" target="_blank" rel="noopener noreferrer">
+            <MessageCircle className="w-4 h-4" />{isRTL ? "استشارة مجانية" : "Consultation Gratuite"}
+          </SpecularLink>
+        </div>
       </div>
-
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-b from-transparent to-background/80" />
     </section>
   )
 }
