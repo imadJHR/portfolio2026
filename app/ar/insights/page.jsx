@@ -3,6 +3,7 @@ import Link from "next/link"
 import insightsData from "../../lib/insights-data.json"
 import Navbar from "../../components/navbar"
 import Footer from "../../components/footer"
+import { SITE_URL } from "../../lib/seo"
 
 export const metadata = {
   title: "نصائح المواقع وSEO والتجارة الإلكترونية في المغرب",
@@ -10,16 +11,16 @@ export const metadata = {
   openGraph: {
     title: "نصائح المواقع وSEO في المغرب | Nemsi Media",
     description: "نصائح عملية لزيادة الظهور وتحويل زوار موقعك إلى عملاء في المغرب.",
-    url: "https://nemsimedia.ma/ar/insights",
+    url: `${SITE_URL}/ar/insights`,
     locale: "ar_MA",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "نصائح المواقع وSEO من Nemsi Media" }],
   },
   alternates: {
-    canonical: "https://nemsimedia.ma/ar/insights",
+    canonical: `${SITE_URL}/ar/insights`,
     languages: {
-      ar: "https://nemsimedia.ma/ar/insights",
-      fr: "https://nemsimedia.ma/fr/insights",
-      "x-default": "https://nemsimedia.ma/fr/insights",
+      ar: `${SITE_URL}/ar/insights`,
+      fr: `${SITE_URL}/fr/insights`,
+      "x-default": `${SITE_URL}/fr/insights`,
     },
   },
 }

@@ -3,6 +3,7 @@ import Link from "next/link"
 import insightsData from "../../lib/insights-data.json"
 import Navbar from "../../components/navbar"
 import Footer from "../../components/footer"
+import { SITE_URL } from "../../lib/seo"
 
 export const metadata = {
   title: "Conseils web, SEO & e-commerce au Maroc",
@@ -10,16 +11,16 @@ export const metadata = {
   openGraph: {
     title: "Conseils web, SEO & e-commerce au Maroc | Nemsi Media",
     description: "Conseils pratiques pour améliorer votre visibilité et convertir plus de visiteurs au Maroc.",
-    url: "https://nemsimedia.ma/fr/insights",
+    url: `${SITE_URL}/fr/insights`,
     locale: "fr_MA",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Conseils web et SEO par Nemsi Media" }],
   },
   alternates: {
-    canonical: "https://nemsimedia.ma/fr/insights",
+    canonical: `${SITE_URL}/fr/insights`,
     languages: {
-      ar: "https://nemsimedia.ma/ar/insights",
-      fr: "https://nemsimedia.ma/fr/insights",
-      "x-default": "https://nemsimedia.ma/fr/insights",
+      ar: `${SITE_URL}/ar/insights`,
+      fr: `${SITE_URL}/fr/insights`,
+      "x-default": `${SITE_URL}/fr/insights`,
     },
   },
 }

@@ -1,4 +1,4 @@
-export const SITE_URL = "https://nemsimedia.ma"
+export const SITE_URL = "https://www.nemsimedia.ma"
 export const SITE_NAME = "Nemsi Media"
 export const PHONE = "+212645288216"
 export const EMAIL = "contact@nemsimedia.ma"
@@ -13,7 +13,7 @@ export const organizationSchema = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  alternateName: "Nemsi Media Maroc",
+  alternateName: ["Nemsi Media Maroc", "NemsiMedia"],
   url: SITE_URL,
   logo: `${SITE_URL}/logo.jpg`,
   description: descriptions.fr,
@@ -56,6 +56,7 @@ export const websiteSchema = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
+  alternateName: ["NemsiMedia", "nemsimedia.ma"],
   url: SITE_URL,
   description: descriptions.fr,
   publisher: { "@id": `${SITE_URL}/#organization` },

@@ -2,6 +2,7 @@ import { getTranslation } from "../../lib/i18n"
 import Navbar from "../../components/navbar"
 import Footer from "../../components/footer"
 import { AnimatedSection } from "../../components/gsap-animations"
+import { SITE_URL } from "../../lib/seo"
 
 export const metadata = {
   title: "من نحن — وكالة ويب راقية الدار البيضاء | نمسي ميديا",
@@ -9,16 +10,16 @@ export const metadata = {
   openGraph: {
     title: "من نحن — نمسي ميديا | وكالة ويب راقية المغرب",
     description: "وكالة ويب راقية في الدار البيضاء متخصصة في تصميم مواقع إنترنت فاخرة.",
-    url: "https://nemsimedia.ma/ar/a-propos",
+    url: `${SITE_URL}/ar/a-propos`,
     locale: "ar_MA",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "تعرف على Nemsi Media" }],
   },
   alternates: {
-    canonical: "https://nemsimedia.ma/ar/a-propos",
+    canonical: `${SITE_URL}/ar/a-propos`,
     languages: {
-      ar: "https://nemsimedia.ma/ar/a-propos",
-      fr: "https://nemsimedia.ma/fr/a-propos",
-      "x-default": "https://nemsimedia.ma/fr/a-propos",
+      ar: `${SITE_URL}/ar/a-propos`,
+      fr: `${SITE_URL}/fr/a-propos`,
+      "x-default": `${SITE_URL}/fr/a-propos`,
     },
   },
 }
@@ -59,6 +60,9 @@ export default function ArabicAboutPage() {
           <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
             مقرها الدار البيضاء، نمسي ميديا تصنع تجارب ويب راقية للعلامات التجارية 
             التي تريد ترك بصمتها. لا نصنع مواقع فقط، بل نصنع راقياً رقمياً حسب الطلب.
+          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-sm font-medium text-[var(--text-muted)]">
+            تُكتب علامة نمسي ميديا أيضاً بالشكل NemsiMedia، وهو الاسم المطابق للنطاق nemsimedia.ma.
           </p>
         </div>
       </section>

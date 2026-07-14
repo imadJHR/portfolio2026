@@ -8,6 +8,16 @@ export function trackLead(source, details = {}) {
     ...details,
   }
 
+  try {
+    const aiSource = window.sessionStorage.getItem("nemsi_ai_source")
+    if (aiSource) {
+      payload.traffic_channel = "ai_assistant"
+      payload.ai_source = aiSource
+    }
+  } catch {
+    // Lead tracking still works when browser storage is unavailable.
+  }
+
   if (typeof window.gtag === "function") {
     window.gtag("event", "generate_lead", payload)
     return

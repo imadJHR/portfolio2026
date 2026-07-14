@@ -27,7 +27,16 @@ export function Hero({ lang }) {
 
   return (
     <section ref={sectionRef} id="home" className="hero-section relative min-h-screen overflow-hidden pt-24 sm:pt-28" dir={isRTL ? "rtl" : "ltr"}>
-      <Strands colors={HERO_STRAND_COLORS} count={4} speed={0.38} amplitude={1.08} opacity={0.68} className="z-[1]" />
+      <Strands
+        colors={HERO_STRAND_COLORS}
+        count={5}
+        speed={0.52}
+        amplitude={1.18}
+        opacity={0.84}
+        interactive
+        interactionStrength={1.15}
+        className="z-[2]"
+      />
       <div className="aurora" />
       <div className="absolute inset-0 grid-pattern opacity-70" />
       <div className="orb orb-cyan -left-32 top-16 h-[28rem] w-[28rem]" />

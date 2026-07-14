@@ -2,6 +2,7 @@ import { getTranslation } from "../../lib/i18n"
 import Navbar from "../../components/navbar"
 import Footer from "../../components/footer"
 import { AnimatedSection } from "../../components/gsap-animations"
+import { SITE_URL } from "../../lib/seo"
 
 export const metadata = {
   title: "À propos — Agence Web Premium Casablanca",
@@ -9,16 +10,16 @@ export const metadata = {
   openGraph: {
     title: "À propos — Nemsi Media | Agence Web Premium Maroc",
     description: "Agence web premium à Casablanca spécialisée en création de sites internet haut de gamme.",
-    url: "https://nemsimedia.ma/fr/a-propos",
+    url: `${SITE_URL}/fr/a-propos`,
     locale: "fr_MA",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "À propos de Nemsi Media" }],
   },
   alternates: {
-    canonical: "https://nemsimedia.ma/fr/a-propos",
+    canonical: `${SITE_URL}/fr/a-propos`,
     languages: {
-      ar: "https://nemsimedia.ma/ar/a-propos",
-      fr: "https://nemsimedia.ma/fr/a-propos",
-      "x-default": "https://nemsimedia.ma/fr/a-propos",
+      ar: `${SITE_URL}/ar/a-propos`,
+      fr: `${SITE_URL}/fr/a-propos`,
+      "x-default": `${SITE_URL}/fr/a-propos`,
     },
   },
 }
@@ -77,6 +78,9 @@ export default function AboutPage() {
             Basée à Casablanca, Nemsi Media conçoit des expériences web haut de gamme 
             pour les marques qui veulent marquer leur époque. Nous ne faisons pas du web, 
             nous faisons du sur-mesure digital.
+          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-sm font-medium text-[var(--text-muted)]">
+            Nemsi Media est également identifiée sous l’écriture NemsiMedia, correspondant au domaine nemsimedia.ma.
           </p>
         </div>
       </section>

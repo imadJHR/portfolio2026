@@ -21,6 +21,9 @@ uniform int uStrandCount;
 uniform float uSpeed;
 uniform float uAmplitude;
 uniform float uOpacity;
+uniform vec2 uPointer;
+uniform float uPointerActive;
+uniform float uInteractionStrength;
 out vec4 fragColor;
 const float PI = 3.14159265;
 
@@ -34,6 +37,10 @@ vec3 palette(float t) {
 
 void main() {
   vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution) / uResolution.y;
+  vec2 pointerUv = vec2(
+    (uPointer.x - 0.5) * (uResolution.x / uResolution.y),
+    0.5 - uPointer.y
+  );
   float env = pow(max(cos(uv.x * PI * 1.1), 0.0), 2.8);
   vec3 col = vec3(0.0);
 
@@ -45,12 +52,19 @@ void main() {
     float wave = sin(uv.x * (2.5 + fi * 0.3) + uTime * uSpeed * speed + phase) * 0.62;
     wave += sin(uv.x * (4.2 + fi * 0.18) - uTime * uSpeed * 0.72 + phase * 1.4) * 0.38;
     float y = wave * 0.115 * env * uAmplitude;
+    float pointerBand = exp(-pow((uv.x - pointerUv.x) * 4.2, 2.0));
+    float pointerPull = pointerBand * uPointerActive * uInteractionStrength;
+    float pointerLane = pointerUv.y + sin(fi * 1.86 + uTime * 0.42) * 0.025;
+    y = mix(y, pointerLane, min(pointerPull * 0.34, 0.42));
     float distanceToLine = abs(uv.y - y);
     float thickness = (0.006 + fi * 0.0007) * (0.55 + env);
     float glow = thickness / (distanceToLine + thickness * 0.55);
-    col += palette(fi / float(uStrandCount) + uv.x * 0.24 + uTime * 0.018) * glow * glow * env;
+    float pointerBoost = 1.0 + pointerBand * uPointerActive * 0.42;
+    col += palette(fi / float(uStrandCount) + uv.x * 0.24 + uTime * 0.018) * glow * glow * env * pointerBoost;
   }
 
+  float cursorAura = exp(-length(uv - pointerUv) * 5.8) * uPointerActive * uInteractionStrength;
+  col += palette(uTime * 0.045 + uPointer.x * 0.3) * cursorAura * 0.32;
   col = 1.0 - exp(-col * 2.1);
   float alpha = clamp(max(max(col.r, col.g), col.b), 0.0, 1.0) * uOpacity;
   fragColor = vec4(col * uOpacity, alpha);
@@ -71,6 +85,8 @@ export function Strands({
   speed = 0.42,
   amplitude = 1,
   opacity = 0.72,
+  interactive = false,
+  interactionStrength = 1,
   className = "",
 }) {
   const containerRef = useRef(null)
@@ -105,6 +121,9 @@ export function Strands({
         uSpeed: { value: speed },
         uAmplitude: { value: amplitude },
         uOpacity: { value: opacity },
+        uPointer: { value: [0.5, 0.5] },
+        uPointerActive: { value: 0 },
+        uInteractionStrength: { value: interactionStrength },
       },
     })
     const mesh = new Mesh(gl, { geometry, program })
@@ -126,9 +145,30 @@ export function Strands({
     }, { rootMargin: "120px" })
     visibilityObserver.observe(container)
 
+    const pointerTarget = { x: 0.5, y: 0.5, active: 0 }
+    const pointerCurrent = { x: 0.5, y: 0.5, active: 0 }
+    const interactionTarget = container.parentElement ?? container
+    const onPointerMove = (event) => {
+      if (!interactive || event.pointerType === "touch") return
+      const rect = container.getBoundingClientRect()
+      pointerTarget.x = Math.min(Math.max((event.clientX - rect.left) / Math.max(rect.width, 1), 0), 1)
+      pointerTarget.y = Math.min(Math.max((event.clientY - rect.top) / Math.max(rect.height, 1), 0), 1)
+      pointerTarget.active = 1
+    }
+    const onPointerLeave = () => { pointerTarget.active = 0 }
+    if (interactive && !reducedMotion) {
+      interactionTarget.addEventListener("pointermove", onPointerMove, { passive: true })
+      interactionTarget.addEventListener("pointerleave", onPointerLeave)
+    }
+
     const render = (time = 0) => {
       if (visible && !document.hidden) {
+        pointerCurrent.x += (pointerTarget.x - pointerCurrent.x) * 0.075
+        pointerCurrent.y += (pointerTarget.y - pointerCurrent.y) * 0.075
+        pointerCurrent.active += (pointerTarget.active - pointerCurrent.active) * 0.08
         program.uniforms.uTime.value = time * 0.001
+        program.uniforms.uPointer.value = [pointerCurrent.x, pointerCurrent.y]
+        program.uniforms.uPointerActive.value = pointerCurrent.active
         renderer.render({ scene: mesh })
       }
       if (!reducedMotion) frame = requestAnimationFrame(render)
@@ -139,10 +179,12 @@ export function Strands({
       cancelAnimationFrame(frame)
       observer.disconnect()
       visibilityObserver.disconnect()
+      interactionTarget.removeEventListener("pointermove", onPointerMove)
+      interactionTarget.removeEventListener("pointerleave", onPointerLeave)
       if (gl.canvas.parentNode === container) container.removeChild(gl.canvas)
       gl.getExtension("WEBGL_lose_context")?.loseContext()
     }
-  }, [amplitude, colors, count, opacity, speed])
+  }, [amplitude, colors, count, interactionStrength, interactive, opacity, speed])
 
-  return <div ref={containerRef} className={`strands-container ${className}`} aria-hidden="true" />
+  return <div ref={containerRef} className={`strands-container ${className}`} data-interactive={interactive || undefined} aria-hidden="true" />
 }

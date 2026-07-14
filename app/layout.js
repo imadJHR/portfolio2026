@@ -3,6 +3,7 @@ import { Suspense } from "react"
 import Script from "next/script"
 import { ThemeProvider } from "./components/theme-provider"
 import { SmoothScroll } from "./components/smooth-scroll"
+import { AiReferralTracker } from "./components/ai-referral-tracker"
 import {
   SITE_NAME,
   SITE_URL,
@@ -103,6 +104,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" dir="ltr" className="dark" suppressHydrationWarning>
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="Nemsi Media — AI-readable information" />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-HHESPWMXQF"
@@ -133,6 +135,7 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider>
           <SmoothScroll />
+          <AiReferralTracker />
           <Suspense
             fallback={
               <div className="flex min-h-screen items-center justify-center bg-[var(--bg)]">
