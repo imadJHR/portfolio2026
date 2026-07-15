@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Star, Quote, Sparkles } from "lucide-react"
+import { Star, Quote } from "lucide-react"
 import { AnimatedSection, StaggerSection } from "./gsap-animations"
 
 export function Testimonials({ lang }) {

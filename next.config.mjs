@@ -6,11 +6,18 @@ const nextConfig = {
     root: path.resolve(process.cwd()),
   },
   async redirects() {
-    return ["fr", "ar"].map((lang) => ({
-      source: `/${lang}/insights/seo-maroc-2025`,
-      destination: `/${lang}/insights/seo-maroc-2026`,
-      permanent: true,
-    }));
+    return [
+      {
+        source: "/",
+        destination: "/fr",
+        permanent: true,
+      },
+      ...["fr", "ar"].map((lang) => ({
+        source: `/${lang}/insights/seo-maroc-2025`,
+        destination: `/${lang}/insights/seo-maroc-2026`,
+        permanent: true,
+      })),
+    ];
   },
 };
 

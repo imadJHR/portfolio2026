@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Linkedin, Instagram, Mail, MessageCircle, Heart, ArrowUp, MapPin, Phone, ArrowRight, Sparkles } from "lucide-react"
+import { Linkedin, Instagram, Mail, MessageCircle, Heart, ArrowUp, MapPin, Phone, ArrowRight } from "lucide-react"
 import { openWhatsApp } from "../lib/leads"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 
@@ -24,7 +24,7 @@ export default function Footer({ lang }) {
       <div className="container relative z-10">
         <div className="glass-card overflow-hidden p-4 sm:p-8 lg:p-10">
           <div className="mb-10 grid gap-5 lg:grid-cols-[1.25fr_.75fr] lg:items-center">
-            <div><div className="badge mb-4"><Sparkles className="h-3.5 w-3.5" />Nemsi Media</div><h2 className="max-w-3xl text-3xl sm:text-5xl">{isRTL ? "لنبنِ موقعاً" : "Construisons un site"} <span className="gradient-text">{isRTL ? "يُشبه طموحك" : "à la hauteur de votre ambition"}</span></h2></div>
+            <div><div className="badge mb-4"><span className="badge-dot" aria-hidden="true" />Nemsi Media</div><h2 className="max-w-3xl text-3xl sm:text-5xl">{isRTL ? "لنبنِ موقعاً" : "Construisons un site"} <span className="gradient-text">{isRTL ? "يُشبه طموحك" : "à la hauteur de votre ambition"}</span></h2></div>
             <div className="rounded-[24px] border border-[var(--border)] bg-[var(--bg-surface)] p-4"><p className="text-sm">{isRTL ? "احصل على اقتراح واضح لتصميم موقعك، بدون تعقيد." : "Recevez une direction claire pour votre site, sans jargon."}</p><SpecularButton onClick={handleWhatsApp} className="mt-4 w-full"><MessageCircle className="h-4 w-4" />WhatsApp</SpecularButton></div>
           </div>
           <div className="grid grid-cols-1 gap-8 border-y border-[var(--border)] py-8 md:grid-cols-2 lg:grid-cols-12">

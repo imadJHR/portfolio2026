@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
-import { Code, ShoppingCart, Search, Rocket, ArrowRight, Sparkles, Palette, Wrench, CheckCircle, LayoutDashboard, Server, MessageCircle } from "lucide-react"
+import { Code, ShoppingCart, Search, MousePointer2, ArrowRight, Palette, Wrench, CheckCircle, LayoutDashboard, Server, MessageCircle } from "lucide-react"
 import { AnimatedSection, StaggerSection } from "./gsap-animations"
 import { OptionWheel } from "./react-bits/option-wheel"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
@@ -19,12 +19,12 @@ export function Services({ lang }) {
     )
   }
   const services = [
-    { slug: "creation-site-web-maroc", icon: Code, title: isRTL ? "تصميم وتطوير المواقع" : "Sites web premium", desc: isRTL ? "واجهات حديثة وسريعة ومتجاوبة" : "Interfaces rapides, éditables et responsive", features: ["Next.js", isRTL ? "تصميم زجاجي" : "Glass UI", isRTL ? "سرعة عالية" : "Core Web Vitals"] },
-    { slug: "ui-ux-identite-visuelle", icon: Palette, title: isRTL ? "هوية وتجربة المستخدم" : "UI/UX & identité", desc: isRTL ? "نظام بصري يرفع الثقة" : "Design system clair pour crédibilité", features: [isRTL ? "ألوان" : "Palette", "Components", isRTL ? "حركة" : "Motion"] },
-    { slug: "landing-page-maroc", icon: Rocket, title: isRTL ? "صفحات هبوط" : "Landing pages", desc: isRTL ? "صفحات مصممة للتحويل" : "Pages ads pensées pour convertir", features: ["CTA", "A/B ready", isRTL ? "نسخ إعلانية" : "Copywriting"] },
-    { slug: "ecommerce-maroc", icon: ShoppingCart, title: isRTL ? "متاجر إلكترونية" : "E-commerce", desc: isRTL ? "كتالوج وطلب سلس" : "Parcours achat simple et premium", features: [isRTL ? "منتجات" : "Catalogue", isRTL ? "سلة" : "Cart", isRTL ? "إدارة" : "Admin"] },
-    { slug: "seo-maroc", icon: Search, title: isRTL ? "SEO وظهور" : "SEO & visibilité", desc: isRTL ? "بنية تقنية لنتائج Google" : "Structure propre pour Google", features: ["Schema", "Speed", isRTL ? "محلي" : "Local SEO"] },
-    { slug: "maintenance-site-web", icon: Wrench, title: isRTL ? "صيانة ودعم" : "Maintenance", desc: isRTL ? "متابعة وتحديثات مستمرة" : "Suivi, sécurité et évolutions", features: ["Updates", "Monitoring", "Support"] },
+    { slug: "creation-site-web-maroc", icon: Code, title: isRTL ? "تصميم وتطوير المواقع" : "Sites web premium", desc: isRTL ? "واجهات حديثة, rapides et responsives" : "Interfaces rapides, lisibles et responsives", features: ["Next.js", isRTL ? "تصميم واضح" : "Design clair", isRTL ? "سرعة عالية" : "Performance"] },
+    { slug: "ui-ux-identite-visuelle", icon: Palette, title: isRTL ? "هوية وتجربة المستخدم" : "UI/UX & identité", desc: isRTL ? "نظام بصري يرفع الثقة" : "Design clair qui renforce la crédibilité", features: [isRTL ? "ألوان" : "Palette", isRTL ? "مكونات" : "Composants", isRTL ? "حركة" : "Animations"] },
+    { slug: "landing-page-maroc", icon: MousePointer2, title: isRTL ? "صفحات هبوط" : "Landing pages", desc: isRTL ? "صفحات مصممة للتحويل" : "Pages de campagne pensées pour convertir", features: ["CTA", isRTL ? "اختبارات A/B" : "Tests A/B", isRTL ? "نسخ إعلانية" : "Copywriting"] },
+    { slug: "ecommerce-maroc", icon: ShoppingCart, title: isRTL ? "متاجر إلكترونية" : "E-commerce", desc: isRTL ? "كتالوج وطلب سلس" : "Parcours d'achat simple et premium", features: [isRTL ? "منتجات" : "Catalogue", isRTL ? "سلة" : "Panier", isRTL ? "إدارة" : "Gestion"] },
+    { slug: "seo-maroc", icon: Search, title: isRTL ? "SEO وظهور" : "SEO & visibilité", desc: isRTL ? "بنية تقنية لنتائج Google" : "Structure propre pour Google", features: ["Schema", isRTL ? "سرعة" : "Vitesse", isRTL ? "محلي" : "SEO local"] },
+    { slug: "maintenance-site-web", icon: Wrench, title: isRTL ? "صيانة ودعم" : "Maintenance", desc: isRTL ? "متابعة وتحديثات مستمرة" : "Suivi, sécurité et évolutions", features: [isRTL ? "تحديثات" : "Mises à jour", isRTL ? "متابعة" : "Suivi", "Support"] },
     { slug: "application-web-sur-mesure", icon: LayoutDashboard, title: isRTL ? "تطبيقات ويب" : "Apps web", desc: isRTL ? "Dashboards ومنصات مخصصة" : "Dashboards et plateformes métier", features: ["Auth", "API", "Admin"] },
     { slug: "backend-api", icon: Server, title: "Backend & API", desc: isRTL ? "واجهات آمنة وقابلة للتوسع" : "APIs robustes et scalables", features: ["REST", "MongoDB", "Node.js"] },
   ]
@@ -37,10 +37,10 @@ export function Services({ lang }) {
       <div className="orb orb-violet -right-48 top-10 h-96 w-96" />
       <div className="container">
         <AnimatedSection className="services-heading mx-auto mb-14 max-w-3xl text-center sm:mb-18">
-          <div className="badge mx-auto mb-4"><Sparkles className="h-3.5 w-3.5" />{isRTL ? "خدماتنا" : "Services"}</div>
+          <div className="badge mx-auto mb-4"><span className="badge-dot" aria-hidden="true" />{isRTL ? "خدماتنا" : "Services"}</div>
           <div className="divider mb-6" />
           <h2>{isRTL ? "كل ما تحتاجه" : "Un système complet"} <span className="gradient-text">{isRTL ? "لنموك الرقمي" : "pour votre présence digitale"}</span></h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg">{isRTL ? "مكونات مثل ReactBits، عمق بصري مثل Dark.Design، وfooter غني مثل Footer.Design — لكن بهوية أصلية لعلامتك." : "Des composants vivants façon ReactBits, une profondeur visuelle dark.design et un footer éditorial riche façon footer.design — adaptés à votre marque."}</p>
+          <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg">{isRTL ? "تصميم واضح، تطوير سريع، تجربة موبايل ممتازة ومسار تواصل مباشر — بهوية أصلية تناسب علامتك." : "Design clair, développement rapide, expérience mobile soignée et parcours de contact direct — adaptés à votre marque."}</p>
         </AnimatedSection>
 
         <AnimatedSection className="service-wheel-showcase mb-14 sm:mb-18">
@@ -92,7 +92,6 @@ export function Services({ lang }) {
                     <div><strong>Conversion</strong><small>{isRTL ? "هدف واضح" : "Objectif mesurable"}</small></div>
                   </div>
                   <SpecularLink href={`/${lang}/services/${activeService.slug}`} className="mt-6 w-full">
-                    <Sparkles className="h-4 w-4" />
                     {isRTL ? "اكتشف تفاصيل الخدمة" : "Découvrir cette solution"}
                     <ArrowRight className={`h-4 w-4 ${isRTL ? "rotate-180" : ""}`} />
                   </SpecularLink>

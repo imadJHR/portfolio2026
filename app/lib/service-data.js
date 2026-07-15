@@ -143,7 +143,7 @@ export const serviceCatalog = [
   },
   {
     slug: "landing-page-maroc",
-    icon: "Rocket",
+    icon: "MousePointer2",
     related: ["ui-ux-identite-visuelle", "creation-site-web-maroc", "seo-maroc"],
     fr: {
       name: "Landing pages",

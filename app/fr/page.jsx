@@ -1,5 +1,5 @@
 import { getTranslation } from "../lib/i18n"
-import { SITE_URL, descriptions } from "../lib/seo"
+import { SITE_URL, descriptions, seoKeywords } from "../lib/seo"
 import Navbar from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Services } from "../components/services"
@@ -16,6 +16,7 @@ const title = "Agence web à Casablanca — Sites, SEO & e-commerce"
 export const metadata = {
   title,
   description: descriptions.fr,
+  keywords: seoKeywords,
   alternates: {
     canonical: `${SITE_URL}/fr`,
     languages: {
@@ -51,6 +52,7 @@ const pageSchema = {
   "@id": `${SITE_URL}/fr#webpage`,
   url: `${SITE_URL}/fr`,
   name: title,
+  alternateName: ["NemsiMedia", "nemsimedia", "nemsimedia.ma"],
   description: descriptions.fr,
   inLanguage: "fr-MA",
   isPartOf: { "@id": `${SITE_URL}/#website` },

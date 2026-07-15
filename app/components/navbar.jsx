@@ -3,9 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, Globe, MessageCircle, Moon, Sun, Sparkles } from "lucide-react"
+import { Menu, X, Globe, MessageCircle, Moon, Sun } from "lucide-react"
 import { useTheme } from "./theme-provider"
 import { openWhatsApp } from "../lib/leads"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
@@ -60,9 +59,13 @@ export default function Navbar({ lang }) {
       <motion.div initial={{ y: -18, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: .5 }} className={`site-navbar-shell container relative overflow-hidden rounded-full border transition-all duration-500 ${isScrolled ? "border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow-md)] backdrop-blur-2xl" : "border-transparent bg-transparent"}`}>
         <div ref={progressRef} className={`absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[var(--brand-2)] via-[var(--brand-hover)] to-[var(--brand-3)] will-change-transform ${isRTL ? "origin-right" : "origin-left"}`} style={{ transform: "scaleX(0)" }} />
         <nav className="flex h-14 min-w-0 items-center justify-between gap-2 sm:h-16 sm:gap-3">
-          <Link href={lang === "fr" ? "/fr" : "/ar"} className="site-brand flex min-w-0 items-center gap-2 sm:gap-2.5" aria-label="Nemsi Media">
-            <Image src="/dark.png" alt="" width={38} height={38} className="site-brand-logo h-8 w-8 shrink-0 rounded-xl object-cover sm:h-9 sm:w-9" priority />
-            <span className="site-brand-wordmark truncate text-sm font-black tracking-tight sm:text-lg">Nemsi<span className="gradient-text ml-1">Media</span></span>
+          <Link href={lang === "fr" ? "/fr" : "/ar"} className="site-brand flex min-w-0 items-center" aria-label="Nemsi Media">
+            <span className="site-brand-logo flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl sm:h-11 sm:w-11" aria-hidden="true">
+              <svg className="h-5 w-5 sm:h-6 sm:w-6" viewBox="0 0 28 28" fill="none">
+                <path d="M6.5 21.5V6.5l15 15V6.5" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M6.5 6.5h4.4l10.6 10.6" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
+              </svg>
+            </span>
           </Link>
 
           <div className="hidden items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--bg-surface)] p-1 backdrop-blur-xl xl:flex">
@@ -80,7 +83,7 @@ export default function Navbar({ lang }) {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild><SpecularButton variant="ghost" size="icon" aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}>{isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</SpecularButton></SheetTrigger>
               <SheetContent side={isRTL ? "right" : "left"} className="w-[min(22rem,calc(100vw-1rem))] max-w-none overflow-y-auto border-[var(--border)] bg-[var(--bg)] p-5 text-[var(--text)] sm:p-6">
-                <div className="badge mt-6"><Sparkles className="h-3.5 w-3.5" />Menu</div>
+                <div className="badge mt-6"><span className="badge-dot" aria-hidden="true" />Menu</div>
                 <div className="mt-8 flex flex-col gap-3">
                   {items.map((item) => <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)} className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 font-semibold text-[var(--text-secondary)]">{item.label}</Link>)}
                   <Link href={`/${otherLang}`} onClick={() => setIsOpen(false)} className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 font-semibold text-[var(--text-secondary)]">{otherLang === "ar" ? "العربية" : "Français"}</Link>

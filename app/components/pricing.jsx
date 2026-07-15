@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, MessageCircle, Crown, BadgeCheck, Sparkles } from "lucide-react"
+import { Check, MessageCircle, Crown, BadgeCheck } from "lucide-react"
 import { useState } from "react"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 
@@ -21,7 +21,7 @@ export function Pricing({ lang, t }) {
     <section id="pricing" className={`section ${isRTL ? "rtl" : ""}`}>
       <div className="container">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16 sm:mb-20">
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="badge mx-auto mb-6"><Sparkles className="w-3.5 h-3.5" />{isRTL ? "الأسعار" : "TARIFS"}</motion.div>
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="badge mx-auto mb-6"><span className="badge-dot" aria-hidden="true" />{isRTL ? "الأسعار" : "TARIFS"}</motion.div>
           <div className="divider mb-6" />
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">{t.pricing.title}</h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">{t.pricing.subtitle}</p>

@@ -1,13 +1,13 @@
 "use client"
 
-import { Code, Server, Database, Terminal, Shield, GitBranch, Globe, Layers, Zap, Smartphone } from "lucide-react"
+import { Code, Server, Database, Terminal, Shield, GitBranch, Globe, Layers, Gauge, Smartphone } from "lucide-react"
 import Marquee from "react-fast-marquee"
 import { AnimatedSection } from "./gsap-animations"
 
 export function TechStack({ lang }) {
   const isRTL = lang === "ar"
   const techs = [
-    { name: "Next.js", icon: Code }, { name: "React", icon: Layers }, { name: "Node.js", icon: Terminal }, { name: "MongoDB", icon: Database }, { name: "TypeScript", icon: Shield }, { name: "Tailwind", icon: Zap }, { name: "Three.js", icon: Globe }, { name: "Git", icon: GitBranch }, { name: "API", icon: Server }, { name: "Mobile-first", icon: Smartphone },
+    { name: "Next.js", icon: Code }, { name: "React", icon: Layers }, { name: "Node.js", icon: Terminal }, { name: "MongoDB", icon: Database }, { name: "TypeScript", icon: Shield }, { name: "Tailwind", icon: Gauge }, { name: "Three.js", icon: Globe }, { name: "Git", icon: GitBranch }, { name: "API", icon: Server }, { name: "Mobile-first", icon: Smartphone },
   ]
 
   return (

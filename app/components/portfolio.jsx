@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import { ExternalLink, Eye, X, TrendingUp, MessageCircle, Briefcase, ArrowUpRight, Sparkles } from "lucide-react"
+import { ExternalLink, Eye, X, TrendingUp, MessageCircle, Briefcase, ArrowUpRight } from "lucide-react"
 import portfolioData from "../lib/portfolio-data.json"
 import { AnimatedSection, StaggerSection } from "./gsap-animations"
 import { openWhatsApp } from "../lib/leads"
@@ -68,7 +68,7 @@ export function Portfolio({ lang }) {
             <SpecularButton onClick={() => setSelected(null)} variant="ghost" size="icon" className="absolute right-4 top-4 z-10" aria-label={isRTL ? "إغلاق" : "Fermer"}><X className="h-4 w-4" /></SpecularButton>
             <div className="relative h-48 sm:h-80"><Image src={selected.image || "/placeholder.png"} alt="" fill className="object-cover" sizes="768px" /><div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] to-transparent" /></div>
             <div className="space-y-5 p-4 sm:p-8">
-              <div className="badge"><Sparkles className="h-3.5 w-3.5" />Case study</div>
+              <div className="badge"><span className="badge-dot" aria-hidden="true" />Case study</div>
               <h3 className="text-2xl sm:text-4xl">{isRTL && selected.title.ar ? selected.title.ar : selected.title.fr}</h3>
               {(isRTL ? selected.challenge.ar : selected.challenge.fr) && <div><p className="mb-2 text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{isRTL ? "التحدي" : "Le défi"}</p><p>{isRTL ? selected.challenge.ar : selected.challenge.fr}</p></div>}
               {(isRTL ? selected.solution.ar : selected.solution.fr) && <div><p className="mb-2 text-xs font-black uppercase tracking-[.18em] text-[var(--text-muted)]">{isRTL ? "الحل" : "Notre solution"}</p><p>{isRTL ? selected.solution.ar : selected.solution.fr}</p></div>}

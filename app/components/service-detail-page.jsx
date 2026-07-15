@@ -10,13 +10,12 @@ import {
   Gauge,
   LayoutDashboard,
   MessageCircle,
+  MousePointer2,
   Palette,
-  Rocket,
   Search,
   Server,
   ShieldCheck,
   ShoppingCart,
-  Sparkles,
   Wrench,
 } from "lucide-react"
 import Navbar from "./navbar"
@@ -26,7 +25,7 @@ import { Strands } from "./react-bits/strands"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 import { openWhatsApp } from "../lib/leads"
 
-const iconMap = { Code, Palette, Rocket, ShoppingCart, Search, Wrench, LayoutDashboard, Server }
+const iconMap = { Code, Palette, MousePointer2, ShoppingCart, Search, Wrench, LayoutDashboard, Server }
 
 const ui = {
   fr: {
@@ -118,7 +117,7 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
                 <span aria-current="page">{content.name}</span>
               </nav>
 
-              <div className="badge mt-8"><Sparkles className="h-3.5 w-3.5" />{content.eyebrow}</div>
+              <div className="badge mt-8"><span className="badge-dot" aria-hidden="true" />{content.eyebrow}</div>
               <h1 className="service-detail-title">{content.title}</h1>
               <p className="service-detail-highlight gradient-text">{content.highlight}</p>
               <p className="service-detail-description">{content.description}</p>
@@ -170,7 +169,7 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section service-detail-benefits">
           <div className="container">
             <AnimatedSection className="mx-auto mb-12 max-w-3xl text-center">
-              <div className="badge mx-auto mb-5"><Sparkles className="h-3.5 w-3.5" />{copy.benefitsEyebrow}</div>
+              <div className="badge mx-auto mb-5"><span className="badge-dot" aria-hidden="true" />{copy.benefitsEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.benefitsTitle}</h2>
             </AnimatedSection>
             <StaggerSection staggerAmount={0.08}>
@@ -241,7 +240,7 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section service-related-section">
           <div className="container">
             <AnimatedSection className="mb-10 max-w-3xl">
-              <div className="badge mb-5"><Sparkles className="h-3.5 w-3.5" />{copy.relatedEyebrow}</div>
+              <div className="badge mb-5"><span className="badge-dot" aria-hidden="true" />{copy.relatedEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.relatedTitle}</h2>
             </AnimatedSection>
             <div className="service-related-grid">

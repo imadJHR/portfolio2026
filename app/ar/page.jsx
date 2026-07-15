@@ -1,5 +1,5 @@
 import { getTranslation } from "../lib/i18n"
-import { SITE_URL, descriptions } from "../lib/seo"
+import { SITE_URL, descriptions, seoKeywords } from "../lib/seo"
 import Navbar from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Services } from "../components/services"
@@ -16,6 +16,7 @@ const title = "وكالة ويب في الدار البيضاء — تصميم �
 export const metadata = {
   title,
   description: descriptions.ar,
+  keywords: seoKeywords,
   alternates: {
     canonical: `${SITE_URL}/ar`,
     languages: {
@@ -52,6 +53,7 @@ const pageSchema = {
   "@id": `${SITE_URL}/ar#webpage`,
   url: `${SITE_URL}/ar`,
   name: title,
+  alternateName: ["NemsiMedia", "nemsimedia", "nemsimedia.ma"],
   description: descriptions.ar,
   inLanguage: "ar-MA",
   isPartOf: { "@id": `${SITE_URL}/#website` },
