@@ -3,14 +3,14 @@ import { SITE_URL } from "./lib/seo"
 import { serviceCatalog } from "./lib/service-data"
 
 export default function sitemap() {
-  const updatedAt = new Date("2026-07-14")
+  const updatedAt = new Date("2026-07-21")
   const staticPages = [
     { path: "/fr", priority: 1, changeFrequency: "weekly" },
     { path: "/ar", priority: 1, changeFrequency: "weekly" },
-    { path: "/fr/a-propos", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/ar/a-propos", priority: 0.7, changeFrequency: "monthly" },
-    { path: "/fr/insights", priority: 0.8, changeFrequency: "weekly" },
-    { path: "/ar/insights", priority: 0.8, changeFrequency: "weekly" },
+    { path: "/fr/a-propos", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/ar/a-propos", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/fr/insights", priority: 0.85, changeFrequency: "weekly" },
+    { path: "/ar/insights", priority: 0.85, changeFrequency: "weekly" },
   ].map((page) => ({
     url: `${SITE_URL}${page.path}`,
     lastModified: updatedAt,
@@ -23,7 +23,7 @@ export default function sitemap() {
       url: `${SITE_URL}/${lang}/insights/${article.id}`,
       lastModified: new Date(article.date),
       changeFrequency: "monthly",
-      priority: 0.65,
+      priority: 0.7,
     })),
   )
 
@@ -31,8 +31,8 @@ export default function sitemap() {
     ["fr", "ar"].map((lang) => ({
       url: `${SITE_URL}/${lang}/services/${service.slug}`,
       lastModified: updatedAt,
-      changeFrequency: "monthly",
-      priority: 0.85,
+      changeFrequency: "weekly",
+      priority: 0.9,
     })),
   )
 

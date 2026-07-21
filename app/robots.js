@@ -15,6 +15,7 @@ export default function robots() {
           "Perplexity-User",
           "Googlebot",
           "Bingbot",
+          "YandexBot",
         ],
         allow: "/",
       },

@@ -8,6 +8,7 @@ import {
   SITE_NAME,
   SITE_URL,
   descriptions,
+  seoKeywords,
   organizationSchema,
   websiteSchema,
 } from "./lib/seo"
@@ -33,7 +34,7 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Agence web à Casablanca | Nemsi Media",
+    default: "Agence web Casablanca | Nemsi Media",
     template: `%s | ${SITE_NAME}`,
   },
   description: descriptions.fr,
@@ -41,7 +42,8 @@ export const metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   applicationName: SITE_NAME,
-  category: "Création de sites web et marketing digital",
+  category: "Agence web à Casablanca, SEO et e-commerce au Maroc",
+  keywords: seoKeywords,
   robots: {
     index: true,
     follow: true,
@@ -71,7 +73,7 @@ export const metadata = {
     alternateLocale: ["ar_MA"],
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Nemsi Media — Sites web, SEO et e-commerce au Maroc",
+    title: "Agence web Casablanca — Sites, SEO & e-commerce au Maroc",
     description: descriptions.fr,
     images: [
       {
@@ -87,6 +89,10 @@ export const metadata = {
     title: "Nemsi Media — Agence web à Casablanca",
     description: descriptions.fr,
     images: ["/opengraph-image"],
+  },
+  other: {
+    "geo.region": "MA-CAS",
+    "geo.placename": "Casablanca",
   },
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/icon.jpg", type: "image/jpeg" }],

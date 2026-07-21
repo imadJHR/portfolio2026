@@ -1,5 +1,5 @@
 import { getTranslation } from "../lib/i18n"
-import { SITE_URL, descriptions, seoKeywords } from "../lib/seo"
+import { SITE_URL, SITE_NAME, descriptions, seoKeywords, PHONE, EMAIL, addressLine, region, geo, openingHoursSchema } from "../lib/seo"
 import Navbar from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Services } from "../components/services"
@@ -101,6 +101,51 @@ export default function FrenchPage() {
       <Footer lang="fr" t={t} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": `${SITE_URL}/fr#localbusiness`,
+            name: SITE_NAME,
+            image: `${SITE_URL}/opengraph-image`,
+            url: SITE_URL,
+            telephone: PHONE,
+            email: EMAIL,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: addressLine,
+              addressLocality: "Casablanca",
+              addressRegion: region,
+              addressCountry: "MA",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: geo.lat,
+              longitude: geo.lng,
+            },
+            openingHoursSpecification: openingHoursSchema.map((o) => ({
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: o.includes("Mo-Fr") ? ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] : ["Saturday"],
+              opens: o.includes("Mo-Fr") ? "09:00" : "10:00",
+              closes: o.includes("Mo-Fr") ? "19:00" : "15:00",
+            })),
+            areaServed: [
+              { "@type": "City", name: "Casablanca" },
+              { "@type": "City", name: "Rabat" },
+              { "@type": "City", name: "Tanger" },
+              { "@type": "City", name: "Marrakech" },
+            ],
+            priceRange: "$$",
+            makesOffer: [
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Création de site web" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO à Casablanca" } },
+              { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-commerce" } },
+            ],
+          }),
+        }}
+      />
     </div>
   )
 }

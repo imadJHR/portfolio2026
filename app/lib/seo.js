@@ -1,13 +1,18 @@
 export const SITE_URL = "https://www.nemsimedia.ma"
 export const SITE_NAME = "Nemsi Media"
-export const PHONE = "+212645288216"
+export const PHONE = "+212 6 45 28 82 16"
 export const EMAIL = "contact@nemsimedia.ma"
+export const WHATSAPP = "+2126625288216"
+export const addressLine = "Casablanca, Maroc"
+export const region = "Casablanca-Settat"
+export const geo = { lat: 33.5731, lng: -7.5898 }
+export const officeHours = "Mo-Fr 09:00-19:00, Sa 10:00-15:00"
+export const openingHoursSchema = ["Mo-Fr 09:00-19:00", "Sa 10:00-15:00"]
 
 export const descriptions = {
-  fr: "Nemsi Media (nemsimedia.ma), agence web à Casablanca spécialisée en création de sites rapides, SEO et e-commerce. Obtenez une recommandation claire et un devis adapté à votre projet.",
-  ar: "Nemsi Media (nemsimedia.ma)، وكالة ويب في الدار البيضاء متخصصة في تصميم المواقع السريعة، تحسين محركات البحث والتجارة الإلكترونية. احصل على تصور واضح وعرض مناسب لمشروعك.",
+  fr: "Agence web à Casablanca : création de sites rapides, SEO et e-commerce au Maroc. Devis clair, prise de rendez-vous et projet prêt à convertir vos visiteurs en clients.",
+  ar: "وكالة ويب في الدار البيضاء : تصميم مواقع سريعة، SEO وتجارة إلكترونية في المغرب. عرض واضح وموعد جاهز لتحويل الزيارات إلى تواصل حقيقي.",
 }
-
 export const brandAliases = [
   "Nemsi Media",
   "Nemsi Media Maroc",
@@ -21,11 +26,14 @@ export const seoKeywords = [
   ...brandAliases,
   "agence web Casablanca",
   "agence web Maroc",
-  "création site web Maroc",
+  "agence web à Casablanca",
   "création site web Casablanca",
   "référencement SEO Maroc",
+  "SEO Casablanca",
   "site e-commerce Maroc",
-  "marketing digital Maroc",
+  "marketing digital Casablanca",
+  "site internet Casablanca",
+  "développement web Maroc",
 ]
 
 export const organizationSchema = {
