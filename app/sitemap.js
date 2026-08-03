@@ -11,6 +11,10 @@ export default function sitemap() {
     { path: "/ar/a-propos", priority: 0.8, changeFrequency: "monthly" },
     { path: "/fr/insights", priority: 0.85, changeFrequency: "weekly" },
     { path: "/ar/insights", priority: 0.85, changeFrequency: "weekly" },
+    { path: "/fr/contact", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/ar/contact", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/fr/devis", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/ar/devis", priority: 0.9, changeFrequency: "weekly" },
   ].map((page) => ({
     url: `${SITE_URL}${page.path}`,
     lastModified: updatedAt,

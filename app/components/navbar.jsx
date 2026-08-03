@@ -6,19 +6,20 @@ import Link from "next/link"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, X, Globe, MessageCircle, Moon, Sun } from "lucide-react"
 import { useTheme } from "./theme-provider"
-import { openWhatsApp } from "../lib/leads"
+import QuoteFormModal from "./quote-form-modal"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 
 export default function Navbar({ lang }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [quoteOpen, setQuoteOpen] = useState(false)
   const progressRef = useRef(null)
   const { theme, toggleTheme } = useTheme()
   const isRTL = lang === "ar"
 
   const items = lang === "fr"
-    ? [{ label: "Accueil", href: "/fr" }, { label: "Services", href: "/fr#services" }, { label: "Portfolio", href: "/fr#portfolio" }, { label: "À propos", href: "/fr/a-propos" }, { label: "Insights", href: "/fr/insights" }, { label: "Contact", href: "/fr#contact" }]
-    : [{ label: "الرئيسية", href: "/ar" }, { label: "خدماتنا", href: "/ar#services" }, { label: "أعمالنا", href: "/ar#portfolio" }, { label: "من نحن", href: "/ar/a-propos" }, { label: "مقالات", href: "/ar/insights" }, { label: "اتصل بنا", href: "/ar#contact" }]
+    ? [{ label: "Accueil", href: "/fr" }, { label: "Services", href: "/fr#services" }, { label: "Portfolio", href: "/fr#portfolio" }, { label: "À propos", href: "/fr/a-propos" }, { label: "Insights", href: "/fr/insights" }, { label: "Contact", href: "/fr/contact" }]
+    : [{ label: "الرئيسية", href: "/ar" }, { label: "خدماتنا", href: "/ar#services" }, { label: "أعمالنا", href: "/ar#portfolio" }, { label: "من نحن", href: "/ar/a-propos" }, { label: "مقالات", href: "/ar/insights" }, { label: "اتصل بنا", href: "/ar/contact" }]
 
   useEffect(() => {
     let frame = 0
@@ -45,12 +46,8 @@ export default function Navbar({ lang }) {
     }
   }, [])
 
-  const handleWhatsApp = () => {
-    openWhatsApp(
-      lang === "ar" ? "مرحبا، أود مناقشة مشروعي معكم." : "Bonjour, je souhaite discuter de mon projet avec vous.",
-      "navbar_cta",
-      { language: lang },
-    )
+  const handleDevis = () => {
+    window.location.href = `/${lang}/devis`
   }
   const otherLang = lang === "fr" ? "ar" : "fr"
 
@@ -75,7 +72,7 @@ export default function Navbar({ lang }) {
           <div className="hidden items-center gap-2 xl:flex">
             <SpecularLink href={`/${otherLang}`} variant="ghost" size="sm"><Globe className="h-3.5 w-3.5" />{otherLang === "ar" ? "AR" : "FR"}</SpecularLink>
             <SpecularButton onClick={toggleTheme} variant="ghost" size="icon" aria-label={isRTL ? "تغيير المظهر" : "Changer le thème"}>{theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</SpecularButton>
-            <SpecularButton onClick={handleWhatsApp} size="sm"><MessageCircle className="h-3.5 w-3.5" />{lang === "fr" ? "Devis" : "استشارة"}</SpecularButton>
+            <SpecularButton onClick={handleDevis} size="sm"><MessageCircle className="h-3.5 w-3.5" />{lang === "fr" ? "Devis" : "استشارة"}</SpecularButton>
           </div>
 
           <div className="flex shrink-0 items-center gap-1 xl:hidden sm:gap-1.5">
@@ -87,13 +84,15 @@ export default function Navbar({ lang }) {
                 <div className="mt-8 flex flex-col gap-3">
                   {items.map((item) => <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)} className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 font-semibold text-[var(--text-secondary)]">{item.label}</Link>)}
                   <Link href={`/${otherLang}`} onClick={() => setIsOpen(false)} className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 font-semibold text-[var(--text-secondary)]">{otherLang === "ar" ? "العربية" : "Français"}</Link>
-                  <SpecularButton onClick={handleWhatsApp} className="mt-3 w-full"><MessageCircle className="h-4 w-4" />{lang === "fr" ? "Devis gratuit" : "استشارة مجانية"}</SpecularButton>
+                  <SpecularButton onClick={handleDevis} className="mt-3 w-full"><MessageCircle className="h-4 w-4" />{lang === "fr" ? "Devis gratuit" : "استشارة مجانية"}</SpecularButton>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
         </nav>
       </motion.div>
+
+      <QuoteFormModal isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} lang={lang} />
     </header>
   )
 }

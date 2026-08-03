@@ -1,4 +1,19 @@
+import { branding } from "./services/branding"
+import { designGraphique } from "./services/design-graphique"
+import { photoVideo } from "./services/photo-video"
+import { socialMedia } from "./services/social-media"
+import { marketingInfluence } from "./services/marketing-influence"
+import { publicitePayante } from "./services/publicite-payante"
+import { emailMarketing } from "./services/email-marketing"
+
 export const serviceCatalog = [
+  branding,
+  designGraphique,
+  photoVideo,
+  socialMedia,
+  marketingInfluence,
+  publicitePayante,
+  emailMarketing,
   {
     slug: "creation-site-web-maroc",
     icon: "Code",

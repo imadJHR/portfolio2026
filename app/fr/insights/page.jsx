@@ -97,7 +97,7 @@ export default function InsightsPage() {
       <section className="pb-20">
         <div className="container">
           <div className="divider mb-12" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
             {insightsData.map((article, i) => (
               <ArticleCard key={article.id} article={article} index={i} />
             ))}

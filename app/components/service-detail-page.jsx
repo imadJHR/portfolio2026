@@ -17,6 +17,12 @@ import {
   ShieldCheck,
   ShoppingCart,
   Wrench,
+  Image,
+  Clapperboard,
+  Share2,
+  Users,
+  Megaphone,
+  Mail,
 } from "lucide-react"
 import Navbar from "./navbar"
 import Footer from "./footer"
@@ -25,7 +31,7 @@ import { Strands } from "./react-bits/strands"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 import { openWhatsApp } from "../lib/leads"
 
-const iconMap = { Code, Palette, MousePointer2, ShoppingCart, Search, Wrench, LayoutDashboard, Server }
+const iconMap = { Code, Palette, MousePointer2, ShoppingCart, Search, Wrench, LayoutDashboard, Server, Image, Clapperboard, Share2, Users, Megaphone, Mail }
 
 const ui = {
   fr: {

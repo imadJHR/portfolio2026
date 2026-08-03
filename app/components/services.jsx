@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
-import { Code, ShoppingCart, Search, MousePointer2, ArrowRight, Palette, Wrench, CheckCircle, LayoutDashboard, Server, MessageCircle } from "lucide-react"
+import { Code, ShoppingCart, Search, MousePointer2, ArrowRight, Palette, Wrench, CheckCircle, LayoutDashboard, Server, MessageCircle, Image, Clapperboard, Share2, Users, Megaphone, Mail } from "lucide-react"
 import { AnimatedSection, StaggerSection } from "./gsap-animations"
 import { OptionWheel } from "./react-bits/option-wheel"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
@@ -19,7 +19,14 @@ export function Services({ lang }) {
     )
   }
   const services = [
-    { slug: "creation-site-web-maroc", icon: Code, title: isRTL ? "تصميم وتطوير المواقع" : "Sites web premium", desc: isRTL ? "واجهات حديثة, rapides et responsives" : "Interfaces rapides, lisibles et responsives", features: ["Next.js", isRTL ? "تصميم واضح" : "Design clair", isRTL ? "سرعة عالية" : "Performance"] },
+    { slug: "branding-identite-marque", icon: Image, title: isRTL ? "الهوية والعلامة" : "Branding & identité", desc: isRTL ? "شعار وهوية بصرية قوية" : "Logo, identité et charte graphique", features: ["Logo", isRTL ? "ألوان وخطوط" : "Palette", isRTL ? "دليل الهوية" : "Charte"] },
+    { slug: "design-graphique-maroc", icon: Image, title: isRTL ? "التصميم الجرافيكي" : "Design graphique", desc: isRTL ? "تصاميم جذابة ومتناسقة" : "Visuels pour tous les supports", features: [isRTL ? "شبكات" : "Réseaux", isRTL ? "فلييرات" : "Flyers", isRTL ? "ملصقات" : "Posters"] },
+    { slug: "production-photo-video-maroc", icon: Clapperboard, title: isRTL ? "إنتاج الصور والفيديو" : "Photo & vidéo", desc: isRTL ? "إنتاج بصري احترافي" : "Photos, vidéos et motion design", features: [isRTL ? "تصوير" : "Photo", isRTL ? "فيديو" : "Vidéo", isRTL ? "مونتاج" : "Montage"] },
+    { slug: "social-media-maroc", icon: Share2, title: isRTL ? "إدارة وسائل التواصل" : "Réseaux sociaux", desc: isRTL ? "إدارة مجتمعات ومحتوى" : "Community management & contenu", features: [isRTL ? "استراتيجية" : "Stratégie", isRTL ? "محتوى" : "Contenu", isRTL ? "تفاعل" : "Engagement"] },
+    { slug: "marketing-influence-maroc", icon: Users, title: isRTL ? "التسويق بالمؤثرين" : "Influence & créateurs", desc: isRTL ? "حملات مؤثرين ومحتوى UGC" : "Campagnes influence & UGC", features: [isRTL ? "مؤثرين" : "Influenceurs", isRTL ? "UGC" : "UGC", isRTL ? "قياس" : "Mesure"] },
+    { slug: "publicite-payante-maroc", icon: Megaphone, title: isRTL ? "الإعلانات المدفوعة" : "Publicité payante", desc: isRTL ? "Meta Google TikTok Ads" : "Meta Ads, Google Ads, TikTok", features: ["Meta Ads", "Google Ads", "TikTok Ads"] },
+    { slug: "email-marketing-maroc", icon: Mail, title: isRTL ? "التسويق بالبريد" : "Email marketing", desc: isRTL ? "نشرات وأتمتة بريدية" : "Newsletters & automation", features: [isRTL ? "نشرات" : "Newsletters", isRTL ? "أتمتة" : "Automation", isRTL ? "قياس" : "Mesure"] },
+    { slug: "creation-site-web-maroc", icon: Code, title: isRTL ? "تصميم المواقع" : "Sites web premium", desc: isRTL ? "واجهات حديثة وسريعة" : "Interfaces rapides et responsives", features: ["Next.js", isRTL ? "تصميم واضح" : "Design clair", isRTL ? "سرعة عالية" : "Performance"] },
     { slug: "ui-ux-identite-visuelle", icon: Palette, title: isRTL ? "هوية وتجربة المستخدم" : "UI/UX & identité", desc: isRTL ? "نظام بصري يرفع الثقة" : "Design clair qui renforce la crédibilité", features: [isRTL ? "ألوان" : "Palette", isRTL ? "مكونات" : "Composants", isRTL ? "حركة" : "Animations"] },
     { slug: "landing-page-maroc", icon: MousePointer2, title: isRTL ? "صفحات هبوط" : "Landing pages", desc: isRTL ? "صفحات مصممة للتحويل" : "Pages de campagne pensées pour convertir", features: ["CTA", isRTL ? "اختبارات A/B" : "Tests A/B", isRTL ? "نسخ إعلانية" : "Copywriting"] },
     { slug: "ecommerce-maroc", icon: ShoppingCart, title: isRTL ? "متاجر إلكترونية" : "E-commerce", desc: isRTL ? "كتالوج وطلب سلس" : "Parcours d'achat simple et premium", features: [isRTL ? "منتجات" : "Catalogue", isRTL ? "سلة" : "Panier", isRTL ? "إدارة" : "Gestion"] },
