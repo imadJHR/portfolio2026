@@ -47,7 +47,7 @@ export function Portfolio({ lang }) {
               {filtered.map((project, index) => (
                 <motion.button key={project.id} layout initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: .96 }} onClick={() => setSelected(project)} className={`card-accent group overflow-hidden text-left ${index === 0 ? "lg:col-span-2" : ""}`} dir={isRTL ? "rtl" : "ltr"}>
                   <div className="relative h-64 overflow-hidden sm:h-72">
-                    <Image src={project.image || "/placeholder.png"} alt={project.title.fr} fill className="object-cover transition duration-700 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                    <Image src={project.image || "/placeholder.png"} alt={lang === "ar" && project.title.ar ? project.title.ar : project.title.fr} fill className="object-cover transition duration-700 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                     <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/35 px-3 py-1 text-xs font-bold text-white backdrop-blur-xl">{project.category === "ecommerce" ? (isRTL ? "متجر" : "E-commerce") : project.category === "service" ? (isRTL ? "خدمة" : "Service") : (isRTL ? "موقع" : "Vitrine")}</div>
                     <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white opacity-100 backdrop-blur-xl transition sm:opacity-0 sm:group-hover:opacity-100"><ArrowUpRight className="h-4 w-4" /></div>

@@ -21,6 +21,8 @@ export default function Navbar({ lang }) {
     ? [{ label: "Accueil", href: "/fr" }, { label: "Services", href: "/fr#services" }, { label: "Portfolio", href: "/fr#portfolio" }, { label: "À propos", href: "/fr/a-propos" }, { label: "Insights", href: "/fr/insights" }, { label: "Contact", href: "/fr/contact" }]
     : [{ label: "الرئيسية", href: "/ar" }, { label: "خدماتنا", href: "/ar#services" }, { label: "أعمالنا", href: "/ar#portfolio" }, { label: "من نحن", href: "/ar/a-propos" }, { label: "مقالات", href: "/ar/insights" }, { label: "اتصل بنا", href: "/ar/contact" }]
 
+  const skipToContentLabel = lang === "fr" ? "Aller au contenu" : "انتقل إلى المحتوى"
+
   useEffect(() => {
     let frame = 0
 
@@ -64,6 +66,7 @@ export default function Navbar({ lang }) {
               </svg>
             </span>
           </Link>
+          <a href="#home" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:border focus:border-[var(--border)] focus:bg-[var(--bg-card)] focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-[var(--text)]">{skipToContentLabel}</a>
 
           <div className="hidden items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--bg-surface)] p-1 backdrop-blur-xl xl:flex">
             {items.map((item) => <Link key={item.label} href={item.href} className="rounded-full px-3.5 py-2 text-sm font-semibold text-[var(--text-secondary)] transition hover:bg-[var(--bg-card-hover)] hover:text-[var(--text)]">{item.label}</Link>)}
