@@ -41,10 +41,8 @@ export function Services({ lang }) {
 
   return (
     <section id="services" className="services-section section overflow-hidden">
-      <div className="orb orb-violet -right-48 top-10 h-96 w-96" />
       <div className="container">
         <AnimatedSection className="services-heading mx-auto mb-14 max-w-3xl text-center sm:mb-18">
-          <div className="badge mx-auto mb-4"><span className="badge-dot" aria-hidden="true" />{isRTL ? "خدماتنا" : "Services"}</div>
           <div className="divider mb-6" />
           <h2>{isRTL ? "كل ما تحتاجه" : "Un système complet"} <span className="gradient-text">{isRTL ? "لنموك الرقمي" : "pour votre présence digitale"}</span></h2>
           <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg">{isRTL ? "تصميم واضح، تطوير سريع، تجربة موبايل ممتازة ومسار تواصل مباشر — بهوية أصلية تناسب علامتك." : "Design clair, développement rapide, expérience mobile soignée et parcours de contact direct — adaptés à votre marque."}</p>
@@ -88,7 +86,6 @@ export function Services({ lang }) {
                     </motion.div>
                     <span>{String(selectedService + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}</span>
                   </div>
-                  <p className="service-wheel-kicker">{isRTL ? "حل مصمم حسب مشروعك" : "Une solution pensée pour votre projet"}</p>
                   <h3>{activeService.title}</h3>
                   <p className="service-wheel-description">{activeService.desc}</p>
                   <div className="service-wheel-features">

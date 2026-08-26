@@ -15,7 +15,6 @@ export function Testimonials({ lang }) {
     <section id="testimonials" className="section overflow-hidden">
       <div className="container">
         <AnimatedSection className="mx-auto mb-14 max-w-3xl text-center sm:mb-16">
-          <div className="badge mx-auto mb-4"><Star className="h-3.5 w-3.5" />{isRTL ? "آراء العملاء" : "Témoignages"}</div>
           <div className="divider mb-6" />
           <h2>{isRTL ? "تجربة يثق بها" : "Une expérience"} <span className="gradient-text">{isRTL ? "عملاؤنا" : "qui inspire confiance"}</span></h2>
         </AnimatedSection>

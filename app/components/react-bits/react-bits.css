@@ -34,7 +34,7 @@
   transition: transform .2s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease, color .25s ease;
 }
 .specular-button--primary {
-  background: linear-gradient(135deg, rgba(117, 103, 255, .96), rgba(160, 107, 255, .96) 48%, rgba(255, 91, 215, .92));
+  background: linear-gradient(135deg, rgba(124, 58, 237, .96), rgba(109, 40, 217, .96) 48%, rgba(139, 92, 246, .92));
   color: #fff;
   box-shadow: 0 16px 42px var(--brand-glow), inset 0 1px 0 rgba(255, 255, 255, .3);
 }
@@ -70,7 +70,7 @@
   z-index: 0;
   border-radius: inherit;
   padding: 1.5px;
-  background: conic-gradient(from var(--sb-angle), transparent 0 28%, rgba(255, 255, 255, .95) 34%, transparent 40% 67%, rgba(36, 217, 255, .85) 74%, transparent 82%);
+  background: conic-gradient(from var(--sb-angle), transparent 0 28%, rgba(255, 255, 255, .95) 34%, transparent 40% 67%, rgba(245, 183, 0, .85) 74%, transparent 82%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

@@ -73,10 +73,8 @@ export function Contact({ lang }) {
 
   return (
     <section id="contact" className="section overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="orb orb-pink right-[-10rem] top-10 h-[28rem] w-[28rem]" />
       <div className="container">
         <AnimatedSection className="mx-auto mb-14 max-w-3xl text-center sm:mb-16">
-          <div className="badge mx-auto mb-4"><span className="badge-dot" aria-hidden="true" />{isRTL ? "اتصل بنا" : "Contact"}</div>
           <div className="divider mb-6" />
           <h2>{isRTL ? "جاهز لبناء" : "Prêt à créer"} <span className="gradient-text">{isRTL ? "نسختك الرقمية؟" : "votre nouvelle vitrine ?"}</span></h2>
           <p className="mx-auto mt-6 max-w-2xl">{isRTL ? "أرسل لنا فكرة مشروعك وسنقترح عليك المسار الأفضل." : "Décrivez votre objectif et recevez une première direction claire, design et technique."}</p>

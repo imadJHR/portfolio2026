@@ -27,7 +27,6 @@ import {
 import Navbar from "./navbar"
 import Footer from "./footer"
 import { AnimatedSection, StaggerSection } from "./gsap-animations"
-import { Strands } from "./react-bits/strands"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 import { openWhatsApp } from "../lib/leads"
 
@@ -108,10 +107,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
       <Navbar lang={lang} />
       <main>
         <section className="service-detail-hero">
-          <Strands colors={["#24d9ff", "#7567ff", "#ff5bd7"]} count={4} speed={0.28} amplitude={0.9} opacity={0.52} className="z-[1]" />
-          <div className="absolute inset-0 grid-pattern opacity-45" />
-          <div className="orb orb-cyan -left-40 top-20 h-[30rem] w-[30rem]" />
-          <div className="orb orb-violet -right-32 top-10 h-[34rem] w-[34rem]" />
 
           <div className="container service-detail-hero-grid relative z-10">
             <div className="service-detail-copy">
@@ -122,8 +117,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
                 <span>/</span>
                 <span aria-current="page">{content.name}</span>
               </nav>
-
-              <div className="badge mt-8"><span className="badge-dot" aria-hidden="true" />{content.eyebrow}</div>
               <h1 className="service-detail-title">{content.title}</h1>
               <p className="service-detail-highlight gradient-text">{content.highlight}</p>
               <p className="service-detail-description">{content.description}</p>
@@ -158,7 +151,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section id="details" className="section service-detail-intro">
           <div className="container grid gap-8 lg:grid-cols-[1.15fr_.85fr] lg:gap-16">
             <AnimatedSection>
-              <div className="badge mb-5"><Gauge className="h-3.5 w-3.5" />{copy.introEyebrow}</div>
               <h2 className="max-w-3xl text-3xl sm:text-5xl">{content.introTitle}</h2>
               <div className="service-rich-copy">
                 {content.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -175,7 +167,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section service-detail-benefits">
           <div className="container">
             <AnimatedSection className="mx-auto mb-12 max-w-3xl text-center">
-              <div className="badge mx-auto mb-5"><span className="badge-dot" aria-hidden="true" />{copy.benefitsEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.benefitsTitle}</h2>
             </AnimatedSection>
             <StaggerSection staggerAmount={0.08}>
@@ -195,7 +186,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section">
           <div className="container service-deliverables-shell">
             <AnimatedSection className="service-deliverables-heading">
-              <div className="badge mb-5"><Code className="h-3.5 w-3.5" />{copy.deliverablesEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.deliverablesTitle}</h2>
             </AnimatedSection>
             <StaggerSection staggerAmount={0.06}>
@@ -211,7 +201,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section service-process-section">
           <div className="container">
             <AnimatedSection className="mb-12 max-w-3xl">
-              <div className="badge mb-5"><LayoutDashboard className="h-3.5 w-3.5" />{copy.processEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.processTitle}</h2>
             </AnimatedSection>
             <div className="service-process-grid">
@@ -229,7 +218,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section">
           <div className="container grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:gap-16">
             <AnimatedSection>
-              <div className="badge mb-5"><MessageCircle className="h-3.5 w-3.5" />{copy.faqEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.faqTitle}</h2>
             </AnimatedSection>
             <div className="service-faq-list">
@@ -246,7 +234,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
         <section className="section service-related-section">
           <div className="container">
             <AnimatedSection className="mb-10 max-w-3xl">
-              <div className="badge mb-5"><span className="badge-dot" aria-hidden="true" />{copy.relatedEyebrow}</div>
               <h2 className="text-3xl sm:text-5xl">{copy.relatedTitle}</h2>
             </AnimatedSection>
             <div className="service-related-grid">
@@ -269,7 +256,6 @@ export function ServiceDetailPage({ slug, icon, content, relatedServices, lang }
           <div className="container">
             <AnimatedSection className="service-final-cta">
               <div>
-                <p>{content.eyebrow}</p>
                 <h2>{copy.finalTitle}</h2>
                 <span>{copy.finalText}</span>
               </div>

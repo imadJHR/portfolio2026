@@ -4,6 +4,7 @@ import Script from "next/script"
 import { ThemeProvider } from "./components/theme-provider"
 import { SmoothScroll } from "./components/smooth-scroll"
 import { AiReferralTracker } from "./components/ai-referral-tracker"
+import { LogoMark } from "./components/logo/logo-mark"
 import { HtmlLangUpdater } from "./components/html-lang-updater"
 import {
   SITE_NAME,
@@ -96,21 +97,22 @@ export const metadata = {
     "geo.placename": "Casablanca",
   },
   icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/icon.jpg", type: "image/jpeg" }],
-    apple: [{ url: "/icon.jpg", type: "image/jpeg" }],
+    icon: [{ url: "/favicon.ico" }, { url: "/logo/icon-32.png", type: "image/png", sizes: "32x32" }, { url: "/logo/icon-192.png", type: "image/png", sizes: "192x192" }],
+    apple: [{ url: "/apple-touch-icon.png" }],
   },
 }
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#070912",
+  themeColor: "#0d0716",
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" dir="ltr" className="dark" suppressHydrationWarning>
+    <html lang="fr" dir="ltr" suppressHydrationWarning>
       <head>
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Nemsi Media — AI-readable information" />
         <link rel="alternate" hreflang="fr" href={`${SITE_URL}/fr`} />
         <link rel="alternate" hreflang="ar" href={`${SITE_URL}/ar`} />
@@ -151,7 +153,7 @@ export default function RootLayout({ children }) {
             fallback={
               <div className="flex min-h-screen items-center justify-center bg-[var(--bg)]">
                 <div className="text-center">
-                  <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-2 border-[var(--brand-primary)]/30 border-t-[var(--brand-primary)]" />
+                  <LogoMark className="mx-auto mb-4 h-12 w-12 animate-pulse" />
                   <p className="text-sm text-[var(--text-muted)]">Nemsi Media</p>
                 </div>
               </div>

@@ -4,17 +4,16 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, Globe, MessageCircle, Moon, Sun } from "lucide-react"
-import { useTheme } from "./theme-provider"
-import QuoteFormModal from "./quote-form-modal"
+import { Menu, X, Globe, MessageCircle } from "lucide-react"
+import { LogoMark } from "./logo/logo-mark"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
+import QuoteFormModal from "./quote-form-modal"
 
 export default function Navbar({ lang }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [quoteOpen, setQuoteOpen] = useState(false)
   const progressRef = useRef(null)
-  const { theme, toggleTheme } = useTheme()
   const isRTL = lang === "ar"
 
   const items = lang === "fr"
@@ -58,12 +57,9 @@ export default function Navbar({ lang }) {
       <motion.div initial={{ y: -18, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: .5 }} className={`site-navbar-shell container relative overflow-hidden rounded-full border transition-all duration-500 ${isScrolled ? "border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow-md)] backdrop-blur-2xl" : "border-transparent bg-transparent"}`}>
         <div ref={progressRef} className={`absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[var(--brand-2)] via-[var(--brand-hover)] to-[var(--brand-3)] will-change-transform ${isRTL ? "origin-right" : "origin-left"}`} style={{ transform: "scaleX(0)" }} />
         <nav className="flex h-14 min-w-0 items-center justify-between gap-2 sm:h-16 sm:gap-3">
-          <Link href={lang === "fr" ? "/fr" : "/ar"} className="site-brand flex min-w-0 items-center" aria-label="Nemsi Media">
-            <span className="site-brand-logo flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl sm:h-11 sm:w-11" aria-hidden="true">
-              <svg className="h-5 w-5 sm:h-6 sm:w-6" viewBox="0 0 28 28" fill="none">
-                <path d="M6.5 21.5V6.5l15 15V6.5" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M6.5 6.5h4.4l10.6 10.6" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
-              </svg>
+          <Link href={lang === "fr" ? "/fr" : "/ar"} className="site-brand flex min-w-0 items-center" aria-label="Nemsi Media — Agence web premium à Casablanca">
+            <span className="site-brand-logo flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl sm:h-16 sm:w-16 overflow-hidden" aria-hidden="true">
+              <LogoMark className="h-7 w-7 sm:h-8 sm:w-8" />
             </span>
           </Link>
           <a href="#home" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:border focus:border-[var(--border)] focus:bg-[var(--bg-card)] focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-[var(--text)]">{skipToContentLabel}</a>
@@ -74,12 +70,10 @@ export default function Navbar({ lang }) {
 
           <div className="hidden items-center gap-2 xl:flex">
             <SpecularLink href={`/${otherLang}`} variant="ghost" size="sm"><Globe className="h-3.5 w-3.5" />{otherLang === "ar" ? "AR" : "FR"}</SpecularLink>
-            <SpecularButton onClick={toggleTheme} variant="ghost" size="icon" aria-label={isRTL ? "تغيير المظهر" : "Changer le thème"}>{theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</SpecularButton>
             <SpecularButton onClick={handleDevis} size="sm"><MessageCircle className="h-3.5 w-3.5" />{lang === "fr" ? "Devis" : "استشارة"}</SpecularButton>
           </div>
 
           <div className="flex shrink-0 items-center gap-1 xl:hidden sm:gap-1.5">
-            <SpecularButton onClick={toggleTheme} variant="ghost" size="icon" aria-label={isRTL ? "تغيير المظهر" : "Changer le thème"}>{theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}</SpecularButton>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild><SpecularButton variant="ghost" size="icon" aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}>{isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</SpecularButton></SheetTrigger>
               <SheetContent side={isRTL ? "right" : "left"} className="w-[min(22rem,calc(100vw-1rem))] max-w-none overflow-y-auto border-[var(--border)] bg-[var(--bg)] p-5 text-[var(--text)] sm:p-6">

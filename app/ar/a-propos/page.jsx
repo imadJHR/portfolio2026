@@ -50,7 +50,6 @@ export default function ArabicAboutPage() {
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-[var(--brand)]/5 blur-[120px] rounded-full" />
         <div className="container relative z-[2] text-center">
-          <div className="badge mx-auto mb-6">من نحن</div>
           <AnimatedSection>
             <h1 className="mb-6 text-[clamp(2.35rem,11vw,3.75rem)] font-bold">
               الوكالة التي تجمع بين{" "}

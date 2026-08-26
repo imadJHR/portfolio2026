@@ -29,7 +29,7 @@ function ArticleCard({ article, index }) {
   const categories = {
     "Web Design": "border-[var(--brand)]/30 text-[var(--brand)]",
     "SEO": "border-[var(--brand)]/30 text-[var(--brand)]",
-    "E-commerce": "border-emerald-700/30 text-emerald-600",
+    "E-commerce": "border-[var(--amber-flame)]/40 text-[var(--amber-text)]",
   }
 
   const categoryStyle = categories[article.category.fr] || categories["Web Design"]
@@ -44,7 +44,7 @@ function ArticleCard({ article, index }) {
           <span className="text-xs text-[var(--text-muted)]">{article.readTime.ar}</span>
         </div>
 
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 group-hover:text-[var(--brand)] transition-colors">
+        <h2 className="article-card-title text-xl sm:text-2xl font-bold mb-3 group-hover:text-[var(--brand)] transition-colors">
           <Link href={`/ar/insights/${article.id}`}>
             {article.title.ar}
           </Link>
@@ -83,7 +83,6 @@ export default function ArabicInsightsPage() {
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-[var(--brand)]/5 blur-[120px] rounded-full" />
         <div className="container relative z-[2] text-center">
-          <div className="badge mx-auto mb-6">مقالات</div>
           <h1 className="mb-6 text-[clamp(2.35rem,11vw,3.75rem)] font-bold">
             مقالات، نصائح و{" "}
             <span className="gradient-text">اتجاهات رقمية</span>

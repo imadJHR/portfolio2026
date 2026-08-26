@@ -66,11 +66,9 @@ export function LeadFaq({ lang }) {
 
   return (
     <section className="section relative overflow-hidden" aria-labelledby="faq-title" dir={isRTL ? "rtl" : "ltr"}>
-      <div className="orb orb-blue -left-40 top-10 h-96 w-96 opacity-40" />
       <div className="container relative z-10">
         <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr] lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <div className="badge mb-5"><HelpCircle className="h-3.5 w-3.5" />{copy.eyebrow}</div>
             <h2 id="faq-title" className="text-3xl sm:text-5xl">{copy.title}</h2>
             <p className="mt-5 max-w-xl text-[var(--text-secondary)]">{copy.intro}</p>
             <SpecularLink href={`/${lang}#contact`} className="mt-7 w-full sm:w-auto">

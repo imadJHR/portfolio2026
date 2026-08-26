@@ -30,10 +30,8 @@ export function Portfolio({ lang }) {
   }
   return (
     <section id="portfolio" className="section overflow-hidden">
-      <div className="orb orb-cyan -left-52 top-28 h-[30rem] w-[30rem]" />
       <div className="container">
         <AnimatedSection className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
-          <div className="badge mx-auto mb-4"><Briefcase className="h-3.5 w-3.5" />{isRTL ? "أعمالنا" : "Portfolio"}</div>
           <div className="divider mb-6" />
           <h2>{isRTL ? "مشاريع بواجهة" : "Des projets avec"} <span className="gradient-text">{isRTL ? "تبدو حيّة" : "une interface vivante"}</span></h2>
           <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg">{isRTL ? "عرض بصري غني، بطاقات تفاعلية، وتفاصيل واضحة لكل مشروع." : "Cartes interactives, profondeur visuelle et lecture rapide des résultats — une grille premium inspirée des meilleurs showcases."}</p>

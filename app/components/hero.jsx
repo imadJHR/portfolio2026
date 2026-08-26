@@ -3,11 +3,9 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { MessageCircle, ChevronDown, Play, CheckCircle2, MousePointer2, Gauge, Layers3 } from "lucide-react"
-import { Strands } from "./react-bits/strands"
 import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
 import { openWhatsApp } from "../lib/leads"
 
-const HERO_STRAND_COLORS = ["#24d9ff", "#7567ff", "#ff5bd7"]
 
 export function Hero({ lang }) {
   const isRTL = lang === "ar"
@@ -27,29 +25,9 @@ export function Hero({ lang }) {
 
   return (
     <section ref={sectionRef} id="home" className="hero-section relative min-h-screen overflow-hidden pt-24 sm:pt-28" dir={isRTL ? "rtl" : "ltr"}>
-      <Strands
-        colors={HERO_STRAND_COLORS}
-        count={5}
-        speed={0.52}
-        amplitude={1.18}
-        opacity={0.84}
-        interactive
-        interactionStrength={1.15}
-        className="z-[2]"
-      />
-      <div className="aurora" />
-      <div className="absolute inset-0 grid-pattern opacity-70" />
-      <div className="orb orb-cyan -left-32 top-16 h-[28rem] w-[28rem]" />
-      <div className="orb orb-violet right-[-10rem] top-28 h-[34rem] w-[34rem]" />
-      <div className="orb orb-pink bottom-[-12rem] left-1/2 h-[24rem] w-[24rem]" />
 
       <motion.div style={{ y, opacity }} className="container hero-layout relative z-10 grid items-center">
         <div className="hero-copy">
-          <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .55 }} className="hero-badge badge mb-6 sm:mb-7">
-            <span className="badge-dot" aria-hidden="true" />
-            {isRTL ? "Nemsi Media — استوديو رقمي مغربي بنَفَس عالمي" : "Nemsi Media — studio digital marocain, rendu international"}
-          </motion.div>
-
           <motion.h1 className="hero-title" initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .78, delay: .08, ease: [0.22, 1, 0.36, 1] }}>
             {isRTL ? (
               <><span>مواقع ويب</span><span className="gradient-text">تتحرك، تبيع</span><span className="gradient-text">وتبهر</span></>

@@ -30,10 +30,6 @@ export default function ContactPage() {
         <section className="section" style={{ paddingTop: "120px" }}>
           <div className="container">
             <div className="mx-auto mb-14 max-w-3xl text-center">
-              <div className="badge mx-auto mb-4">
-                <span className="badge-dot" aria-hidden="true" />
-                اتصل بنا
-              </div>
               <div className="divider mb-6" />
               <h1>
                 لنتحدث عن <span className="gradient-text">مشروعك</span>

@@ -80,7 +80,7 @@ function makePalette(colors) {
 }
 
 export function Strands({
-  colors = ["#24d9ff", "#7567ff", "#ff5bd7"],
+  colors = ["#f5b700", "#7c3aed", "#a78bfa"],
   count = 4,
   speed = 0.42,
   amplitude = 1,
