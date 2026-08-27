@@ -42,3 +42,5 @@ next-env.d.ts
 
 # puter app (separate project)
 /puter-ai-chat-app/
+
+.vercel

@@ -7,7 +7,7 @@
     "fr": "FadlloCar - Location de Voitures"
   },
   "category": "service",
-  "image": "/fadllocar.png",
+  "image": "/fadllocar.webp",
   "challenge": {
     "ar": "إنشاء منصة رقمية لوكالة تأجير السيارات لتسهيل عرض الأسطول وجذب العملاء المحليين والسياح في المغرب.",
     "fr": "Créer une plateforme numérique pour une agence de location de voitures afin de faciliter la présentation de la flotte et d'attirer une clientèle locale et touristique au Maroc."
@@ -29,7 +29,7 @@
     "fr": "LA BURRATINA – TRATTORIA & PIZZERIA"
   },
   "category": "vitrine",
-  "image": "/burratina.png",
+  "image": "/burratina.webp",
   "challenge": {
     "ar": "إيصال أصالة المطبخ الإيطالي الدافئ وتسهيل الحجز المباشر عبر الإنترنت",
     "fr": "Communiquer l'authenticité de la cuisine italienne et faciliter la réservation directe en ligne"
@@ -51,7 +51,7 @@
     "fr": "CAFÉ BIANCA - CASABLANCA"
   },
   "category": "vitrine",
-  "image": "/bianca.png",
+  "image": "/bianca.webp",
   "challenge": {
     "ar": "تقديم تجربة طهوية فريدة وعصرية، وتسهيل عملية الحجز المباشر عبر الإنترنت.",
     "fr": "Présenter une expérience culinaire unique et moderne, et faciliter le processus de réservation en ligne."
@@ -73,7 +73,7 @@
     "fr": "Ironz Équipements"
   },
   "category": "ecommerce",
-  "image": "/ironz.png",
+  "image": "/ironz.webp",
   "challenge": {
   "ar": "تطوير منصة تجارة إلكترونية مخصصة لعشاق اللياقة البدنية في المغرب، تجمع بين المنتجات عالية الجودة وتجربة مستخدم سريعة وسهلة.",
   "fr": "Développer une plateforme e-commerce dédiée aux passionnés de fitness au Maroc, combinant produits de haute qualité et expérience utilisateur fluide et rapide."
@@ -95,7 +95,7 @@
     "ar": "ليتر 3 دي شوب / إم جاي باب"
   },
   "category": "ecommerce",
-  "image": "/mj.png",
+  "image": "/mj.webp",
   "challenge": {
     "fr": "Permettre aux entreprises et commerçants de concevoir et commander des enseignes lumineuses sur mesure, tout en garantissant une expérience en ligne intuitive et fiable.",
     "ar": "تمكين الشركات والتجار من تصميم وطلب لافتات مضيئة مخصصة، مع ضمان تجربة مستخدم إلكترونية سلسة وموثوقة."
@@ -117,7 +117,7 @@
     "fr": "Pâtisserie Les Jumeaux Casablanca"
   },
   "category": "ecommerce",
-  "image": "/pat.png",
+  "image": "/pat.webp",
   "challenge": {
     "ar": "عرض أصالة وتنوع الحلويات المغربية بطريقة جذابة وسهلة",
     "fr": "Présenter l'authenticité et la variété des pâtisseries marocaines de manière attractive et simple"
@@ -139,7 +139,7 @@
     "fr": "Firdaous Spa & Massage"
   },
   "category": "vitrine",
-  "image": "/spa.png",
+  "image": "/spa.webp",
   "challenge": {
     "ar": "بناء الثقة وعرض الأجواء الهادئة للخدمات الراقية عبر الإنترنت",
     "fr": "Instaurer la confiance et transmettre l'atmosphère sereine des services haut de gamme en ligne"
@@ -161,7 +161,7 @@
     "fr": "Café & Restaurant La Brioche - Expérience Italienne"
   },
   "category": "ecommerce",
-  "image": "/test.png",
+  "image": "/test.webp",
   "challenge": {
     "ar": "تحويل الزوار إلى زبائن عبر الحجز وعرض الأجواء الدافئة والمطبخ الإيطالي الأصيل",
     "fr": "Convertir les visiteurs en clients par la réservation et transmettre l'ambiance chaleureuse et la cuisine italienne authentique"
@@ -183,7 +183,7 @@
     "fr": "Copine - Marque / Communauté Féminine"
   },
   "category": "ecommerce",
-  "image": "/copine.png",
+  "image": "/copine.webp",
   "challenge": {
     "ar": "بناء علامة تجارية قوية تستهدف جمهوراً نسائياً محدداً وتعزيز التفاعل المجتمعي",
     "fr": "Construire une marque forte ciblant un public féminin spécifique et stimuler l'engagement communautaire"
@@ -205,7 +205,7 @@
     "fr": "L'atelier Tonka - Chocolatier Artisanal"
   },
   "category": "vitrine",
-  "image": "/tonka.png",
+  "image": "/tonka.webp",
   "challenge": {
     "ar": "تسليط الضوء على جودة الحرفية والمكونات الفاخرة لمنتجات الشوكولاتة",
     "fr": "Mettre en valeur la qualité artisanale et les ingrédients haut de gamme des produits de chocolat"
@@ -227,7 +227,7 @@
     "fr": "Sou9 Al Maghreb"
   },
   "category": "vitrine",
-  "image": "/sou9.png",
+  "image": "/sou9.webp",
   "challenge": {
     "ar": "",
     "fr": ""

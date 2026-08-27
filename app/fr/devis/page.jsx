@@ -3,7 +3,7 @@ import Footer from "../../components/footer"
 import QuoteForm from "../../components/quote-form"
 
 export const metadata = {
-  title: "Demande de devis gratuit — Nemsi Media | Agence web Casablanca",
+  title: "Devis gratuit — Nemsi Media | Agence web Casablanca",
   description: "Demandez votre devis gratuit pour votre projet web au Maroc : site vitrine, e-commerce, SEO, branding, automation. Réponse sous 24h.",
   alternates: {
     canonical: "https://www.nemsimedia.ma/fr/devis",

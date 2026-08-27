@@ -37,6 +37,7 @@ export function SocialSidebar({ isRTL = false }) {
           transition={{ delay: 0.5 + i * 0.1 }}
           className="group relative w-9 h-9 rounded-lg bg-[var(--bg-surface)] border border-[var(--border)] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--brand-hover)] hover:border-[rgba(124,58,237,0.3)] transition-all duration-200"
           whileHover={{ scale: 1.1 }}
+          aria-label={link.label}
         >
           <link.icon className="w-3.5 h-3.5" />
           <span className="absolute right-full mr-3 px-2 py-1 rounded-md bg-[var(--bg-card)] border border-[var(--border)] text-xs text-[var(--text)] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">

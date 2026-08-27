@@ -64,7 +64,7 @@ export function Portfolio({ lang }) {
         {selected && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-2 backdrop-blur-md sm:p-4" onClick={() => setSelected(null)}>
           <motion.div initial={{ opacity: 0, scale: .94, y: 22 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: .94, y: 22 }} className="glass-card max-h-[calc(100dvh-1rem)] w-full max-w-3xl overflow-y-auto overscroll-contain sm:max-h-[88dvh]" onClick={e => e.stopPropagation()}>
             <SpecularButton onClick={() => setSelected(null)} variant="ghost" size="icon" className="absolute right-4 top-4 z-10" aria-label={isRTL ? "إغلاق" : "Fermer"}><X className="h-4 w-4" /></SpecularButton>
-            <div className="relative h-48 sm:h-80"><Image src={selected.image || "/placeholder.png"} alt="" fill className="object-cover" sizes="768px" /><div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] to-transparent" /></div>
+            <div className="relative h-48 sm:h-80"><Image src={selected.image || "/placeholder.png"} alt={lang === "ar" && selected.title.ar ? selected.title.ar : selected.title.fr} fill className="object-cover" sizes="768px" /><div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] to-transparent" /></div>
             <div className="space-y-5 p-4 sm:p-8">
               <div className="badge"><span className="badge-dot" aria-hidden="true" />Case study</div>
               <h3 className="text-2xl sm:text-4xl">{isRTL && selected.title.ar ? selected.title.ar : selected.title.fr}</h3>

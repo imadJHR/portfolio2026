@@ -3,19 +3,30 @@ import Navbar from "../../components/navbar"
 import Footer from "../../components/footer"
 import { AnimatedSection } from "../../components/gsap-animations"
 import { SITE_URL } from "../../lib/seo"
-import { Award, Ruler, Zap, Eye, ArrowRight } from "lucide-react"
+import { 
+  Award, 
+  Ruler, 
+  Zap, 
+  Eye, 
+  ArrowLeft, 
+  Sparkles, 
+  ChevronDown, 
+  CheckCircle2, 
+  Star,
+  Quote
+} from "lucide-react"
 
 export const metadata = {
-  title: "من نحن — وكالة ويب راقية الدار البيضاء | نمسي ميديا",
+  title: "من نحن — وكالة ويب راقية بالدار البيضاء | نمسي ميديا",
   description:
-    "تعرف على نيمسي ميديا، وكالة ويب راقية في الدار البيضاء، متخصصة في تصميم مواقع فاخرة والتسويق الرقمي وحلول ويب مخصصة للشركات.",
+    "تعرف على نمسي ميديا، وكالة ويب راقية بالدار البيضاء متخصصة في تصميم المواقع الإلكترونية الفاخرة، والتسويق الرقمي والحلول المخصصة للشركات.",
   openGraph: {
-    title: "من نحن — نيمسي ميديا | وكالة ويب راقية المغرب",
+    title: "من نحن — نمسي ميديا | وكالة ويب راقية في المغرب",
     description:
-      "Agence web premium à Casablanca spécialisée en création de sites internet haut de gamme.",
+      "وكالة ويب متخصصة في إنشاء وتطوير المواقع الإلكترونية الفاخرة والمخصصة بالدار البيضاء.",
     url: `${SITE_URL}/ar/a-propos`,
     locale: "ar_MA",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "من نحن نيمسي ميديا" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "من نحن - نمسي ميديا" }],
   },
   alternates: {
     canonical: `${SITE_URL}/ar/a-propos`,
@@ -29,160 +40,184 @@ export const metadata = {
 
 export default function ArabicAboutPage() {
   const dict = getTranslation("ar")
-  const isRTL = true
 
   const values = [
     {
       number: "01",
-      title: "Excellence",
-      desc:
-        "Nous ne livrons que ce que nous serions fiers de montrer. Chaque pixel est pensé, chaque animation a du sens.",
+      title: "التميز والإتقان",
+      desc: "لا نقدم إلا ما نعتز به. كل بكسل مدروس بعناية، وكل حركة تفاعلية لها هدف واضح يخدم تجربة المستخدم وأهدافك.",
       Icon: Award,
     },
     {
       number: "02",
-      title: "Sur-mesure",
-      desc:
-        "Pas de templates. Chaque projet est unique et mérite une approche, une architecture et un design qui lui sont propres.",
+      title: "تصميم مخصص 100%",
+      desc: "نبتعد تماماً عن القوالب الجاهزة. كل مشروع هو تحفة فريدة تستحق بنية برمجية وتصميماً يجسد هويتها الخاصة.",
       Icon: Ruler,
     },
     {
       number: "03",
-      title: "Performance",
-      desc:
-        "Un site rapide, optimisé SEO, accessible. La technique au service de vos objectifs business, pas l'inverse.",
+      title: "الأداء والسرعة",
+      desc: "مواقع فائقة السرعة، مهيأة لمحركات البحث (SEO)، وسهلة الوصول. نضع التكنولوجيا المتطورة في خدمة أهداف أعمالك.",
       Icon: Zap,
     },
     {
       number: "04",
-      title: "Transparence",
-      desc:
-        "Communication claire, livraisons respectées, budget maîtrisé. Nous construisons une relation de confiance durable.",
+      title: "الشفافية والالتزام",
+      desc: "تواصل واضح، احترام دقيق للمواعيد، وميزانية محددة. نبني علاقات شراكة طويلة الأجل قائمة على الثقة المتبادلة.",
       Icon: Eye,
     },
   ]
 
   const stats = [
-    { value: "Sur mesure", label: "Architecture dédiée, pas de templates génériques" },
-    { value: "24h", label: "Délai de première réponse" },
-    { value: "100%", label: "Design adapté à la marque" },
-    { value: "Maroc", label: "Accompagnement national" },
+    { value: "100%", label: "تطوير مخصص بدون قوالب جاهزة" },
+    { value: "24 ساعة", label: "أقصى أجل للاستجابة والرد" },
+    { value: "100%", label: "تصميم مطابق مع الهوية التجارية" },
+    { value: "المغرب", label: "مرافقة شاملة بكافة المدن" },
   ]
 
   const processSteps = [
     {
-      title: "Découverte",
-      text: "Nous analysons vos objectifs, votre audience et vos contraintes pour cadrer un périmètre précis et éviter les dérives.",
+      step: "01",
+      title: "الاستكشاف والتخطيط",
+      text: "نحلل أهداف مشروعك، جمهورك المستهدف، ونحدد نطاق العمل بدقة لتفادي أي انحراف عن الأهداف المسطرة.",
     },
     {
-      title: "Design",
-      text: "Nous définissons la direction visuelle, la hiérarchie du message et les principes d’interface avant toute intégration.",
+      step: "02",
+      title: "التصميم والتجربة",
+      text: "نحدد التوجه البصري، تراتبية الرسالة، وتجربة المستخدم (UI/UX) بكل عناية قبل البدء في مرحلة التطوير.",
     },
     {
-      title: "Développement",
-      text: "Nous construisons une base technique rapide, maintenable et prête à évoluer avec votre activité.",
+      step: "03",
+      title: "التطوير البرمجي",
+      text: "نبني بنية برمجية حديثة، فائقة السرعة، آمنة ومجهزة لتتطور وتتوسع باستمرار مع نمو نشاطك التجاري.",
     },
     {
-      title: "Lancement",
-      text: "Nous vérifions la performance, le SEO et les parcours clés, puis nous vous accompagnons pour la mise en ligne.",
+      step: "04",
+      title: "الإطلاق والمرافقة",
+      text: "نفحص كفاءة الأداء، تحسين محركات البحث، ونرافقك خطوة بخطوة لضمان إطلاق موقعك بنجاح وبأعلى معايير الجودة.",
     },
   ]
 
   const faqs = [
     {
-      q: "Quels délais pour un projet ?",
-      a: "Une landing page peut être livrée plus rapidement qu’un site vitrine complet ou une boutique. Le calendrier est fixé avant le démarrage et inclut les étapes de design, développement, contenu et validation.",
+      q: "ما هي المدة الزمنية المتوقعة لإنجاز المشروع؟",
+      a: "تختلف المدة حسب حجم المشروع؛ صفحة الهبوط تُنجز بسرعة أكبر مقارنة بالمواقع التعريفية الكاملة أو المتاجر الإلكترونية. نحدد جدولاً زمنياً دقيقاً يتضمن مرحلة التصميم، التطوير، والمراجعة قبل البدء.",
     },
     {
-      q: "Quelles technologies utilisez-vous ?",
-      a: "Nous travaillons principalement avec Next.js, React, Node.js, MongoDB et Tailwind pour livrer des interfaces rapides, structurées et faciles à faire évoluer.",
+      q: "ما هي التقنيات البرمجية التي تعتمدون عليها؟",
+      a: "نعتمد على التقنيات الحديثة والأكثر كفاءة عالمياً مثل Next.js و React و Node.js و MongoDB و Tailwind CSS لضمان تقديم واجهات فائقة السرعة، آمنة، وسهلة التطوير مستقبلاً.",
     },
     {
-      q: "Intervenez-vous hors Casablanca ?",
-      a: "Oui. Nous sommes basés à Casablanca et accompagnons des projets dans tout le Maroc, avec un suivi à distance simple et réactif.",
+      q: "هل تقدمون خدماتكم للشركات خارج مدينة الدار البيضاء؟",
+      a: "نعم بالتأكيد! رغم تواجد مقرنا الرئيسي بالدار البيضاء، إلا أننا نرافق عملاءنا في كافة أنحاء المغرب وخارجه عبر تواصل رقمي سلس وفعال.",
     },
     {
-      q: "Comment sont fixés les budgets ?",
-      a: "Le budget dépend du périmètre, du nombre de pages, des fonctionnalités et du niveau de design. Après un échange court, nous proposons un devis clair et adapté.",
+      q: "كيف يتم تحديد ميزانية وتكلفة المشروع؟",
+      a: "تعتمد التكلفة على متطلبات المشروع، عدد الصفحات، الميزات الخاصة والمستوى الفني للتصميم. بعد جلسة استكشافية قصيرة، نقدم لك عرض سعر شفافاً ومفصلاً يناسب تطلعاتك.",
     },
   ]
 
   const clients = [
     {
-      name: "Chocochino Café",
-      role: "Gérant",
+      name: "شوكوتشينو كافيه",
+      role: "المدير العام",
       testimonial:
-        "Nemsi Media a parfaitement capturé l'identité de notre café. Le site est visuellement époustouflant et nos commandes en ligne ont augmenté de 35% dès le lancement.",
+        "نجحت نمسي ميديا في تجسيد هويتنا التجارية بشكل استثنائي. الموقع جذاب للغاية وسجلنا زيادة بنسبة 35% في الطلبات عبر الإنترنت فور الإطلاق.",
     },
     {
-      name: "Noble West Luxe Dates",
-      role: "Propriétaire",
+      name: "نوبل وست لتمور الفاخرة",
+      role: "المالك",
       testimonial:
-        "Un site d'exception à la hauteur de nos dates premium. Le design est luxueux, la navigation fluide, et nous avons constaté une hausse significative du panier moyen.",
+        "موقع إلكتروني فاخر يرتقي لمستوى منتجاتنا الراقية. التصميم راقٍ والتصفح سلس للغاية، مما انعكس إيجاباً على متوسط قيمة المبيعات.",
     },
     {
-      name: "Fadlo Car",
-      role: "Directeur",
+      name: "فادلو كار لتأجير السيارات",
+      role: "المدير التنفيذي",
       testimonial:
-        "L'équipe a transformé notre concept automobile en une expérience digitale premium. Bien au-delà de nos attentes en termes de crédibilité et de conversion.",
+        "حوّل الفريق رؤيتنا إلى تجربة رقمية فاخرة تجاوزت توقعاتنا، وساهت بشكل مباشر في تعزيز مصداقيتنا وجذب عملاء جدد.",
     },
   ]
 
   return (
-    <div className="rtl" dir="rtl">
+    <div className="rtl font-sans text-[var(--text)] bg-[var(--bg)] min-h-screen selection:bg-[var(--brand)] selection:text-white" dir="rtl">
       <Navbar lang="ar" t={dict} />
 
-      {/* Hero */}
-      <section className="relative flex min-h-[50svh] items-center justify-center overflow-hidden px-0 pb-12 pt-24 sm:pb-16 sm:pt-28">
-        <div className="absolute inset-0 grid-pattern opacity-20" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-[var(--brand)]/5 blur-[120px] rounded-full" />
-        <div className="container relative z-[2] text-center">
+      {/* Hero Section */}
+      <section className="relative flex min-h-[60svh] items-center justify-center overflow-hidden px-4 pb-16 pt-28 sm:pb-20 sm:pt-36">
+        <div className="absolute inset-0 grid-pattern opacity-15 pointer-events-none" />
+        <div className="absolute top-1/4 right-1/3 w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] bg-[var(--brand)]/10 blur-[130px] rounded-full pointer-events-none" />
+        
+        <div className="container relative z-10 text-center max-w-5xl mx-auto">
           <AnimatedSection>
-            <h1 className="mb-6 text-[clamp(2.35rem,11vw,3.75rem)] font-bold">
-              الوكالة التي تجمع بين
-              <span className="gradient-text">الرقمنة والرفاهية</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--brand)]/20 bg-[var(--brand-soft)]/30 text-[var(--brand)] text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md">
+              <Sparkles className="w-4 h-4" />
+              <span>وكالة تصميم مواقع فاخرة بالدار البيضاء</span>
+            </div>
+            
+            <h1 className="mb-6 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              الوكالة الرقمية التي تجمع بين{" "}
+              <span className="gradient-text block sm:inline mt-2 sm:mt-0">
+                الابتكار والرفاهية
+              </span>
             </h1>
           </AnimatedSection>
-          <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            Basée à Casablanca, Nemsi Media conçoit des expériences web haut de gamme
-            pour les marques qui veulent marquer leur époque. Nous ne faisons pas du web,
-            nous faisons du sur-mesure digital.
-          </p>
-          <p className="mx-auto mt-5 max-w-3xl text-sm font-medium text-[var(--text-secondary)]">
-            Notre équipe travaille avec Next.js, React, Node.js, MongoDB et Tailwind pour
-            concevoir des interfaces rapides, structurées et évolutives, pensées pour des secteurs
-            exigeants : restauration, immobilier, automobile, e-commerce et services premium.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/ar/contact"
-              className="btn btn-primary text-lg"
-            >
-              Discutons de votre projet
-            </a>
-            <a
-              href="/ar/services"
-              className="btn btn-ghost text-lg"
-            >
-              Voir nos services
-            </a>
-          </div>
+
+          <AnimatedSection delay={0.1}>
+            <p className="text-base sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+              انطلاقاً من الدار البيضاء، تبتكر <strong className="text-[var(--text)] font-semibold">نمسي ميديا</strong> تجارب ويب استثنائية وعالية الجودة للعلامات التجارية الطموحة. نحن لا نصمم مجرد مواقع، بل نصنع حضوراً رقمياً مخصصاً يترك انطباعاً يدوم.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <p className="mx-auto mt-4 max-w-2xl text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+              يعتمد فريقنا على أحدث التقنيات مثل Next.js و React و Node.js و Tailwind لبناء واجهات فائقة السرعة، مصممة خصيصاً للقطاعات الفاخرة: المطاعم، العقارات، السيارات، التجارة الإلكترونية والخدمات الراقية.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.3}>
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="/ar/contact"
+                className="btn btn-primary text-base sm:text-lg w-full sm:w-auto px-8 py-3.5 shadow-lg shadow-[var(--brand)]/20 hover:scale-[1.02] transition-transform"
+              >
+                <span>ابدأ مشروعك معنا</span>
+                <ArrowLeft className="w-5 h-5 mr-2" />
+              </a>
+              <a
+                href="/ar/services"
+                className="btn btn-ghost text-base sm:text-lg w-full sm:w-auto px-8 py-3.5 border border-[var(--border)] hover:bg-[var(--bg-alt)]"
+              >
+                استكشف خدماتنا
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="section relative">
+      {/* Values Section */}
+      <section className="section relative py-16 sm:py-24">
         <div className="container">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2 md:gap-8">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4">
+              قيمنا التي تشكّل <span className="gradient-text">تميزنا</span>
+            </h2>
+            <p className="text-[var(--text-secondary)] text-sm sm:text-base">
+              مبادئ ثابتة نعتمد عليها في كل مشروع لضمان تقديم الأفضل لعملاءنا.
+            </p>
+          </AnimatedSection>
+
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
             {values.map((v, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="card-accent h-full p-5 sm:p-8">
-                  <span className="text-4xl font-bold text-[var(--brand)]/20 font-serif">{v.number}</span>
-                  <div className="mt-2 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--brand-soft)] text-[var(--brand)]">
-                    <v.Icon className="h-5 w-5" />
+                <div className="card-accent h-full p-6 sm:p-8 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] hover:border-[var(--brand)]/40 transition-all duration-300 relative overflow-hidden group">
+                  <span className="absolute top-4 left-6 text-4xl sm:text-5xl font-black text-[var(--brand)]/10 group-hover:text-[var(--brand)]/20 transition-colors">
+                    {v.number}
+                  </span>
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--brand)]/20 bg-[var(--brand-soft)] text-[var(--brand)]">
+                    <v.Icon className="h-6 w-6" />
                   </div>
-                  <h2 className="text-xl font-bold text-balance" style={{ textWrap: 'balance' }}>{v.title}</h2>
-                  <p className="text-[var(--text-secondary)] leading-relaxed">{v.desc}</p>
+                  <h3 className="text-xl font-bold mb-3 text-[var(--text)]">{v.title}</h3>
+                  <p className="text-[var(--text-secondary)] text-sm sm:text-base leading-relaxed">{v.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -190,39 +225,54 @@ export default function ArabicAboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="pb-20">
+      {/* Stats Section */}
+      <section className="py-12 sm:py-16 bg-[var(--bg-alt)]/50 border-y border-[var(--border)]">
         <div className="container">
-          <div className="divider mb-16" />
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4">
             {stats.map((s, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="text-center">
-                  <div className="mb-2 break-words font-serif text-3xl font-bold sm:text-5xl gradient-text">{s.value}</div>
-                  <div className="divider mx-auto mb-2" />
-                  <div className="text-sm text-[var(--text-muted)] uppercase tracking-wider">{s.label}</div>
+                <div className="text-center p-4">
+                  <div className="mb-2 font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-text">
+                    {s.value}
+                  </div>
+                  <div className="h-0.5 w-8 bg-[var(--brand)]/30 mx-auto mb-3" />
+                  <div className="text-xs sm:text-sm font-medium text-[var(--text-secondary)] leading-tight">
+                    {s.label}
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
-          <div className="divider mt-16" />
         </div>
       </section>
 
-      {/* Process */}
-      <section className="section relative">
+      {/* Process Section */}
+      <section className="section relative py-16 sm:py-24">
         <div className="container">
-          <AnimatedSection className="mx-auto max-w-3xl text-center mb-10 sm:mb-14">
-            <h2 className="mb-4 text-[clamp(2rem,5vw,3rem)] font-bold">Notre <span className="gradient-text">méthode</span></h2>
-            <p className="text-[var(--text-secondary)]">Un parcours cadré pour aller vite sans sacrifier la qualité.</p>
+          <AnimatedSection className="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
+            <h2 className="mb-4 text-2xl sm:text-4xl font-bold">
+              منهجية العمل <span className="gradient-text">المحكمة</span>
+            </h2>
+            <p className="text-[var(--text-secondary)] text-sm sm:text-base">
+              مسار واضح ومدروس لضمان السرعة في التنفيذ بدون المساومة على الجودة.
+            </p>
           </AnimatedSection>
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, i) => (
-              <AnimatedSection key={i} delay={i * 0.05}>
-                <div className="card h-full p-6 text-left">
-                  <span className="text-xs font-black uppercase tracking-[.18em] text-[var(--brand)]">Étape {String(i + 1).padStart(2, '0')}</span>
-                  <h3 className="mt-3 text-lg font-bold text-balance" style={{ textWrap: 'balance' }}>{step.title}</h3>
-                  <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">{step.text}</p>
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="card h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] hover:shadow-lg transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[var(--brand-soft)] text-[var(--brand)]">
+                        المرحلة {step.step}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 text-[var(--text)]">{step.title}</h3>
+                    <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                      {step.text}
+                    </p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
@@ -230,23 +280,70 @@ export default function ArabicAboutPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section relative">
+      {/* Testimonials / Credibility Section */}
+      <section className="py-16 sm:py-24 bg-[var(--bg-alt)] border-y border-[var(--border)] relative overflow-hidden">
+        <div className="container relative z-10">
+          <AnimatedSection className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4">
+              شركاء النجاح <span className="gradient-text">وثقتهم بنا</span>
+            </h2>
+            <p className="text-[var(--text-secondary)] text-sm sm:text-base">
+              نفخر بمرافقة أفضل العلامات التجارية وتطوير حضورها الرقمي.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {clients.map((c, i) => (
+              <AnimatedSection key={i} delay={i * 0.15}>
+                <div className="glass-card p-6 sm:p-8 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]/80 backdrop-blur-md flex flex-col justify-between h-full hover:border-[var(--brand)]/30 transition-all">
+                  <div>
+                    <div className="flex gap-1 text-amber-400 mb-4">
+                      {[...Array(5)].map((_, idx) => (
+                        <Star key={idx} className="w-4 h-4 fill-amber-400" />
+                      ))}
+                    </div>
+                    <blockquote className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed mb-6 italic">
+                      “{c.testimonial}”
+                    </blockquote>
+                  </div>
+                  <div className="pt-4 border-t border-[var(--border)]/60 flex items-center justify-between">
+                    <div>
+                      <h4 className="font-bold text-sm sm:text-base text-[var(--text)]">{c.name}</h4>
+                      <p className="text-xs text-[var(--text-muted)]">{c.role}</p>
+                    </div>
+                    <Quote className="w-8 h-8 text-[var(--brand)]/20" />
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section relative py-16 sm:py-24">
         <div className="container">
           <div className="mx-auto max-w-3xl">
-            <AnimatedSection className="mb-10 text-center">
-              <h2 className="mb-3 text-[clamp(2rem,5vw,3rem)] font-bold">Questions <span className="gradient-text">fréquentes</span></h2>
-              <p className="text-[var(--text-secondary)]">Les réponses essentielles pour avancer sereinement.</p>
+            <AnimatedSection className="mb-12 text-center">
+              <h2 className="text-2xl sm:text-4xl font-bold mb-3">
+                الأسئلة <span className="gradient-text">الشائعة</span>
+              </h2>
+              <p className="text-[var(--text-secondary)] text-sm sm:text-base">
+                إجابات عن أهم الاستفسارات لمساعدتك في اتخاذ القرار المناسب.
+              </p>
             </AnimatedSection>
-            <div className="flex flex-col gap-3">
+
+            <div className="flex flex-col gap-4">
               {faqs.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 0.05}>
-                  <details className="group rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-5 open:shadow-[var(--shadow-md)]">
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
-                      <span className="font-semibold">{item.q}</span>
-                      <ArrowRight className="h-4 w-4 shrink-0 transition group-open:rotate-90 text-[var(--text-muted)]" />
+                  <details className="group rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-5 sm:p-6 transition-all [&_summary::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer items-center justify-between gap-4 font-bold text-base sm:text-lg text-[var(--text)]">
+                      <span>{item.q}</span>
+                      <ChevronDown className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:-rotate-180 text-[var(--brand)]" />
                     </summary>
-                    <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">{item.a}</p>
+                    <p className="mt-4 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border)]/50 pt-4">
+                      {item.a}
+                    </p>
                   </details>
                 </AnimatedSection>
               ))}
@@ -255,81 +352,38 @@ export default function ArabicAboutPage() {
         </div>
       </section>
 
-      {/* Credibility Section */}
-      <section className="pb-24 bg-[var(--bg-alt)]">
-        <div className="container">
-          <div className="mx-auto max-w-5xl text-center">
+      {/* Call To Action (CTA) */}
+      <section className="section relative overflow-hidden py-16 sm:py-24">
+        <div className="container relative z-10">
+          <div className="relative max-w-4xl mx-auto rounded-3xl p-8 sm:p-14 text-center border border-[var(--border)] bg-gradient-to-b from-[var(--bg-card)] via-[var(--bg-alt)] to-[var(--bg-card)] shadow-2xl overflow-hidden">
+            <div className="absolute top-0 right-1/2 translate-x-1/2 w-96 h-96 bg-[var(--brand)]/10 blur-[100px] rounded-full pointer-events-none" />
+            
             <AnimatedSection>
-              <h2 className="mb-8 text-[clamp(2rem,5vw,3rem)] font-bold">
-                {dict.credibility.trusted_by}
-                <span className="gradient-text">{dict.credibility.clients}</span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold mb-6 leading-tight">
+                جاهز للارتقاء بحضورك الرقمي إلى{" "}
+                <span className="gradient-text block sm:inline mt-1 sm:mt-0">المستوى التالي؟</span>
               </h2>
-            </AnimatedSection>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center">
-              {clients.map((c, i) => (
-                <AnimatedSection key={i} delay={i * 0.15}>
-                  <div className="glass-card p-6 sm:p-8 text-center border">
-                    {/* Inline SVG brand mark using CSS variables */}
-                    <div className="mx-auto mb-6 inline-block">
-                      <svg
-                        width="80"
-                        height="80"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="var(--brand)"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mx-auto"
-                      >
-                        <rect x="3" y="11" width="18" height="11" rx="2" />
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </div>
-                    <p className="text-base font-medium text-[var(--text)] mb-4">
-                      {c.name}
-                    </p>
-                    <p className="text-sm text-[var(--text-secondary)] mb-6">
-                      {c.role}
-                    </p>
-                    <blockquote className="italic text-lg leading-relaxed text-[var(--text-secondary)]">
-                      “{c.testimonial}”
-                    </blockquote>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="section relative overflow-hidden">
-        <div className="container relative z-10 py-24 sm:py-32 bg-gradient-to-b from-[var(--bg)] via-[var(--bg-alt)] to-[var(--bg)]">
-          <div className="relative max-w-2xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="mb-6 text-[clamp(2rem,5vw,3rem)] font-bold">
-                Prêt à élever votre présence digitale ?
-              </h2>
-              <p className="text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
-                Discutons de votre projet et découvrez comment nous pouvons aider votre marque à se démarquer.
+              <p className="text-sm sm:text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto leading-relaxed">
+                دعنا نناقش تفاصيل مشروعك ونكتشف كيف يمكننا مساعدة علامتك التجارية على البروز والتميز في السوق.
               </p>
             </AnimatedSection>
-            <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/ar/contact"
-                className="btn btn-primary text-lg"
-              >
-                Prenez rendez-vous
-              </a>
-              <a
-                href="/ar/services"
-                className="btn btn-ghost text-lg"
-              >
-                En savoir plus
-              </a>
-            </div>
+
+            <AnimatedSection delay={0.1}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="/ar/contact"
+                  className="btn btn-primary text-base sm:text-lg w-full sm:w-auto px-8 py-3.5 shadow-lg shadow-[var(--brand)]/20"
+                >
+                  احجز جلسة استشارية
+                </a>
+                <a
+                  href="/ar/services"
+                  className="btn btn-ghost text-base sm:text-lg w-full sm:w-auto px-8 py-3.5 border border-[var(--border)]"
+                >
+                  تعرف على خدماتنا
+                </a>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
