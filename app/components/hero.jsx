@@ -74,7 +74,7 @@ export function Hero({ lang }) {
                   <div className="hero-showcase-heading">
                     <div>
                       <p>{isRTL ? "نظام رقمي متكامل" : "Expérience digitale"}</p>
-                      <h3>{isRTL ? "علامتك، بتجربة أقوى." : "Votre marque, orchestrée."}</h3>
+                      <p className="text-lg font-semibold">{isRTL ? "علامتك، بتجربة أقوى." : "Votre marque, orchestrée."}</p>
                     </div>
                     <span><span className="status-dot" aria-hidden="true" /> Live</span>
                   </div>
@@ -94,7 +94,7 @@ export function Hero({ lang }) {
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--brand-soft)] text-[var(--brand-hover)]"><MousePointer2 className="h-4 w-4" /></div>
                   <div className="min-w-0">
                     <p className="text-[10px] font-bold uppercase tracking-[.16em] text-[var(--brand-2)]">{isRTL ? "جاهز للتحويل" : "Pensé pour convertir"}</p>
-                    <h3 className="mt-1 text-base sm:text-lg">{isRTL ? "تجربة سريعة وواضحة" : "Clair, rapide, mémorable"}</h3>
+                    <p className="mt-1 text-base sm:text-lg font-semibold">{isRTL ? "تجربة سريعة وواضحة" : "Clair, rapide, mémorable"}</p>
                     <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">{isRTL ? "كل تفاعل يخدم رسالة علامتك وأهداف مشروعك." : "Chaque interaction sert votre message et vos objectifs commerciaux."}</p>
                   </div>
                 </div>

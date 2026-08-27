@@ -133,7 +133,7 @@ export default function AboutPage() {
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="card-accent h-full p-5 sm:p-8">
                   <span className="text-4xl font-bold text-[var(--brand)]/20 font-serif">{v.number}</span>
-                  <h3 className="text-xl font-bold mt-2 mb-3">{v.title}</h3>
+                  <h2 className="text-xl font-bold mt-2 mb-3">{v.title}</h2>
                   <p className="text-[var(--text-secondary)] leading-relaxed">{v.desc}</p>
                 </div>
               </AnimatedSection>
