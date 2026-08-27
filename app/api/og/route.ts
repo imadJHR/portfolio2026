@@ -2,9 +2,8 @@ import { NextResponse } from "next/server"
 import path from "path"
 import fs from "fs"
 
-export const contentType = "image/png"
-export const size = { width: 1200, height: 630 }
-export const alt = "Nemsi Media — Agence web à Casablanca"
+export const runtime = "nodejs"
+export const dynamic = "force-dynamic"
 
 export async function GET() {
   try {

@@ -2,8 +2,9 @@ import path from "node:path";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  turbopack: {
-    root: path.resolve(process.cwd()),
+  webpack: (config) => {
+    config.resolve.alias["@"] = path.resolve(process.cwd());
+    return config;
   },
   async headers() {
     return [

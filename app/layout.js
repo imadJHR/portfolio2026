@@ -79,7 +79,7 @@ export const metadata = {
     description: descriptions.fr,
     images: [
       {
-        url: "/opengraph-image",
+        url: "https://nemsimedia.com/api/og",
         width: 1200,
         height: 630,
         alt: "Nemsi Media — Agence web à Casablanca",
@@ -87,10 +87,10 @@ export const metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Nemsi Media — Agence web à Casablanca",
-    description: descriptions.fr,
-    images: ["/opengraph-image"],
+  card: "summary_large_image",
+  title: "Nemsi Media — Agence web à Casablanca",
+  description: descriptions.fr,
+  images: ["https://nemsimedia.com/api/og"],
   },
   other: {
     "geo.region": "MA-CAS",
