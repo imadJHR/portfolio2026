@@ -33,17 +33,12 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/",
-        destination: "/fr",
-        permanent: true,
-      },
       ...["fr", "ar"].map((lang) => ({
         source: `/${lang}/insights/seo-maroc-2025`,
         destination: `/${lang}/insights/seo-maroc-2026`,
         permanent: true,
       })),
-    ];
+    ]
   },
 };
 
