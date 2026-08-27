@@ -3,11 +3,12 @@ import Navbar from "../../components/navbar"
 import Footer from "../../components/footer"
 import { AnimatedSection } from "../../components/gsap-animations"
 import { SITE_URL } from "../../lib/seo"
+import { Award, Ruler, Zap, Eye, ArrowRight } from "lucide-react"
 
 export const metadata = {
   title: "من نحن — وكالة ويب راقية الدار البيضاء | نمسي ميديا",
   description:
-    "تعرف على نيمسي ميديا، وكالة ويب راقية في الدار البيضاء. Expertise en création de sites haut de gamme, marketing digital et solutions web sur-mesure pour entreprises exigeantes.",
+    "تعرف على نيمسي ميديا، وكالة ويب راقية في الدار البيضاء، متخصصة في تصميم مواقع فاخرة والتسويق الرقمي وحلول ويب مخصصة للشركات.",
   openGraph: {
     title: "من نحن — نيمسي ميديا | وكالة ويب راقية المغرب",
     description:
@@ -36,32 +37,74 @@ export default function ArabicAboutPage() {
       title: "Excellence",
       desc:
         "Nous ne livrons que ce que nous serions fiers de montrer. Chaque pixel est pensé, chaque animation a du sens.",
+      Icon: Award,
     },
     {
       number: "02",
       title: "Sur-mesure",
       desc:
         "Pas de templates. Chaque projet est unique et mérite une approche, une architecture et un design qui lui sont propres.",
+      Icon: Ruler,
     },
     {
       number: "03",
       title: "Performance",
       desc:
         "Un site rapide, optimisé SEO, accessible. La technique au service de vos objectifs business, pas l'inverse.",
+      Icon: Zap,
     },
     {
       number: "04",
       title: "Transparence",
       desc:
         "Communication claire, livraisons respectées, budget maîtrisé. Nous construisons une relation de confiance durable.",
+      Icon: Eye,
     },
   ]
 
   const stats = [
-    { value: "FR / AR", label: "Accompagnement bilingue" },
+    { value: "Sur mesure", label: "Architecture dédiée, pas de templates génériques" },
     { value: "24h", label: "Délai de première réponse" },
     { value: "100%", label: "Design adapté à la marque" },
     { value: "Maroc", label: "Accompagnement national" },
+  ]
+
+  const processSteps = [
+    {
+      title: "Découverte",
+      text: "Nous analysons vos objectifs, votre audience et vos contraintes pour cadrer un périmètre précis et éviter les dérives.",
+    },
+    {
+      title: "Design",
+      text: "Nous définissons la direction visuelle, la hiérarchie du message et les principes d’interface avant toute intégration.",
+    },
+    {
+      title: "Développement",
+      text: "Nous construisons une base technique rapide, maintenable et prête à évoluer avec votre activité.",
+    },
+    {
+      title: "Lancement",
+      text: "Nous vérifions la performance, le SEO et les parcours clés, puis nous vous accompagnons pour la mise en ligne.",
+    },
+  ]
+
+  const faqs = [
+    {
+      q: "Quels délais pour un projet ?",
+      a: "Une landing page peut être livrée plus rapidement qu’un site vitrine complet ou une boutique. Le calendrier est fixé avant le démarrage et inclut les étapes de design, développement, contenu et validation.",
+    },
+    {
+      q: "Quelles technologies utilisez-vous ?",
+      a: "Nous travaillons principalement avec Next.js, React, Node.js, MongoDB et Tailwind pour livrer des interfaces rapides, structurées et faciles à faire évoluer.",
+    },
+    {
+      q: "Intervenez-vous hors Casablanca ?",
+      a: "Oui. Nous sommes basés à Casablanca et accompagnons des projets dans tout le Maroc, avec un suivi à distance simple et réactif.",
+    },
+    {
+      q: "Comment sont fixés les budgets ?",
+      a: "Le budget dépend du périmètre, du nombre de pages, des fonctionnalités et du niveau de design. Après un échange court, nous proposons un devis clair et adapté.",
+    },
   ]
 
   const clients = [
@@ -105,9 +148,10 @@ export default function ArabicAboutPage() {
             pour les marques qui veulent marquer leur époque. Nous ne faisons pas du web,
             nous faisons du sur-mesure digital.
           </p>
-          <p className="mx-auto mt-5 max-w-2xl text-sm font-medium text-[var(--text-muted)]">
-            Nemsi Media est également identifiée sous l'écriture NemsiMedia, correspondant
-            au domaine nemsimedia.ma.
+          <p className="mx-auto mt-5 max-w-3xl text-sm font-medium text-[var(--text-secondary)]">
+            Notre équipe travaille avec Next.js, React, Node.js, MongoDB et Tailwind pour
+            concevoir des interfaces rapides, structurées et évolutives, pensées pour des secteurs
+            exigeants : restauration, immobilier, automobile, e-commerce et services premium.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -134,7 +178,10 @@ export default function ArabicAboutPage() {
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="card-accent h-full p-5 sm:p-8">
                   <span className="text-4xl font-bold text-[var(--brand)]/20 font-serif">{v.number}</span>
-                  <h2 className="text-xl font-bold mt-2 mb-3">{v.title}</h2>
+                  <div className="mt-2 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--brand-soft)] text-[var(--brand)]">
+                    <v.Icon className="h-5 w-5" />
+                  </div>
+                  <h2 className="text-xl font-bold text-balance" style={{ textWrap: 'balance' }}>{v.title}</h2>
                   <p className="text-[var(--text-secondary)] leading-relaxed">{v.desc}</p>
                 </div>
               </AnimatedSection>
@@ -159,6 +206,52 @@ export default function ArabicAboutPage() {
             ))}
           </div>
           <div className="divider mt-16" />
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="section relative">
+        <div className="container">
+          <AnimatedSection className="mx-auto max-w-3xl text-center mb-10 sm:mb-14">
+            <h2 className="mb-4 text-[clamp(2rem,5vw,3rem)] font-bold">Notre <span className="gradient-text">méthode</span></h2>
+            <p className="text-[var(--text-secondary)]">Un parcours cadré pour aller vite sans sacrifier la qualité.</p>
+          </AnimatedSection>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, i) => (
+              <AnimatedSection key={i} delay={i * 0.05}>
+                <div className="card h-full p-6 text-left">
+                  <span className="text-xs font-black uppercase tracking-[.18em] text-[var(--brand)]">Étape {String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="mt-3 text-lg font-bold text-balance" style={{ textWrap: 'balance' }}>{step.title}</h3>
+                  <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">{step.text}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section relative">
+        <div className="container">
+          <div className="mx-auto max-w-3xl">
+            <AnimatedSection className="mb-10 text-center">
+              <h2 className="mb-3 text-[clamp(2rem,5vw,3rem)] font-bold">Questions <span className="gradient-text">fréquentes</span></h2>
+              <p className="text-[var(--text-secondary)]">Les réponses essentielles pour avancer sereinement.</p>
+            </AnimatedSection>
+            <div className="flex flex-col gap-3">
+              {faqs.map((item, i) => (
+                <AnimatedSection key={i} delay={i * 0.05}>
+                  <details className="group rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-5 open:shadow-[var(--shadow-md)]">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
+                      <span className="font-semibold">{item.q}</span>
+                      <ArrowRight className="h-4 w-4 shrink-0 transition group-open:rotate-90 text-[var(--text-muted)]" />
+                    </summary>
+                    <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">{item.a}</p>
+                  </details>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
