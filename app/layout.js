@@ -114,9 +114,6 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Nemsi Media — AI-readable information" />
-        <link rel="alternate" hreflang="fr" href={`${SITE_URL}/fr`} />
-        <link rel="alternate" hreflang="ar" href={`${SITE_URL}/ar`} />
-        <link rel="alternate" hreflang="x-default" href={`${SITE_URL}/fr`} />
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-HHESPWMXQF"

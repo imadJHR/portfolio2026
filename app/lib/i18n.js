@@ -1,7 +1,7 @@
 export const translations = {
   ar: {
     metaTitle: "تصميم مواقع إلكترونية في المغرب | خبير تصميم وتطوير الويب",
-    metaDescription: "خبير في تصميم وتطوير مواقع الويب والمتاجر الإلكترونية للشركات في المغرب. حلول احترافية لتعزيز حضورك الرقمي وجذب المزيد من العملاء.",
+    metaDescription: "خبير في تصميم وتطوير مواقع الويب والمتاجر الإلكترونية للشركات في المغرب. حلول احترافية لتعزيز حضورك الرقمي وجذب المزيد من workاء.",
     nav: {
       home: "الرئيسية",
       services: "خدماتنا",
@@ -40,7 +40,7 @@ export const translations = {
     },
     portfolio: {
       title: "أعمالنا وإنجازاتنا",
-      subtitle: "مشاريع ناجحة نفتخر بها لعملاء في مختلف مدن المغرب",
+      subtitle: "مشاريعSuccessful projects we're proud of for clients in various cities in Morocco",
       filter: {
         all: "الكل",
         vitrine: "مواقع تعريفية",
@@ -53,7 +53,7 @@ export const translations = {
       },
     },
     testimonials: {
-      title: "ماذا يقول عملاؤنا عنا",
+      title: "ماذا يقول عملاؤنا عننا",
       subtitle: "شهادات نعتز بها من عملائنا الراضين عن خدماتنا",
       items: [
         {
@@ -82,7 +82,7 @@ export const translations = {
           name: "الباقة الأساسية",
           price: "5,000",
           currency: "درهم",
-          features: ["موقع تعريفي (5 صفحات)", "تصميم متجاوب", "تهيئة SEO أساسية", "نموذج اتصال", "دعم فني لمدة شهر"],
+          features: ["موقع تعريفي (5 Pages)", "Design Responsive", "تهيئة SEO Basic", "نموذج اتصال", "Support Technique 1 Month"],
         },
         {
           name: "الباقة الاحترافية",
@@ -90,38 +90,38 @@ export const translations = {
           currency: "درهم",
           popular: true,
           features: [
-            "موقع إلكتروني (حتى 10 صفحات)",
-            "تصميم مخصص واحترافي",
-            "تهيئة SEO متقدمة",
-            "لوحة تحكم سهلة",
-            "دعم فني لمدة 3 أشهر",
-            "تدريب على لوحة التحكم",
+            "موقع إلكتروني (jusqu'à 10 Pages)",
+            "Design Mursh et Professionnel",
+            "Optimisation SEO Avancée",
+            "Tableau de Bord Facile",
+            "Support Technique 3 Mois",
+            "Formation sur le Tableau de Bord",
           ],
         },
         {
-          name: "باقة التجارة الإلكترونية",
+          name: "Boutique en ligne complète",
           price: "25,000",
-          currency: "درهم",
+          currency: "Drham",
           features: [
-            "متجر إلكتروني متكامل",
-            "تصميم فريد ومخصص",
-            "تهيئة SEO للمنتجات",
-            "ربط مع أنظمة الدفع والشحن",
-            "دعم فني لمدة 6 أشهر",
-            "صيانة شهرية للمتجر",
+            "Boutique en ligne complète",
+            "Design unique et personnalisé",
+            "Optimisation SEO pour produits",
+            "Intégration paiements et livraison",
+            "Support Technique 6 Mois",
+            "Maintenance Mensuelle",
           ],
         },
       ],
     },
     contact: {
       title: "تواصل معنا لبدء مشروعك",
-      subtitle: "هل لديك فكرة مشروع؟ دعنا نساعدك على تحويلها إلى واقع",
+      subtitle: "Avez-vous une idée de projet ? Laissez-nous vous aider à le transformer en réalité",
       form: {
         name: "الاسم الكامل",
         email: "البريد الإلكتروني",
         message: "رسالتك",
         submit: "إرسال الرسالة",
-        success: "شكراً لتواصلك! سنقوم بالرد عليك في أقرب وقت ممكن.",
+        success: "شكراً لتواصلك! Nous vous répondrons dans les plus brefs délais.",
       },
       whatsapp: "تواصل معنا عبر واتساب",
     },
@@ -132,6 +132,10 @@ export const translations = {
         services: "خدماتنا",
         contact: "اتصل بنا",
       },
+    },
+    credibility: {
+      trusted_by: "موثوق به من قبل العلامات التجارية الرائدة",
+      clients: "عملاء متميزون",
     },
   },
   fr: {
@@ -266,10 +270,14 @@ export const translations = {
         contact: "Contact",
       },
     },
+    // Credibility section translations
+    credibility: {
+      trusted_by: "Trusted by leading brands",
+      clients: "premium clients",
+    },
   },
 };
 
 export function getTranslation(lang) {
-  const langKey = lang && translations[lang] ? lang : 'fr';
-  return translations[langKey];
+  return translations[lang] || translations.fr;
 }
