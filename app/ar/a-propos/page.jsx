@@ -111,13 +111,13 @@ export default function ArabicAboutPage() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/contact"
+              href="/ar/contact"
               className="btn btn-primary text-lg"
             >
               Discutons de votre projet
             </a>
             <a
-              href="/services"
+              href="/ar/services"
               className="btn btn-ghost text-lg"
             >
               Voir nos services
@@ -225,13 +225,13 @@ export default function ArabicAboutPage() {
             </AnimatedSection>
             <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/contact"
+                href="/ar/contact"
                 className="btn btn-primary text-lg"
               >
                 Prenez rendez-vous
               </a>
               <a
-                href="/services"
+                href="/ar/services"
                 className="btn btn-ghost text-lg"
               >
                 En savoir plus
