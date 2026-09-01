@@ -2,14 +2,15 @@ import { getTranslation } from "../lib/i18n"
 import { SITE_URL, SITE_NAME, descriptions, seoKeywords, PHONE, EMAIL, addressLine, region, geo, openingHoursSchema } from "../lib/seo"
 import Navbar from "../components/navbar"
 import { Hero } from "../components/hero"
+import { ClientLogos } from "../components/client-logos"
 import { Services } from "../components/services"
 import { TechStack } from "../components/tech-stack"
 import { Portfolio } from "../components/portfolio"
 import { Testimonials } from "../components/testimonials"
+import { HomeInsights } from "../components/home-insights"
 import { LeadFaq } from "../components/lead-faq"
 import { Contact } from "../components/contact"
 import Footer from "../components/footer"
-import { SocialSidebar } from "../components/social-sidebar"
 
 const title = "وكالة ويب في الدار البيضاء — تصميم مواقع وSEO"
 
@@ -88,14 +89,15 @@ export default function ArabicPage() {
 
   return (
     <div className="rtl" dir="rtl">
-      <SocialSidebar isRTL />
       <Navbar lang="ar" t={t} />
       <main>
         <Hero lang="ar" t={t} />
+        <ClientLogos lang="ar" />
         <Services lang="ar" t={t} />
         <TechStack lang="ar" />
         <Portfolio lang="ar" t={t} />
         <Testimonials lang="ar" t={t} />
+        <HomeInsights lang="ar" />
         <LeadFaq lang="ar" />
         <Contact lang="ar" t={t} />
       </main>

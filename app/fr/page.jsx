@@ -2,14 +2,15 @@ import { getTranslation } from "../lib/i18n"
 import { SITE_URL, SITE_NAME, descriptions, seoKeywords, PHONE, EMAIL, addressLine, region, geo, openingHoursSchema } from "../lib/seo"
 import Navbar from "../components/navbar"
 import { Hero } from "../components/hero"
+import { ClientLogos } from "../components/client-logos"
 import { Services } from "../components/services"
 import { TechStack } from "../components/tech-stack"
 import { Portfolio } from "../components/portfolio"
 import { Testimonials } from "../components/testimonials"
+import { HomeInsights } from "../components/home-insights"
 import { LeadFaq } from "../components/lead-faq"
 import { Contact } from "../components/contact"
 import Footer from "../components/footer"
-import { SocialSidebar } from "../components/social-sidebar"
 
 const title = "Agence web à Casablanca — Sites, SEO & e-commerce"
 
@@ -87,14 +88,15 @@ export default function FrenchPage() {
 
   return (
     <div className="ltr" dir="ltr">
-      <SocialSidebar isRTL={false} />
       <Navbar lang="fr" t={t} />
       <main>
         <Hero lang="fr" t={t} />
+        <ClientLogos lang="fr" />
         <Services lang="fr" t={t} />
         <TechStack lang="fr" />
         <Portfolio lang="fr" t={t} />
         <Testimonials lang="fr" t={t} />
+        <HomeInsights lang="fr" />
         <LeadFaq lang="fr" />
         <Contact lang="fr" t={t} />
       </main>

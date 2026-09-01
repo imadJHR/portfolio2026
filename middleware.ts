@@ -10,14 +10,30 @@ export function middleware(req: NextRequest) {
   const host = req.headers.get("host") ?? ""
   const proto = req.headers.get("x-forwarded-proto") ?? "http"
 
+  // Preserve local development URLs instead of redirecting them to the
+  // production domain. The root still resolves to the default French page.
+  const hostname = host.startsWith("[")
+    ? host.slice(1, host.indexOf("]"))
+    : host.split(":")[0]
+  const isLocalHost = ["localhost", "127.0.0.1", "::1"].includes(hostname.toLowerCase())
+
+  if (isLocalHost) {
+    if (pathname === "/") {
+      const localUrl = req.nextUrl.clone()
+      localUrl.pathname = "/fr"
+      return NextResponse.rewrite(localUrl)
+    }
+
+    return NextResponse.next()
+  }
+
   // Le chemin canonique :
   //   "/"  -> "/fr" (la home par défaut est /fr)
   //   autre -> inchangé
   const targetPath = pathname === "/" ? "/fr" : pathname
 
   // Une seule redirection 301 vers l'URL canonique complète.
-  // S'applique à tous les hôtes (y compris localhost) pour que le comportement
-  // soit cohérent en prod et en local/worker.
+  // S'applique aux hôtes non locaux afin de conserver une URL publique unique.
   const isCanonicalHost = host === CANONICAL_HOST
   const isSecure = proto === CANONICAL_PROTOCOL
 

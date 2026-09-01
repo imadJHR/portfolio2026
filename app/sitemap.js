@@ -3,12 +3,14 @@ import { SITE_URL } from "./lib/seo"
 import { serviceCatalog } from "./lib/service-data"
 
 export default function sitemap() {
-  const updatedAt = new Date("2026-07-21")
+  const updatedAt = new Date("2026-09-02")
   const staticPages = [
     { path: "/fr", priority: 1, changeFrequency: "weekly" },
     { path: "/ar", priority: 1, changeFrequency: "weekly" },
     { path: "/fr/a-propos", priority: 0.8, changeFrequency: "monthly" },
     { path: "/ar/a-propos", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/fr/projets", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/ar/projets", priority: 0.9, changeFrequency: "monthly" },
     { path: "/fr/insights", priority: 0.85, changeFrequency: "weekly" },
     { path: "/ar/insights", priority: 0.85, changeFrequency: "weekly" },
     { path: "/fr/contact", priority: 0.8, changeFrequency: "monthly" },

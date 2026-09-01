@@ -241,5 +241,51 @@
     "fr": ""
   },
   "liveUrl": "https://sou9maghrib.netlify.app/"
+},
+{
+  "id": "natures-dates",
+  "title": {
+    "ar": "Nature’s Dates - تمور المجهول الفاخرة",
+    "fr": "Nature’s Dates - Premium Medjool"
+  },
+  "category": "ecommerce",
+  "image": "/natures-dates.webp",
+  "imageLayout": "wide",
+  "challenge": {
+    "ar": "بناء حضور رقمي متكامل لعلامة تمور فاخرة، يجمع المنتجات والمحتوى الغذائي والوصفات وطلبات البيع بالجملة.",
+    "fr": "Construire une présence digitale complète pour une marque de dattes premium, en réunissant produits, nutrition, recettes et demandes wholesale."
+  },
+  "solution": {
+    "ar": "منصة غنية بالمحتوى مع كتالوج واضح، صفحات للمنتجات والوصفات، ومسارات مخصصة للعملاء والأعمال.",
+    "fr": "Une plateforme éditoriale avec catalogue clair, pages produits, recettes et parcours distincts pour les particuliers et les professionnels."
+  },
+  "results": {
+    "ar": "تجربة علامة متماسكة توضح جودة المنتج وتسهّل اكتشاف المجموعة والتواصل التجاري.",
+    "fr": "Une expérience de marque cohérente qui valorise le produit et facilite la découverte de la gamme comme le contact commercial."
+  },
+  "liveUrl": "https://naturesdates.com/"
+},
+{
+  "id": "atelier-lamiaa",
+  "title": {
+    "ar": "Atelier Lamiaa - حلويات مغربية منزلية",
+    "fr": "Atelier Lamiaa - Créations artisanales"
+  },
+  "category": "ecommerce",
+  "image": "/atelier-lamiaa.webp",
+  "imageLayout": "wide",
+  "challenge": {
+    "ar": "عرض الحلويات المغربية والسابلي الحلو والمالح بطريقة شهية، واضحة وسهلة الاستخدام على الهاتف.",
+    "fr": "Présenter des gâteaux marocains et sablés sucrés ou salés de façon gourmande, claire et facile à parcourir sur mobile."
+  },
+  "solution": {
+    "ar": "واجهة بصرية دافئة مع تصنيفات واضحة، كتالوج منتجات مفصل وسلة تسهّل تجهيز الطلب.",
+    "fr": "Une interface chaleureuse avec catégories lisibles, catalogue produit détaillé et panier pour préparer simplement sa commande."
+  },
+  "results": {
+    "ar": "كتالوج رقمي متناسق يعكس الطابع الحرفي ويساعد الزبون على اكتشاف المنتجات والطلب بسهولة.",
+    "fr": "Un catalogue digital cohérent qui traduit le savoir-faire artisanal et guide naturellement de la découverte à la commande."
+  },
+  "liveUrl": "https://atelierlamiaa.vercel.app/"
 }
 ]

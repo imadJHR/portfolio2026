@@ -1,8 +1,7 @@
-import { Inter, Playfair_Display } from "next/font/google"
+import { Space_Grotesk, Noto_Sans_Arabic } from "next/font/google"
 import { Suspense } from "react"
 import Script from "next/script"
 import { ThemeProvider } from "./components/theme-provider"
-import { SmoothScroll } from "./components/smooth-scroll"
 import { AiReferralTracker } from "./components/ai-referral-tracker"
 import { LogoMark } from "./components/logo/logo-mark"
 import { HtmlLangUpdater } from "./components/html-lang-updater"
@@ -14,21 +13,21 @@ import {
   organizationSchema,
   websiteSchema,
 } from "./lib/seo"
-import "lenis/dist/lenis.css"
 import "./components/react-bits/react-bits.css"
 import "./globals.css"
 
-const playfair = Playfair_Display({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space",
   display: "swap",
   preload: true,
 })
 
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
+const notoArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-arabic",
   display: "swap",
   preload: true,
 })
@@ -105,7 +104,7 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0d0716",
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({ children }) {
@@ -140,11 +139,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`font-sans ${inter.variable} ${playfair.variable} antialiased bg-[var(--bg)] text-[var(--text)]`}
+        className={`font-sans ${spaceGrotesk.variable} ${notoArabic.variable} antialiased bg-[var(--bg)] text-[var(--text)]`}
       >
         <HtmlLangUpdater />
         <ThemeProvider>
-          <SmoothScroll />
           <AiReferralTracker />
           <Suspense
             fallback={

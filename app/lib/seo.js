@@ -43,7 +43,7 @@ export const organizationSchema = {
   name: SITE_NAME,
   alternateName: brandAliases,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo/nemsi-media-icon.svg`,
+  logo: `${SITE_URL}/logo/nemsi-media-mark-2026.svg`,
   description: descriptions.fr,
   email: EMAIL,
   telephone: PHONE,

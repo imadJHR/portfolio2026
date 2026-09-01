@@ -1,7 +1,10 @@
 import path from "node:path";
 
+const isDevelopment = process.env.NODE_ENV === "development";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: path.resolve(process.cwd()),
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(process.cwd());
     return config;
@@ -31,7 +34,7 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+              `script-src 'self' 'unsafe-inline'${isDevelopment ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com https://www.google-analytics.com`,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data:",
@@ -48,6 +51,16 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/projet",
+        destination: "/fr/projets",
+        permanent: true,
+      },
+      {
+        source: "/projets",
+        destination: "/fr/projets",
+        permanent: true,
+      },
       ...["fr", "ar"].map((lang) => ({
         source: `/${lang}/insights/seo-maroc-2025`,
         destination: `/${lang}/insights/seo-maroc-2026`,

@@ -75,7 +75,7 @@ export default function QuoteForm({ lang }) {
             value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-hover)]"
-            placeholder={lang === "ar" ? "محمد أحمد" : "Jean Dupont"}
+            placeholder={lang === "ar" ? "أدخل اسمك الكامل" : "Votre nom complet"}
           />
         </div>
         <div className="space-y-1.5">

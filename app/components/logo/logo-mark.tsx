@@ -1,34 +1,18 @@
-"use client"
-
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32"
+      viewBox="0 0 40 40"
       fill="none"
       className={className}
       aria-hidden="true"
     >
-      <defs>
-        <linearGradient id="n-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="var(--brand)" />
-          <stop offset="1" stopColor="var(--brand-3)" />
-        </linearGradient>
-      </defs>
+      <rect x="1" y="1" width="38" height="38" rx="10" fill="#111113" />
       <path
-        d="M5 27V5l22 22V5"
-        stroke="url(#n-grad)"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M10.5 29V11h5.2l8.6 10.6V11h5.2v18h-5.2l-8.6-10.6V29h-5.2Z"
+        fill="white"
       />
-      <path
-        d="M5 5h6l14 14"
-        stroke="url(#n-grad)"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <circle cx="31.5" cy="8.5" r="3.5" fill="var(--brand)" />
     </svg>
   )
 }

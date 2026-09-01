@@ -1,95 +1,38 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X, Globe, MessageCircle } from "lucide-react"
+import { ArrowUpRight, Menu, X } from "lucide-react"
 import { LogoMark } from "./logo/logo-mark"
-import { SpecularButton, SpecularLink } from "./react-bits/specular-button"
-import QuoteFormModal from "./quote-form-modal"
 
 export default function Navbar({ lang }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [quoteOpen, setQuoteOpen] = useState(false)
-  const progressRef = useRef(null)
   const isRTL = lang === "ar"
-
-  const items = lang === "fr"
-    ? [{ label: "Accueil", href: "/fr" }, { label: "Services", href: "/fr#services" }, { label: "Portfolio", href: "/fr#portfolio" }, { label: "À propos", href: "/fr/a-propos" }, { label: "Insights", href: "/fr/insights" }, { label: "Contact", href: "/fr/contact" }]
-    : [{ label: "الرئيسية", href: "/ar" }, { label: "خدماتنا", href: "/ar#services" }, { label: "أعمالنا", href: "/ar#portfolio" }, { label: "من نحن", href: "/ar/a-propos" }, { label: "مقالات", href: "/ar/insights" }, { label: "اتصل بنا", href: "/ar/contact" }]
-
-  const skipToContentLabel = lang === "fr" ? "Aller au contenu" : "انتقل إلى المحتوى"
+  const otherLang = isRTL ? "fr" : "ar"
+  const items = isRTL
+    ? [{ label: "الرئيسية", href: "/ar" }, { label: "الخدمات", href: "/ar#services" }, { label: "المشاريع", href: "/ar/projets" }, { label: "من نحن", href: "/ar/a-propos" }, { label: "المقالات", href: "/ar/insights" }]
+    : [{ label: "Accueil", href: "/fr" }, { label: "Expertises", href: "/fr#services" }, { label: "Projets", href: "/fr/projets" }, { label: "Studio", href: "/fr/a-propos" }, { label: "Insights", href: "/fr/insights" }]
 
   useEffect(() => {
-    let frame = 0
-
-    const onScroll = () => {
-      if (frame) return
-      frame = window.requestAnimationFrame(() => {
-        const nextScrolled = window.scrollY > 12
-        setIsScrolled((current) => current === nextScrolled ? current : nextScrolled)
-
-        const max = document.documentElement.scrollHeight - window.innerHeight
-        const nextProgress = max > 0 ? Math.min(window.scrollY / max, 1) : 0
-        if (progressRef.current) {
-          progressRef.current.style.transform = `scaleX(${nextProgress})`
-        }
-        frame = 0
-      })
-    }
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      if (frame) window.cancelAnimationFrame(frame)
-    }
-  }, [])
-
-  const handleDevis = () => {
-    window.location.href = `/${lang}/devis`
-  }
-  const otherLang = lang === "fr" ? "ar" : "fr"
+    document.body.style.overflow = isOpen ? "hidden" : ""
+    return () => { document.body.style.overflow = "" }
+  }, [isOpen])
 
   return (
-    <header className="site-header fixed left-0 right-0 top-0 z-50 px-2.5 pt-2.5 sm:px-3 sm:pt-3" dir={isRTL ? "rtl" : "ltr"}>
-      <motion.div initial={{ y: -18, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: .5 }} className={`site-navbar-shell container relative overflow-hidden rounded-full border transition-all duration-500 ${isScrolled ? "border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow-md)] backdrop-blur-2xl" : "border-transparent bg-transparent"}`}>
-        <div ref={progressRef} className={`absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-[var(--brand-2)] via-[var(--brand-hover)] to-[var(--brand-3)] will-change-transform ${isRTL ? "origin-right" : "origin-left"}`} style={{ transform: "scaleX(0)" }} />
-        <nav className="flex h-14 min-w-0 items-center justify-between gap-2 sm:h-16 sm:gap-3">
-          <Link href={lang === "fr" ? "/fr" : "/ar"} className="site-brand flex min-w-0 items-center" aria-label="Nemsi Media — Agence web premium à Casablanca">
-            <span className="site-brand-logo flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl sm:h-16 sm:w-16 overflow-hidden" aria-hidden="true">
-              <LogoMark className="h-7 w-7 sm:h-8 sm:w-8" />
-            </span>
-          </Link>
-          <a href="#home" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:border focus:border-[var(--border)] focus:bg-[var(--bg-card)] focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-[var(--text)]">{skipToContentLabel}</a>
-
-          <div className="hidden items-center gap-1 rounded-full border border-[var(--border)] bg-[var(--bg-surface)] p-1 backdrop-blur-xl xl:flex">
-            {items.map((item) => <Link key={item.label} href={item.href} className="rounded-full px-3.5 py-2 text-sm font-semibold text-[var(--text-secondary)] transition hover:bg-[var(--bg-card-hover)] hover:text-[var(--text)]">{item.label}</Link>)}
-          </div>
-
-          <div className="hidden items-center gap-2 xl:flex">
-            <SpecularLink href={`/${otherLang}`} variant="ghost" size="sm"><Globe className="h-3.5 w-3.5" />{otherLang === "ar" ? "AR" : "FR"}</SpecularLink>
-            <SpecularButton onClick={handleDevis} size="sm"><MessageCircle className="h-3.5 w-3.5" />{lang === "fr" ? "Devis" : "استشارة"}</SpecularButton>
-          </div>
-
-          <div className="flex shrink-0 items-center gap-1 xl:hidden sm:gap-1.5">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild><SpecularButton variant="ghost" size="icon" aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}>{isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</SpecularButton></SheetTrigger>
-              <SheetContent side={isRTL ? "right" : "left"} className="w-[min(22rem,calc(100vw-1rem))] max-w-none overflow-y-auto border-[var(--border)] bg-[var(--bg)] p-5 text-[var(--text)] sm:p-6">
-                <div className="badge mt-6"><span className="badge-dot" aria-hidden="true" />Menu</div>
-                <div className="mt-8 flex flex-col gap-3">
-                  {items.map((item) => <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)} className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 font-semibold text-[var(--text-secondary)]">{item.label}</Link>)}
-                  <Link href={`/${otherLang}`} onClick={() => setIsOpen(false)} className="rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] px-4 py-3 font-semibold text-[var(--text-secondary)]">{otherLang === "ar" ? "العربية" : "Français"}</Link>
-                  <SpecularButton onClick={handleDevis} className="mt-3 w-full"><MessageCircle className="h-4 w-4" />{lang === "fr" ? "Devis gratuit" : "استشارة مجانية"}</SpecularButton>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+    <header className="nm-header" dir={isRTL ? "rtl" : "ltr"}>
+      <a href="#home" className="sr-only focus:not-sr-only">{isRTL ? "انتقل إلى المحتوى" : "Aller au contenu"}</a>
+      <div className="container nm-nav">
+        <Link href={`/${lang}`} className="nm-brand" aria-label="Nemsi Media"><LogoMark className="nm-brand__mark" /><span>NEMSI<small>MEDIA</small></span></Link>
+        <nav className="nm-nav__desktop" aria-label={isRTL ? "التنقل الرئيسي" : "Navigation principale"}>
+          {items.map((item, index) => <Link key={item.href} href={item.href}><small>0{index + 1}</small>{item.label}</Link>)}
         </nav>
-      </motion.div>
-
-      <QuoteFormModal isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} lang={lang} />
+        <div className="nm-nav__actions">
+          <Link className="nm-lang" href={`/${otherLang}`}>{otherLang.toUpperCase()}</Link>
+          <Link className="nm-nav__cta" href={`/${lang}/devis`}>{isRTL ? "مشروع جديد" : "Nouveau projet"}<ArrowUpRight aria-hidden="true" /></Link>
+          <button className="nm-menu-button" type="button" onClick={() => setIsOpen((value) => !value)} aria-expanded={isOpen} aria-controls="mobile-navigation" aria-label={isOpen ? (isRTL ? "إغلاق القائمة" : "Fermer le menu") : (isRTL ? "فتح القائمة" : "Ouvrir le menu")}>{isOpen ? <X /> : <Menu />}</button>
+        </div>
+      </div>
+      {isOpen && <div id="mobile-navigation" className="nm-mobile-nav"><nav className="container" aria-label={isRTL ? "قائمة الهاتف" : "Navigation mobile"}>{items.map((item, index) => <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}><small>0{index + 1}</small><span>{item.label}</span></Link>)}<Link href={`/${lang}/devis`} onClick={() => setIsOpen(false)}><small>06</small><span>{isRTL ? "ابدأ مشروعك" : "Démarrer un projet"}</span></Link></nav></div>}
     </header>
   )
 }
