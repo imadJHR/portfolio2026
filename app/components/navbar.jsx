@@ -22,7 +22,7 @@ export default function Navbar({ lang }) {
     <header className="nm-header" dir={isRTL ? "rtl" : "ltr"}>
       <a href="#home" className="sr-only focus:not-sr-only">{isRTL ? "انتقل إلى المحتوى" : "Aller au contenu"}</a>
       <div className="container nm-nav">
-        <Link href={`/${lang}`} className="nm-brand" aria-label="Nemsi Media"><LogoMark className="nm-brand__mark" /><span>NEMSI<small>MEDIA</small></span></Link>
+        <Link href={`/${lang}`} className="nm-brand"><LogoMark className="nm-brand__mark" /><span>NEMSI<small>MEDIA</small></span></Link>
         <nav className="nm-nav__desktop" aria-label={isRTL ? "التنقل الرئيسي" : "Navigation principale"}>
           {items.map((item, index) => <Link key={item.href} href={item.href}><small>0{index + 1}</small>{item.label}</Link>)}
         </nav>

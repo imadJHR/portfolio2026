@@ -626,7 +626,7 @@ select.input option:checked { background: #7c3aed; color: #ffffff; }
   --bg-surface: #f4f3f6;
   --text: #111113;
   --text-secondary: #414147;
-  --text-muted: #77777f;
+  --text-muted: #6c6c74;
   --brand: #5f22c9;
   --brand-hover: #48139f;
   --brand-2: #5f22c9;
@@ -666,7 +666,7 @@ p { color: var(--text-secondary); line-height: 1.58; }
 }
 .nm-index {
   display: inline-flex;
-  color: #d7d7dc;
+  color: #85858c;
   font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 600;
   letter-spacing: -.08em;
@@ -768,7 +768,7 @@ p { color: var(--text-secondary); line-height: 1.58; }
 .nm-clients__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 1px solid var(--border); border-inline-start: 1px solid var(--border); list-style: none; }
 .nm-clients__grid li { display: grid; min-height: 9rem; place-items: center; border-inline-end: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem; background: #fff; }
 .nm-client-mark { display: inline-flex; align-items: baseline; justify-content: center; color: #242426; line-height: 1; text-align: center; white-space: nowrap; }
-.nm-client-mark small { display: block; margin-top: .35rem; color: #77777d; font-family: var(--font-inter, system-ui, sans-serif); font-size: .38em; font-weight: 650; letter-spacing: .16em; }
+.nm-client-mark small { display: block; margin-top: .35rem; color: #6c6c72; font-family: var(--font-inter, system-ui, sans-serif); font-size: .38em; font-weight: 650; letter-spacing: .16em; }
 .nm-client-mark--fadllo { font-size: 1.25rem; font-weight: 800; letter-spacing: -.04em; }
 .nm-client-mark--fadllo span { color: var(--brand); }
 .nm-client-mark--burratina { flex-direction: column; align-items: center; font-family: Georgia, serif; font-size: .72rem; letter-spacing: .2em; }
@@ -1017,7 +1017,7 @@ p { color: var(--text-secondary); line-height: 1.58; }
 .nm-quotes__grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3rem; border-top: 1px solid var(--border); border-inline-start: 1px solid var(--border); }
 .nm-quotes article { display: flex; min-height: 30rem; flex-direction: column; border-inline-end: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem; }
 .nm-proof__top { display: flex; min-height: 8rem; align-items: flex-start; justify-content: space-between; gap: 1rem; }
-.nm-proof__top > span:last-child { color: #d7d7dc; font-size: 2rem; font-weight: 600; letter-spacing: -.06em; }
+.nm-proof__top > span:last-child { color: #85858c; font-size: 2rem; font-weight: 600; letter-spacing: -.06em; }
 .nm-proof__wordmark { color: #171719; font-size: 1.45rem; font-weight: 850; letter-spacing: -.05em; }
 .nm-proof__wordmark i { color: var(--brand); font-style: normal; }
 .nm-proof__wordmark--natures { display: flex; flex-direction: column; color: #171719; font-size: 1.18rem; letter-spacing: .08em; line-height: .88; }
@@ -1044,7 +1044,7 @@ p { color: var(--text-secondary); line-height: 1.58; }
 .nm-faq details[open] summary i { transform: rotate(45deg); }
 .nm-faq details > p { max-width: 42rem; padding: 0 1rem 1.5rem 4rem; }
 .nm-contact { background: var(--brand); color: #fff; }
-.nm-contact .nm-index { color: rgba(255,255,255,.24); }
+.nm-contact .nm-index { color: rgba(255,255,255,.88); }
 .nm-contact .nm-kicker, .nm-contact h2, .nm-contact p { color: #fff; }
 .nm-contact__grid { display: grid; grid-template-columns: 1fr .8fr; gap: clamp(3rem, 8vw, 9rem); }
 .nm-contact h2 { max-width: 12ch; margin-top: 1.5rem; }

@@ -8,6 +8,7 @@ import { HtmlLangUpdater } from "./components/html-lang-updater"
 import {
   SITE_NAME,
   SITE_URL,
+  OG_IMAGE,
   descriptions,
   seoKeywords,
   organizationSchema,
@@ -78,7 +79,7 @@ export const metadata = {
     description: descriptions.fr,
     images: [
       {
-        url: "https://nemsimedia.com/api/og",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Nemsi Media — Agence web à Casablanca",
@@ -89,7 +90,7 @@ export const metadata = {
   card: "summary_large_image",
   title: "Nemsi Media — Agence web à Casablanca",
   description: descriptions.fr,
-  images: ["https://nemsimedia.com/api/og"],
+  images: [OG_IMAGE],
   },
   other: {
     "geo.region": "MA-CAS",
@@ -111,15 +112,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" dir="ltr" suppressHydrationWarning>
       <head>
+        <Script
+          id="locale-document-attributes"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var ar=location.pathname==='/ar'||location.pathname.indexOf('/ar/')===0;document.documentElement.lang=ar?'ar':'fr';document.documentElement.dir=ar?'rtl':'ltr';})();`,
+          }}
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Nemsi Media — AI-readable information" />
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-HHESPWMXQF"
         />
         <Script
           id="ga-main"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

@@ -4,8 +4,10 @@ import insightsData from "../../../lib/insights-data.json"
 import Navbar from "../../../components/navbar"
 import Footer from "../../../components/footer"
 import { getTranslation } from "../../../lib/i18n"
-import { SITE_URL } from "../../../lib/seo"
+import { OG_IMAGE, SITE_URL } from "../../../lib/seo"
 import { getInsightMetaTitle } from "../../../lib/insight-seo"
+import { getInsightLinks } from "../../../lib/insight-links"
+import { getServiceBySlug } from "../../../lib/service-data"
 import { SpecularLink } from "../../../components/react-bits/specular-button"
 
 export async function generateStaticParams() {
@@ -29,13 +31,13 @@ export async function generateMetadata({ params }) {
       locale: "fr_MA",
       publishedTime: article.date,
       authors: ["Nemsi Media"],
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: article.title.fr }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: article.title.fr }],
     },
     twitter: {
       card: "summary_large_image",
       title: metaTitle,
       description: article.excerpt.fr,
-      images: ["/opengraph-image"],
+      images: [OG_IMAGE],
     },
     alternates: {
       canonical: `${SITE_URL}/fr/insights/${id}`,
@@ -54,6 +56,9 @@ export default async function ArticlePage({ params }) {
   if (!article) notFound()
 
   const t = getTranslation("fr")
+  const links = getInsightLinks(id)
+  const service = getServiceBySlug(links.service)
+  const relatedArticles = links.related.map((relatedId) => insightsData.find((item) => item.id === relatedId)).filter(Boolean)
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -64,8 +69,19 @@ export default async function ArticlePage({ params }) {
     dateModified: article.date,
     inLanguage: "fr-MA",
     mainEntityOfPage: `${SITE_URL}/fr/insights/${id}`,
+    image: OG_IMAGE,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
+  }
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE_URL}/fr` },
+      { "@type": "ListItem", position: 2, name: "Insights", item: `${SITE_URL}/fr/insights` },
+      { "@type": "ListItem", position: 3, name: article.title.fr, item: `${SITE_URL}/fr/insights/${id}` },
+    ],
   }
 
   return (
@@ -118,6 +134,24 @@ export default async function ArticlePage({ params }) {
               ))}
             </div>
 
+            <section className="mt-12 border-y border-[var(--border)] py-8" aria-labelledby="related-reading-title">
+              <h2 id="related-reading-title" className="mb-4 text-2xl font-bold">Pour aller plus loin</h2>
+              <p className="mb-5 text-[var(--text-secondary)]">
+                Découvrez notre expertise en{
+                " "}<Link className="font-semibold text-[var(--brand)] hover:underline" href={`/fr/services/${service.slug}`}>{service.fr.name}</Link>{
+                " "}pour passer de la lecture à un plan d’action adapté à votre projet.
+              </p>
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {relatedArticles.map((related) => (
+                  <li key={related.id}>
+                    <Link className="block rounded-xl border border-[var(--border)] p-4 font-medium transition-colors hover:border-[var(--brand)] hover:text-[var(--brand)]" href={`/fr/insights/${related.id}`}>
+                      {related.title.fr}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
             {/* Share / CTA */}
             <div className="mt-12 rounded-2xl border border-[var(--border)] bg-[var(--bg-surface)] p-5 text-center sm:p-8">
               <p className="text-lg font-bold mb-2">Vous avez aimé cet article ?</p>
@@ -139,6 +173,7 @@ export default async function ArticlePage({ params }) {
       </article>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Footer lang="fr" t={t} />
     </div>

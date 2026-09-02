@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL } from "./seo"
+import { OG_IMAGE, SITE_NAME, SITE_URL } from "./seo"
 
 export function buildLocalizedPageMetadata({ lang, path, title, description }) {
   const canonical = `${SITE_URL}/${lang}/${path}`
@@ -24,13 +24,13 @@ export function buildLocalizedPageMetadata({ lang, path, title, description }) {
       locale: lang === "ar" ? "ar_MA" : "fr_MA",
       alternateLocale: [lang === "ar" ? "fr_MA" : "ar_MA"],
       type: "website",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/opengraph-image"],
+      images: [OG_IMAGE],
     },
   }
 }

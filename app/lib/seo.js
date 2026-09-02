@@ -1,13 +1,9 @@
 export const SITE_URL = "https://www.nemsimedia.ma"
 export const SITE_NAME = "Nemsi Media"
+export const OG_IMAGE = `${SITE_URL}/api/og`
 export const PHONE = "+212 6 45 28 82 16"
 export const EMAIL = "contact@nemsimedia.ma"
-export const WHATSAPP = "+2126625288216"
-export const addressLine = "Casablanca, Maroc"
-export const region = "Casablanca-Settat"
-export const geo = { lat: 33.5731, lng: -7.5898 }
-export const officeHours = "Mo-Fr 09:00-19:00, Sa 10:00-15:00"
-export const openingHoursSchema = ["Mo-Fr 09:00-19:00", "Sa 10:00-15:00"]
+export const WHATSAPP = "+212645288216"
 
 export const descriptions = {
   fr: "Agence web à Casablanca : sites rapides, SEO et e-commerce au Maroc. Devis clair et projets conçus pour convertir vos visiteurs en clients.",

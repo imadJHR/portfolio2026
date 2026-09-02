@@ -1,4 +1,4 @@
-import { SITE_URL } from "./seo"
+import { OG_IMAGE, SITE_URL } from "./seo"
 
 export function buildServiceMetadata(service, lang) {
   const content = service[lang]
@@ -22,13 +22,13 @@ export function buildServiceMetadata(service, lang) {
       url: canonical,
       locale: lang === "ar" ? "ar_MA" : "fr_MA",
       alternateLocale: [lang === "ar" ? "fr_MA" : "ar_MA"],
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: content.title }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: content.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${content.metaTitle} | Nemsi Media`,
       description: content.metaDescription,
-      images: ["/opengraph-image"],
+      images: [OG_IMAGE],
     },
   }
 }
@@ -59,7 +59,7 @@ export function buildServiceSchemas(service, lang) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: homeName, item: `${SITE_URL}/${lang}` },
-        { "@type": "ListItem", position: 2, name: servicesName, item: `${SITE_URL}/${lang}#services` },
+        { "@type": "ListItem", position: 2, name: servicesName, item: `${SITE_URL}/${lang}/services` },
         { "@type": "ListItem", position: 3, name: content.name, item: url },
       ],
     },

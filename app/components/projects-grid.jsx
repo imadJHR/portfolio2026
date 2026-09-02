@@ -36,7 +36,6 @@ export function ProjectsGrid({ lang, projects, headingLevel = "h3" }) {
             target="_blank"
             rel="noopener noreferrer"
             key={project.id}
-            aria-label={lang === "ar" ? `مشاهدة مشروع ${title}` : `Voir le projet ${title}`}
           >
             {content}
           </a>

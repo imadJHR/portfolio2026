@@ -7,6 +7,8 @@ export default function sitemap() {
   const staticPages = [
     { path: "/fr", priority: 1, changeFrequency: "weekly" },
     { path: "/ar", priority: 1, changeFrequency: "weekly" },
+    { path: "/fr/services", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/ar/services", priority: 0.9, changeFrequency: "weekly" },
     { path: "/fr/a-propos", priority: 0.8, changeFrequency: "monthly" },
     { path: "/ar/a-propos", priority: 0.8, changeFrequency: "monthly" },
     { path: "/fr/projets", priority: 0.9, changeFrequency: "monthly" },

@@ -12,6 +12,14 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: "/fr/:path*",
+        headers: [{ key: "Content-Language", value: "fr-MA" }],
+      },
+      {
+        source: "/ar/:path*",
+        headers: [{ key: "Content-Language", value: "ar-MA" }],
+      },
+      {
         source: "/(.*)",
         headers: [
           {
@@ -38,7 +46,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://wa.me",
+              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com https://wa.me",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

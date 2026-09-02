@@ -1,6 +1,6 @@
 import portfolioData from "../../lib/portfolio-data.json"
 import { ProjectsIndex } from "../../components/projects-index"
-import { SITE_URL, SITE_NAME, seoKeywords } from "../../lib/seo"
+import { OG_IMAGE, SITE_URL, SITE_NAME, seoKeywords } from "../../lib/seo"
 
 const title = "Projets web, e-commerce et branding au Maroc"
 const description = "Découvrez les sites web, boutiques e-commerce et expériences digitales réalisés par Nemsi Media pour des marques au Maroc."
@@ -22,9 +22,9 @@ export const metadata = {
     locale: "fr_MA",
     alternateLocale: ["ar_MA"],
     type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Projets digitaux réalisés par Nemsi Media" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Projets digitaux réalisés par Nemsi Media" }],
   },
-  twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE] },
 }
 
 const projectsSchema = {

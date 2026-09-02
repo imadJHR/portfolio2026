@@ -47,7 +47,7 @@ export function Hero({ lang }) {
         </div>
         <div className="nm-hero__footer">
           <p>{isRTL ? "فكرة واحدة · فريق واحد · تنفيذ واضح" : "UNE IDÉE · UNE ÉQUIPE · UNE EXÉCUTION CLAIRE"}</p>
-          <a className="nm-hero__scroll" href="#services" aria-label={isRTL ? "انتقل إلى الخدمات" : "Découvrir les services"}><span>{isRTL ? "اكتشف خبراتنا" : "Découvrir les expertises"}</span><ArrowDown aria-hidden="true" /></a>
+          <a className="nm-hero__scroll" href="#services"><span>{isRTL ? "اكتشف خبراتنا" : "Découvrir les expertises"}</span><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
     </section>

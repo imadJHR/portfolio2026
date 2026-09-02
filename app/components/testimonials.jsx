@@ -68,8 +68,8 @@ export function Testimonials({ lang }) {
               <p>{project.text}</p>
               <footer>
                 <small>{project.service}</small>
-                <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${isRTL ? "زيارة موقع" : "Visiter le site"} ${project.brand}`}>
-                  {isRTL ? "زيارة الموقع" : "Voir le site"}<ArrowUpRight aria-hidden="true" />
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  {isRTL ? "زيارة الموقع" : "Voir le site"}<span className="sr-only"> — {project.brand}</span><ArrowUpRight aria-hidden="true" />
                 </a>
               </footer>
             </article>

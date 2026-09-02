@@ -304,7 +304,7 @@ export const serviceCatalog = [
     related: ["creation-site-web-maroc", "landing-page-maroc", "maintenance-site-web"],
     fr: {
       name: "SEO & visibilité",
-      metaTitle: "Agence SEO au Maroc — Référencement naturel",
+      metaTitle: "Agence SEO Casablanca — Référencement Maroc",
       metaDescription: "Accompagnement SEO au Maroc : audit technique, stratégie de contenu, SEO local et mesure pour développer une visibilité organique durable.",
       eyebrow: "SEO · Référencement naturel au Maroc",
       title: "Accompagnement SEO au Maroc",
