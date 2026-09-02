@@ -4,7 +4,7 @@ export const publicitePayante = {
   related: ["marketing-influence-maroc", "social-media-maroc", "seo-maroc"],
   fr: {
     name: "Publicité payante",
-    metaTitle: "Publicité payante Meta Ads Google Ads TikTok Ads au Maroc",
+    metaTitle: "Publicité au Maroc : Meta, Google et TikTok",
     metaDescription: "Publicité payante au Maroc : Meta Ads, Google Ads et TikTok Ads pour générer des leads qualifiés et maximiser votre retour sur investissement.",
     eyebrow: "Publicité · Meta, Google & TikTok",
     title: "Publicité payante Meta Ads, Google Ads et TikTok Ads au Maroc",
@@ -37,7 +37,7 @@ export const publicitePayante = {
   },
   ar: {
     name: "الإعلانات المدفوعة",
-    metaTitle: "الإعلانات المدفوعة Meta Ads Google Ads TikTok Ads في المغرب",
+    metaTitle: "إعلانات Meta وGoogle وTikTok في المغرب",
     metaDescription: "الإعلانات المدفوعة في المغرب: Meta Ads وGoogle Ads وTikTok Ads لجذب عملاء محتملين مؤهلين وتعظيم العائد على الاستثمار.",
     eyebrow: "إعلانات · Meta وGoogle وTikTok",
     title: "الإعلانات المدفوعة Meta Ads وGoogle Ads وTikTok Ads في المغرب",

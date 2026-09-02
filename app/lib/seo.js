@@ -10,7 +10,7 @@ export const officeHours = "Mo-Fr 09:00-19:00, Sa 10:00-15:00"
 export const openingHoursSchema = ["Mo-Fr 09:00-19:00", "Sa 10:00-15:00"]
 
 export const descriptions = {
-  fr: "Agence web à Casablanca : création de sites rapides, SEO et e-commerce au Maroc. Devis clair, prise de rendez-vous et projet prêt à convertir vos visiteurs en clients.",
+  fr: "Agence web à Casablanca : sites rapides, SEO et e-commerce au Maroc. Devis clair et projets conçus pour convertir vos visiteurs en clients.",
   ar: "وكالة ويب في الدار البيضاء : تصميم مواقع سريعة، SEO وتجارة إلكترونية في المغرب. عرض واضح وموعد جاهز لتحويل الزيارات إلى تواصل حقيقي.",
 }
 export const brandAliases = [

@@ -24,13 +24,16 @@
         "Dans un marché marocain de plus en plus compétitif, votre site web est souvent le premier point de contact avec vos clients potentiels. Un site premium n'est pas un luxe, c'est un investissement stratégique.",
         "Un design exceptionnel renforce instantanément votre crédibilité. Les visiteurs jugent votre entreprise en moins de 3 secondes. Un site au design premium, avec des animations fluides et une typographie soignée, communique professionnalisme et attention aux détails.",
         "Les sites premium sont construits avec les meilleures technologies (Next.js, Three.js, animations GSAP) garantissant des performances optimales, un référencement naturel supérieur et une expérience utilisateur mémorable.",
-        "Au Maroc, où le digital est en pleine expansion, se démarquer par un site web d'exception est le meilleur moyen d'attirer une clientèle exigeante et de justifier des tarifs premium."
+        "Au Maroc, où le digital est en pleine expansion, se démarquer par un site web d'exception est le meilleur moyen d'attirer une clientèle exigeante et de justifier des tarifs premium.",
+        "Avant d'investir, définissez pourtant des objectifs mesurables : demandes de devis, réservations, ventes ou candidatures. Un site premium devient rentable lorsqu'il associe une proposition de valeur claire, des preuves concrètes, un parcours mobile simple et un suivi analytique. Le budget doit donc couvrir la stratégie, les contenus, le design, le développement, les tests et l'amélioration après la mise en ligne."
       ],
       "ar": [
         "في سوق مغربي يتسم بالتنافسية المتزايدة، غالباً ما يكون موقعك الإلكتروني هو نقطة الاتصال الأولى مع عملائك المحتملين. الموقع الراقي ليس رفاهية، بل استثمار استراتيجي.",
         "التصميم الاستثنائي يعزز مصداقيتك فوراً. الزوار يحكمون على شركتك في أقل من 3 ثوانٍ. موقع بتصميم راقٍ، مع رسوم متحركة سلسة وخطوط أنيقة، يوصل الاحترافية والاهتمام بأدق التفاصيل.",
         "المواقع الراقية تُبنى بأفضل التقنيات (Next.js، Three.js، GSAP) مما يضمن أداءً مثالياً، وظهوراً متفوقاً في محركات البحث، وتجربة مستخدم لا تُنسى.",
-        "في المغرب، حيث الرقمنة في توسع مستمر، التميز بموقع إلكتروني استثنائي هو أفضل وسيلة لجذب عملاء طموحين وتبرير أسعار متميزة."
+        "في المغرب، حيث الرقمنة في توسع مستمر، التميز بموقع إلكتروني استثنائي هو أفضل وسيلة لجذب عملاء طموحين وتبرير أسعار متميزة.",
+        "قبل الاستثمار، حدد النتيجة التي تريد قياسها: طلبات عروض أو حجوزات أو مبيعات أو اتصالات مؤهلة. الموقع الاحترافي لا يعتمد على المظهر وحده، بل يجمع رسالة واضحة وأدلة ثقة ومساراً بسيطاً على الهاتف وتحليلات دقيقة لمعرفة ما ينجح فعلاً.",
+        "ينبغي أن تشمل الميزانية الاستراتيجية وكتابة المحتوى والتصميم والتطوير والاختبارات والتحسين بعد الإطلاق. بهذه الطريقة يصبح الموقع أصلاً رقمياً قابلاً للتطوير، وليس واجهة جميلة تتقادم بعد بضعة أشهر أو تحتاج إلى إعادة بناء كاملة عند إضافة خدمة جديدة."
       ]
     }
   },
@@ -60,14 +63,17 @@
         "L'EEAT (Experience, Expertise, Authoritativeness, Trustworthiness) est devenu le pilier du référencement. Pour les entreprises marocaines, cela signifie qu'il faut démontrer son expertise locale et sa légitimité.",
         "L'indexation mobile est la norme. Votre site doit offrir une navigation rapide et lisible sur smartphone, avec des boutons accessibles et un contenu qui répond immédiatement à l'intention de recherche.",
         "La recherche vocale en darija et en arabe est en pleine croissance. Optimiser votre contenu pour le langage naturel et les questions fréquentes est désormais incontournable.",
-        "Le contenu local de qualité reste le roi. Google privilégie les sites qui publient du contenu pertinent pour le marché marocain, avec des informations actualisées et utiles."
+        "Le contenu local de qualité reste le roi. Google privilégie les sites qui publient du contenu pertinent pour le marché marocain, avec des informations actualisées et utiles.",
+        "Commencez par relier chaque page à une intention précise, puis vérifiez l'indexation, les données structurées, les liens internes et les performances mobiles. Suivez ensuite les requêtes, les clics et les conversions dans Search Console et votre outil d'analyse. Une progression durable vient d'améliorations régulières fondées sur ces données, pas d'une accumulation de mots-clés ou de pages presque identiques."
       ],
       "ar": [
         "تحسين محركات البحث في المغرب تطور بشكل ملحوظ. جوجل الآن تولي أهمية قصوى لتجربة المستخدم والملاءمة المحلية.",
         "EEAT (الخبرة، التخصص، الموثوقية، الجدارة بالثقة) أصبح ركيزة تحسين محركات البحث. للشركات المغربية، هذا يعني ضرورة إظهار الخبرة المحلية والمصداقية.",
         "فهرسة الأجهزة المحمولة أصبحت المعيار. يجب أن يوفر موقعك تجربة سريعة وواضحة على الهاتف، مع أزرار سهلة ومحتوى يجيب مباشرة عن نية البحث.",
         "البحث الصوتي بالدارجة والعربية في ازدياد مستمر. تحسين محتواك للغة الطبيعية والأسئلة الشائعة أصبح ضرورياً.",
-        "المحتوى المحلي عالي الجودة يبقى هو الأهم. جوجل تفضل المواقع التي تنشر محتوى ملائماً للسوق المغربي بمعلومات محدثة ومفيدة."
+        "المحتوى المحلي عالي الجودة يبقى هو الأهم. جوجل تفضل المواقع التي تنشر محتوى ملائماً للسوق المغربي بمعلومات محدثة ومفيدة.",
+        "ابدأ بربط كل صفحة بنية بحث واضحة، ثم راجع الفهرسة والبيانات المنظمة والروابط الداخلية وسرعة الهاتف. استخدم Search Console لمعرفة العبارات التي تجلب الظهور والنقرات، واربطها بطلبات التواصل أو المبيعات حتى تقيس القيمة الحقيقية لكل تحسين.",
+        "النتائج المستدامة تأتي من مراجعة دورية للمحتوى التقني والتحريري، وليس من تكرار الكلمات المفتاحية أو إنشاء صفحات متشابهة. حدّث المعلومات القديمة، أضف إجابات عملية، أصلح الروابط، وحسّن الصفحات التي تظهر جيداً لكنها لا تحصل على نقرات أو تحويلات كافية."
       ]
     }
   },
@@ -97,14 +103,17 @@
         "Le choix de la plateforme est crucial. Entre les solutions clé en main (Shopify, WooCommerce) et le développement sur-mesure (Next.js + Strapi), chaque option a ses avantages selon vos besoins.",
         "Le paiement en ligne au Maroc s'est démocratisé avec des solutions comme CMI, Maroc Telecommerce, et les portefeuilles électroniques. Proposer plusieurs moyens de paiement est essentiel pour maximiser vos ventes.",
         "La livraison reste un défi logistique majeur. Travailler avec des transporteurs fiables et offrir des options flexibles (point relais, domicile, retrait magasin) est un facteur clé de succès.",
-        "Le marketing digital pour votre e-commerce doit combiner SEO local, publicité sur les réseaux sociaux (Instagram, Facebook, TikTok) et email marketing pour générer un trafic qualifié et fidéliser vos clients."
+        "Le marketing digital pour votre e-commerce doit combiner SEO local, publicité sur les réseaux sociaux (Instagram, Facebook, TikTok) et email marketing pour générer un trafic qualifié et fidéliser vos clients.",
+        "Avant le lancement, testez une commande complète sur mobile : recherche, fiche produit, panier, paiement, confirmation et suivi. Préparez aussi les règles de stock, les retours, le service client et les indicateurs de marge. Cette préparation opérationnelle évite qu'une campagne réussie crée des retards, des annulations ou une expérience incohérente qui empêche les clients de revenir."
       ],
       "ar": [
         "التجارة الإلكترونية في المغرب تشهد نمواً هائلاً. مع زيادة انتشار الإنترنت وتطور عادات الاستهلاك، أصبح إطلاق متجر إلكتروني فرصة لا تُفوّت.",
         "اختيار المنصة مناسب أمر حاسم. بين الحلول الجاهزة (Shopify, WooCommerce) والتطوير المخصص (Next.js + Strapi)، كل خيار له مزاياه حسب احتياجاتك.",
         "الدفع الإلكتروني في المغرب أصبح متاحاً بفضل حلول مثل CMI وMaroc Telecommerce والمحافظ الإلكترونية. توفير وسائل دفع متعددة ضروري لتعظيم مبيعاتك.",
         "التوصيل يبقى تحدياً لوجيستياً كبيراً. العمل مع شركات شحن موثوقة وتقديم خيارات مرنة (نقطة استلام، منزل، استلام من المتجر) هو عامل نجاح رئيسي.",
-        "التسويق الرقمي لمتجرك الإلكتروني يجب أن يجمع بين تحسين محركات البحث المحلي، الإعلان على وسائل التواصل الاجتماعي (Instagram, Facebook, TikTok) والتسويق عبر البريد الإلكتروني لجذب زوار مؤهلين وبناء ولاء العملاء."
+        "التسويق الرقمي لمتجرك الإلكتروني يجب أن يجمع بين تحسين محركات البحث المحلي، الإعلان على وسائل التواصل الاجتماعي (Instagram, Facebook, TikTok) والتسويق عبر البريد الإلكتروني لجذب زوار مؤهلين وبناء ولاء العملاء.",
+        "قبل الإطلاق، نفذ طلباً كاملاً من الهاتف: البحث عن المنتج، قراءة التفاصيل، إضافة السلة، اختيار الدفع والتوصيل، ثم استلام التأكيد. اختبر الحالات الصعبة أيضاً مثل نفاد المخزون أو تغيير العنوان أو إلغاء الطلب حتى لا يكتشف العميل المشكلة قبلك.",
+        "جهز قواعد واضحة للمخزون والإرجاع وخدمة العملاء ومتابعة هامش الربح. نجاح الحملة الإعلانية لا يكفي إذا كانت العمليات بطيئة أو المعلومات غير دقيقة. المتجر القابل للنمو يربط تجربة الشراء بالإدارة اليومية ويقيس المبيعات المتكررة، تكلفة الاستحواذ وقيمة كل عميل."
       ]
     }
   },
@@ -133,13 +142,16 @@
         "Les réseaux sociaux sont devenus un canal de vente et de notoriété incontournable pour les entreprises marocaines. Instagram reste la plateforme reine pour les secteurs de la mode, de la beauté et de la restauration.",
         "TikTok émerge comme un puissant levier de croissance, particulièrement auprès des jeunes Marocains. Les vidéos courtes, authentiques et divertissantes génèrent un engagement exceptionnel.",
         "Facebook conserve sa force pour le ciblage publicitaire avancé et la construction de communautés. Les groupes Facebook sont devenus des espaces d'échange privilégiés pour les professionnels.",
-        "La clé du succès ? Un contenu adapté à chaque plateforme, une fréquence régulière et une authentique proximité avec votre audience marocaine."
+        "La clé du succès ? Un contenu adapté à chaque plateforme, une fréquence régulière et une authentique proximité avec votre audience marocaine.",
+        "Construisez un calendrier autour de quelques piliers : expertise, coulisses, preuves clients, produits et réponses aux objections. Mesurez les sauvegardes, les conversations et les demandes qualifiées plutôt que les seuls abonnés. Chaque mois, conservez les formats qui génèrent une action utile, améliorez leur accroche et réutilisez les meilleures idées dans plusieurs formats sans publier exactement le même contenu partout."
       ],
       "ar": [
         "وسائل التواصل الاجتماعي أصبحت قناة مبيعات وانتشار لا غنى عنها للشركات المغربية. إنستغرام يبقى المنصة الملكية لقطاعات الأزياء والتجميع والمطاعم.",
         "تيك توك يبرز كأداة نمو قوية، خاصة بين الشباب المغربي. الفيديوهات القصيرة والأصيلة والمسلية تولد تفاعلاً استثنائياً.",
         "فيسبوك يحافظ على قوته في الاستهداف الإعلاني المتقدم وبناء المجتمعات. مجموعات فيسبوك أصبحت مساحات تفاعل مميزة للمحترفين.",
-        "مفتاح النجاح؟ محتوى متكيف مع كل منصة، تكرار منتج وقرب أصيل مع جمهورك المغربي."
+        "مفتاح النجاح؟ محتوى متكيف مع كل منصة، تكرار منتج وقرب أصيل مع جمهورك المغربي.",
+        "ابنِ تقويم النشر حول محاور واضحة مثل الخبرة وكواليس العمل وتجارب العملاء والمنتجات والإجابة عن الاعتراضات. هذا التنظيم يساعد الفريق على الاستمرار ويمنع النشر العشوائي المرتبط فقط بالمناسبات أو الأفكار الطارئة.",
+        "لا تقيس النجاح بعدد المتابعين وحده. راقب الحفظ والمشاركة والرسائل والطلبات المؤهلة والمبيعات الناتجة عن كل صيغة. في نهاية كل شهر، احتفظ بالمواضيع التي دفعت الجمهور إلى خطوة مفيدة، وحسّن بدايتها، ثم أعد استخدامها بصيغ مختلفة تناسب كل منصة من دون نسخ المحتوى نفسه."
       ]
     }
   },
@@ -168,13 +180,16 @@
         "Votre marque est bien plus qu'un logo. C'est la promesse que vous faites à vos clients, l'émotion que vous suscitez et la confiance que vous inspirez. Au Maroc, où les relations humaines restent centrales, un branding fort est un atout majeur.",
         "Un bon branding commence par la définition de votre positionnement : vos valeurs, votre cible, votre différence. Cette base stratégique guidera tous vos choix créatifs.",
         "La palette de couleurs, la typographie et les déclinaisons du logo doivent être cohérentes sur tous les supports : site web, cartes de visite, réseaux sociaux, packaging.",
-        "Investir dans un branding professionnel, c'est investir dans la durée. Une identité bien conçue traversera les années et les évolutions de votre entreprise."
+        "Investir dans un branding professionnel, c'est investir dans la durée. Une identité bien conçue traversera les années et les évolutions de votre entreprise.",
+        "Pour rendre cette identité exploitable, formalisez des règles simples : versions du logo, tailles minimales, contrastes, usages des couleurs, styles photographiques et exemples de composition. Testez ensuite le système sur des supports réels avant de le valider. Une marque forte n'impose pas un visuel unique partout ; elle crée une cohérence reconnaissable tout en laissant assez de souplesse pour évoluer."
       ],
       "ar": [
         "علامتك التجارية أكثر من مجرد شعار. إنها الوعد الذي تقدمه لعملائك، العاطفة التي تثيرها والثقة التي تلهمها. في المغرب، حيث العلاقات الإنسانية تبقى مركزية، الهوية البصرية القوية ميزة كبيرة.",
         "الهوية البصرية الناجحة تبدأ بتحديد موقعك: قيمك، جمهورك المستهدف، اختلافك. هذا الأساس الاستراتيجي يوجه كل اختياراتك الإبداعية.",
         "لوحة الألوان والخطوط وتنويعات الشعار يجب أن تكون متسقة عبر جميع الوسائل: الموقع الإلكتروني، بطاقات العمل، وسائل التواصل، التغليف.",
-        "الاستثمار في هوية بصرية احترافية هو استثمار في الديمومة. هوية مصممة جيداً ستعبر السنين وتطورات شركتك."
+        "الاستثمار في هوية بصرية احترافية هو استثمار في الديمومة. هوية مصممة جيداً ستعبر السنين وتطورات شركتك.",
+        "لجعل الهوية سهلة الاستخدام، وثق قواعد عملية تشمل نسخ الشعار وأحجامه الدنيا والتباين والألوان والخطوط وأسلوب الصور. أضف أمثلة واضحة لما يجب فعله وما ينبغي تجنبه حتى يستطيع أي مصمم أو موظف تطبيق النظام من دون تخمين.",
+        "اختبر الهوية على حالات حقيقية قبل اعتمادها: شاشة هاتف، منشور اجتماعي، فاتورة، تغليف ولافتة. العلامة القوية لا تكرر تصميماً واحداً في كل مكان، بل تحافظ على عناصر ثابتة تجعلها معروفة وتسمح في الوقت نفسه بمرونة كافية للحملات والخدمات الجديدة."
       ]
     }
   },
@@ -203,13 +218,16 @@
         "La performance web n'est plus une option. Google utilise Core Web Vitals comme facteur de classement, et les utilisateurs attendent un chargement en moins de 3 secondes.",
         "Un site rapide améliore directement votre taux de conversion. Chaque seconde de gagnée peut augmenter vos ventes de 7% selon les études.",
         "Les images non optimisées sont la cause n°1 des lenteurs. Utilisez des formats modernes (WebP, AVIF), le lazy loading et un CDN pour des résultats immédiats.",
-        "Le code JavaScript excessif ralentit le rendu. Privilégiez le rendu serveur (SSR) et le static generation (SSG) avec Next.js pour des performances optimales."
+        "Le code JavaScript excessif ralentit le rendu. Privilégiez le rendu serveur (SSR) et le static generation (SSG) avec Next.js pour des performances optimales.",
+        "Mesurez avant d'optimiser avec PageSpeed Insights, Lighthouse et les données réelles de vos visiteurs. Traitez d'abord l'élément principal trop lent, les décalages de mise en page et les interactions tardives. Fixez ensuite un budget de performance pour les images, les polices et les scripts tiers, puis contrôlez-le à chaque mise en ligne afin d'éviter une dégradation progressive."
       ],
       "ar": [
         "أداء الويب لم يعد خياراً. جوجل يستخدم مقاييس أداء الويب كعامل تصنيف، والمستخدمون يتوقون تحميلاً في أقل من 3 ثوانٍ.",
         "الموقع السريع يحسن مباشرة معدل التحويل الخاص بك. كل ثانية مكتسبة يمكن أن تزيد مبيعاتك بنسبة 7% وفق الدراسات.",
         "الصور غير المحسنة هي السبب الأول للبطء. استخدم صيغاً حديثة (WebP, AVIF)، التحميل الكسول وشبكة توصيل محتوى لنتائج فورية.",
-        "كود جافا سكريبت الزائد يبطئ العرض. فضل العرض من الخادم والتوليد الثابت مع Next.js لأداء مثالي."
+        "كود جافا سكريبت الزائد يبطئ العرض. فضل العرض من الخادم والتوليد الثابت مع Next.js لأداء مثالي.",
+        "ابدأ القياس قبل التحسين باستعمال PageSpeed Insights وLighthouse وبيانات الزوار الحقيقية. عالج أولاً العنصر الرئيسي البطيء وتحركات الصفحة المفاجئة وتأخر التفاعل، لأن كل مؤشر منها يحتاج سبباً وحلاً مختلفين وليس مجرد ضغط شامل للملفات.",
+        "ضع ميزانية واضحة لحجم الصور والخطوط والسكربتات الخارجية، وراجعها مع كل تحديث. راقب الصفحات المهمة على اتصال هاتف عادي وليس على جهاز المطور فقط. بهذه الممارسة تمنع تراجع السرعة تدريجياً وتحافظ على تجربة مستقرة مع إضافة المحتوى والميزات الجديدة."
       ]
     }
   },
@@ -238,13 +256,16 @@
         "Le SEO local est crucial pour les entreprises marocaines qui ciblent une clientèle géographiquement définie. Casablanca, Rabat, Marrakech : chaque ville a ses spécificités de recherche.",
         "Google My Business est votre outil principal. Une fiche complète avec photos, horaires, avis clients et publications régulières augmente votre visibilité dans le pack local.",
         "Les citations cohérentes sur les annuaires marocains (Pagine.ma, Moteur.ma, etc.) renforcent votre autorité locale. La cohérence NAP (Nom, Adresse, Téléphone) est essentielle.",
-        "Le contenu géolocalisé — pages ville, articles sur des événements locaux, témoignages clients — signale à Google votre pertinence pour une zone donnée."
+        "Le contenu géolocalisé — pages ville, articles sur des événements locaux, témoignages clients — signale à Google votre pertinence pour une zone donnée.",
+        "Évitez toutefois de dupliquer la même page pour chaque ville en changeant seulement le nom du lieu. Décrivez vos services, délais, réalisations et contraintes propres à la zone ciblée. Demandez des avis détaillés après une prestation, répondez-y avec soin et mesurez les appels, demandes d'itinéraire et formulaires issus de votre fiche pour concentrer vos efforts sur les actions réellement rentables."
       ],
       "ar": [
         "السيو المحلي ضروري للشركات المغربية التي تستهدف زبائن محدودين جغرافيا. الدار البيضاء والرباط ومراكش: كل مدينة لها خصائص بحث خاصة.",
         "Google My Business هو أداتك الرئيسية. صفحة كاملة بصور وساعات وتقييمات العملاء ونشرات منتظمة يزيد ظهورك في الحزمة المحلية.",
         "الاستشهادات المتسقة في الدلائل المغربية تعزز سلطتك المحلية. اتساق NAP (الاسم، العنوان، الهاتف) ضروري.",
-        "المحتوى المحدد جغرافيا — صفحات المدن، مقالات عن الأحداث المحلية، آراء العملاء — يشير لجوجل بملاءمتك لمنطقة معينة."
+        "المحتوى المحدد جغرافيا — صفحات المدن، مقالات عن الأحداث المحلية، آراء العملاء — يشير لجوجل بملاءمتك لمنطقة معينة.",
+        "تجنب إنشاء صفحة متطابقة لكل مدينة مع تغيير اسم المكان فقط. اشرح الخدمات والمواعيد والمشاريع والاحتياجات الخاصة بالمنطقة المستهدفة، واربط الصفحة بأمثلة حقيقية ومعلومات اتصال دقيقة تساعد الزائر قبل أن يتواصل معك.",
+        "اطلب من العملاء تقييماً مفصلاً بعد تقديم الخدمة ورد على كل مراجعة باحترام. تابع المكالمات وطلبات الاتجاه والنماذج القادمة من ملف النشاط التجاري، ثم قارن النتائج حسب المدينة والخدمة. بهذه البيانات تركز على الإجراءات التي تجلب فرصاً حقيقية بدل مطاردة ترتيب لا ينتج عنه عملاء."
       ]
     }
   },
@@ -273,13 +294,16 @@
         "Le mobile-first n'est plus une option : 78% des Marocains accèdent à Internet via leur smartphone. Votre site doit offrir une expérience irréprochable sur mobile.",
         "L'accessibilité numérique est devenue un impératif légal et éthique. Contrastes suffisants, textes alternatifs, navigation au clavier : chaque détail compte pour l'inclusion.",
         "Le parcours utilisateur doit être intuitif et rapide. Réduisez le nombre d'étapes pour atteindre l'objectif (contact, achat, inscription) et supprimez les frictions inutiles.",
-        "Les micro-interactions et animations fluides améliorent la perception de qualité. Mais attention : chaque animation doit avoir un purpose, pas seulement décorative."
+        "Les micro-interactions et animations fluides améliorent la perception de qualité. Mais attention : chaque animation doit avoir un objectif, pas seulement une fonction décorative.",
+        "Pour évaluer une interface, observez des utilisateurs accomplir une tâche réelle sans les guider. Notez les hésitations, les retours en arrière et les éléments ignorés. Priorisez ensuite les corrections qui réduisent l'effort : libellés plus précis, contraste renforcé, formulaire plus court ou appel à l'action mieux placé. Une bonne UX se valide par la compréhension et la réussite, pas par la quantité d'effets visuels."
       ],
       "ar": [
         "أولوية الموبايل لم تعد خياراً: 78% من المغاربة يصلون للإنترنت عبر هواتفهم. موقعك يجب أن يقدم تجربة لا تشوبها شائبة على الموبايل.",
-        "إمكانية الوصول الرقمية أصبحت التزاماً قانونياً وأخلاقياً. تباينات كافية، نصوص بديلة، تنقل بلوحة المفاتيح: كل detail يهم للإدماج.",
+        "إمكانية الوصول الرقمية أصبحت التزاماً قانونياً وأخلاقياً. تباين كافٍ ونصوص بديلة وتنقل بلوحة المفاتيح: كل تفصيل مهم للإدماج.",
         "مسار المستخدم يجب أن يكون بديهياً وسريعاً. قلل عدد الخطوات للوصول للهدف (اتصال، شراء، تسجيل) وأزل الاحتكاكات غير الضرورية.",
-        "التفاعلات المصغرة والرسوم المتحركة السلسة تحسن إدراك الجودة. لكن انتبه: كل رسم متحرك يجب أن له هدف، ليس مجرد ديكور."
+        "التفاعلات المصغرة والرسوم المتحركة السلسة تحسن إدراك الجودة. لكن يجب أن تخدم كل حركة هدفاً واضحاً، لا أن تكون مجرد ديكور.",
+        "لاختبار الواجهة، راقب مستخدمين حقيقيين وهم ينجزون مهمة من دون إرشاد. سجل لحظات التردد والرجوع والعناصر التي لم يلاحظوها، ثم رتب التحسينات حسب تأثيرها على نجاح المهمة وليس حسب سهولة تنفيذها.",
+        "قد يكون الحل عنواناً أوضح أو تبايناً أقوى أو نموذجاً أقصر أو زر إجراء في مكان أفضل. تجربة المستخدم الجيدة تقاس بالفهم والسرعة وإتمام الهدف، وليس بعدد المؤثرات البصرية. أعد الاختبار بعد التعديل وتأكد من النتيجة على الهاتف ولوحة المفاتيح وقارئ الشاشة."
       ]
     }
   },
@@ -308,13 +332,16 @@
         "WhatsApp est le canal de communication préféré des Marocains. Intégrer WhatsApp Business API à votre site permet de répondre instantanément aux questions de vos prospects.",
         "Les chatbots intelligents peuvent qualifier les leads 24/7 : recueillir les coordonnées, identifier le besoin, orienter vers le bon service — sans intervention humaine.",
         "Au-delà du support, WhatsApp devient un canal de vente : envoi de devis, confirmation de commande, relance de panier abandonné. Le taux d'ouverture dépasse les 90%.",
-        "L'automatisation ne remplace pas l'humain : elle le libère pour les cas complexes. Combinez automation et suivi personnalisé pour un service client d'excellence."
+        "L'automatisation ne remplace pas l'humain : elle le libère pour les cas complexes. Combinez automatisation et suivi personnalisé pour un service client d'excellence.",
+        "Avant de connecter Twilio, cartographiez les scénarios autorisés, le consentement, les modèles de messages et le passage vers un conseiller. Conservez l'historique utile sans collecter plus de données que nécessaire. Lancez d'abord un parcours simple, mesurez le délai de réponse et le taux de résolution, puis ajoutez des automatisations uniquement lorsqu'elles réduisent une friction clairement identifiée."
       ],
       "ar": [
         "واتساب هو قناة التواصل المفضلة عند المغاربة. دمج WhatsApp Business API مع موقعك يتيح الرد فوراً على أسئلة زوارك.",
         "الروبوتات الذكية يمكنها تأهيل العملاء المحتملين على مدار الساعة: جمع البيانات، تحديد الحاجة، التوجيه للخدمة المناسبة — بدون تدخل بشري.",
         "بعد الدعم، واتساب يصبح قناة مبيعات: إرسال عروض أسعار، تأكيد الطلب، متابعة سلة متروكة. معدل الفتح يتجاوز 90%.",
-        "الأتمتة لا تحل محل الإنسان: تبدأه للحالات المعقدة. اجمع بين الأتمتة والمتابعة الشخصية لخدمة عملاء متميزة."
+        "الأتمتة لا تحل محل الإنسان، بل توفر وقته للحالات المعقدة. اجمع بين الأتمتة والمتابعة الشخصية لتقديم خدمة عملاء متميزة.",
+        "قبل ربط Twilio، ارسم السيناريوهات المسموح بها وحدد الموافقة وقوالب الرسائل واللحظة التي تنتقل فيها المحادثة إلى موظف. اجمع فقط البيانات الضرورية ووضح للمستخدم سبب استخدامها وكيف يمكنه إيقاف الرسائل.",
+        "ابدأ بمسار بسيط مثل تأكيد الطلب أو تأهيل طلب التواصل، ثم قس مدة الرد ونسبة إتمام المهمة والحالات التي احتاجت تدخلاً بشرياً. أضف أتمتة جديدة فقط عندما تعالج احتكاكاً واضحاً، وراجع الرسائل دورياً حتى تبقى دقيقة وطبيعية ومتوافقة مع سياسات واتساب."
       ]
     }
   }

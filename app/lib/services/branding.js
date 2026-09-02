@@ -4,7 +4,7 @@ export const branding = {
   related: ["ui-ux-identite-visuelle", "design-graphique-maroc", "social-media-maroc"],
   fr: {
     name: "Branding & identité",
-    metaTitle: "Création de logo et identité de marque au Maroc",
+    metaTitle: "Logo et identité de marque au Maroc",
     metaDescription: "Création de logo et identité de marque au Maroc : logo design, charte graphique, couleurs et typographie pour une marque mémorable et cohérente.",
     eyebrow: "Branding · Identité de marque",
     title: "Création de logo et identité de marque au Maroc",

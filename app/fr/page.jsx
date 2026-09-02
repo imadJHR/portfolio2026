@@ -12,7 +12,7 @@ import { LeadFaq } from "../components/lead-faq"
 import { Contact } from "../components/contact"
 import Footer from "../components/footer"
 
-const title = "Agence web à Casablanca — Sites, SEO & e-commerce"
+const title = "Agence web Casablanca — Sites, SEO, e-commerce"
 
 export const metadata = {
   title,

@@ -4,8 +4,8 @@ export const marketingInfluence = {
   related: ["social-media-maroc", "production-photo-video-maroc", "publicite-payante-maroc"],
   fr: {
     name: "Marketing d'influence",
-    metaTitle: "Marketing d'influence et collaboration avec créateurs au Maroc",
-    metaDescription: "Marketing d'influence au Maroc : campagnes avec influenceurs, collaborations créateurs et contenu UGC pour toucher votre audience de façon authentique.",
+    metaTitle: "Marketing d'influence au Maroc",
+    metaDescription: "Marketing d'influence au Maroc : campagnes, collaborations avec des créateurs et contenu UGC pour toucher votre audience avec authenticité.",
     eyebrow: "Influence & créateurs · Marketing authentique",
     title: "Marketing d'influence et collaborations créateurs au Maroc",
     highlight: "Une recommandation authentique vaut plus qu'une publicité classique.",

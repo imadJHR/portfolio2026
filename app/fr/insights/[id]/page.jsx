@@ -5,6 +5,7 @@ import Navbar from "../../../components/navbar"
 import Footer from "../../../components/footer"
 import { getTranslation } from "../../../lib/i18n"
 import { SITE_URL } from "../../../lib/seo"
+import { getInsightMetaTitle } from "../../../lib/insight-seo"
 import { SpecularLink } from "../../../components/react-bits/specular-button"
 
 export async function generateStaticParams() {
@@ -15,12 +16,13 @@ export async function generateMetadata({ params }) {
   const { id } = await params
   const article = insightsData.find((a) => a.id === id)
   if (!article) return {}
+  const metaTitle = getInsightMetaTitle(article, "fr")
 
   return {
-    title: article.title.fr,
+    title: metaTitle,
     description: article.excerpt.fr,
     openGraph: {
-      title: article.title.fr,
+      title: metaTitle,
       description: article.excerpt.fr,
       type: "article",
       url: `${SITE_URL}/fr/insights/${id}`,
@@ -31,7 +33,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title.fr,
+      title: metaTitle,
       description: article.excerpt.fr,
       images: ["/opengraph-image"],
     },

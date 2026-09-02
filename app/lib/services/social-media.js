@@ -5,7 +5,7 @@ export const socialMedia = {
   fr: {
     name: "Réseaux sociaux",
     metaTitle: "Gestion des réseaux sociaux au Maroc",
-    metaDescription: "Gestion des réseaux sociaux au Maroc : community management, content creation et stratégie sociale pour développer votre présence en ligne et engager votre audience.",
+    metaDescription: "Gestion des réseaux sociaux au Maroc : stratégie, création de contenu et community management pour développer une audience engagée.",
     eyebrow: "Réseaux sociaux · Gestion & contenu",
     title: "Gestion des réseaux sociaux et création de contenu au Maroc",
     highlight: "Une présence sociale cohérente qui construit une communauté fidèle.",

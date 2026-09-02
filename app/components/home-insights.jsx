@@ -44,6 +44,7 @@ export function HomeInsights({ lang }) {
                 <time dateTime={article.date}>{dateFormatter.format(new Date(`${article.date}T00:00:00`))}</time>
                 <Link href={`/${lang}/insights/${article.id}`} aria-label={isRTL ? `قراءة: ${article.title.ar}` : `Lire : ${article.title.fr}`}>
                   <ArrowUpRight aria-hidden="true" />
+                  <span className="sr-only">{isRTL ? `قراءة ${article.title.ar}` : `Lire ${article.title.fr}`}</span>
                 </Link>
               </footer>
             </article>

@@ -15,7 +15,8 @@ export function ProjectsGrid({ lang, projects, headingLevel = "h3" }) {
               <Image
                 src={project.image}
                 alt={lang === "ar" ? `مشروع ${title} من Nemsi Media` : `Projet ${title} réalisé par Nemsi Media`}
-                fill
+                width={1600}
+                height={1000}
                 sizes="(max-width: 800px) 100vw, 50vw"
               />
             </div>

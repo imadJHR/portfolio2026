@@ -7,7 +7,7 @@ import { buildLocalizedPageMetadata } from "../../lib/page-seo"
 export const metadata = buildLocalizedPageMetadata({
   lang: "fr",
   path: "contact",
-  title: "Contact",
+  title: "Contact agence web Casablanca",
   description: "Parlez-nous de votre projet digital. Nemsi Media vous répond avec une première direction claire sous 24h.",
 })
 export default function Page() { return <div dir="ltr"><Navbar lang="fr" /><main><PageHero lang="fr" eyebrow="CONTACT" title="Commençons par une conversation simple." description="Parlez-nous du contexte, de l’objectif et du moment où vous souhaitez avancer." /><Contact lang="fr" /></main><Footer lang="fr" /></div> }
