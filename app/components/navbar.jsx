@@ -27,7 +27,7 @@ export default function Navbar({ lang }) {
           {items.map((item, index) => <Link key={item.href} href={item.href}><small>0{index + 1}</small>{item.label}</Link>)}
         </nav>
         <div className="nm-nav__actions">
-          <Link className="nm-lang" href={`/${otherLang}`}>{otherLang.toUpperCase()}</Link>
+          <a className="nm-lang" href={`/${otherLang}`}>{otherLang.toUpperCase()}</a>
           <Link className="nm-nav__cta" href={`/${lang}/devis`}>{isRTL ? "مشروع جديد" : "Nouveau projet"}<ArrowUpRight aria-hidden="true" /></Link>
           <button className="nm-menu-button" type="button" onClick={() => setIsOpen((value) => !value)} aria-expanded={isOpen} aria-controls="mobile-navigation" aria-label={isOpen ? (isRTL ? "إغلاق القائمة" : "Fermer le menu") : (isRTL ? "فتح القائمة" : "Ouvrir le menu")}>{isOpen ? <X /> : <Menu />}</button>
         </div>

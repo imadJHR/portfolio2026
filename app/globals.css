@@ -760,6 +760,19 @@ p { color: var(--text-secondary); line-height: 1.58; }
 .nm-hero__scroll { display: flex; align-self: stretch; align-items: center; gap: 3rem; border-inline-start: 1px solid var(--border); padding-inline: 1.4rem; color: var(--brand); font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .nm-hero__scroll svg { width: 1rem; animation: none; }
 
+/* Keep the long homepage inexpensive to render until each section approaches the viewport. */
+.nm-clients,
+.nm-services,
+.nm-capabilities,
+.nm-work,
+.nm-quotes,
+.nm-home-insights,
+.nm-faq,
+.nm-contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
+}
+
 /* Client logo wall */
 .nm-clients { background: #fff; }
 .nm-clients__heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, .42fr); gap: 3rem; align-items: end; border-top: 1px solid var(--text); padding-top: 1.5rem; margin-bottom: 3.5rem; }

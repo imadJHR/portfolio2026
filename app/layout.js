@@ -1,10 +1,4 @@
 import { Space_Grotesk, Noto_Sans_Arabic } from "next/font/google"
-import { Suspense } from "react"
-import Script from "next/script"
-import { ThemeProvider } from "./components/theme-provider"
-import { AiReferralTracker } from "./components/ai-referral-tracker"
-import { LogoMark } from "./components/logo/logo-mark"
-import { HtmlLangUpdater } from "./components/html-lang-updater"
 import {
   SITE_NAME,
   SITE_URL,
@@ -19,7 +13,6 @@ import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-space",
   display: "swap",
   preload: true,
@@ -27,10 +20,9 @@ const spaceGrotesk = Space_Grotesk({
 
 const notoArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-arabic",
   display: "swap",
-  preload: true,
+  preload: false,
 })
 
 export const metadata = {
@@ -112,28 +104,41 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" dir="ltr" suppressHydrationWarning>
       <head>
-        <Script
+        <script
           id="locale-document-attributes"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(){var ar=location.pathname==='/ar'||location.pathname.indexOf('/ar/')===0;document.documentElement.lang=ar?'ar':'fr';document.documentElement.dir=ar?'rtl':'ltr';})();`,
           }}
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="Nemsi Media — AI-readable information" />
-        <Script
-          strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-HHESPWMXQF"
-        />
-        <Script
-          id="ga-main"
-          strategy="lazyOnload"
+        <script
+          id="deferred-analytics"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-HHESPWMXQF');
+              window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+              window.gtag('js', new Date());
+              window.gtag('config', 'G-HHESPWMXQF');
+              (function(){
+                var loaded = false;
+                function loadAnalytics(){
+                  if (loaded) return;
+                  loaded = true;
+                  var script = document.createElement('script');
+                  script.async = true;
+                  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HHESPWMXQF';
+                  document.head.appendChild(script);
+                }
+                function schedule(){ window.setTimeout(loadAnalytics, 6000); }
+                if (document.readyState === 'complete') schedule();
+                else window.addEventListener('load', schedule, { once: true });
+
+                var value = [new URLSearchParams(location.search).get('utm_source') || '', new URLSearchParams(location.search).get('ref') || '', document.referrer || ''].join(' ').toLowerCase();
+                var sources = [['chatgpt',['chatgpt.com','chat.openai.com','openai.com']],['perplexity',['perplexity.ai']],['copilot',['copilot.microsoft.com']],['gemini',['gemini.google.com']],['claude',['claude.ai']],['you',['you.com']],['poe',['poe.com']],['phind',['phind.com']]];
+                var match = sources.find(function(item){ return item[1].some(function(domain){ return value.indexOf(domain) !== -1; }); });
+                if (match) window.gtag('event', 'ai_referral', { ai_source: match[0], landing_path: location.pathname });
+              })();
             `,
           }}
         />
@@ -149,22 +154,7 @@ export default function RootLayout({ children }) {
       <body
         className={`font-sans ${spaceGrotesk.variable} ${notoArabic.variable} antialiased bg-[var(--bg)] text-[var(--text)]`}
       >
-        <HtmlLangUpdater />
-        <ThemeProvider>
-          <AiReferralTracker />
-          <Suspense
-            fallback={
-              <div className="flex min-h-screen items-center justify-center bg-[var(--bg)]">
-                <div className="text-center">
-                  <LogoMark className="mx-auto mb-4 h-12 w-12 animate-pulse" />
-                  <p className="text-sm text-[var(--text-muted)]">Nemsi Media</p>
-                </div>
-              </div>
-            }
-          >
-            {children}
-          </Suspense>
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   )

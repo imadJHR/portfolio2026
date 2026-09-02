@@ -1,16 +1,11 @@
-"use client"
-
 import Link from "next/link"
 import { ArrowDown, ArrowUpRight } from "lucide-react"
-import { openWhatsApp } from "../lib/leads"
+import { WHATSAPP_NUMBER } from "../lib/leads"
 
 export function Hero({ lang }) {
   const isRTL = lang === "ar"
-  const startProject = () => openWhatsApp(
-    isRTL ? "مرحبا، أود مناقشة مشروعي الرقمي." : "Bonjour, je souhaite discuter de mon projet digital.",
-    "hero_cta",
-    { language: lang },
-  )
+  const message = isRTL ? "مرحبا، أود مناقشة مشروعي الرقمي." : "Bonjour, je souhaite discuter de mon projet digital."
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
   return (
     <section id="home" className="nm-hero" dir={isRTL ? "rtl" : "ltr"}>
@@ -35,7 +30,7 @@ export function Hero({ lang }) {
               {isRTL ? "استوديو رقمي في الدار البيضاء. نبني هويات ومواقع ومنتجات رقمية تخدم أهدافاً حقيقية، بدون تعقيد غير ضروري." : "Studio digital à Casablanca. Nous créons des identités, des sites et des produits pensés pour des objectifs réels, sans complexité inutile."}
             </p>
             <div className="nm-hero__actions">
-              <button type="button" className="nm-button nm-button--primary" onClick={startProject}>{isRTL ? "ابدأ مشروعك" : "Démarrer un projet"}<ArrowUpRight aria-hidden="true" /></button>
+              <a className="nm-button nm-button--primary" href={whatsappHref} target="_blank" rel="noopener noreferrer">{isRTL ? "ابدأ مشروعك" : "Démarrer un projet"}<ArrowUpRight aria-hidden="true" /></a>
               <Link className="nm-button nm-button--text" href="#portfolio">{isRTL ? "شاهد أعمالنا" : "Voir les projets"}<span aria-hidden="true">↘</span></Link>
             </div>
             <ul className="nm-hero__scope" aria-label={isRTL ? "مجالات العمل" : "Domaines d’intervention"}>
