@@ -1,9 +1,54 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { ArrowDown, ArrowUpRight } from "lucide-react"
 import { WHATSAPP_NUMBER } from "../lib/leads"
 
+const frenchHeroPhrases = [["rapide,", "précis"], ["beau,", "efficace"], ["clair,", "utile"], ["simple,", "puissant"], ["pensé pour", "convertir"]]
+const arabicHeroPhrases = [["واضح", "ومفيد"], ["سريع", "وذكي"], ["جميل", "ومتقن"]]
+
+function RotatingText({ phrases }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [nextIndex, setNextIndex] = useState(1 % phrases.length)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const currentIndexRef = useRef(0)
+  const transitionTimerRef = useRef(null)
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      const next = (currentIndexRef.current + 1) % phrases.length
+      setNextIndex(next)
+      setIsAnimating(true)
+
+      transitionTimerRef.current = window.setTimeout(() => {
+        currentIndexRef.current = next
+        setCurrentIndex(next)
+        setIsAnimating(false)
+      }, 650)
+    }, 3000)
+
+    return () => {
+      window.clearInterval(interval)
+      window.clearTimeout(transitionTimerRef.current)
+    }
+  }, [phrases.length])
+
+  return (
+    <span className="nm-hero__rotating-wrap" aria-live="polite">
+      <span className={`nm-hero__rotating-word nm-hero__rotating-word--current${isAnimating ? " is-exiting" : ""}`}>
+        {phrases[currentIndex].map((line) => <span className="nm-hero__rotating-line" key={line}>{line}</span>)}
+      </span>
+      <span className={`nm-hero__rotating-word nm-hero__rotating-word--next${isAnimating ? " is-entering" : ""}`} aria-hidden="true">
+        {phrases[nextIndex].map((line) => <span className="nm-hero__rotating-line" key={line}>{line}</span>)}
+      </span>
+    </span>
+  )
+}
+
 export function Hero({ lang }) {
   const isRTL = lang === "ar"
+
   const message = isRTL ? "مرحبا، أود مناقشة مشروعي الرقمي." : "Bonjour, je souhaite discuter de mon projet digital."
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
@@ -22,7 +67,7 @@ export function Hero({ lang }) {
           </div>
           <div className="nm-hero__headline">
             <p className="nm-kicker">{isRTL ? "استراتيجية · تصميم · تطوير" : "STRATÉGIE · DESIGN · DÉVELOPPEMENT"}</p>
-            <h1>{isRTL ? <><span>رقمي</span><em>واضح ومفيد</em><span>ومتقن.</span></> : <><span>Du digital</span><em>clair, utile</em><span>et bien fait.</span></>}</h1>
+            <h1>{isRTL ? <><span>رقمي</span><em><RotatingText phrases={arabicHeroPhrases} /></em><span>ومتقن.</span></> : <><span>Du digital</span><em><RotatingText phrases={frenchHeroPhrases} /></em><span>et bien fait.</span></>}</h1>
           </div>
           <aside className="nm-hero__aside">
             <div className="nm-hero__availability"><span aria-hidden="true" />{isRTL ? "نستقبل مشاريع جديدة" : "Disponible pour de nouveaux projets"}</div>

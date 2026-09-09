@@ -1116,3 +1116,33 @@ p { color: var(--text-secondary); line-height: 1.58; }
   .nm-footer__grid { grid-template-columns: 1fr; margin-top: 4rem; }
   .nm-contact__grid { gap: 4rem; }
 }
+
+/* Homepage-only rotating phrase. The fixed wrapper prevents the H1 from jumping. */
+.nm-hero__rotating-wrap {
+  position: relative;
+  display: block;
+  height: 2em;
+  overflow: hidden;
+  isolation: isolate;
+}
+.nm-hero__rotating-word {
+  display: block;
+  width: 100%;
+  line-height: 1;
+  will-change: transform, opacity, filter;
+}
+.nm-hero__rotating-line { display: block; }
+.nm-hero__rotating-word--current { position: relative; opacity: 1; transform: translateY(0); filter: blur(0); }
+.nm-hero__rotating-word--next { position: absolute; inset-block-start: 0; inset-inline-start: 0; opacity: 0; transform: translateY(20px); filter: blur(6px); }
+.nm-hero__rotating-word--current.is-exiting,
+.nm-hero__rotating-word--next.is-entering { transition: transform .65s ease-in-out, opacity .65s ease-in-out, filter .65s ease-in-out; }
+.nm-hero__rotating-word--current.is-exiting { opacity: 0; transform: translateY(-20px); filter: blur(6px); }
+.nm-hero__rotating-word--next.is-entering { opacity: 1; transform: translateY(0); filter: blur(0); }
+@media (max-width: 700px) {
+  .nm-hero__rotating-wrap { height: 2.15em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nm-hero__rotating-word--current.is-exiting { opacity: 0; transform: none; filter: none; }
+  .nm-hero__rotating-word--next.is-entering { opacity: 0; transform: none; filter: none; }
+  .nm-hero__rotating-word--current { transition: none; }
+}
