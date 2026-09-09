@@ -1,0 +1,94 @@
+<!-- SEO audit report template.
+     Replace ALL-CAPS placeholders and the example rows/items. Keep the CSS and structure.
+     If your agent publishes HTML through a pipeline that adds its own document wrapper
+     (for example an artifact viewer), strip this comment and the doctype/head/body tags;
+     as a standalone file opened in a browser, keep everything. -->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nemsi Media : audit SEO du 9 septembre 2026</title>
+<style>
+  :root {
+    --bg: #e2e9f3;
+    --ink: #122650;
+    --muted: #4f5f79;
+    --rule: #c2cddd;
+    --rule-strong: #122650;
+  }
+  html { background: var(--bg); color-scheme: light; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: Charter, Georgia, "Times New Roman", serif;
+    line-height: 1.55; margin: 0; padding: 3.5rem 1.5rem 5rem;
+  }
+  .page { max-width: 860px; margin: 0 auto; }
+  .mono {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  }
+  h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700; font-size: 1.6rem; letter-spacing: -0.01em;
+    margin: 0.75rem 0 0.25rem; text-wrap: balance;
+  }
+  .subtitle { color: var(--muted); margin: 0 0 2.5rem; font-size: 1.02rem; max-width: 46rem; }
+  .dateline { color: var(--muted); font-size: 0.92rem; margin: 0 0 1.1rem; }
+  h2 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700; font-size: 1.25rem; margin: 3rem 0 0.75rem;
+  }
+  .lede { font-size: 1.05rem; max-width: 46rem; }
+  section > p { max-width: 46rem; }
+  hr.heavy { border: 0; border-top: 2px solid var(--rule-strong); margin: 3rem 0 0; }
+  section .cols:first-of-type { border-top: 1px solid var(--rule); }
+  .cols {
+    display: grid; grid-template-columns: minmax(180px, 5fr) 8fr;
+    gap: 1.25rem; padding: 0.6rem 0; border-bottom: 1px solid var(--rule);
+  }
+  .row-title { font-size: 1.12rem; margin: 0; }
+  .row-title .tag { display: block; margin-top: 0.35rem; }
+  .cols > div p { margin: 0 0 0.6rem; color: var(--muted); font-size: 0.95rem; }
+  .cols > div p:last-child { margin-bottom: 0; }
+  .cols > div p.fix { color: var(--ink); }
+  .fix b { font-weight: 600; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.85em; word-break: break-word;
+  }
+  ol { padding-left: 1.3rem; max-width: 44rem; }
+  ol li { margin-bottom: 0.5rem; }
+  ul.plain { list-style: none; padding: 0; max-width: 46rem; }
+  ul.plain li { padding: 0.5rem 0; border-bottom: 1px solid var(--rule); font-size: 0.98rem; }
+  ul.plain li:first-child { border-top: 1px solid var(--rule); }
+  ul.plain .why { color: var(--muted); }
+  footer { margin-top: 4rem; color: var(--muted); font-size: 0.88rem; max-width: 46rem; }
+  @media (max-width: 620px) {
+    .cols { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+<header><h1>nemsimedia.ma</h1><p class="dateline">9 septembre 2026</p><p class="subtitle">Les contrôles techniques effectués sur le site sont rassurants. OpenSEO signale huit pages courtes ; les pages Services ont reçu un complément utile dans le code local. La priorité cette semaine est de connecter Search Console pour vérifier ce que Google affiche réellement.</p></header>
+<section><h2>État du site</h2><p class="lede">Le contrôle direct des 62 adresses du plan du site n’a relevé aucune anomalie dans les vérifications prévues : titres, descriptions, adresses de référence, versions linguistiques et liens internes. L’image de partage répond correctement.</p><p class="lede">OpenSEO a exploré 50 pages, soit sa limite par défaut, et trouvé huit avertissements de contenu court. Ce signal ne prouve pas une mauvaise qualité : une page Contact peut remplir son rôle avec peu de texte. Le classement et la présence dans Google restent inconnus.</p></section>
+<hr class="heavy">
+<section><h2>Une action cette semaine</h2><p class="lede">Connecter Google Search Console à OpenSEO pour mesurer les recherches qui apportent déjà des visiteurs.</p><p>Search Console est l’outil de Google qui montre les apparitions du site dans les résultats, les clics et les pages connues de Google. OpenSEO indique actuellement <code>not_connected</code>.</p><ol><li>Ouvrir <a href="https://app.openseo.so/p/214d4b91-df22-4980-a418-0a9aefc151ce/search-performance">la connexion Search Console du projet Nemsi Media</a> et sélectionner la propriété du site.</li><li>Dans Search Console, contrôler le plan du site <code>https://www.nemsimedia.ma/sitemap.xml</code> et inspecter les pages Services françaises et arabes.</li><li>Lire les recherches et les pages sur les 28 derniers jours. Choisir ensuite une page de service ayant des apparitions pertinentes à améliorer ; si aucune donnée n’est disponible, commencer par vérifier sa présence dans Google.</li></ol></section>
+<section><h2>Points concrets, par priorité</h2>
+<div class="cols"><div><p class="row-title">Services : aider à choisir</p></div><div><p>OpenSEO : 113 mots en français, 91 en arabe. La lecture directe confirme une introduction et huit cartes de services très brèves.</p><p class="fix"><b>Préparé localement :</b> un guide bilingue distingue site vitrine, boutique et SEO, précise les informations à préparer et renvoie vers les offres et le devis. À publier après revue.</p></div></div>
+<div class="cols"><div><p class="row-title">Accueil : préciser l’offre</p></div><div><p>La version en ligne présente un « Studio digital à Casablanca » et des « identités, des sites et des produits ».</p><p class="fix"><b>Préparé localement :</b> une introduction précise la création de sites, le e-commerce et le SEO au Maroc, avec des liens directs vers les trois services dans chaque langue.</p></div></div>
+<div class="cols"><div><p class="row-title">À propos : ajouter des preuves utiles</p></div><div><p>OpenSEO : 119 mots en français, 92 en arabe. Le contenu lu décrit des valeurs et quatre étapes, sans détailler un exemple de réalisation.</p><p class="fix"><b>Suite éditoriale :</b> ajouter un projet réel, le besoin initial, le travail réalisé et un lien vers le résultat. Faire confirmer ces faits avant publication.</p></div></div>
+<div class="cols"><div><p class="row-title">Contact et devis : garder un objectif clair</p></div><div><p>OpenSEO : Contact 70/60 mots et Devis 81/81 mots, français/arabe. Les quatre pages répondent en HTTP 200 et affichent leurs formulaires.</p><p class="fix"><b>Suite éditoriale :</b> ajouter uniquement les précisions qui aident à remplir la demande. Ne pas masquer ces pages à Google sur la seule base du nombre de mots. Les options du devis arabe sont encore en français : les traduire lors de la prochaine amélioration du formulaire.</p></div></div>
+<div class="cols"><div><p class="row-title">Données de recherche indisponibles</p></div><div><p>Solde OpenSEO : 0 crédit. Les volumes de recherche, la difficulté des mots-clés et les liens provenant d’autres sites n’ont pas été interrogés.</p><p class="fix"><b>Suite :</b> utiliser d’abord les données gratuites de Search Console. Prévoir des crédits si une recherche de mots-clés ou une analyse de liens devient nécessaire.</p></div></div>
+</section>
+<section><h2>Premier axe à explorer</h2><p>Les services web pour les entreprises au Maroc correspondent au marché confirmé par le propriétaire. Les expressions ci-dessous sont des hypothèses éditoriales : volume mensuel et difficulté inconnus, aucune promesse de classement. Enrichir les pages existantes avant d’en créer des doublons.</p>
+<div class="cols"><div><p class="row-title">création site web Casablanca<span class="mono tag">Volume non mesuré</span></p></div><div><p class="fix">Page existante : <a href="https://www.nemsimedia.ma/fr/services/creation-site-web-maroc">création de sites</a>. Préciser les besoins d’une entreprise locale et montrer un projet réel.</p></div></div>
+<div class="cols"><div><p class="row-title">création site e-commerce Maroc<span class="mono tag">Volume non mesuré</span></p></div><div><p class="fix">Page existante : <a href="https://www.nemsimedia.ma/fr/services/ecommerce-maroc">e-commerce</a>. Détailler les questions de catalogue, livraison et paiement selon les services effectivement proposés.</p></div></div>
+<div class="cols"><div><p class="row-title">تصميم مواقع في الدار البيضاء<span class="mono tag">Volume non mesuré</span></p></div><div><p class="fix">Page existante : <a href="https://www.nemsimedia.ma/ar/services/creation-site-web-maroc">création de sites en arabe</a>. Décrire les étapes et les contenus à préparer dans la langue du visiteur.</p></div></div>
+</section>
+<section><h2>Déjà en place</h2><ul class="plain"><li>62 adresses dans le plan du site. <span class="why">Elles ont toutes été récupérées par le contrôle direct.</span></li><li>Titres et descriptions distincts dans les contrôles effectués. <span class="why">Chaque page possède sa présentation.</span></li><li>Adresses de référence et liens de langues cohérents. <span class="why">Le contrôle vérifie la version principale de chaque page et ses équivalents français/arabe.</span></li><li>60 cibles de liens internes contrôlées et image de partage HTTP 200.</li></ul></section>
+<footer><p>Méthode : audit OpenSEO cd15cd24-049c-4d03-9db4-ecc1ac5b1729 terminé, 50/50 pages ; avertissements vérifiés par lecture directe des huit pages. Contrôle indépendant via scripts/seo-audit.mjs sur 62 pages publiques : 0 anomalie dans ses contrôles. Les nombres de mots sont ceux d’OpenSEO. Aucune mesure de classement, de vitesse approfondie ou de liens externes. Les modifications du code sont locales et ne sont pas encore déployées.</p><p>Référence pour les équivalents linguistiques : <a href="https://developers.google.com/search/docs/specialty/international/localized-versions">documentation Google Search Central</a>. Les liens de langues étaient déjà corrects ; aucun changement de ce mécanisme n’a été nécessaire.</p></footer>
+</div>
+</body>
+</html>

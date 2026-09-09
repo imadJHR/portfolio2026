@@ -27,7 +27,11 @@ export function Hero({ lang }) {
           <aside className="nm-hero__aside">
             <div className="nm-hero__availability"><span aria-hidden="true" />{isRTL ? "نستقبل مشاريع جديدة" : "Disponible pour de nouveaux projets"}</div>
             <p className="nm-hero__intro">
-              {isRTL ? "استوديو رقمي في الدار البيضاء. نبني هويات ومواقع ومنتجات رقمية تخدم أهدافاً حقيقية، بدون تعقيد غير ضروري." : "Studio digital à Casablanca. Nous créons des identités, des sites et des produits pensés pour des objectifs réels, sans complexité inutile."}
+              {isRTL ? <>
+                وكالة ويب في الدار البيضاء. نساعد الشركات في المغرب على <Link href="/ar/services/creation-site-web-maroc" className="underline underline-offset-4">تصميم مواقع احترافية</Link>، و<Link href="/ar/services/ecommerce-maroc" className="underline underline-offset-4">إنشاء متاجر إلكترونية</Link>، و<Link href="/ar/services/seo-maroc" className="underline underline-offset-4">تحسين الظهور في محركات البحث</Link>.
+              </> : <>
+                Agence web à Casablanca, nous accompagnons les entreprises au Maroc : <Link href="/fr/services/creation-site-web-maroc" className="underline underline-offset-4">création de sites web</Link>, <Link href="/fr/services/ecommerce-maroc" className="underline underline-offset-4">boutiques e-commerce</Link> et <Link href="/fr/services/seo-maroc" className="underline underline-offset-4">référencement naturel SEO</Link>.
+              </>}
             </p>
             <div className="nm-hero__actions">
               <a className="nm-button nm-button--primary" href={whatsappHref} target="_blank" rel="noopener noreferrer">{isRTL ? "ابدأ مشروعك" : "Démarrer un projet"}<ArrowUpRight aria-hidden="true" /></a>
