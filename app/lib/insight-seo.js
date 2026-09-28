@@ -1,39 +1,39 @@
 const metaTitles = {
   "site-web-premium-maroc": {
+    en: "Premium website in Morocco: is it worth investing?",
     fr: "Site web premium au Maroc : faut-il investir ?",
-    ar: "موقع ويب احترافي بالمغرب: لماذا تستثمر؟",
   },
   "seo-maroc-2026": {
+    en: "SEO in Morocco 2026: priorities for success",
     fr: "SEO Maroc 2026 : les priorités pour réussir",
-    ar: "SEO المغرب 2026: أولويات الظهور",
   },
   "ecommerce-maroc": {
+    en: "E-commerce in Morocco: a guide to getting started",
     fr: "E-commerce au Maroc : le guide pour se lancer",
-    ar: "متجر إلكتروني في المغرب: دليل الإطلاق",
   },
   "marketing-reseaux-sociaux-maroc": {
+    en: "Social media in Morocco: 2026 strategy",
     fr: "Réseaux sociaux au Maroc : stratégie 2026",
-    ar: "التواصل الاجتماعي بالمغرب: خطة 2026",
   },
   "branding-identite-maroc": {
+    en: "Branding in Morocco: building a strong brand",
     fr: "Branding au Maroc : bâtir une marque forte",
-    ar: "هوية بصرية قوية لعلامتك في المغرب",
   },
   "performance-web-mobile-maroc": {
+    en: "Web performance: speed and conversion",
     fr: "Performance web : vitesse et conversion",
-    ar: "أداء الويب: السرعة والتحويل",
   },
   "seo-local-maroc": {
+    en: "Local SEO in Morocco: cities and visibility",
     fr: "SEO local au Maroc : villes et visibilité",
-    ar: "SEO محلي بالمغرب: ظهور أقوى",
   },
   "design-ux-maroc-2026": {
+    en: "UX design in Morocco: effective interfaces",
     fr: "Design UX au Maroc : des interfaces efficaces",
-    ar: "تجربة المستخدم بالمغرب: واجهات فعالة",
   },
   "twilio-whatsapp-automation": {
+    en: "WhatsApp automation for your customers",
     fr: "Automatisation WhatsApp pour vos clients",
-    ar: "أتمتة واتساب لخدمة عملائك",
   },
 }
 

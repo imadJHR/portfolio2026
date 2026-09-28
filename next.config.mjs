@@ -16,8 +16,8 @@ const nextConfig = {
         headers: [{ key: "Content-Language", value: "fr-MA" }],
       },
       {
-        source: "/ar/:path*",
-        headers: [{ key: "Content-Language", value: "ar-MA" }],
+        source: "/en/:path*",
+        headers: [{ key: "Content-Language", value: "en" }],
       },
       {
         source: "/(.*)",
@@ -69,7 +69,12 @@ const nextConfig = {
         destination: "/fr/projets",
         permanent: true,
       },
-      ...["fr", "ar"].map((lang) => ({
+      {
+        source: "/ar/insights/seo-maroc-2025",
+        destination: "/en/insights/seo-maroc-2026",
+        permanent: true,
+      },
+      ...["fr", "en"].map((lang) => ({
         source: `/${lang}/insights/seo-maroc-2025`,
         destination: `/${lang}/insights/seo-maroc-2026`,
         permanent: true,

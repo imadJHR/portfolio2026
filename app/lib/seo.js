@@ -7,7 +7,7 @@ export const WHATSAPP = "+212645288216"
 
 export const descriptions = {
   fr: "Agence web à Casablanca : sites rapides, SEO et e-commerce au Maroc. Devis clair et projets conçus pour convertir vos visiteurs en clients.",
-  ar: "وكالة ويب في الدار البيضاء : تصميم مواقع سريعة، SEO وتجارة إلكترونية في المغرب. عرض واضح وموعد جاهز لتحويل الزيارات إلى تواصل حقيقي.",
+  en: "Web agency in Casablanca: fast websites, SEO and e-commerce in Morocco. Clear quotes and projects designed to turn visitors into customers.",
 }
 export const brandAliases = [
   "Nemsi Media",
@@ -55,7 +55,7 @@ export const organizationSchema = {
     telephone: PHONE,
     email: EMAIL,
     areaServed: "MA",
-    availableLanguage: ["fr", "ar"],
+    availableLanguage: ["fr", "en"],
   },
   areaServed: {
     "@type": "Country",
@@ -84,7 +84,7 @@ export const websiteSchema = {
   url: SITE_URL,
   description: descriptions.fr,
   publisher: { "@id": `${SITE_URL}/#organization` },
-  inLanguage: ["fr-MA", "ar-MA"],
+  inLanguage: ["fr-MA", "en"],
 }
 
 export function localizedOrganizationSchema(lang) {
@@ -92,6 +92,6 @@ export function localizedOrganizationSchema(lang) {
     ...organizationSchema,
     "@id": `${SITE_URL}/#organization`,
     description: descriptions[lang],
-    inLanguage: lang === "ar" ? "ar-MA" : "fr-MA",
+    inLanguage: lang === "en" ? "en" : "fr-MA",
   }
 }

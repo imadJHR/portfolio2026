@@ -10,8 +10,8 @@ export function buildServiceMetadata(service, lang) {
     alternates: {
       canonical,
       languages: {
-        fr: `${SITE_URL}/fr/services/${service.slug}`,
-        ar: `${SITE_URL}/ar/services/${service.slug}`,
+        "fr-MA": `${SITE_URL}/fr/services/${service.slug}`,
+        en: `${SITE_URL}/en/services/${service.slug}`,
         "x-default": `${SITE_URL}/fr/services/${service.slug}`,
       },
     },
@@ -20,8 +20,8 @@ export function buildServiceMetadata(service, lang) {
       title: `${content.metaTitle} | Nemsi Media`,
       description: content.metaDescription,
       url: canonical,
-      locale: lang === "ar" ? "ar_MA" : "fr_MA",
-      alternateLocale: [lang === "ar" ? "fr_MA" : "ar_MA"],
+      locale: lang === "en" ? "en" : "fr_MA",
+      alternateLocale: [lang === "en" ? "fr_MA" : "en"],
       images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: content.title }],
     },
     twitter: {
@@ -36,9 +36,9 @@ export function buildServiceMetadata(service, lang) {
 export function buildServiceSchemas(service, lang) {
   const content = service[lang]
   const url = `${SITE_URL}/${lang}/services/${service.slug}`
-  const homeName = lang === "ar" ? "الرئيسية" : "Accueil"
-  const servicesName = lang === "ar" ? "الخدمات" : "Services"
-  const inLanguage = lang === "ar" ? "ar-MA" : "fr-MA"
+  const homeName = lang === "en" ? "Home" : "Accueil"
+  const servicesName = "Services"
+  const inLanguage = lang === "en" ? "en" : "fr-MA"
 
   return [
     {

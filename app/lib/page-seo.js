@@ -3,7 +3,7 @@ import { OG_IMAGE, SITE_NAME, SITE_URL } from "./seo"
 export function buildLocalizedPageMetadata({ lang, path, title, description }) {
   const canonical = `${SITE_URL}/${lang}/${path}`
   const frenchUrl = `${SITE_URL}/fr/${path}`
-  const arabicUrl = `${SITE_URL}/ar/${path}`
+  const englishUrl = `${SITE_URL}/en/${path}`
 
   return {
     title,
@@ -11,8 +11,8 @@ export function buildLocalizedPageMetadata({ lang, path, title, description }) {
     alternates: {
       canonical,
       languages: {
-        fr: frenchUrl,
-        ar: arabicUrl,
+        "fr-MA": frenchUrl,
+        en: englishUrl,
         "x-default": frenchUrl,
       },
     },
@@ -21,8 +21,8 @@ export function buildLocalizedPageMetadata({ lang, path, title, description }) {
       description,
       url: canonical,
       siteName: SITE_NAME,
-      locale: lang === "ar" ? "ar_MA" : "fr_MA",
-      alternateLocale: [lang === "ar" ? "fr_MA" : "ar_MA"],
+      locale: lang === "en" ? "en" : "fr_MA",
+      alternateLocale: [lang === "en" ? "fr_MA" : "en"],
       type: "website",
       images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: title }],
     },

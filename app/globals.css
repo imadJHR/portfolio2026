@@ -254,7 +254,7 @@ select.input option:checked { background: #7c3aed; color: #ffffff; }
     animation-iteration-count: var(--iteration-count) !important;
   }
 }
-[dir="rtl"] { text-align: right; }
+
 
 .site-header {
   padding-left: max(.625rem, env(safe-area-inset-left));
@@ -386,7 +386,7 @@ select.input option:checked { background: #7c3aed; color: #ffffff; }
 .service-wheel-label strong { color: var(--text-secondary); font-size: .78rem; overflow-wrap: anywhere; }
 .service-option-wheel.option-wheel { height: 28rem; margin-top: .5rem; }
 .service-option-wheel .option-wheel__item { left: .5rem; max-width: calc(100% - 1rem); overflow: hidden; font-size: clamp(1.65rem, 3.3vw, 3rem); text-overflow: ellipsis; }
-[dir="rtl"] .service-option-wheel .option-wheel__item { right: .5rem; left: auto; }
+
 .service-wheel-result { position: relative; align-self: stretch; margin: .85rem; padding: clamp(1.5rem, 3.5vw, 3rem); border: 1px solid var(--border); border-radius: clamp(1.25rem, 2.5vw, 1.8rem); background: color-mix(in srgb, var(--bg) 88%, transparent); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), var(--shadow-md); backdrop-filter: blur(24px); }
 .service-wheel-result-content { min-height: 100%; }
 .service-wheel-result-top { display: flex; align-items: center; justify-content: space-between; }
@@ -512,7 +512,7 @@ select.input option:checked { background: #7c3aed; color: #ffffff; }
 .service-final-cta > div > span { display: block; max-width: 42rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.7; }
 .service-final-cta .specular-button { justify-self: start; min-height: 3.6rem; padding-inline: 1.5rem; }
 .service-back-link { position: fixed; z-index: 45; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); display: inline-flex; align-items: center; gap: .45rem; padding: .65rem .85rem; border: 1px solid var(--border); border-radius: 999px; background: color-mix(in srgb, var(--bg-card) 88%, transparent); color: var(--text-secondary); box-shadow: var(--shadow-md); backdrop-filter: blur(18px); font-size: .72rem; font-weight: 800; }
-[dir="rtl"] .service-back-link { right: auto; left: max(1rem, env(safe-area-inset-left)); }
+
 
 @media (min-width: 760px) {
   .service-benefit-grid,
@@ -649,9 +649,7 @@ body {
   font-feature-settings: "ss01", "ss03";
   overscroll-behavior-y: auto;
 }
-[dir="rtl"] { font-family: var(--font-arabic), Arial, sans-serif; }
 h1, h2, h3, h4 { font-family: inherit; color: var(--text); letter-spacing: -.05em; }
-[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { letter-spacing: 0; }
 h1 { font-size: clamp(3.4rem, 8.7vw, 9.4rem); font-weight: 500; line-height: .89; }
 h2 { font-size: clamp(2.65rem, 5.8vw, 6.5rem); font-weight: 500; line-height: .96; }
 h3 { font-weight: 600; }
@@ -808,6 +806,9 @@ p { color: var(--text-secondary); line-height: 1.58; }
 .nm-section-heading .nm-index { grid-row: 1 / 4; }
 .nm-section-heading h2 { max-width: 14ch; margin-top: 1.2rem; }
 .nm-section-heading > p:last-child { max-width: 37rem; margin-top: 1.5rem; font-size: 1.05rem; }
+.nm-service-cluster { margin-bottom: 5rem; }
+.nm-service-cluster:last-child { margin-bottom: 0; }
+.nm-service-cluster__title { margin-bottom: 1.5rem; font-size: clamp(1.15rem, 1.6vw, 1.4rem); font-weight: 600; letter-spacing: -.01em; color: var(--text); }
 .nm-service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--border); border-inline-start: 1px solid var(--border); }
 .nm-service-card {
   position: relative; display: flex; min-height: 31rem; flex-direction: column; isolation: isolate;
@@ -928,6 +929,9 @@ p { color: var(--text-secondary); line-height: 1.58; }
 .nm-service-intro aside span { display: flex; gap: .8rem; align-items: center; border-top: 1px solid var(--border); padding-block: .85rem; font-size: .85rem; }
 .nm-service-intro aside svg { width: .9rem; height: .9rem; color: var(--brand); }
 .nm-service-block { background: #f6f6f7; }
+.nm-service-showcase { background: #fff; }
+.nm-service-showcase__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 4.5rem); margin-top: 4rem; font-size: 1.05rem; line-height: 1.65; }
+.nm-service-showcase__grid p { margin: 0; }
 .nm-service-benefits { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 4rem; border-top: 1px solid var(--border); border-inline-start: 1px solid var(--border); }
 .nm-service-benefits article { min-height: 24rem; border-inline-end: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.4rem; }
 .nm-service-benefits article > span { color: var(--brand); font-size: .62rem; }

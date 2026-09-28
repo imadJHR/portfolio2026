@@ -1,27 +1,27 @@
 import { ArrowUpRight } from "lucide-react"
 
 export function Testimonials({ lang }) {
-  const isRTL = lang === "ar"
-  const projects = isRTL ? [
+  const isEnglish = lang === "en"
+  const projects = isEnglish ? [
     {
       brand: "FadlloCar",
       mark: <span className="nm-proof__wordmark">FADLLO<i>CAR</i></span>,
-      service: "موقع خدمات · حجز مباشر",
-      text: "واجهة واضحة لعرض أسطول السيارات وتسهيل طلبات الحجز عبر الهاتف وواتساب.",
+      service: "Service website · Direct booking",
+      text: "A clear interface to showcase the fleet and simplify booking requests by phone or WhatsApp.",
       url: "https://fadllocar.ma",
     },
     {
       brand: "Nature’s Dates",
       mark: <span className="nm-proof__wordmark nm-proof__wordmark--natures"><b>NATURE’S</b><b>DATES</b></span>,
-      service: "علامة غذائية · منصة منتجات",
-      text: "منصة متكاملة تجمع قصة العلامة، منتجات تمور المجهول، المحتوى الغذائي والوصفات في تجربة واحدة.",
+      service: "Food brand · Product platform",
+      text: "A complete brand platform that brings together Medjool products, nutritional content, and recipes in one experience.",
       url: "https://naturesdates.com/",
     },
     {
       brand: "Atelier Lamiaa",
       mark: <span className="nm-proof__wordmark nm-proof__wordmark--lamiaa"><small>ATELIER</small><b>LAMIAA</b></span>,
-      service: "حلويات حرفية · كتالوج رقمي",
-      text: "كتالوج بصري سريع على الهاتف يعرض الحلويات المغربية والسابلي ويسهّل اكتشاف المنتجات والطلب.",
+      service: "Artisanal pastry · Digital catalogue",
+      text: "A mobile-first catalogue that presents Moroccan pastries, makes products easy to discover, and guides ordering.",
       url: "https://atelierlamiaa.vercel.app/",
     },
   ] : [
@@ -49,13 +49,13 @@ export function Testimonials({ lang }) {
   ]
 
   return (
-    <section className="nm-quotes section" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="nm-quotes section">
       <div className="container">
         <header className="nm-quotes__title">
           <span className="nm-index">05</span>
           <div>
-            <h2>{isRTL ? "مشاريع حقيقية، مبنية حول كل علامة." : "Des projets réels, pensés autour de chaque marque."}</h2>
-            <p>{isRTL ? "لا أسماء وهمية ولا أرقام مبالغ فيها: فقط ما تم تصميمه وتطويره." : "Pas de faux noms ni de chiffres inventés : uniquement ce qui a été conçu et développé."}</p>
+            <h2>{isEnglish ? "Real projects, built around each brand." : "Des projets réels, pensés autour de chaque marque."}</h2>
+            <p>{isEnglish ? "No fake names or inflated numbers: only what has been designed and developed." : "Pas de faux noms ni de chiffres inventés : uniquement ce qui a été conçu et développé."}</p>
           </div>
         </header>
         <div className="nm-quotes__grid">
@@ -69,7 +69,7 @@ export function Testimonials({ lang }) {
               <footer>
                 <small>{project.service}</small>
                 <a href={project.url} target="_blank" rel="noopener noreferrer">
-                  {isRTL ? "زيارة الموقع" : "Voir le site"}<span className="sr-only"> — {project.brand}</span><ArrowUpRight aria-hidden="true" />
+                  {isEnglish ? "Visit the site" : "Voir le site"}<span className="sr-only"> — {project.brand}</span><ArrowUpRight aria-hidden="true" />
                 </a>
               </footer>
             </article>

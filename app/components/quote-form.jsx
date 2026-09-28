@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Send, Loader2 } from "lucide-react"
 
+const englishServices = ["Branding & identity", "Graphic design", "Photo & video", "Social media", "Influencer marketing", "Paid advertising", "Email marketing", "Premium website", "E-commerce", "SEO & visibility", "Web application", "Other"]
+
 const services = [
   { value: "branding", label: "Branding & identité" },
   { value: "design-graphique", label: "Design graphique" },
@@ -18,6 +20,8 @@ const services = [
   { value: "autre", label: "Autre" },
 ]
 
+const englishBudgets = ["Estimated budget", "< 10,000 MAD", "10,000 - 30,000 MAD", "30,000 - 60,000 MAD", "> 60,000 MAD"]
+
 const budgets = [
   { value: "", label: "Budget estimé" },
   { value: "moins-10k", label: "< 10 000 MAD" },
@@ -28,6 +32,9 @@ const budgets = [
 
 export default function QuoteForm({ lang }) {
   const [loading, setLoading] = useState(false)
+  const isEnglish = lang === "en"
+  const localizedServices = isEnglish ? services.map((service, index) => ({ ...service, label: englishServices[index] })) : services
+  const localizedBudgets = isEnglish ? budgets.map((budget, index) => ({ ...budget, label: englishBudgets[index] })) : budgets
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -48,13 +55,11 @@ export default function QuoteForm({ lang }) {
     e.preventDefault()
     setLoading(true)
 
-    const serviceLabels = form.services.map((val) => services.find((s) => s.value === val)?.label || val)
-    const budgetLabel = budgets.find((b) => b.value === form.budget)?.label || form.budget
+    const serviceLabels = form.services.map((val) => localizedServices.find((s) => s.value === val)?.label || val)
+    const budgetLabel = localizedBudgets.find((b) => b.value === form.budget)?.label || form.budget
 
     const message =
-      lang === "ar"
-        ? `مرحباً، أود طلب عرض سعر.%0A%0A*الاسم:* ${encodeURIComponent(form.name)}%0A*البريد:* ${encodeURIComponent(form.email)}%0A*الهاتف:* ${encodeURIComponent(form.phone)}%0A*الخدمات:* ${encodeURIComponent(serviceLabels.join(", "))}%0A*الميزانية:* ${encodeURIComponent(budgetLabel)}%0A*الاحتياج:* ${encodeURIComponent(form.need)}`
-        : `Bonjour, je souhaite recevoir un devis.%0A%0A*Nom:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A*Téléphone:* ${encodeURIComponent(form.phone)}%0A*Services:* ${encodeURIComponent(serviceLabels.join(", "))}%0A*Budget:* ${encodeURIComponent(budgetLabel)}%0A*Besoins:* ${encodeURIComponent(form.need)}`
+      isEnglish ? `Hello, I would like to receive a quote.%0A%0A*Name:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A*Phone:* ${encodeURIComponent(form.phone)}%0A*Services:* ${encodeURIComponent(serviceLabels.join(", "))}%0A*Budget:* ${encodeURIComponent(budgetLabel)}%0A*Needs:* ${encodeURIComponent(form.need)}` : `Bonjour, je souhaite recevoir un devis.%0A%0A*Nom:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A*Téléphone:* ${encodeURIComponent(form.phone)}%0A*Services:* ${encodeURIComponent(serviceLabels.join(", "))}%0A*Budget:* ${encodeURIComponent(budgetLabel)}%0A*Besoins:* ${encodeURIComponent(form.need)}`
 
     setTimeout(() => {
       window.open(`https://wa.me/212709120432?text=${message}`, "_blank")
@@ -68,19 +73,19 @@ export default function QuoteForm({ lang }) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="space-y-1.5">
           <label className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-            {lang === "ar" ? "الاسم الكامل" : "Nom complet"} *
+            {isEnglish ? "Full name" : "Nom complet"} *
           </label>
           <input
             required
             value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-hover)]"
-            placeholder={lang === "ar" ? "أدخل اسمك الكامل" : "Votre nom complet"}
+            placeholder={isEnglish ? "Your full name" : "Votre nom complet"}
           />
         </div>
         <div className="space-y-1.5">
           <label className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-            {lang === "ar" ? "الهاتف" : "Téléphone"} *
+            {isEnglish ? "Phone" : "Téléphone"} *
           </label>
           <input
             required
@@ -95,23 +100,23 @@ export default function QuoteForm({ lang }) {
 
       <div className="space-y-1.5">
         <label className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-          {lang === "ar" ? "البريد الإلكتروني" : "Email"}
+          {isEnglish ? "Email" : "Email"}
         </label>
         <input
           type="email"
           value={form.email}
           onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
           className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-hover)]"
-          placeholder={lang === "ar" ? "contact@example.ma" : "contact@exemple.ma"}
+          placeholder={isEnglish ? "contact@example.com" : "contact@exemple.ma"}
         />
       </div>
 
       <div className="space-y-1.5">
         <label className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-          {lang === "ar" ? "الخدمات المطلوبة" : "Services souhaités"} *
+          {isEnglish ? "Required services" : "Services souhaités"} *
         </label>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-          {services.map((s) => {
+          {localizedServices.map((s) => {
             const checked = form.services.includes(s.value)
             return (
               <label
@@ -134,20 +139,20 @@ export default function QuoteForm({ lang }) {
           })}
         </div>
         <p className="text-xs text-[var(--text-muted)]">
-          {lang === "ar" ? "يمكنك اختيار عدة خدمات." : "Vous pouvez sélectionner plusieurs services."}
+          {isEnglish ? "You can select several services." : "Vous pouvez sélectionner plusieurs services."}
         </p>
       </div>
 
       <div className="space-y-1.5">
         <label className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-          {lang === "ar" ? "الميزانية المتوقعة" : "Budget estimé"}
+          {isEnglish ? "Estimated budget" : "Budget estimé"}
         </label>
         <select
           value={form.budget}
           onChange={(e) => setForm((f) => ({ ...f, budget: e.target.value }))}
           className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-hover)]"
         >
-          {budgets.map((b) => (
+          {localizedBudgets.map((b) => (
             <option key={b.value} value={b.value}>
               {b.label}
             </option>
@@ -157,7 +162,7 @@ export default function QuoteForm({ lang }) {
 
       <div className="space-y-1.5">
         <label className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
-          {lang === "ar" ? "صف احتياجك" : "Décrivez votre besoin"} *
+          {isEnglish ? "Describe your needs" : "Décrivez votre besoin"} *
         </label>
         <textarea
           required
@@ -165,7 +170,7 @@ export default function QuoteForm({ lang }) {
           value={form.need}
           onChange={(e) => setForm((f) => ({ ...f, need: e.target.value }))}
           className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-4 py-3 text-sm outline-none transition focus:border-[var(--brand-hover)]"
-          placeholder={lang === "ar" ? "تحدث إلينا عن مشروعك، أهدافك، المواعيد..." : "Parlez-nous de votre projet, objectifs, délais..."}
+          placeholder={isEnglish ? "Tell us about your project, goals and timeline..." : "Parlez-nous de votre projet, objectifs, délais..."}
         />
       </div>
 
@@ -179,7 +184,7 @@ export default function QuoteForm({ lang }) {
         ) : (
           <Send className="h-4 w-4" />
         )}
-        {lang === "ar" ? "إرسال عبر واتساب" : "Envoyer sur WhatsApp"}
+        {isEnglish ? "Send via WhatsApp" : "Envoyer sur WhatsApp"}
       </button>
     </form>
   )

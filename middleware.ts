@@ -9,6 +9,11 @@ export function middleware(req: NextRequest) {
   const { pathname, search } = req.nextUrl
   const host = req.headers.get("host") ?? ""
   const proto = req.headers.get("x-forwarded-proto") ?? "http"
+  const localeTargetPath = pathname === "/ar"
+    ? "/en"
+    : pathname.startsWith("/ar/")
+      ? `/en${pathname.slice(3)}`
+      : pathname
 
   // Preserve local development URLs instead of redirecting them to the
   // production domain. The root still resolves to the default French page.
@@ -18,10 +23,16 @@ export function middleware(req: NextRequest) {
   const isLocalHost = ["localhost", "127.0.0.1", "::1"].includes(hostname.toLowerCase())
 
   if (isLocalHost) {
+    const localUrl = req.nextUrl.clone()
+
     if (pathname === "/") {
-      const localUrl = req.nextUrl.clone()
       localUrl.pathname = "/fr"
       return NextResponse.rewrite(localUrl)
+    }
+
+    if (localeTargetPath !== pathname) {
+      localUrl.pathname = localeTargetPath
+      return NextResponse.redirect(localUrl, 301)
     }
 
     return NextResponse.next()
@@ -29,8 +40,9 @@ export function middleware(req: NextRequest) {
 
   // Le chemin canonique :
   //   "/"  -> "/fr" (la home par défaut est /fr)
+  //   "/ar" et "/ar/*" -> "/en" et "/en/*"
   //   autre -> inchangé
-  const targetPath = pathname === "/" ? "/fr" : pathname
+  const targetPath = pathname === "/" ? "/fr" : localeTargetPath
 
   // Une seule redirection 301 vers l'URL canonique complète.
   // S'applique aux hôtes non locaux afin de conserver une URL publique unique.
@@ -45,7 +57,7 @@ export function middleware(req: NextRequest) {
   url.search = search
 
   // Si on est déjà sur la version canonique ==> pas de redirection (flux normal).
-  if (isCanonicalHost && isSecure && pathname !== "/") {
+  if (isCanonicalHost && isSecure && pathname !== "/" && localeTargetPath === pathname) {
     return NextResponse.next()
   }
 

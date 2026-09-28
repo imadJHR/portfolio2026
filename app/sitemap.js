@@ -6,19 +6,19 @@ export default function sitemap() {
   const updatedAt = new Date("2026-09-02")
   const staticPages = [
     { path: "/fr", priority: 1, changeFrequency: "weekly" },
-    { path: "/ar", priority: 1, changeFrequency: "weekly" },
+    { path: "/en", priority: 1, changeFrequency: "weekly" },
     { path: "/fr/services", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/ar/services", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/en/services", priority: 0.9, changeFrequency: "weekly" },
     { path: "/fr/a-propos", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/ar/a-propos", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/en/a-propos", priority: 0.8, changeFrequency: "monthly" },
     { path: "/fr/projets", priority: 0.9, changeFrequency: "monthly" },
-    { path: "/ar/projets", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/en/projets", priority: 0.9, changeFrequency: "monthly" },
     { path: "/fr/insights", priority: 0.85, changeFrequency: "weekly" },
-    { path: "/ar/insights", priority: 0.85, changeFrequency: "weekly" },
+    { path: "/en/insights", priority: 0.85, changeFrequency: "weekly" },
     { path: "/fr/contact", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/ar/contact", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/en/contact", priority: 0.8, changeFrequency: "monthly" },
     { path: "/fr/devis", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/ar/devis", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/en/devis", priority: 0.9, changeFrequency: "weekly" },
   ].map((page) => ({
     url: `${SITE_URL}${page.path}`,
     lastModified: updatedAt,
@@ -27,7 +27,7 @@ export default function sitemap() {
   }))
 
   const articlePages = insightsData.flatMap((article) =>
-    ["fr", "ar"].map((lang) => ({
+    ["fr", "en"].map((lang) => ({
       url: `${SITE_URL}/${lang}/insights/${article.id}`,
       lastModified: new Date(article.date),
       changeFrequency: "monthly",
@@ -36,7 +36,7 @@ export default function sitemap() {
   )
 
   const servicePages = serviceCatalog.flatMap((service) =>
-    ["fr", "ar"].map((lang) => ({
+    ["fr", "en"].map((lang) => ({
       url: `${SITE_URL}/${lang}/services/${service.slug}`,
       lastModified: updatedAt,
       changeFrequency: "weekly",

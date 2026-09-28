@@ -6,7 +6,7 @@ import { ArrowDown, ArrowUpRight } from "lucide-react"
 import { WHATSAPP_NUMBER } from "../lib/leads"
 
 const frenchHeroPhrases = [["rapide,", "précis"], ["beau,", "efficace"], ["clair,", "utile"], ["simple,", "puissant"], ["pensé pour", "convertir"]]
-const arabicHeroPhrases = [["واضح", "ومفيد"], ["سريع", "وذكي"], ["جميل", "ومتقن"]]
+const englishHeroPhrases = [["fast,", "precise"], ["beautiful,", "effective"], ["clear,", "useful"], ["simple,", "powerful"], ["built to", "convert"]]
 
 function RotatingText({ phrases }) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -47,51 +47,51 @@ function RotatingText({ phrases }) {
 }
 
 export function Hero({ lang }) {
-  const isRTL = lang === "ar"
+  const isEnglish = lang === "en"
 
-  const message = isRTL ? "مرحبا، أود مناقشة مشروعي الرقمي." : "Bonjour, je souhaite discuter de mon projet digital."
+  const message = isEnglish ? "Hello, I’d like to discuss my digital project." : "Bonjour, je souhaite discuter de mon projet digital."
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
   return (
-    <section id="home" className="nm-hero" dir={isRTL ? "rtl" : "ltr"}>
+    <section id="home" className="nm-hero">
       <div className="container nm-hero__grid">
         <div className="nm-hero__meta" aria-hidden="true">
           <span>NM® / 2026</span>
-          <span>{isRTL ? "الدار البيضاء — المغرب" : "CASABLANCA — MAROC"}</span>
-          <span>{isRTL ? "نعمل في المغرب وعن بُعد" : "MAROC + INTERNATIONAL"}</span>
+          <span>{isEnglish ? "CASABLANCA — MOROCCO" : "CASABLANCA — MAROC"}</span>
+          <span>{isEnglish ? "MOROCCO + INTERNATIONAL" : "MAROC + INTERNATIONAL"}</span>
         </div>
         <div className="nm-hero__stage">
           <div className="nm-hero__rail" aria-hidden="true">
             <span>01</span>
-            <small>{isRTL ? "استوديو رقمي مستقل" : "STUDIO DIGITAL INDÉPENDANT"}</small>
+            <small>{isEnglish ? "INDEPENDENT DIGITAL STUDIO" : "STUDIO DIGITAL INDÉPENDANT"}</small>
           </div>
           <div className="nm-hero__headline">
-            <p className="nm-kicker">{isRTL ? "استراتيجية · تصميم · تطوير" : "STRATÉGIE · DESIGN · DÉVELOPPEMENT"}</p>
-            <h1>{isRTL ? <><span>رقمي</span><em><RotatingText phrases={arabicHeroPhrases} /></em><span>ومتقن.</span></> : <><span>Du digital</span><em><RotatingText phrases={frenchHeroPhrases} /></em><span>et bien fait.</span></>}</h1>
+            <p className="nm-kicker">{isEnglish ? "STRATEGY · DESIGN · DEVELOPMENT" : "STRATÉGIE · DESIGN · DÉVELOPPEMENT"}</p>
+            <h1>{isEnglish ? <><span>Digital work</span><em><RotatingText phrases={englishHeroPhrases} /></em><span>done well.</span></> : <><span>Du digital</span><em><RotatingText phrases={frenchHeroPhrases} /></em><span>et bien fait.</span></>}</h1>
           </div>
           <aside className="nm-hero__aside">
-            <div className="nm-hero__availability"><span aria-hidden="true" />{isRTL ? "نستقبل مشاريع جديدة" : "Disponible pour de nouveaux projets"}</div>
+            <div className="nm-hero__availability"><span aria-hidden="true" />{isEnglish ? "Available for new projects" : "Disponible pour de nouveaux projets"}</div>
             <p className="nm-hero__intro">
-              {isRTL ? <>
-                وكالة ويب في الدار البيضاء. نساعد الشركات في المغرب على <Link href="/ar/services/creation-site-web-maroc" className="underline underline-offset-4">تصميم مواقع احترافية</Link>، و<Link href="/ar/services/ecommerce-maroc" className="underline underline-offset-4">إنشاء متاجر إلكترونية</Link>، و<Link href="/ar/services/seo-maroc" className="underline underline-offset-4">تحسين الظهور في محركات البحث</Link>.
+              {isEnglish ? <>
+                A web agency in Casablanca, we help businesses across Morocco with <Link href="/en/services/creation-site-web-maroc" className="underline underline-offset-4">professional websites</Link>, <Link href="/en/services/ecommerce-maroc" className="underline underline-offset-4">e-commerce stores</Link>, and <Link href="/en/services/seo-maroc" className="underline underline-offset-4">SEO</Link>.
               </> : <>
                 Agence web à Casablanca, nous accompagnons les entreprises au Maroc : <Link href="/fr/services/creation-site-web-maroc" className="underline underline-offset-4">création de sites web</Link>, <Link href="/fr/services/ecommerce-maroc" className="underline underline-offset-4">boutiques e-commerce</Link> et <Link href="/fr/services/seo-maroc" className="underline underline-offset-4">référencement naturel SEO</Link>.
               </>}
             </p>
             <div className="nm-hero__actions">
-              <a className="nm-button nm-button--primary" href={whatsappHref} target="_blank" rel="noopener noreferrer">{isRTL ? "ابدأ مشروعك" : "Démarrer un projet"}<ArrowUpRight aria-hidden="true" /></a>
-              <Link className="nm-button nm-button--text" href="#portfolio">{isRTL ? "شاهد أعمالنا" : "Voir les projets"}<span aria-hidden="true">↘</span></Link>
+              <a className="nm-button nm-button--primary" href={whatsappHref} target="_blank" rel="noopener noreferrer">{isEnglish ? "Start your project" : "Démarrer un projet"}<ArrowUpRight aria-hidden="true" /></a>
+              <Link className="nm-button nm-button--text" href="#portfolio">{isEnglish ? "View projects" : "Voir les projets"}<span aria-hidden="true">↘</span></Link>
             </div>
-            <ul className="nm-hero__scope" aria-label={isRTL ? "مجالات العمل" : "Domaines d’intervention"}>
-              <li>{isRTL ? "هوية بصرية" : "Identité"}</li>
-              <li>{isRTL ? "مواقع رقمية" : "Sites web"}</li>
-              <li>{isRTL ? "منتجات رقمية" : "Produits digitaux"}</li>
+            <ul className="nm-hero__scope" aria-label={isEnglish ? "Areas of expertise" : "Domaines d’intervention"}>
+              <li>{isEnglish ? "Brand identity" : "Identité"}</li>
+              <li>{isEnglish ? "Websites" : "Sites web"}</li>
+              <li>{isEnglish ? "Digital products" : "Produits digitaux"}</li>
             </ul>
           </aside>
         </div>
         <div className="nm-hero__footer">
-          <p>{isRTL ? "فكرة واحدة · فريق واحد · تنفيذ واضح" : "UNE IDÉE · UNE ÉQUIPE · UNE EXÉCUTION CLAIRE"}</p>
-          <a className="nm-hero__scroll" href="#services"><span>{isRTL ? "اكتشف خبراتنا" : "Découvrir les expertises"}</span><ArrowDown aria-hidden="true" /></a>
+          <p>{isEnglish ? "ONE IDEA · ONE TEAM · CLEAR DELIVERY" : "UNE IDÉE · UNE ÉQUIPE · UNE EXÉCUTION CLAIRE"}</p>
+          <a className="nm-hero__scroll" href="#services"><span>{isEnglish ? "Explore our expertise" : "Découvrir les expertises"}</span><ArrowDown aria-hidden="true" /></a>
         </div>
       </div>
     </section>

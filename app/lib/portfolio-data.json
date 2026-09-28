@@ -1,290 +1,289 @@
-
 [
   {
-  "id": "fadllo-car",
-  "title": {
-    "ar": "فادلو كار - كراء السيارات",
-    "fr": "FadlloCar - Location de Voitures"
+    "id": "fadllo-car",
+    "title": {
+      "fr": "FadlloCar - Location de Voitures",
+      "en": "FadlloCar - Car Rental"
+    },
+    "category": "service",
+    "image": "/fadllocar.webp",
+    "challenge": {
+      "fr": "Créer une plateforme numérique pour une agence de location de voitures afin de faciliter la présentation de la flotte et d'attirer une clientèle locale et touristique au Maroc.",
+      "en": "Create a digital platform for a car rental agency to make it easier to showcase the fleet and attract local and tourist customers in Morocco."
+    },
+    "solution": {
+      "fr": "Conception d'un site rapide et responsive (adapté aux mobiles), permettant aux visiteurs de parcourir les véhicules et de réserver facilement via WhatsApp ou téléphone.",
+      "en": "Design a fast, responsive website tailored to mobile devices, allowing visitors to browse vehicles and book easily via WhatsApp or phone."
+    },
+    "results": {
+      "fr": "Amélioration de l'image de marque de l'agence et augmentation des demandes de renseignements et réservations.",
+      "en": "Improved the agency’s brand image and increased enquiries and bookings."
+    },
+    "liveUrl": "https://fadllocar.ma"
   },
-  "category": "service",
-  "image": "/fadllocar.webp",
-  "challenge": {
-    "ar": "إنشاء منصة رقمية لوكالة تأجير السيارات لتسهيل عرض الأسطول وجذب العملاء المحليين والسياح في المغرب.",
-    "fr": "Créer une plateforme numérique pour une agence de location de voitures afin de faciliter la présentation de la flotte et d'attirer une clientèle locale et touristique au Maroc."
+  {
+    "id": "la-burratina-trattoria-pizzeria",
+    "title": {
+      "fr": "LA BURRATINA – TRATTORIA & PIZZERIA",
+      "en": "LA BURRATINA – TRATTORIA & PIZZERIA"
+    },
+    "category": "vitrine",
+    "image": "/burratina.webp",
+    "challenge": {
+      "fr": "Communiquer l'authenticité de la cuisine italienne et faciliter la réservation directe en ligne",
+      "en": "Communicate the authenticity of Italian cuisine and facilitate direct online bookings"
+    },
+    "solution": {
+      "fr": "Présentation détaillée du menu (incluant les prix), témoignages clients, et système de réservation clair et intégré",
+      "en": "A detailed presentation of the menu, including prices, customer testimonials and a clear, integrated booking system"
+    },
+    "results": {
+      "fr": "Augmentation des réservations via le site et amélioration de la note moyenne des avis clients en ligne",
+      "en": "Increased bookings through the website and improved the average rating of online customer reviews"
+    },
+    "liveUrl": "https://laburratinagroupe.com/"
   },
-  "solution": {
-    "ar": "تصميم موقع سريع ومتجاوب مع الهواتف، يتيح للزوار تصفح السيارات وحجزها بسهولة عبر واتساب أو الهاتف.",
-    "fr": "Conception d'un site rapide et responsive (adapté aux mobiles), permettant aux visiteurs de parcourir les véhicules et de réserver facilement via WhatsApp ou téléphone."
+  {
+    "id": "cafe-bianca",
+    "title": {
+      "fr": "CAFÉ BIANCA - CASABLANCA",
+      "en": "CAFÉ BIANCA - CASABLANCA"
+    },
+    "category": "vitrine",
+    "image": "/bianca.webp",
+    "challenge": {
+      "fr": "Présenter une expérience culinaire unique et moderne, et faciliter le processus de réservation en ligne.",
+      "en": "Present a unique, modern dining experience and make online bookings easier."
+    },
+    "solution": {
+      "fr": "Un design élégant avec des visuels de haute qualité, une présentation complète du menu, et l'intégration d'un système de réservation de table simple et efficace.",
+      "en": "An elegant design with high-quality visuals, a complete presentation of the menu and the integration of a simple, effective table-booking system."
+    },
+    "results": {
+      "fr": "Augmentation significative des réservations via le site web et renforcement de l'image de marque en ligne.",
+      "en": "Significant increase in bookings through the website and a stronger online brand image."
+    },
+    "liveUrl": "https://demo-cafe-bianca.netlify.app/"
   },
-  "results": {
-    "ar": "تحسين صورة الوكالة وزيادة عدد الاستفسارات والحجوزات اليومية.",
-    "fr": "Amélioration de l'image de marque de l'agence et augmentation des demandes de renseignements et réservations."
+  {
+    "id": "ironz-equipement",
+    "title": {
+      "fr": "Ironz Équipements",
+      "en": "Ironz Equipment"
+    },
+    "category": "ecommerce",
+    "image": "/ironz.webp",
+    "challenge": {
+      "fr": "Développer une plateforme e-commerce dédiée aux passionnés de fitness au Maroc, combinant produits de haute qualité et expérience utilisateur fluide et rapide.",
+      "en": "Develop an e-commerce platform for fitness enthusiasts in Morocco, combining high-quality products with a smooth, fast user experience."
+    },
+    "solution": {
+      "fr": "Design moderne avec éléments traditionnels et UX fluide",
+      "en": "Modern design with traditional elements and a smooth user experience"
+    },
+    "results": {
+      "fr": "Augmentation des ventes et de la notoriété de la marque",
+      "en": "Increased sales and brand awareness"
+    },
+    "liveUrl": "https://ironz.ma"
   },
-  "liveUrl": "https://fadllocar.ma"
-},
-{
-  "id": "la-burratina-trattoria-pizzeria",
-  "title": {
-    "ar": "مطعم وبيتزا البوراتا - القنيطرة",
-    "fr": "LA BURRATINA – TRATTORIA & PIZZERIA"
+  {
+    "id": "lettre-3d-shop",
+    "title": {
+      "fr": "Lettre3DShop / MJ PUB",
+      "en": "Lettre3DShop / MJ PUB"
+    },
+    "category": "ecommerce",
+    "image": "/mj.webp",
+    "challenge": {
+      "fr": "Permettre aux entreprises et commerçants de concevoir et commander des enseignes lumineuses sur mesure, tout en garantissant une expérience en ligne intuitive et fiable.",
+      "en": "Enable businesses and retailers to design and order custom illuminated signs while ensuring an intuitive, reliable online experience."
+    },
+    "solution": {
+      "fr": "Un configurateur en ligne pour personnaliser enseignes LED, lettres découpées et panneaux ; interface claire pour devis instantané, livraison France & Maroc ; galerie de réalisations pour inspirer.",
+      "en": "An online configurator for customising LED signs, cut-out letters and panels; a clear interface for instant quotes and delivery in France and Morocco; and a gallery of completed projects for inspiration."
+    },
+    "results": {
+      "fr": "Amélioration de la visibilité des produits, augmentation des demandes de devis, positionnement comme spécialiste des enseignes personnalisées.",
+      "en": "Improved product visibility, increased quote requests and positioned the business as a specialist in customised signs."
+    },
+    "liveUrl": "https://www.lettre3dshop.com"
   },
-  "category": "vitrine",
-  "image": "/burratina.webp",
-  "challenge": {
-    "ar": "إيصال أصالة المطبخ الإيطالي الدافئ وتسهيل الحجز المباشر عبر الإنترنت",
-    "fr": "Communiquer l'authenticité de la cuisine italienne et faciliter la réservation directe en ligne"
+  {
+    "id": "patisserie-les-jumeaux",
+    "title": {
+      "fr": "Pâtisserie Les Jumeaux Casablanca",
+      "en": "Les Jumeaux Patisserie Casablanca"
+    },
+    "category": "ecommerce",
+    "image": "/pat.webp",
+    "challenge": {
+      "fr": "Présenter l'authenticité et la variété des pâtisseries marocaines de manière attractive et simple",
+      "en": "Present the authenticity and variety of Moroccan pastries in an attractive, simple way"
+    },
+    "solution": {
+      "fr": "Design élégant et catalogue de produits clair avec options de contact direct",
+      "en": "Elegant design and a clear product catalogue with direct contact options"
+    },
+    "results": {
+      "fr": "Renforcement de l'image de marque et amélioration de l'engagement client",
+      "en": "Strengthened brand image and improved customer engagement"
+    }
   },
-  "solution": {
-    "ar": "عرض مفصل لقائمة الطعام (بما في ذلك الأسعار)، شهادات العملاء، ونظام حجز مدمج وواضح",
-    "fr": "Présentation détaillée du menu (incluant les prix), témoignages clients, et système de réservation clair et intégré"
+  {
+    "id": "firdaous-spa",
+    "title": {
+      "fr": "Firdaous Spa & Massage",
+      "en": "Firdaous Spa & Massage"
+    },
+    "category": "vitrine",
+    "image": "/spa.webp",
+    "challenge": {
+      "fr": "Instaurer la confiance et transmettre l'atmosphère sereine des services haut de gamme en ligne",
+      "en": "Build trust and convey the serene atmosphere of high-end services online"
+    },
+    "solution": {
+      "fr": "Design apaisant et engageant avec galerie de photos des services et grille tarifaire claire",
+      "en": "A soothing, engaging design with a photo gallery of services and a clear price list"
+    },
+    "results": {
+      "fr": "Optimisation des prises de rendez-vous en ligne et mise en avant des services signature",
+      "en": "Optimised online appointment bookings and highlighted signature services"
+    },
+    "liveUrl": "https://firdaousspa.netlify.app/"
   },
-  "results": {
-    "ar": "زيادة الحجوزات عبر الموقع وتحسين تقييمات العملاء عبر الإنترنت",
-    "fr": "Augmentation des réservations via le site et amélioration de la note moyenne des avis clients en ligne"
+  {
+    "id": "cafe-restaurant-la-brioche",
+    "title": {
+      "fr": "Café & Restaurant La Brioche - Expérience Italienne",
+      "en": "La Brioche Café & Restaurant - Italian Experience"
+    },
+    "category": "ecommerce",
+    "image": "/test.webp",
+    "challenge": {
+      "fr": "Convertir les visiteurs en clients par la réservation et transmettre l'ambiance chaleureuse et la cuisine italienne authentique",
+      "en": "Convert visitors into customers through bookings while conveying the warm atmosphere and authentic Italian cuisine"
+    },
+    "solution": {
+      "fr": "Présentation claire du menu, fonctionnalité de commande/réservation directe, et galerie photos pour mettre en valeur l'ambiance",
+      "en": "Clear presentation of the menu, direct ordering/booking functionality and a photo gallery to showcase the atmosphere"
+    },
+    "results": {
+      "fr": "Augmentation du taux de réservation de tables et des commandes de livraison en ligne",
+      "en": "Increased table booking rate and online delivery orders"
+    },
+    "liveUrl": "https://labrioche.netlify.app/"
   },
-  "liveUrl": "https://laburratinagroupe.com/"
-},
-{
-  "id": "cafe-bianca",
-  "title": {
-    "ar": "مقهى بيانكا - الدار البيضاء",
-    "fr": "CAFÉ BIANCA - CASABLANCA"
+  {
+    "id": "marque-copine",
+    "title": {
+      "fr": "Copine - Marque / Communauté Féminine",
+      "en": "Copine - Women’s Brand / Community"
+    },
+    "category": "ecommerce",
+    "image": "/copine.webp",
+    "challenge": {
+      "fr": "Construire une marque forte ciblant un public féminin spécifique et stimuler l'engagement communautaire",
+      "en": "Build a strong brand targeting a specific female audience and stimulate community engagement"
+    },
+    "solution": {
+      "fr": "Design moderne et attrayant, contenu orienté vers la cible, et intégration des réseaux sociaux",
+      "en": "Modern, attractive design, target-oriented content and social media integration"
+    },
+    "results": {
+      "fr": "Augmentation du nombre d'abonnés sur les réseaux sociaux et fidélisation de la clientèle",
+      "en": "Increased social media followers and strengthened customer loyalty"
+    },
+    "liveUrl": "https://copine.netlify.app/"
   },
-  "category": "vitrine",
-  "image": "/bianca.webp",
-  "challenge": {
-    "ar": "تقديم تجربة طهوية فريدة وعصرية، وتسهيل عملية الحجز المباشر عبر الإنترنت.",
-    "fr": "Présenter une expérience culinaire unique et moderne, et faciliter le processus de réservation en ligne."
+  {
+    "id": "tonka-atelier-chocolatier",
+    "title": {
+      "fr": "L'atelier Tonka - Chocolatier Artisanal",
+      "en": "Tonka Atelier - Artisan Chocolatier"
+    },
+    "category": "vitrine",
+    "image": "/tonka.webp",
+    "challenge": {
+      "fr": "Mettre en valeur la qualité artisanale et les ingrédients haut de gamme des produits de chocolat",
+      "en": "Showcase the artisanal quality and premium ingredients of the chocolate products"
+    },
+    "solution": {
+      "fr": "Catalogue produits avec photos haute résolution, storytelling de la marque (artisanat), et option de commande personnalisée",
+      "en": "Product catalogue with high-resolution photos, brand storytelling centred on craftsmanship, and a custom-order option"
+    },
+    "results": {
+      "fr": "Augmentation des ventes de produits premium et renforcement de l'image de marque comme référence en chocolaterie",
+      "en": "Increased sales of premium products and strengthened the brand image as a reference in chocolate making"
+    },
+    "liveUrl": "https://tonka-atelier.netlify.app/"
   },
-  "solution": {
-    "ar": "تصميم أنيق يعرض صورًا عالية الجودة، مع عرض لقائمة الطعام الكاملة ودمج نظام حجز بسيط وفعال للطاولات.",
-    "fr": "Un design élégant avec des visuels de haute qualité, une présentation complète du menu, et l'intégration d'un système de réservation de table simple et efficace."
+  {
+    "id": "Sou9-Al-Maghreb",
+    "title": {
+      "fr": "Sou9 Al Maghreb",
+      "en": "Sou9 Al Maghreb"
+    },
+    "category": "vitrine",
+    "image": "/sou9.webp",
+    "challenge": {
+      "fr": "",
+      "en": ""
+    },
+    "solution": {
+      "fr": "",
+      "en": ""
+    },
+    "results": {
+      "fr": "",
+      "en": ""
+    },
+    "liveUrl": "https://sou9maghrib.netlify.app/"
   },
-  "results": {
-    "ar": "زيادة ملحوظة في الحجوزات عبر الموقع الإلكتروني وتعزيز الصورة الرقمية للعلامة التجارية.",
-    "fr": "Augmentation significative des réservations via le site web et renforcement de l'image de marque en ligne."
+  {
+    "id": "natures-dates",
+    "title": {
+      "fr": "Nature’s Dates - Premium Medjool",
+      "en": "Nature’s Dates - Premium Medjool"
+    },
+    "category": "ecommerce",
+    "image": "/natures-dates.webp",
+    "imageLayout": "wide",
+    "challenge": {
+      "fr": "Construire une présence digitale complète pour une marque de dattes premium, en réunissant produits, nutrition, recettes et demandes wholesale.",
+      "en": "Build a complete digital presence for a premium date brand, bringing together products, nutrition, recipes and wholesale enquiries."
+    },
+    "solution": {
+      "fr": "Une plateforme éditoriale avec catalogue clair, pages produits, recettes et parcours distincts pour les particuliers et les professionnels.",
+      "en": "An editorial platform with a clear catalogue, product pages, recipes and distinct journeys for individual and business customers."
+    },
+    "results": {
+      "fr": "Une expérience de marque cohérente qui valorise le produit et facilite la découverte de la gamme comme le contact commercial.",
+      "en": "A consistent brand experience that showcases the product and makes it easier to discover the range and get in touch for business enquiries."
+    },
+    "liveUrl": "https://naturesdates.com/"
   },
-  "liveUrl": "https://demo-cafe-bianca.netlify.app/"
-},
-{
-  "id": "ironz-equipement",
-  "title": {
-    "ar": "معدات الحديد",
-    "fr": "Ironz Équipements"
-  },
-  "category": "ecommerce",
-  "image": "/ironz.webp",
-  "challenge": {
-  "ar": "تطوير منصة تجارة إلكترونية مخصصة لعشاق اللياقة البدنية في المغرب، تجمع بين المنتجات عالية الجودة وتجربة مستخدم سريعة وسهلة.",
-  "fr": "Développer une plateforme e-commerce dédiée aux passionnés de fitness au Maroc, combinant produits de haute qualité et expérience utilisateur fluide et rapide."
-},
-  "solution": {
-    "ar": "تصميم عصري مع عناصر تقليدية وتجربة مستخدم سلسة",
-    "fr": "Design moderne avec éléments traditionnels et UX fluide"
-  },
-  "results": {
-    "ar": "زيادة في المبيعات والوعي بالعلامة التجارية",
-    "fr": "Augmentation des ventes et de la notoriété de la marque"
-  },
-  "liveUrl": "https://ironz.ma"
-},
-{
-  "id": "lettre-3d-shop",
-  "title": {
-    "fr": "Lettre3DShop / MJ PUB",
-    "ar": "ليتر 3 دي شوب / إم جاي باب"
-  },
-  "category": "ecommerce",
-  "image": "/mj.webp",
-  "challenge": {
-    "fr": "Permettre aux entreprises et commerçants de concevoir et commander des enseignes lumineuses sur mesure, tout en garantissant une expérience en ligne intuitive et fiable.",
-    "ar": "تمكين الشركات والتجار من تصميم وطلب لافتات مضيئة مخصصة، مع ضمان تجربة مستخدم إلكترونية سلسة وموثوقة."
-  },
-  "solution": {
-    "fr": "Un configurateur en ligne pour personnaliser enseignes LED, lettres découpées et panneaux ; interface claire pour devis instantané, livraison France & Maroc ; galerie de réalisations pour inspirer.",
-    "ar": "منصة تكوين أونلاين لتخصيص اللافتات LED، الحروف المقتطعة واللوحات؛ واجهة واضحة لتقديم عرض فوري، شحن إلى فرنسا والمغرب؛ معرض إنجازات للإلهام."
-  },
-  "results": {
-    "fr": "Amélioration de la visibilité des produits, augmentation des demandes de devis, positionnement comme spécialiste des enseignes personnalisées.",
-    "ar": "تحسين ظهور المنتجات، زيادة طلبات العروض، تموضع كخبير في اللافتات المخصصة."
-  },
-  "liveUrl": "https://www.lettre3dshop.com"
-},
-{
-  "id": "patisserie-les-jumeaux",
-  "title": {
-    "ar": "حلويات التوأم (الجمال) الدار البيضاء",
-    "fr": "Pâtisserie Les Jumeaux Casablanca"
-  },
-  "category": "ecommerce",
-  "image": "/pat.webp",
-  "challenge": {
-    "ar": "عرض أصالة وتنوع الحلويات المغربية بطريقة جذابة وسهلة",
-    "fr": "Présenter l'authenticité et la variété des pâtisseries marocaines de manière attractive et simple"
-  },
-  "solution": {
-    "ar": "تصميم أنيق وكتالوج منتجات واضح مع خيارات اتصال مباشرة",
-    "fr": "Design élégant et catalogue de produits clair avec options de contact direct"
-  },
-  "results": {
-    "ar": "تعزيز صورة العلامة التجارية وتحسين وصول العملاء",
-    "fr": "Renforcement de l'image de marque et amélioration de l'engagement client"
+  {
+    "id": "atelier-lamiaa",
+    "title": {
+      "fr": "Atelier Lamiaa - Créations artisanales",
+      "en": "Atelier Lamiaa - Artisan Creations"
+    },
+    "category": "ecommerce",
+    "image": "/atelier-lamiaa.webp",
+    "imageLayout": "wide",
+    "challenge": {
+      "fr": "Présenter des gâteaux marocains et sablés sucrés ou salés de façon gourmande, claire et facile à parcourir sur mobile.",
+      "en": "Present Moroccan cakes and sweet or savoury shortbread in an appetising, clear, mobile-friendly way."
+    },
+    "solution": {
+      "fr": "Une interface chaleureuse avec catégories lisibles, catalogue produit détaillé et panier pour préparer simplement sa commande.",
+      "en": "A warm interface with clear categories, a detailed product catalogue and a basket that makes it easy to prepare an order."
+    },
+    "results": {
+      "fr": "Un catalogue digital cohérent qui traduit le savoir-faire artisanal et guide naturellement de la découverte à la commande.",
+      "en": "A consistent digital catalogue that conveys artisanal expertise and naturally guides customers from discovery to ordering."
+    },
+    "liveUrl": "https://atelierlamiaa.vercel.app/"
   }
-},
-{
-  "id": "firdaous-spa",
-  "title": {
-    "ar": "منتجع وفردوس للتدليك",
-    "fr": "Firdaous Spa & Massage"
-  },
-  "category": "vitrine",
-  "image": "/spa.webp",
-  "challenge": {
-    "ar": "بناء الثقة وعرض الأجواء الهادئة للخدمات الراقية عبر الإنترنت",
-    "fr": "Instaurer la confiance et transmettre l'atmosphère sereine des services haut de gamme en ligne"
-  },
-  "solution": {
-    "ar": "تصميم هادئ وجذاب مع معرض صور للخدمات وقائمة أسعار واضحة",
-    "fr": "Design apaisant et engageant avec galerie de photos des services et grille tarifaire claire"
-  },
-  "results": {
-    "ar": "تحسين حجوزات المواعيد عبر الإنترنت وإبراز الخدمات المميزة",
-    "fr": "Optimisation des prises de rendez-vous en ligne et mise en avant des services signature"
-  },
-  "liveUrl": "https://firdaousspa.netlify.app/"
-},
-{
-  "id": "cafe-restaurant-la-brioche",
-  "title": {
-    "ar": "مقهى ومطعم لابريوش (تجربة إيطالية)",
-    "fr": "Café & Restaurant La Brioche - Expérience Italienne"
-  },
-  "category": "ecommerce",
-  "image": "/test.webp",
-  "challenge": {
-    "ar": "تحويل الزوار إلى زبائن عبر الحجز وعرض الأجواء الدافئة والمطبخ الإيطالي الأصيل",
-    "fr": "Convertir les visiteurs en clients par la réservation et transmettre l'ambiance chaleureuse et la cuisine italienne authentique"
-  },
-  "solution": {
-    "ar": "عرض واضح لقائمة الطعام، ميزة طلب/حجز مباشر، ومعرض صور يبرز الأجواء",
-    "fr": "Présentation claire du menu, fonctionnalité de commande/réservation directe, et galerie photos pour mettre en valeur l'ambiance"
-  },
-  "results": {
-    "ar": "زيادة معدل حجز الطاولات وطلبات التوصيل عبر الإنترنت",
-    "fr": "Augmentation du taux de réservation de tables et des commandes de livraison en ligne"
-  },
-  "liveUrl": "https://labrioche.netlify.app/"
-},
-{
-  "id": "marque-copine",
-  "title": {
-    "ar": "ماركة كوبين (للصديقات)",
-    "fr": "Copine - Marque / Communauté Féminine"
-  },
-  "category": "ecommerce",
-  "image": "/copine.webp",
-  "challenge": {
-    "ar": "بناء علامة تجارية قوية تستهدف جمهوراً نسائياً محدداً وتعزيز التفاعل المجتمعي",
-    "fr": "Construire une marque forte ciblant un public féminin spécifique et stimuler l'engagement communautaire"
-  },
-  "solution": {
-    "ar": "تصميم عصري وجذاب، ومحتوى موجه، وتكامل مع وسائل التواصل الاجتماعي",
-    "fr": "Design moderne et attrayant, contenu orienté vers la cible, et intégration des réseaux sociaux"
-  },
-  "results": {
-    "ar": "زيادة المتابعة على وسائل التواصل الاجتماعي وتعزيز ولاء العملاء",
-    "fr": "Augmentation du nombre d'abonnés sur les réseaux sociaux et fidélisation de la clientèle"
-  },
-  "liveUrl": "https://copine.netlify.app/"
-},
-{
-  "id": "tonka-atelier-chocolatier",
-  "title": {
-    "ar": "أتوليي تونكا - صانع شوكولاتة حرفي",
-    "fr": "L'atelier Tonka - Chocolatier Artisanal"
-  },
-  "category": "vitrine",
-  "image": "/tonka.webp",
-  "challenge": {
-    "ar": "تسليط الضوء على جودة الحرفية والمكونات الفاخرة لمنتجات الشوكولاتة",
-    "fr": "Mettre en valeur la qualité artisanale et les ingrédients haut de gamme des produits de chocolat"
-  },
-  "solution": {
-    "ar": "كتالوج منتجات بصور عالية الجودة، قصة العلامة التجارية (الحرفية)، وخيار طلب مخصص",
-    "fr": "Catalogue produits avec photos haute résolution, storytelling de la marque (artisanat), et option de commande personnalisée"
-  },
-  "results": {
-    "ar": "زيادة مبيعات المنتجات الفاخرة وتعزيز صورة العلامة التجارية كمرجع في الشوكولاتة",
-    "fr": "Augmentation des ventes de produits premium et renforcement de l'image de marque comme référence en chocolaterie"
-  },
-  "liveUrl": "https://tonka-atelier.netlify.app/"
-},
-{
-  "id": "Sou9-Al-Maghreb",
-  "title": {
-    "ar": "",
-    "fr": "Sou9 Al Maghreb"
-  },
-  "category": "vitrine",
-  "image": "/sou9.webp",
-  "challenge": {
-    "ar": "",
-    "fr": ""
-  },
-  "solution": {
-    "ar": "",
-    "fr": ""
-  },
-  "results": {
-    "ar": "",
-    "fr": ""
-  },
-  "liveUrl": "https://sou9maghrib.netlify.app/"
-},
-{
-  "id": "natures-dates",
-  "title": {
-    "ar": "Nature’s Dates - تمور المجهول الفاخرة",
-    "fr": "Nature’s Dates - Premium Medjool"
-  },
-  "category": "ecommerce",
-  "image": "/natures-dates.webp",
-  "imageLayout": "wide",
-  "challenge": {
-    "ar": "بناء حضور رقمي متكامل لعلامة تمور فاخرة، يجمع المنتجات والمحتوى الغذائي والوصفات وطلبات البيع بالجملة.",
-    "fr": "Construire une présence digitale complète pour une marque de dattes premium, en réunissant produits, nutrition, recettes et demandes wholesale."
-  },
-  "solution": {
-    "ar": "منصة غنية بالمحتوى مع كتالوج واضح، صفحات للمنتجات والوصفات، ومسارات مخصصة للعملاء والأعمال.",
-    "fr": "Une plateforme éditoriale avec catalogue clair, pages produits, recettes et parcours distincts pour les particuliers et les professionnels."
-  },
-  "results": {
-    "ar": "تجربة علامة متماسكة توضح جودة المنتج وتسهّل اكتشاف المجموعة والتواصل التجاري.",
-    "fr": "Une expérience de marque cohérente qui valorise le produit et facilite la découverte de la gamme comme le contact commercial."
-  },
-  "liveUrl": "https://naturesdates.com/"
-},
-{
-  "id": "atelier-lamiaa",
-  "title": {
-    "ar": "Atelier Lamiaa - حلويات مغربية منزلية",
-    "fr": "Atelier Lamiaa - Créations artisanales"
-  },
-  "category": "ecommerce",
-  "image": "/atelier-lamiaa.webp",
-  "imageLayout": "wide",
-  "challenge": {
-    "ar": "عرض الحلويات المغربية والسابلي الحلو والمالح بطريقة شهية، واضحة وسهلة الاستخدام على الهاتف.",
-    "fr": "Présenter des gâteaux marocains et sablés sucrés ou salés de façon gourmande, claire et facile à parcourir sur mobile."
-  },
-  "solution": {
-    "ar": "واجهة بصرية دافئة مع تصنيفات واضحة، كتالوج منتجات مفصل وسلة تسهّل تجهيز الطلب.",
-    "fr": "Une interface chaleureuse avec catégories lisibles, catalogue produit détaillé et panier pour préparer simplement sa commande."
-  },
-  "results": {
-    "ar": "كتالوج رقمي متناسق يعكس الطابع الحرفي ويساعد الزبون على اكتشاف المنتجات والطلب بسهولة.",
-    "fr": "Un catalogue digital cohérent qui traduit le savoir-faire artisanal et guide naturellement de la découverte à la commande."
-  },
-  "liveUrl": "https://atelierlamiaa.vercel.app/"
-}
 ]

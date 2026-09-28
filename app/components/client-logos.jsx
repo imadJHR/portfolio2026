@@ -13,17 +13,22 @@ const clients = [
   { name: "Atelier Lamiaa", mark: <><small>ATELIER</small><strong>LAMIAA</strong></>, style: "lamiaa" },
 ]
 
+const copy = {
+  fr: { title: "Des marques nous ont confié leur présence digitale.", description: "Des collaborations dans la restauration, le commerce, les services et les marques locales.", clients: "Nos clients" },
+  en: { title: "Brands that trust us with their digital presence.", description: "Partnerships across hospitality, retail, services, and local brands.", clients: "Our clients" },
+}
+
 export function ClientLogos({ lang }) {
-  const isRTL = lang === "ar"
+  const text = copy[lang] || copy.fr
 
   return (
-    <section className="nm-clients section" aria-labelledby="client-logos-title" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="nm-clients section" aria-labelledby="client-logos-title">
       <div className="container">
         <header className="nm-clients__heading">
-          <h2 id="client-logos-title">{isRTL ? "علامات وثقت بنا لتطوير حضورها الرقمي." : "Des marques nous ont confié leur présence digitale."}</h2>
-          <p>{isRTL ? "شراكات في مجالات المطاعم، التجارة، الخدمات والمنتجات المحلية." : "Des collaborations dans la restauration, le commerce, les services et les marques locales."}</p>
+          <h2 id="client-logos-title">{text.title}</h2>
+          <p>{text.description}</p>
         </header>
-        <ul className="nm-clients__grid" aria-label={isRTL ? "عملاؤنا" : "Nos clients"}>
+        <ul className="nm-clients__grid" aria-label={text.clients}>
           {clients.map((client) => (
             <li key={client.name} aria-label={client.name}>
               <span className={`nm-client-mark nm-client-mark--${client.style}`} aria-hidden="true">{client.mark}</span>

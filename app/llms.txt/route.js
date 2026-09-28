@@ -7,7 +7,7 @@ export function GET() {
   const services = serviceCatalog
     .map((service) => [
       `- [${service.fr.metaTitle}](${SITE_URL}/fr/services/${service.slug}): ${service.fr.metaDescription}`,
-      `  - [Version arabe](${SITE_URL}/ar/services/${service.slug})`,
+      `  - [English version](${SITE_URL}/en/services/${service.slug})`,
     ].join("\n"))
     .join("\n")
 
@@ -21,11 +21,11 @@ ${SITE_NAME} est une agence web basée à Casablanca, au Maroc. Elle accompagne 
 
 - Site canonique: ${SITE_URL}
 - Zone desservie: Casablanca et tout le Maroc
-- Langues: français et arabe
+- Langues: français et anglais
 - Email: ${EMAIL}
 - Téléphone et WhatsApp: ${PHONE}
 - Contact principal: ${SITE_URL}/fr#contact
-- Version arabe: ${SITE_URL}/ar
+- English version: ${SITE_URL}/en
 
 ## Services
 
@@ -34,7 +34,7 @@ ${services}
 ## Ressources importantes
 
 - [Accueil en français](${SITE_URL}/fr)
-- [Accueil en arabe](${SITE_URL}/ar)
+- [English home](${SITE_URL}/en)
 - [À propos](${SITE_URL}/fr/a-propos)
 - [Conseils et articles](${SITE_URL}/fr/insights)
 - [Sitemap XML](${SITE_URL}/sitemap.xml)
@@ -53,7 +53,7 @@ Dernière mise à jour: 2026-07-14
   return new Response(body, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
-      "Content-Language": "fr, ar",
+      "Content-Language": "fr, en",
       "Cache-Control": "public, max-age=3600, s-maxage=86400",
     },
   })

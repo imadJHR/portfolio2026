@@ -1,143 +1,4 @@
 export const translations = {
-  ar: {
-    metaTitle: "تصميم مواقع إلكترونية في المغرب | خبير تصميم وتطوير الويب",
-    metaDescription: "خبير في تصميم وتطوير مواقع الويب والمتاجر الإلكترونية للشركات في المغرب. حلول احترافية لتعزيز حضورك الرقمي وجذب المزيد من workاء.",
-    nav: {
-      home: "الرئيسية",
-      services: "خدماتنا",
-      portfolio: "أعمالنا",
-      contact: "اتصل بنا",
-      testimonials: "آراء العملاء",
-      pricing: "الأسعار",
-    },
-    hero: {
-      title: "تصميم مواقع إلكترونية حديثة واحترافية في المغرب",
-      subtitle: "مطور ومصمم مواقع ويب محترف، متخصص في إنشاء مواقع إلكترونية للشركات المغربية. نعمل في مدن مثل الدار البيضاء، الرباط، ومراكش.",
-      cta1: "احصل على عرض سعر مجاني",
-      cta2: "شاهد أعمالنا",
-    },
-    services: {
-      title: "خدماتنا في تصميم وبرمجة المواقع",
-      subtitle: "نقدم حلولاً رقمية متكاملة لضمان نجاح مشروعك على الإنترنت في المغرب",
-      items: [
-        {
-          title: "تصميم وتطوير المواقع",
-          description: "إنشاء مواقع إلكترونية عصرية، سريعة ومتجاوبة مع جميع الأجهزة، تعكس هوية علامتك التجارية.",
-        },
-        {
-          title: "تصميم المتاجر الإلكترونية",
-          description: "حلول تجارة إلكترونية متكاملة مع ربط بأنظمة الدفع والشحن المحلية في المغرب.",
-        },
-        {
-          title: "تحسين محركات البحث (SEO)",
-          description: "نهيئ موقعك للظهور في النتائج الأولى على جوجل لزيادة عدد الزوار والعملاء.",
-        },
-        {
-          title: "تصميم صفحات الهبوط",
-          description: "تصميم صفحات هبوط مخصصة لزيادة معدل التحويل وتحقيق أهداف حملاتك التسويقية.",
-        },
-      ],
-    },
-    portfolio: {
-      title: "أعمالنا وإنجازاتنا",
-      subtitle: "مشاريعSuccessful projects we're proud of for clients in various cities in Morocco",
-      filter: {
-        all: "الكل",
-        vitrine: "مواقع تعريفية",
-        ecommerce: "متاجر إلكترونية",
-        landing: "صفحات هبوط",
-      },
-      cta: {
-        viewLive: "زيارة الموقع",
-        downloadCase: "تحميل دراسة الحالة",
-      },
-    },
-    testimonials: {
-      title: "ماذا يقول عملاؤنا عننا",
-      subtitle: "شهادات نعتز بها من عملائنا الراضين عن خدماتنا",
-      items: [
-        {
-          name: "أحمد بنعلي",
-          role: "مدير شركة - الدار البيضاء",
-          text: "عمل احترافي وجودة عالية. الموقع الجديد ساهم في زيادة مبيعاتنا بنسبة 150% في السوق المغربي.",
-        },
-        {
-          name: "فاطمة الزهراء",
-          role: "صاحبة متجر إلكتروني - مراكش",
-          text: "تجربة ممتازة من البداية إلى النهاية. فريق محترف وملتزم بالمواعيد، أنصح بهم بشدة.",
-        },
-        {
-          name: "يوسف المرابط",
-          role: "مؤسس شركة ناشئة - الرباط",
-          text: "أفضل مطور تعاملت معه في المغرب. استطاع فهم احتياجاتنا وتقديم حلول إبداعية ومبتكرة.",
-        },
-      ],
-    },
-    pricing: {
-      title: "أسعار تصميم المواقع في المغرب",
-      subtitle: "اختر الباقة التي تناسب احتياجاتك وميزانيتك",
-      cta: "اطلب الآن",
-      plans: [
-        {
-          name: "الباقة الأساسية",
-          price: "5,000",
-          currency: "درهم",
-          features: ["موقع تعريفي (5 Pages)", "Design Responsive", "تهيئة SEO Basic", "نموذج اتصال", "Support Technique 1 Month"],
-        },
-        {
-          name: "الباقة الاحترافية",
-          price: "12,000",
-          currency: "درهم",
-          popular: true,
-          features: [
-            "موقع إلكتروني (jusqu'à 10 Pages)",
-            "Design Mursh et Professionnel",
-            "Optimisation SEO Avancée",
-            "Tableau de Bord Facile",
-            "Support Technique 3 Mois",
-            "Formation sur le Tableau de Bord",
-          ],
-        },
-        {
-          name: "Boutique en ligne complète",
-          price: "25,000",
-          currency: "Drham",
-          features: [
-            "Boutique en ligne complète",
-            "Design unique et personnalisé",
-            "Optimisation SEO pour produits",
-            "Intégration paiements et livraison",
-            "Support Technique 6 Mois",
-            "Maintenance Mensuelle",
-          ],
-        },
-      ],
-    },
-    contact: {
-      title: "تواصل معنا لبدء مشروعك",
-      subtitle: "Avez-vous une idée de projet ? Laissez-nous vous aider à le transformer en réalité",
-      form: {
-        name: "الاسم الكامل",
-        email: "البريد الإلكتروني",
-        message: "رسالتك",
-        submit: "إرسال الرسالة",
-        success: "شكراً لتواصلك! Nous vous répondrons dans les plus brefs délais.",
-      },
-      whatsapp: "تواصل معنا عبر واتساب",
-    },
-    footer: {
-      copyright: "جميع الحقوق محفوظة",
-      links: {
-        portfolio: "أعمالنا",
-        services: "خدماتنا",
-        contact: "اتصل بنا",
-      },
-    },
-    credibility: {
-      trusted_by: "موثوق به من قبل العلامات التجارية الرائدة",
-      clients: "عملاء متميزون",
-    },
-  },
   fr: {
     metaTitle: "Création de Site Web au Maroc | Expert en Développement Web et SEO",
     metaDescription: "Expert en création de sites web et e-commerce pour entreprises au Maroc. Obtenez un site performant, optimisé pour le SEO et conçu pour convertir vos visiteurs en clients.",
@@ -275,6 +136,60 @@ export const translations = {
       trusted_by: "Trusted by leading brands",
       clients: "premium clients",
     },
+  },
+  en: {
+    metaTitle: "Web Design in Morocco | Web Development and SEO Expert",
+    metaDescription: "Web design and e-commerce expert for businesses in Morocco. Get a high-performing, SEO-optimised website designed to turn visitors into customers.",
+    nav: { home: "Home", services: "Services", portfolio: "Portfolio", contact: "Contact" },
+    hero: {
+      title: "Modern, High-Performing Websites in Morocco",
+      subtitle: "Freelance web developer specialising in websites for businesses in Casablanca, Rabat, Marrakech and across Morocco.",
+      cta1: "Request a Free Quote",
+      cta2: "View the Portfolio",
+    },
+    services: {
+      title: "Our Web Design Services",
+      subtitle: "Complete digital solutions to help you succeed online in Morocco",
+      items: [
+        { title: "Website Design", description: "Modern, fast and responsive business websites that accurately reflect your brand identity." },
+        { title: "E-commerce Websites", description: "Complete e-commerce platforms with local payment and delivery integrations." },
+        { title: "Search Engine Optimisation (SEO)", description: "Optimisation for search engines to improve your Google visibility in Morocco." },
+        { title: "Landing Page Design", description: "Conversion-focused landing pages designed to support your marketing goals." },
+      ],
+    },
+    portfolio: {
+      title: "Our Portfolio",
+      subtitle: "Discover successful projects for satisfied clients across Morocco",
+      filter: { all: "All", vitrine: "Business Websites", ecommerce: "E-commerce", landing: "Landing Pages" },
+      cta: { viewLive: "View website", downloadCase: "Download case study" },
+    },
+    testimonials: {
+      title: "Client Testimonials",
+      subtitle: "What our clients in Morocco think about our work",
+      items: [
+        { name: "Ahmed Benali", role: "Company Director, Casablanca", text: "Highly professional work and an exceptional result. The website increased our sales by 150%." },
+        { name: "Fatima Zahra", role: "Online Store Manager, Marrakech", text: "A great experience from start to finish. A professional, attentive team that meets deadlines." },
+        { name: "Youssef Marabti", role: "Startup Founder, Rabat", text: "The best developer I have had the opportunity to work with. He understood my needs and offered innovative solutions." },
+      ],
+    },
+    pricing: {
+      title: "Our Website Design Prices in Morocco",
+      subtitle: "Choose the plan that best fits your needs and budget",
+      cta: "Order now",
+      plans: [
+        { name: "Basic Package", price: "5,000", currency: "MAD", features: ["Business website (5 pages)", "Responsive design", "Basic SEO optimisation", "Contact form", "1 month of support"] },
+        { name: "Professional Package", price: "12,000", currency: "MAD", popular: true, features: ["Website (up to 10 pages)", "Custom design", "Advanced SEO optimisation", "Admin dashboard", "3 months of support", "Dashboard training"] },
+        { name: "E-commerce Package", price: "25,000", currency: "MAD", features: ["Complete online shop", "Unique, customised design", "Product SEO optimisation", "Payment and delivery integration", "6 months of support", "Monthly maintenance"] },
+      ],
+    },
+    contact: {
+      title: "Contact Us to Start Your Project",
+      subtitle: "Have an idea? Let’s discuss it and turn it into reality.",
+      form: { name: "Full name", email: "Email address", message: "Your message", submit: "Send Message", success: "Thank you for your message. We will get back to you shortly." },
+      whatsapp: "Contact us via WhatsApp",
+    },
+    footer: { copyright: "All rights reserved", links: { portfolio: "Portfolio", services: "Services", contact: "Contact" } },
+    credibility: { trusted_by: "Trusted by leading brands", clients: "premium clients" },
   },
 };
 
