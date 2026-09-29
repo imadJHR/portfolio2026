@@ -43,6 +43,10 @@ export const insightLinks = {
     service: "email-marketing-maroc",
     related: ["ecommerce-maroc", "landing-page-ou-site-vitrine"],
   },
+  "preparer-catalogue-produit-ecommerce": {
+    service: "ecommerce-maroc",
+    related: ["ecommerce-maroc", "site-web-premium-maroc"],
+  },
 }
 
 export function getInsightLinks(id) {

@@ -308,6 +308,10 @@ export const serviceCatalog = [
         { q: "Comment gérer la livraison ?", a: "Nous structurons les zones, tarifs et méthodes de livraison selon vos partenaires. Des connexions plus avancées sont possibles lorsque le transporteur fournit les outils nécessaires." },
         { q: "Le site pourra-t-il évoluer ?", a: "Oui. Nous anticipons les variantes, promotions, contenus et intégrations prioritaires afin d’éviter une reconstruction quand l’activité grandit." },
       ],
+      resources: [
+        { id: "ecommerce-maroc", title: "Lancer une boutique e-commerce au Maroc : Guide complet", description: "Un aperçu des décisions à préparer avant le lancement d’une boutique en ligne." },
+        { id: "preparer-catalogue-produit-ecommerce", title: "Comment préparer un catalogue produit avant de créer un site e-commerce ?", description: "Organiser produits, catégories, variantes et informations à valider avant le développement." },
+      ],
     },
     en: {
       name: "E-commerce",
@@ -351,6 +355,10 @@ export const serviceCatalog = [
         { q: "Can you integrate online payments?", a: "Yes, depending on your business’s eligibility and the providers available. Cash on delivery or other methods can also be integrated into the journey." },
         { q: "How is delivery managed?", a: "We structure delivery areas, rates and methods around your partners. More advanced connections are possible when the carrier provides the necessary tools." },
         { q: "Will the website be able to grow?", a: "Yes. We anticipate priority variants, promotions, content and integrations so you can avoid rebuilding when the business grows." },
+      ],
+      resources: [
+        { id: "ecommerce-maroc", title: "Launching an e-commerce store in Morocco: Complete guide", description: "An overview of the decisions to prepare before launching an online store." },
+        { id: "preparer-catalogue-produit-ecommerce", title: "How to Prepare a Product Catalogue Before Building an E-commerce Website", description: "Organise products, categories, variants and information to validate before development." },
       ],
     },
   },

@@ -675,5 +675,206 @@
         }
       ]
     }
+  },
+  {
+    "id": "preparer-catalogue-produit-ecommerce",
+    "title": {
+      "fr": "Comment préparer un catalogue produit avant de créer un site e-commerce ?",
+      "en": "How to Prepare a Product Catalogue Before Building an E-commerce Website"
+    },
+    "excerpt": {
+      "fr": "Une méthode pratique pour organiser produits, catégories, variantes et informations à valider avant la conception d’un site e-commerce.",
+      "en": "A practical method for organising products, categories, variants and information to validate before designing an e-commerce website."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-09-29",
+    "category": {
+      "fr": "E-commerce",
+      "en": "E-commerce"
+    },
+    "readTime": {
+      "fr": "7 min",
+      "en": "7 min"
+    },
+    "content": {
+      "fr": [],
+      "en": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Un catalogue est plus qu’une liste de produits",
+          "paragraphs": [
+            "Avant la conception d’un site e-commerce, le catalogue donne une structure concrète au projet. Il aide à comprendre ce qui sera présenté, comment les produits seront regroupés et quelles informations un client doit trouver avant de passer commande.",
+            "Le travail ne consiste pas à écrire chaque fiche de façon définitive dès le départ. Il consiste à réunir et à valider les informations qui déterminent le parcours, les pages et l’organisation quotidienne de la boutique."
+          ]
+        },
+        {
+          "heading": "Choisir les produits du premier catalogue en ligne",
+          "paragraphs": [
+            "L’entreprise peut commencer par les produits qu’elle souhaite réellement proposer en ligne. Ce premier périmètre doit refléter les cas utiles : produits simples, produits avec variantes ou règles de vente particulières, et catégories qui aideront les visiteurs à s’orienter."
+          ]
+        },
+        {
+          "heading": "Préparer un premier catalogue représentatif",
+          "paragraphs": [
+            "Un catalogue initial représentatif est souvent plus utile qu’attendre une version supposée parfaite. Il permet d’identifier les informations manquantes et les décisions à prendre avant que la structure du site ne soit définie.",
+            "L’objectif n’est pas de fixer un nombre de produits. Il est de réunir des exemples qui exposent les cas réels de l’activité et les règles que le futur parcours devra prendre en compte."
+          ]
+        },
+        {
+          "heading": "Organiser les catégories et sous-catégories",
+          "paragraphs": [
+            "Les catégories doivent aider une personne à trouver un type de produit sans devoir connaître toutes les références. Elles peuvent reprendre une famille, un usage, une collection ou un autre classement déjà compris par les clients et l’équipe.",
+            "Une sous-catégorie est utile lorsqu’elle apporte une différence lisible. Si deux groupes décrivent presque la même chose, il est préférable de clarifier la structure avant de la reproduire dans la navigation."
+          ]
+        },
+        {
+          "heading": "Préparer les informations de chaque produit",
+          "paragraphs": [
+            "Pour chaque produit, l’entreprise doit préparer ou valider les éléments qui permettent de le présenter clairement : nom, référence interne si elle est utilisée, description, prix, unité de vente, disponibilité et caractéristiques utiles selon le produit.",
+            "Les images utilisées dans le catalogue doivent être approuvées et fournies par l’entreprise. Elles doivent correspondre au produit présenté et rester cohérentes avec les informations que le client verra sur la page."
+          ],
+          "list": [
+            "Nom et référence lorsque l’activité en utilise une",
+            "Description et caractéristiques utiles",
+            "Images produit approuvées et fournies par l’entreprise",
+            "Prix et unité de vente validés",
+            "Disponibilité et informations utiles à la décision"
+          ]
+        },
+        {
+          "heading": "Identifier les variantes et les règles commerciales",
+          "paragraphs": [
+            "Une variante peut concerner une taille, une couleur, un format, un lot ou toute autre différence réellement proposée à l’achat. L’entreprise doit préciser ce qui change le prix, la disponibilité ou l’information à afficher afin que le produit ne crée pas d’ambiguïté au moment de la commande.",
+            "Il est également utile d’identifier la personne qui valide les informations source. Cette responsabilité évite que des données provisoires soient présentées comme définitives dans le futur catalogue."
+          ]
+        },
+        {
+          "heading": "Relier le catalogue au futur parcours de commande",
+          "paragraphs": [
+            "Le catalogue influence les questions auxquelles les pages produit doivent répondre. L’entreprise peut documenter les zones de livraison à définir, la manière dont les commandes seront confirmées, la responsabilité de mise à jour du stock et les questions récurrentes des clients.",
+            "Ces éléments ne constituent pas un guide de prestataires de paiement ou de livraison. Ils servent à clarifier les choix opérationnels qui devront être cohérents avec le parcours de commande retenu."
+          ]
+        },
+        {
+          "heading": "Checklist avant de transmettre le catalogue",
+          "list": [
+            "Périmètre initial de produits défini",
+            "Catégories principales identifiées",
+            "Noms et références disponibles",
+            "Descriptions et images produit approuvées disponibles",
+            "Prix et unités de vente validés",
+            "Variantes et règles qui affectent prix ou disponibilité identifiées",
+            "Responsabilité de stock et disponibilité clarifiée",
+            "Questions sur zones de livraison et confirmation de commande documentées",
+            "Personne chargée de valider le catalogue identifiée"
+          ]
+        },
+        {
+          "heading": "Quand un catalogue a besoin d’un parcours e-commerce complet",
+          "paragraphs": [
+            "Un catalogue peut simplement présenter une offre, ou devenir le point de départ d’un parcours où les visiteurs sélectionnent des produits et passent commande. La différence dépend de la manière dont l’entreprise souhaite vendre et organiser ses opérations.",
+            "Lorsque le projet nécessite un catalogue, des fiches produit et un parcours de commande cohérent, la discussion peut alors porter sur un périmètre e-commerce adapté aux informations déjà préparées."
+          ]
+        },
+        {
+          "heading": "Passer du catalogue à un projet e-commerce cadré",
+          "paragraphs": [
+            "Un catalogue préparé permet de discuter d’un projet sur une base concrète : produits, informations à afficher, règles à clarifier et parcours à construire. Il ne remplace pas le cadrage, mais il rend les décisions de conception plus lisibles."
+          ],
+          "links": [
+            { "service": "ecommerce-maroc", "label": "Découvrir notre service de création de sites e-commerce" }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "A catalogue is more than a list of products",
+          "paragraphs": [
+            "Before an e-commerce website is designed, the catalogue gives the project a practical structure. It helps define what will be presented, how products will be grouped and which information a customer needs before placing an order.",
+            "The task is not to write every product page in its final form from the start. It is to gather and validate the information that will shape the journey, pages and day-to-day organisation of the store."
+          ]
+        },
+        {
+          "heading": "Choose the products for the initial online catalogue",
+          "paragraphs": [
+            "A business can start with the products it genuinely plans to offer online. This initial scope should represent useful cases: straightforward products, products with variants or specific selling rules, and categories that help visitors find their way."
+          ]
+        },
+        {
+          "heading": "Prepare a representative first catalogue",
+          "paragraphs": [
+            "A representative initial catalogue is often more useful than waiting for a supposedly perfect version. It reveals missing information and decisions to make before the website structure is defined.",
+            "The aim is not to set a fixed product count. It is to gather examples that expose the real cases in the business and the rules the future journey needs to account for."
+          ]
+        },
+        {
+          "heading": "Organise categories and subcategories",
+          "paragraphs": [
+            "Categories should help people find a product type without knowing every reference. They can reflect a family, use, collection or another way of grouping that customers and the team already understand.",
+            "A subcategory is useful when it creates a clear distinction. When two groups describe almost the same thing, it is better to clarify the structure before reproducing it in navigation."
+          ]
+        },
+        {
+          "heading": "Prepare the information for every product",
+          "paragraphs": [
+            "For every product, the business should prepare or validate the elements needed to present it clearly: name, internal reference where it is used, description, price, selling unit, availability and characteristics that matter for that product.",
+            "Images used in the catalogue should be approved and supplied by the business. They should match the product shown and remain consistent with the information customers see on the page."
+          ],
+          "list": [
+            "Name and reference where the business uses one",
+            "Useful description and characteristics",
+            "Approved product images supplied by the business",
+            "Validated price and selling unit",
+            "Availability and information useful for a decision"
+          ]
+        },
+        {
+          "heading": "Identify variants and selling rules",
+          "paragraphs": [
+            "A variant may be a size, colour, format, bundle or another difference genuinely offered for purchase. The business should clarify what changes the price, availability or information shown so the product does not create uncertainty when an order is placed.",
+            "It is also useful to identify the person who validates source information. That responsibility prevents provisional data from appearing as final information in the future catalogue."
+          ]
+        },
+        {
+          "heading": "Connect catalogue information to the future order journey",
+          "paragraphs": [
+            "The catalogue affects the questions product pages need to answer. The business can document delivery areas that need defining, how orders will be confirmed, who updates stock and the questions customers regularly ask.",
+            "These elements are not a guide to payment or delivery providers. They clarify operational choices that need to remain consistent with the chosen ordering journey."
+          ]
+        },
+        {
+          "heading": "Checklist before handing over the catalogue",
+          "list": [
+            "Initial product scope defined",
+            "Main categories identified",
+            "Names and references available",
+            "Approved product descriptions and images available",
+            "Prices and selling units validated",
+            "Variants and rules affecting price or availability identified",
+            "Stock and availability responsibility clarified",
+            "Questions about delivery areas and order confirmation documented",
+            "Person responsible for catalogue validation identified"
+          ]
+        },
+        {
+          "heading": "When a catalogue needs a complete e-commerce journey",
+          "paragraphs": [
+            "A catalogue can simply present an offer, or become the starting point for a journey where visitors select products and place orders. The difference depends on how the business wants to sell and organise its operations.",
+            "When a project needs a catalogue, product pages and a coherent ordering journey, the discussion can focus on an e-commerce scope that fits the information already prepared."
+          ]
+        },
+        {
+          "heading": "Move from a catalogue to a scoped e-commerce project",
+          "paragraphs": [
+            "A prepared catalogue makes it possible to discuss a project on a practical basis: products, information to display, rules to clarify and the journey to build. It does not replace scoping, but it makes design decisions easier to understand."
+          ],
+          "links": [
+            { "service": "ecommerce-maroc", "label": "Explore our e-commerce website development service" }
+          ]
+        }
+      ]
+    }
   }
 ]

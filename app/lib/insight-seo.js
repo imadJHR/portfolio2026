@@ -43,6 +43,10 @@ const metaTitles = {
     en: "Business Newsletter: Plan for an Existing Audience",
     fr: "Newsletter d’entreprise : planifier pour son audience",
   },
+  "preparer-catalogue-produit-ecommerce": {
+    en: "How to Prepare a Product Catalogue for an E-commerce Website",
+    fr: "Préparer un catalogue produit avant un site e-commerce",
+  },
 }
 
 export function getInsightMetaTitle(article, lang) {
