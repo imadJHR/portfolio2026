@@ -35,6 +35,9 @@ export const emailMarketing = {
       { q: "Travaillez-vous avec notre audience de contacts existante ?", a: "Oui. Le périmètre est construit autour de votre audience de contacts existante et de la configuration disponible dans votre environnement." },
       { q: "Comment analysez-vous une campagne email ?", a: "Nous examinons les données de campagne disponibles, comme les envois, ouvertures, clics, désinscriptions, trafic ou conversions lorsque la mesure existante le permet." },
     ],
+    resources: [
+      { id: "newsletter-entreprise-audience-existante", title: "Newsletter d’entreprise : comment la planifier pour une audience existante ?", description: "Une méthode pratique pour organiser sujets, cadence, CTA et revue des données disponibles." },
+    ],
   },
   en: {
     name: "Email marketing",
@@ -68,6 +71,9 @@ export const emailMarketing = {
       { q: "Can you help us prepare regular newsletters?", a: "Yes. We can organise newsletter planning, content and preparation according to the cadence and scope defined with your team." },
       { q: "Do you work with our existing contact audience?", a: "Yes. The scope is built around your existing contact audience and the setup available in your environment." },
       { q: "How do you analyse an email campaign?", a: "We review available campaign data such as sends, opens, clicks, unsubscribes, traffic or conversions where existing measurement allows it." },
+    ],
+    resources: [
+      { id: "newsletter-entreprise-audience-existante", title: "How to Plan a Business Newsletter for an Existing Audience", description: "A practical method for organising topics, cadence, CTAs and review of available data." },
     ],
   },
 }

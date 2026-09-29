@@ -335,5 +335,345 @@
         "Before connecting Twilio, map authorised scenarios, consent, message templates and handoff to an adviser. Keep useful history without collecting more data than necessary. Start with a simple journey, measure response time and resolution rate, then add automation only when it reduces clearly identified friction."
       ]
     }
+  },
+  {
+    "id": "landing-page-ou-site-vitrine",
+    "title": {
+      "fr": "Landing page ou site vitrine : quel format choisir ?",
+      "en": "Landing Page vs Business Website: Which Should You Choose?"
+    },
+    "excerpt": {
+      "fr": "Comparez l’objectif, la navigation, le SEO et les usages de campagne pour choisir entre une landing page et un site vitrine.",
+      "en": "Compare goals, navigation, SEO and campaign use to choose between a landing page and a business website."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-09-29",
+    "category": {
+      "fr": "Stratégie web",
+      "en": "Web Strategy"
+    },
+    "readTime": {
+      "fr": "6 min",
+      "en": "6 min"
+    },
+    "content": {
+      "fr": [],
+      "en": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Choisir selon l’objectif, pas selon le format",
+          "paragraphs": [
+            "Pour une entreprise au Maroc, la bonne question n’est pas de savoir si une landing page est meilleure qu’un site vitrine. Ces deux formats répondent à des situations différentes.",
+            "Une landing page concentre une offre, une audience et une action. Un site vitrine présente l’entreprise sur la durée, avec plusieurs pages et plusieurs parcours possibles. Le choix dépend donc de ce que la personne doit faire après son arrivée sur la page."
+          ]
+        },
+        {
+          "heading": "À quoi sert une landing page ?",
+          "paragraphs": [
+            "Une landing page est une page de destination construite autour d’une proposition précise : demander un devis pour une offre, réserver un rendez-vous, s’inscrire à un événement ou répondre à une campagne. Son contenu, son message et son appel à l’action restent centrés sur cette seule prochaine étape.",
+            "Elle convient lorsqu’une campagne, un email ou une publication dirige une audience identifiable vers une offre précise. La navigation y est souvent limitée pour garder le lien entre le message d’origine et l’action proposée."
+          ],
+          "links": [
+            { "service": "landing-page-maroc", "label": "Découvrir notre service de création de landing pages" }
+          ]
+        },
+        {
+          "heading": "Dans quel cas un site vitrine est-il plus adapté ?",
+          "paragraphs": [
+            "Un site vitrine est la présence durable d’une entreprise. Il aide un visiteur à comprendre l’activité, explorer des services, vérifier des réalisations, trouver les contacts et revenir plus tard. Il est utile quand plusieurs audiences ou questions doivent être servies sur le même domaine.",
+            "Avec plusieurs pages indexables et une architecture claire, un site vitrine peut soutenir une visibilité organique plus large sur le long terme. Cela ne signifie pas qu’une landing page ne peut jamais être indexée : elle répond simplement à une intention plus étroite."
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Découvrir notre service de création de sites web" }
+          ]
+        },
+        {
+          "heading": "Landing page vs site vitrine : les différences utiles",
+          "table": {
+            "headers": ["Critère", "Landing page", "Site vitrine"],
+            "rows": [
+              ["Objectif principal", "Une offre et une action précise", "Présenter l’entreprise et ses informations"],
+              ["Structure", "Une page centrée sur une campagne", "Plusieurs pages reliées entre elles"],
+              ["Navigation", "Limitée selon l’objectif", "Pensée pour explorer services et contenus"],
+              ["Offres", "Une proposition prioritaire", "Plusieurs services ou informations"],
+              ["Appel à l’action", "Une prochaine étape dominante", "Plusieurs parcours selon la page"],
+              ["Usage campagne", "Destination adaptée à une campagne ciblée", "Base de réassurance et d’information"],
+              ["SEO", "Intention étroite, selon son contenu et son usage", "Couverture plus large grâce à plusieurs pages indexables"],
+              ["Présence long terme", "Peut accompagner une offre ou une campagne", "Base durable de l’entreprise" ]
+            ]
+          }
+        },
+        {
+          "heading": "Quel format pour une campagne Google ou Meta ?",
+          "paragraphs": [
+            "Quand une campagne porte sur une offre, une audience et une action définies, une landing page peut servir de destination cohérente. Elle permet d’aligner la promesse du message de campagne avec la page consultée, sans transformer le site entier en page publicitaire.",
+            "La gestion des canaux, du ciblage et du budget relève toutefois d’une campagne publicitaire. La landing page reste la destination à laquelle cette campagne peut renvoyer."
+          ],
+          "links": [
+            { "service": "publicite-payante-maroc", "label": "Voir le service Publicité payante" }
+          ]
+        },
+        {
+          "heading": "Peuvent-ils fonctionner ensemble ?",
+          "paragraphs": [
+            "Oui. Un site vitrine peut présenter l’entreprise, ses services et ses informations utiles, tandis qu’une landing page accompagne une offre ou une campagne précise. Les deux formats ne se remplacent pas automatiquement : ils peuvent se compléter selon la source de trafic et l’objectif attendu.",
+            "Avant de choisir, vérifiez quatre points : avez-vous une offre unique à promouvoir, une audience clairement définie, une action principale mesurable et une campagne qui justifie une page dédiée ? Si oui, une landing page est pertinente. Si votre objectif est de construire une présence, répondre à plusieurs questions et développer des contenus dans le temps, le site vitrine est généralement la base la plus adaptée."
+          ]
+        },
+        {
+          "heading": "Conclusion : choisir le format qui sert la prochaine décision",
+          "paragraphs": [
+            "Une landing page convient à une action concentrée autour d’une offre. Un site vitrine convient à une présence plus complète et durable. Le bon choix part de la campagne, de l’audience et du parcours à construire, plutôt que d’un modèle unique pour tous les besoins."
+          ],
+          "links": [
+            { "service": "landing-page-maroc", "label": "Parler d’un projet de landing page" },
+            { "service": "creation-site-web-maroc", "label": "Parler d’un projet de site vitrine" }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Choose by objective, not by format",
+          "paragraphs": [
+            "For a business in Morocco, the useful question is not whether a landing page is better than a business website. The two formats solve different problems.",
+            "A landing page concentrates one offer, one audience and one action. A business website presents the company over time, with several pages and possible journeys. The choice therefore depends on what a visitor needs to do after arriving."
+          ]
+        },
+        {
+          "heading": "What is a landing page for?",
+          "paragraphs": [
+            "A landing page is a destination page built around a specific proposition: requesting a quote for one offer, booking an appointment, registering for an event or responding to a campaign. Its content, message and call to action stay focused on that next step.",
+            "It is useful when a campaign, email or social post sends an identifiable audience to a specific offer. Navigation is often limited so the original message and proposed action remain connected."
+          ],
+          "links": [
+            { "service": "landing-page-maroc", "label": "Explore our landing page design service" }
+          ]
+        },
+        {
+          "heading": "When is a business website a better fit?",
+          "paragraphs": [
+            "A business website is a company’s durable online presence. It helps visitors understand the business, explore services, review work, find contact details and return later. It is useful when several audiences or questions need to be served on one domain.",
+            "With multiple indexable pages and a clear architecture, a business website can support broader long-term organic visibility. That does not mean a landing page can never be indexed; it simply answers a narrower intent."
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Explore our website design service" }
+          ]
+        },
+        {
+          "heading": "Landing page vs business website: useful differences",
+          "table": {
+            "headers": ["Factor", "Landing page", "Business website"],
+            "rows": [
+              ["Primary purpose", "One offer and one specific action", "Present the business and its information"],
+              ["Structure", "One page centred on a campaign", "Several connected pages"],
+              ["Navigation", "Limited to support the objective", "Built for exploring services and content"],
+              ["Offers", "One priority proposition", "Several services or information areas"],
+              ["Call to action", "One dominant next step", "Several journeys depending on the page"],
+              ["Campaign use", "A suitable destination for a targeted campaign", "A foundation for reassurance and information"],
+              ["SEO", "Narrow intent, depending on content and use", "Broader coverage through multiple indexable pages"],
+              ["Long-term presence", "Can support an offer or campaign", "A durable company foundation" ]
+            ]
+          }
+        },
+        {
+          "heading": "Which format for a Google or Meta campaign?",
+          "paragraphs": [
+            "When a campaign has a defined offer, audience and action, a landing page can provide a consistent destination. It lets the campaign message continue on the page without turning the whole website into an advertising page.",
+            "Channel selection, targeting and budget management remain part of the advertising campaign itself. The landing page is the destination that campaign can point to."
+          ],
+          "links": [
+            { "service": "publicite-payante-maroc", "label": "View our paid advertising service" }
+          ]
+        },
+        {
+          "heading": "Can they work together?",
+          "paragraphs": [
+            "Yes. A business website can present the company, its services and useful information, while a landing page supports one specific offer or campaign. The formats do not automatically replace one another: they can complement each other depending on the traffic source and expected outcome.",
+            "Before choosing, check four points: do you have one offer to promote, a clearly defined audience, one measurable primary action and a campaign that justifies a dedicated page? If so, a landing page is relevant. If the goal is to build a presence, answer several questions and develop content over time, a business website is usually the more suitable foundation."
+          ]
+        },
+        {
+          "heading": "Conclusion: choose the format that supports the next decision",
+          "paragraphs": [
+            "A landing page suits a focused action around one offer. A business website suits a more complete and durable presence. The right choice begins with the campaign, audience and journey to build, rather than one model for every need."
+          ],
+          "links": [
+            { "service": "landing-page-maroc", "label": "Discuss a landing page project" },
+            { "service": "creation-site-web-maroc", "label": "Discuss a business website project" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "newsletter-entreprise-audience-existante",
+    "title": {
+      "fr": "Newsletter d’entreprise : comment la planifier pour une audience existante ?",
+      "en": "How to Plan a Business Newsletter for an Existing Audience"
+    },
+    "excerpt": {
+      "fr": "Une méthode concrète pour planifier une newsletter utile à partir de l’audience de clients ou prospects que votre entreprise possède déjà.",
+      "en": "A practical method for planning a useful newsletter for the customer or prospect audience your business already owns."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-09-29",
+    "category": {
+      "fr": "Email marketing",
+      "en": "Email Marketing"
+    },
+    "readTime": {
+      "fr": "6 min",
+      "en": "6 min"
+    },
+    "content": {
+      "fr": [],
+      "en": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Une newsletter d’entreprise sert une communication déjà permise",
+          "paragraphs": [
+            "Une newsletter d’entreprise organise une communication régulière avec une audience que l’entreprise possède déjà : clients, prospects ou contacts existants. Elle peut partager une actualité, clarifier une offre, mettre en avant un contenu utile ou diriger vers une page pertinente.",
+            "Le point de départ n’est pas l’envoi lui-même. Il consiste à décider ce que cette édition doit apporter à son audience et quelle prochaine action, si nécessaire, elle doit faciliter."
+          ]
+        },
+        {
+          "heading": "Commencer par un objectif clair",
+          "paragraphs": [
+            "Chaque édition gagne à avoir un objectif principal : informer d’une nouveauté, partager une ressource, rappeler un service ou orienter vers une page précise. Un objectif clair aide à choisir le sujet, le message et l’appel à l’action sans transformer l’email en catalogue.",
+            "La newsletter peut s’inscrire dans une campagne plus large, mais elle ne remplace pas la gestion des canaux publicitaires ni une infrastructure d’email automatisée."
+          ]
+        },
+        {
+          "heading": "Identifier l’audience existante et son contexte",
+          "paragraphs": [
+            "Avant de préparer le contenu, l’entreprise doit identifier l’audience concernée dans sa configuration existante : des clients qui attendent une mise à jour, des prospects ayant déjà demandé des informations, ou des contacts intéressés par un sujet précis.",
+            "Le message peut alors rester cohérent avec le contexte connu de cette audience. Cet article ne traite ni de l’acquisition de contacts, ni de listes achetées, ni de l’enrichissement de données."
+          ],
+          "links": [
+            { "service": "email-marketing-maroc", "label": "Découvrir notre accompagnement en email marketing" }
+          ]
+        },
+        {
+          "heading": "Choisir un contenu utile et une structure simple",
+          "paragraphs": [
+            "Une édition peut s’appuyer sur un sujet utile pour l’audience : une actualité de l’entreprise, une sélection de produits ou services, une ressource, une invitation ou une information qui aide à prendre une décision. Les éléments visuels et contenus sont coordonnés à partir des éléments approuvés par l’entreprise.",
+            "Une structure lisible reste souvent suffisante : un objet qui annonce le sujet, une introduction courte, le contenu principal, un appel à l’action et des liens vérifiés vers une destination prête à accueillir le visiteur."
+          ],
+          "links": [
+            { "service": "landing-page-maroc", "label": "Préparer une landing page lorsque la campagne a une action précise" }
+          ]
+        },
+        {
+          "heading": "Choisir une cadence réaliste",
+          "paragraphs": [
+            "Il n’existe pas de fréquence universelle. La cadence doit correspondre à la disponibilité de contenus utiles, aux attentes de l’audience, à l’objectif de communication et à la capacité de l’équipe à préparer puis relire chaque édition.",
+            "Un calendrier simple aide à relier les sujets aux temps forts réellement prévus par l’entreprise, plutôt que d’envoyer un message uniquement pour respecter une fréquence fixe."
+          ]
+        },
+        {
+          "heading": "Relire les données disponibles après l’envoi",
+          "paragraphs": [
+            "Après l’envoi, la revue peut porter sur les données disponibles dans la configuration du client : emails envoyés, ouvertures, clics, désinscriptions, trafic et conversions lorsque la mesure existante le permet. Ces observations peuvent guider les prochains sujets, formats et appels à l’action.",
+            "Elles ne constituent pas une promesse de taux d’ouverture, de clics, de ventes ou de retour sur investissement."
+          ]
+        },
+        {
+          "heading": "Checklist avant de préparer une édition",
+          "list": [
+            "Objectif de l’édition défini",
+            "Audience existante et contexte identifiés",
+            "Sujet et valeur apportée clairement formulés",
+            "Objet, message et appel à l’action relus",
+            "Liens et page de destination vérifiés",
+            "Éléments visuels et contenus approuvés disponibles",
+            "Données de campagne consultables lorsque la configuration le permet"
+          ]
+        },
+        {
+          "heading": "Planifier une newsletter à partir de votre contexte réel",
+          "paragraphs": [
+            "Une newsletter utile part d’une audience existante, d’un sujet pertinent et d’une prochaine étape claire. La planification permet ensuite de garder une communication régulière sans ajouter de promesses ou de mécanismes qui ne correspondent pas au besoin de l’entreprise."
+          ],
+          "links": [
+            { "service": "email-marketing-maroc", "label": "Discuter d’une stratégie de newsletters pour votre audience existante" }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "A business newsletter supports communication you already have permission to send",
+          "paragraphs": [
+            "A business newsletter organises regular communication with an audience the business already owns: existing customers, prospects or contacts. It can share an update, clarify an offer, highlight a useful resource or direct readers to a relevant page.",
+            "The starting point is not sending an email. It is deciding what the edition should bring to its audience and which next action, if any, it should make easier."
+          ]
+        },
+        {
+          "heading": "Start with a clear objective",
+          "paragraphs": [
+            "Each edition benefits from one primary objective: sharing an update, a resource, a service reminder or a path to a specific page. A clear objective helps choose the topic, message and call to action without turning the email into a catalogue.",
+            "A newsletter can be part of a broader campaign, but it does not replace paid-channel management or automated email infrastructure."
+          ]
+        },
+        {
+          "heading": "Identify the existing audience and its context",
+          "paragraphs": [
+            "Before preparing content, the business should identify the relevant audience in its existing setup: customers expecting an update, prospects who have already requested information or contacts interested in a specific topic.",
+            "The message can then remain consistent with that audience’s known context. This article does not cover contact acquisition, purchased lists or data enrichment."
+          ],
+          "links": [
+            { "service": "email-marketing-maroc", "label": "Explore our email marketing service" }
+          ]
+        },
+        {
+          "heading": "Choose useful content and a simple structure",
+          "paragraphs": [
+            "An edition can focus on something useful for the audience: a company update, a selection of products or services, a resource, an invitation or information that helps a decision. Visual assets and content are coordinated from business-approved elements.",
+            "A readable structure is often enough: a subject line that announces the topic, a short introduction, the main content, one call to action and verified links to a destination ready for the visitor."
+          ],
+          "links": [
+            { "service": "landing-page-maroc", "label": "Prepare a landing page when a campaign has one clear action" }
+          ]
+        },
+        {
+          "heading": "Choose a realistic cadence",
+          "paragraphs": [
+            "There is no universal sending frequency. Cadence should reflect the availability of useful content, audience expectations, the communication objective and the team’s capacity to prepare and review each edition.",
+            "A simple calendar helps connect topics to moments the business has genuinely planned, rather than sending a message only to meet a fixed frequency."
+          ]
+        },
+        {
+          "heading": "Review the data available after sending",
+          "paragraphs": [
+            "After sending, the review can use data available in the client’s existing setup: emails sent, opens, clicks, unsubscribes, traffic and conversions where existing measurement allows it. These observations can guide future topics, formats and calls to action.",
+            "They do not promise opens, clicks, sales or return on investment."
+          ]
+        },
+        {
+          "heading": "Checklist before preparing an edition",
+          "list": [
+            "Edition objective defined",
+            "Existing audience and context identified",
+            "Topic and reader value clearly expressed",
+            "Subject line, message and call to action reviewed",
+            "Links and destination page verified",
+            "Approved visual assets and content available",
+            "Campaign data accessible where the existing setup allows it"
+          ]
+        },
+        {
+          "heading": "Plan a newsletter around your real context",
+          "paragraphs": [
+            "A useful newsletter starts with an existing audience, a relevant topic and a clear next step. Planning then makes regular communication possible without adding promises or mechanisms that do not match the business’s actual needs."
+          ],
+          "links": [
+            { "service": "email-marketing-maroc", "label": "Discuss a newsletter strategy for your existing audience" }
+          ]
+        }
+      ]
+    }
   }
 ]

@@ -35,6 +35,14 @@ const metaTitles = {
     en: "WhatsApp automation for your customers",
     fr: "Automatisation WhatsApp pour vos clients",
   },
+  "landing-page-ou-site-vitrine": {
+    en: "Landing Page vs Business Website: Which to Choose?",
+    fr: "Landing page ou site vitrine : lequel choisir ?",
+  },
+  "newsletter-entreprise-audience-existante": {
+    en: "Business Newsletter: Plan for an Existing Audience",
+    fr: "Newsletter d’entreprise : planifier pour son audience",
+  },
 }
 
 export function getInsightMetaTitle(article, lang) {

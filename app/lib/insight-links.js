@@ -35,6 +35,14 @@ export const insightLinks = {
     service: "application-web-sur-mesure",
     related: ["ecommerce-maroc", "marketing-reseaux-sociaux-maroc"],
   },
+  "landing-page-ou-site-vitrine": {
+    service: "landing-page-maroc",
+    related: ["site-web-premium-maroc", "design-ux-maroc-2026"],
+  },
+  "newsletter-entreprise-audience-existante": {
+    service: "email-marketing-maroc",
+    related: ["ecommerce-maroc", "landing-page-ou-site-vitrine"],
+  },
 }
 
 export function getInsightLinks(id) {

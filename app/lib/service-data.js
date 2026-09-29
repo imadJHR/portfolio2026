@@ -219,6 +219,9 @@ export const serviceCatalog = [
         { q: "La landing page fonctionne-t-elle avec Meta et Google Ads ?", a: "Oui. Elle peut être adaptée aux deux canaux, avec un message et un suivi cohérents selon la campagne et les paramètres utilisés." },
         { q: "Peut-on tester plusieurs versions ?", a: "La structure peut être préparée pour comparer des accroches, preuves ou appels à l’action. Un test utile nécessite toutefois assez de trafic et un objectif de conversion bien défini." },
       ],
+      resources: [
+        { id: "landing-page-ou-site-vitrine", title: "Landing page ou site vitrine : quel format choisir ?", description: "Comparer objectif, navigation, SEO et usages de campagne avant de choisir le bon format." },
+      ],
     },
     en: {
       name: "Landing pages",
@@ -252,6 +255,9 @@ export const serviceCatalog = [
         { q: "Can you write the content?", a: "Yes. We structure the message around your offer, proof points and customers’ questions. Your approval ensures that every promise remains accurate." },
         { q: "Does the landing page work with Meta and Google Ads?", a: "Yes. It can be adapted to both channels, with messaging and tracking consistent with the campaign and parameters used." },
         { q: "Can we test several versions?", a: "The structure can be prepared to compare headlines, proof points or calls to action. A useful test does, however, require sufficient traffic and a clearly defined conversion goal." },
+      ],
+      resources: [
+        { id: "landing-page-ou-site-vitrine", title: "Landing Page vs Business Website: Which Should You Choose?", description: "Compare goals, navigation, SEO and campaign use before choosing the right format." },
       ],
     },
   },
