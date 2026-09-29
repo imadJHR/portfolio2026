@@ -5,7 +5,7 @@ export function buildServiceMetadata(service, lang) {
   const canonical = `${SITE_URL}/${lang}/services/${service.slug}`
 
   return {
-    title: content.metaTitle,
+    title: content.metaTitleAbsolute ? { absolute: content.metaTitle } : content.metaTitle,
     description: content.metaDescription,
     alternates: {
       canonical,

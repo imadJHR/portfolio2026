@@ -36,11 +36,9 @@ const gridLabels = {
 
 // Regroupe les services par pôle pour la page index.
 // La home conserve uniquement les services prioritaires via `homeSlugs`.
-const clusters = [
-  { id: "web", fr: "Web & Développement", en: "Web & Development", slugs: ["creation-site-web-maroc", "landing-page-maroc", "ecommerce-maroc", "application-web-sur-mesure", "backend-api"] },
-  { id: "marketing", fr: "Marketing & Acquisition", en: "Marketing & Acquisition", slugs: ["seo-maroc", "publicite-payante-maroc", "social-media-maroc", "email-marketing-maroc", "marketing-influence-maroc"] },
-  { id: "brand", fr: "Brand & Contenu", en: "Brand & Content", slugs: ["branding-identite-marque", "ui-ux-identite-visuelle", "design-graphique-maroc", "production-photo-video-maroc", "maintenance-site-web"] },
-]
+// La structure des pôles est partagée avec la navigation via `service-nav.js`.
+import { serviceClusters } from "../lib/service-nav"
+const clusters = serviceClusters
 
 const homeSlugs = [
   "creation-site-web-maroc",

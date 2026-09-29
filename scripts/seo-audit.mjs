@@ -39,10 +39,10 @@ for (const publicUrl of urls) {
   const imageTags = [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0])
   const jsonLdBlocks = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis)]
   const schemaTypes = []
-  const localizedPath = pathname.replace(/^\/(fr|ar)/, "")
+  const localizedPath = pathname.replace(/^\/(fr|en)/, "")
   const expectedAlternates = {
-    fr: `${publicOrigin}/fr${localizedPath}`,
-    ar: `${publicOrigin}/ar${localizedPath}`,
+    "fr-MA": `${publicOrigin}/fr${localizedPath}`,
+    en: `${publicOrigin}/en${localizedPath}`,
     "x-default": `${publicOrigin}/fr${localizedPath}`,
   }
 
@@ -52,7 +52,7 @@ for (const publicUrl of urls) {
   if (!description) issues.push({ publicUrl, issue: "Meta description absente" })
   if (description.length > 160) issues.push({ publicUrl, issue: `Description trop longue (${description.length})` })
   if (canonical !== publicUrl) issues.push({ publicUrl, issue: `Canonical incorrecte: ${canonical}` })
-  for (const lang of ["fr", "ar", "x-default"]) {
+  for (const lang of ["fr-MA", "en", "x-default"]) {
     const alternate = alternates.find((item) => item.lang === lang)
     if (!alternate) issues.push({ publicUrl, issue: `hreflang ${lang} absent` })
     else if (alternate.href !== expectedAlternates[lang]) issues.push({ publicUrl, issue: `hreflang ${lang} incorrect: ${alternate.href}` })
@@ -76,7 +76,7 @@ for (const publicUrl of urls) {
     }
   }
 
-  const expectedLanguage = pathname.startsWith("/ar") ? "ar-MA" : "fr-MA"
+  const expectedLanguage = pathname.startsWith("/en") ? "en" : "fr-MA"
   if (pageResponse.headers.get("content-language") !== expectedLanguage) {
     issues.push({ publicUrl, issue: `Content-Language incorrect (${pageResponse.headers.get("content-language")})` })
   }
