@@ -17,7 +17,7 @@ function localePath(pathname, locale) {
   return `/${locale}${suffix}`
 }
 
-export default function Navbar({ lang }) {
+export default function Navbar({ lang, availableLocales = ["fr", "en"] }) {
   const [isOpen, setIsOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const pathname = usePathname()
@@ -50,13 +50,13 @@ export default function Navbar({ lang }) {
     return () => window.removeEventListener("keydown", onKeyDown)
   }, [servicesOpen])
 
-  const languageSwitcher = (mobile = false) => (
+  const languageSwitcher = (mobile = false) => availableLocales.length > 1 ? (
     <div className={mobile ? "nm-mobile-language" : "nm-lang"} role="group" aria-label={copy.language} style={{ display: "flex", alignItems: "center", gap: ".25rem" }}>
       <Link href={localePath(pathname, "fr")} aria-current={locale === "fr" ? "page" : undefined} onClick={mobile ? () => setIsOpen(false) : undefined} style={mobile ? { display: "inline", padding: 0, border: 0, fontSize: ".8rem" } : undefined}>FR</Link>
       <span aria-hidden="true"> | </span>
       <Link href={localePath(pathname, "en")} aria-current={locale === "en" ? "page" : undefined} onClick={mobile ? () => setIsOpen(false) : undefined} style={mobile ? { display: "inline", padding: 0, border: 0, fontSize: ".8rem" } : undefined}>EN</Link>
     </div>
-  )
+  ) : null
 
   return (
     <header className="nm-header">

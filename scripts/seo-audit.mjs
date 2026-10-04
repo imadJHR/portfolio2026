@@ -18,6 +18,7 @@ const response = await fetch(`${origin}/sitemap.xml`)
 if (!response.ok) throw new Error(`Sitemap HTTP ${response.status}`)
 const sitemap = await response.text()
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1])
+const urlSet = new Set(urls)
 const issues = []
 const pages = []
 const internalTargets = new Set()
@@ -40,11 +41,12 @@ for (const publicUrl of urls) {
   const jsonLdBlocks = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>(.*?)<\/script>/gis)]
   const schemaTypes = []
   const localizedPath = pathname.replace(/^\/(fr|en)/, "")
-  const expectedAlternates = {
-    "fr-MA": `${publicOrigin}/fr${localizedPath}`,
-    en: `${publicOrigin}/en${localizedPath}`,
-    "x-default": `${publicOrigin}/fr${localizedPath}`,
-  }
+  const frenchAlternate = `${publicOrigin}/fr${localizedPath}`
+  const englishAlternate = `${publicOrigin}/en${localizedPath}`
+  const expectedAlternates = {}
+  if (urlSet.has(frenchAlternate)) expectedAlternates["fr-MA"] = frenchAlternate
+  if (urlSet.has(englishAlternate)) expectedAlternates.en = englishAlternate
+  expectedAlternates["x-default"] = urlSet.has(frenchAlternate) ? frenchAlternate : publicUrl
 
   if (pageResponse.status !== 200) issues.push({ publicUrl, issue: `HTTP ${pageResponse.status}` })
   if (!title) issues.push({ publicUrl, issue: "Titre absent" })
@@ -52,10 +54,13 @@ for (const publicUrl of urls) {
   if (!description) issues.push({ publicUrl, issue: "Meta description absente" })
   if (description.length > 160) issues.push({ publicUrl, issue: `Description trop longue (${description.length})` })
   if (canonical !== publicUrl) issues.push({ publicUrl, issue: `Canonical incorrecte: ${canonical}` })
-  for (const lang of ["fr-MA", "en", "x-default"]) {
+  for (const [lang, expectedHref] of Object.entries(expectedAlternates)) {
     const alternate = alternates.find((item) => item.lang === lang)
     if (!alternate) issues.push({ publicUrl, issue: `hreflang ${lang} absent` })
-    else if (alternate.href !== expectedAlternates[lang]) issues.push({ publicUrl, issue: `hreflang ${lang} incorrect: ${alternate.href}` })
+    else if (alternate.href !== expectedHref) issues.push({ publicUrl, issue: `hreflang ${lang} incorrect: ${alternate.href}` })
+  }
+  for (const alternate of alternates) {
+    if (!(alternate.lang in expectedAlternates)) issues.push({ publicUrl, issue: `hreflang ${alternate.lang} inattendu: ${alternate.href}` })
   }
   if (h1Count !== 1) issues.push({ publicUrl, issue: `${h1Count} H1` })
   if (/noindex/i.test(robots)) issues.push({ publicUrl, issue: "noindex inattendu" })

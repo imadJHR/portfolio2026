@@ -4,7 +4,8 @@ import insightsData from "../lib/insights-data.json"
 
 export function HomeInsights({ lang }) {
   const isEnglish = lang === "en"
-  const articles = [...insightsData]
+  const articles = insightsData
+    .filter((article) => (article.locales || ["fr", "en"]).includes(lang))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3)
   const dateFormatter = new Intl.DateTimeFormat(isEnglish ? "en" : "fr-MA", {

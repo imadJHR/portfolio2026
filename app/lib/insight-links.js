@@ -1,7 +1,7 @@
 export const insightLinks = {
   "site-web-premium-maroc": {
     service: "creation-site-web-maroc",
-    related: ["performance-web-mobile-maroc", "design-ux-maroc-2026"],
+    related: ["site-sur-mesure-ou-template", "performance-web-mobile-maroc"],
   },
   "seo-maroc-2026": {
     service: "seo-maroc",
@@ -46,6 +46,22 @@ export const insightLinks = {
   "preparer-catalogue-produit-ecommerce": {
     service: "ecommerce-maroc",
     related: ["ecommerce-maroc", "site-web-premium-maroc"],
+  },
+  "seo-avant-refonte-site": {
+    service: "seo-maroc",
+    related: ["seo-maroc-2026", "site-web-premium-maroc"],
+  },
+  "prix-seo-maroc": {
+    service: "seo-maroc",
+    related: ["seo-maroc-2026", "seo-local-maroc"],
+  },
+  "prix-creation-site-web-maroc": {
+    service: "creation-site-web-maroc",
+    related: ["site-web-premium-maroc", "landing-page-ou-site-vitrine"],
+  },
+  "site-sur-mesure-ou-template": {
+    service: "creation-site-web-maroc",
+    related: ["prix-creation-site-web-maroc", "site-web-premium-maroc"],
   },
 }
 

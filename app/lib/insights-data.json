@@ -2,37 +2,111 @@
   {
     "id": "site-web-premium-maroc",
     "title": {
-      "fr": "Pourquoi investir dans un site web premium au Maroc ?",
+      "fr": "Site web premium au Maroc : quand l’investissement est-il pertinent ?",
       "en": "Why invest in a premium website in Morocco?"
     },
     "excerpt": {
-      "fr": "Découvrez comment un site web haut de gamme peut transformer votre image de marque et booster votre chiffre d'affaires au Maroc.",
-      "en": "Discover how a high-end website can transform your brand image and boost your revenue in Morocco."
+      "fr": "Objectifs, contenus, UX, développement et coûts dans la durée : les critères pour décider si un site web premium est justifié.",
+      "en": "Goals, content, UX, development and long-term costs: the criteria for deciding whether a premium website is justified."
     },
     "author": "Nemsi Media",
     "date": "2025-06-01",
+    "updatedAt": "2026-10-04",
     "category": {
       "fr": "Web Design",
       "en": "Web Design"
     },
     "readTime": {
-      "fr": "5 min",
+      "fr": "8 min",
       "en": "5 min"
     },
     "content": {
-      "fr": [
-        "Dans un marché marocain de plus en plus compétitif, votre site web est souvent le premier point de contact avec vos clients potentiels. Un site premium n'est pas un luxe, c'est un investissement stratégique.",
-        "Un design exceptionnel renforce instantanément votre crédibilité. Les visiteurs jugent votre entreprise en moins de 3 secondes. Un site au design premium, avec des animations fluides et une typographie soignée, communique professionnalisme et attention aux détails.",
-        "Les sites premium sont construits avec les meilleures technologies (Next.js, Three.js, animations GSAP) garantissant des performances optimales, un référencement naturel supérieur et une expérience utilisateur mémorable.",
-        "Au Maroc, où le digital est en pleine expansion, se démarquer par un site web d'exception est le meilleur moyen d'attirer une clientèle exigeante et de justifier des tarifs premium.",
-        "Avant d'investir, définissez pourtant des objectifs mesurables : demandes de devis, réservations, ventes ou candidatures. Un site premium devient rentable lorsqu'il associe une proposition de valeur claire, des preuves concrètes, un parcours mobile simple et un suivi analytique. Le budget doit donc couvrir la stratégie, les contenus, le design, le développement, les tests et l'amélioration après la mise en ligne."
-      ],
+      "fr": [],
       "en": [
-        "In an increasingly competitive Moroccan market, your website is often the first point of contact with potential clients. A premium website is not a luxury; it is a strategic investment.",
-        "Exceptional design instantly strengthens your credibility. Visitors form an opinion of your business in under 3 seconds. A premium-designed website, with smooth animations and refined typography, communicates professionalism and attention to detail.",
-        "Premium websites are built with the best technologies (Next.js, Three.js, GSAP animations), ensuring optimal performance, stronger organic search visibility and a memorable user experience.",
-        "In Morocco, where digital adoption is rapidly expanding, standing out with an exceptional website is the best way to attract discerning clients and justify premium pricing.",
-        "Before investing, however, define measurable goals: quote requests, bookings, sales or applications. A premium website becomes profitable when it combines a clear value proposition, concrete proof, a simple mobile journey and analytics tracking. The budget should therefore cover strategy, content, design, development, testing and improvement after launch."
+        "A premium website should not be defined by animations, a visual trend or a specific technology. The term is useful only when it describes a level of research, content, user-experience design, development and testing suited to an important business need.",
+        "A deeper investment can be justified when the offer is complex, several audiences need different journeys, trust is central to the decision or the website must connect with existing tools. A simple website may still be the better choice for a narrow offer with limited content.",
+        "The budget can cover discovery, information architecture, content preparation, responsive design, development, integrations, performance, accessibility, technical SEO, measurement and testing. Responsibilities for content, approval, access and maintenance should be explicit.",
+        "Before choosing a solution, connect each objective to an observable action such as requesting a quote, booking an appointment, applying for a role or completing an order. Measurement can reveal friction, but it does not guarantee a commercial result.",
+        "Compare proposals through their scope, validation criteria, mobile and indexing checks, ownership of access, maintenance and future change. A higher initial cost is not automatically more valuable; value depends on fit, execution and continued use."
+      ]
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Un site premium n’est pas un style visuel",
+          "paragraphs": [
+            "Le mot premium ne devrait pas désigner une accumulation d’animations, un thème sombre ou une technologie particulière. Il décrit plutôt un niveau de travail adapté à un enjeu important : comprendre l’activité, organiser les contenus, concevoir les parcours, produire une interface cohérente et vérifier la qualité avant la mise en ligne.",
+            "Un site simple peut être la meilleure décision lorsque l’offre est courte et que les contenus sont limités. À l’inverse, un projet plus approfondi devient pertinent lorsque plusieurs audiences, services, langues, intégrations ou objectifs doivent cohabiter sans rendre l’expérience confuse."
+          ]
+        },
+        {
+          "heading": "Dans quels cas un investissement supérieur est-il pertinent ?",
+          "paragraphs": [
+            "Un travail plus poussé peut être justifié quand la confiance influence fortement la décision, quand l’offre demande des explications, quand le site soutient une acquisition active ou quand plusieurs équipes doivent pouvoir publier et faire évoluer les contenus.",
+            "Il peut aussi être utile pour une marque qui s’adresse à plusieurs marchés, un service B2B avec un cycle de décision long, un catalogue structuré ou une entreprise dont le site doit se connecter à des outils existants. Le budget doit répondre à ces contraintes réelles, pas à une étiquette."
+          ],
+          "list": [
+            "Plusieurs offres ou audiences à organiser",
+            "Contenus de preuve et réalisations à présenter",
+            "Parcours de contact, réservation ou candidature à mesurer",
+            "Exigences multilingues, éditoriales ou d’intégration",
+            "Besoin d’une base capable d’évoluer dans le temps"
+          ]
+        },
+        {
+          "heading": "Ce que le budget doit réellement financer",
+          "paragraphs": [
+            "Le coût d’un site ne correspond pas seulement au nombre d’écrans. Il couvre le cadrage, l’architecture de l’information, la préparation des contenus, l’UX, la direction visuelle, le développement responsive, les intégrations, la performance, l’accessibilité, le SEO technique, la mesure et les tests.",
+            "Les responsabilités doivent être explicites : qui fournit les textes, les photos et les preuves ? Qui valide les pages ? Qui gère les accès, l’hébergement, les mises à jour et les nouvelles demandes après le lancement ? Une proposition claire décrit ces éléments avant de parler d’effets visuels."
+          ]
+        },
+        {
+          "heading": "Définir les résultats attendus avant la solution",
+          "paragraphs": [
+            "Le projet gagne en précision lorsque chaque objectif est relié à une action observable : demander un devis, prendre rendez-vous, consulter un catalogue, envoyer une candidature ou accéder à une information importante. Cette décision influence la structure des pages et les événements à mesurer.",
+            "Les indicateurs ne garantissent pas une progression commerciale. Ils permettent de vérifier si les visiteurs atteignent les étapes prévues et d’identifier les frictions à corriger après la mise en ligne."
+          ]
+        },
+        {
+          "heading": "Choisir le bon format plutôt que le plus coûteux",
+          "table": {
+            "headers": ["Besoin", "Format probable", "Point de vigilance"],
+            "rows": [
+              ["Promouvoir une offre et une action", "Landing page", "Aligner le message avec la campagne"],
+              ["Présenter durablement une entreprise", "Site vitrine ou corporate", "Organiser services, preuves et contacts"],
+              ["Vendre un catalogue", "Site e-commerce", "Préparer produits, paiement, livraison et opérations"],
+              ["Gérer des données ou un processus", "Application web", "Définir rôles, règles métier et sécurité"]
+            ]
+          }
+        },
+        {
+          "heading": "Évaluer une proposition de création de site",
+          "paragraphs": [
+            "Une proposition utile précise le périmètre, les livrables, les responsabilités de contenu, les critères de validation et les contrôles avant lancement. Elle explique aussi comment seront traités le mobile, les formulaires, l’indexation, les accès, la mesure et les évolutions futures.",
+            "La qualité ne se déduit ni du prix le plus élevé ni de la stack la plus récente. Elle se vérifie dans la cohérence entre les objectifs, le travail prévu et la capacité de l’entreprise à maintenir le résultat."
+          ]
+        },
+        {
+          "heading": "Considérer le coût sur la durée",
+          "paragraphs": [
+            "Après le lancement, le site continue de générer des besoins : hébergement, mises à jour, nouvelles pages, renouvellement des contenus, contrôle des formulaires et suivi des performances. Ces coûts doivent être identifiés pour comparer deux solutions de manière équitable.",
+            "Un investissement initial supérieur peut être rationnel s’il finance une architecture utile et réduit des reprises prévisibles. Il n’est toutefois pas automatiquement plus rentable : la valeur dépend de l’usage réel, de la qualité des contenus et du suivi."
+          ]
+        },
+        {
+          "heading": "Checklist avant d’investir",
+          "list": [
+            "Objectifs et actions attendues clairement définis",
+            "Audiences et contenus prioritaires identifiés",
+            "Format choisi en fonction du besoin réel",
+            "Fonctionnalités et intégrations justifiées",
+            "Responsabilités de contenu et de validation réparties",
+            "Mesure, maintenance et coûts futurs clarifiés"
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Découvrir notre approche de création de sites web sur mesure" }
+          ]
+        }
       ]
     }
   },
@@ -191,148 +265,415 @@
   {
     "id": "performance-web-mobile-maroc",
     "title": {
-      "fr": "Performance web : la vitesse, facteur clé de conversion",
+      "fr": "Performance web mobile : mesurer et corriger les vrais ralentissements",
       "en": "Web performance: speed as a key conversion factor"
     },
     "excerpt": {
-      "fr": "Un site lent perd 40% de ses visiteurs. Découvrez comment optimiser la vitesse de chargement pour améliorer l'expérience utilisateur et le référencement.",
-      "en": "A slow site loses 40% of its visitors. Discover how to optimise loading speed to improve user experience and SEO."
+      "fr": "Core Web Vitals, données terrain, images, JavaScript et scripts tiers : une méthode pour diagnostiquer et prioriser la performance mobile.",
+      "en": "Core Web Vitals, field data, images, JavaScript and third-party scripts: a method for diagnosing and prioritising mobile performance."
     },
     "author": "Nemsi Media",
     "date": "2026-03-10",
+    "updatedAt": "2026-10-04",
     "category": {
       "fr": "Performance",
       "en": "Performance"
     },
     "readTime": {
-      "fr": "4 min",
+      "fr": "7 min",
       "en": "4 min"
     },
     "content": {
-      "fr": [
-        "La performance web n'est plus une option. Google utilise Core Web Vitals comme facteur de classement, et les utilisateurs attendent un chargement en moins de 3 secondes.",
-        "Un site rapide améliore directement votre taux de conversion. Chaque seconde de gagnée peut augmenter vos ventes de 7% selon les études.",
-        "Les images non optimisées sont la cause n°1 des lenteurs. Utilisez des formats modernes (WebP, AVIF), le lazy loading et un CDN pour des résultats immédiats.",
-        "Le code JavaScript excessif ralentit le rendu. Privilégiez le rendu serveur (SSR) et le static generation (SSG) avec Next.js pour des performances optimales.",
-        "Mesurez avant d'optimiser avec PageSpeed Insights, Lighthouse et les données réelles de vos visiteurs. Traitez d'abord l'élément principal trop lent, les décalages de mise en page et les interactions tardives. Fixez ensuite un budget de performance pour les images, les polices et les scripts tiers, puis contrôlez-le à chaque mise en ligne afin d'éviter une dégradation progressive."
-      ],
+      "fr": [],
       "en": [
-        "Web performance is no longer optional. Google uses Core Web Vitals as a ranking factor, and users expect pages to load in under 3 seconds.",
-        "A fast website directly improves your conversion rate. According to studies, every second gained can increase sales by 7%.",
-        "Unoptimised images are the number-one cause of slowdowns. Use modern formats (WebP, AVIF), lazy loading and a CDN for immediate results.",
-        "Excess JavaScript slows rendering. Favour server-side rendering (SSR) and static generation (SSG) with Next.js for optimal performance.",
-        "Measure before optimising with PageSpeed Insights, Lighthouse and real visitor data. First address the main element that is too slow, layout shifts and delayed interactions. Then set a performance budget for images, fonts and third-party scripts, and monitor it with every release to avoid gradual degradation."
+        "Web performance should be evaluated on important pages and real journeys rather than through one site-wide score. Opening a service page, viewing a product and submitting a form can expose different constraints.",
+        "Laboratory tools such as Lighthouse reproduce controlled conditions and help diagnose problems. Field data describes real experiences when enough data is available. Device, network, location, cache and interaction patterns can explain differences between the two.",
+        "Core Web Vitals describe the appearance of the main content, interaction responsiveness and visual stability. Each signal still needs to be tied to the page template and element responsible for the problem.",
+        "Large media, fonts, JavaScript, third-party scripts, server response and cache behaviour can all contribute to slow journeys. Modern image formats or server rendering can help in the right context, but no technique guarantees performance on its own.",
+        "Prioritise fixes by severity, number of pages affected, commercial role and implementation effort. Measure before and after under comparable conditions, then use budgets and release checks to prevent gradual regression."
+      ]
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Relier la performance à un parcours réel",
+          "paragraphs": [
+            "La performance devient utile lorsqu’elle est observée sur une page et une action concrètes : comprendre une offre, ouvrir une fiche produit, ajouter au panier ou envoyer un formulaire. Un score global ne montre pas à lui seul ce que vit chaque visiteur.",
+            "L’audit commence donc par les modèles importants et les parcours commerciaux. Une correction sur une page très peu consultée n’a pas la même priorité qu’un problème répété sur toutes les pages service ou sur le tunnel de commande."
+          ]
+        },
+        {
+          "heading": "Distinguer données de laboratoire et données réelles",
+          "paragraphs": [
+            "Lighthouse et PageSpeed Insights peuvent simuler un appareil et un réseau pour reproduire des problèmes. Ces données de laboratoire sont utiles pour diagnostiquer, mais elles ne décrivent pas tous les visiteurs.",
+            "Les données terrain agrègent des expériences réelles lorsque le volume disponible le permet. L’appareil, le réseau, la localisation, le cache et les interactions expliquent une partie des écarts. Il faut lire les deux sources plutôt que chercher un score unique."
+          ]
+        },
+        {
+          "heading": "Lire les Core Web Vitals en langage utilisateur",
+          "paragraphs": [
+            "Le LCP mesure le temps nécessaire pour afficher l’élément principal visible. L’INP observe la réactivité après les interactions. Le CLS mesure les déplacements inattendus qui font bouger le contenu pendant la lecture.",
+            "Ces indicateurs aident à classer les symptômes, mais ils doivent être reliés à l’élément et au modèle de page concernés. Une moyenne du domaine peut masquer un problème limité à quelques pages importantes."
+          ]
+        },
+        {
+          "heading": "Identifier les causes fréquentes sur mobile",
+          "paragraphs": [
+            "Les ralentissements peuvent venir d’images surdimensionnées, de polices, d’un volume JavaScript élevé, de scripts tiers, du serveur, du cache ou de composants chargés avant d’être utiles. La cause réelle se confirme avec une trace et l’inspection de la page.",
+            "Le format WebP ou AVIF, le chargement différé et le rendu serveur peuvent aider dans certains cas, mais aucune technique ne garantit à elle seule un bon résultat. La bonne correction dépend de la ressource qui bloque ou retarde le parcours."
+          ]
+        },
+        {
+          "heading": "Prioriser les corrections selon l’impact",
+          "paragraphs": [
+            "Une feuille de route croise la gravité du problème, le nombre de pages touchées, le trafic, le rôle commercial et l’effort. Les modèles partagés et les éléments visibles au début de page sont souvent prioritaires lorsque les mesures confirment leur impact.",
+            "Chaque modification doit être mesurée avant et après, sur le même scénario autant que possible. Cette comparaison évite de déclarer une amélioration à partir d’un changement de réseau ou d’un cache différent."
+          ]
+        },
+        {
+          "heading": "Associer chaque symptôme à un contrôle",
+          "table": {
+            "headers": ["Symptôme", "Piste à examiner", "Contrôle après correction"],
+            "rows": [
+              ["LCP élevé", "Image principale, police, réponse serveur", "Nouvelle mesure sur la même page"],
+              ["CLS élevé", "Images sans dimensions, contenu injecté, police", "Vérification visuelle et mesure CLS"],
+              ["INP élevé", "JavaScript, gestionnaires lourds, tâche principale", "Interaction répétée sur appareil mobile"],
+              ["Page lourde", "Images, vidéos, polices et scripts tiers", "Poids transféré et parcours retesté"]
+            ]
+          }
+        },
+        {
+          "heading": "Éviter la régression après l’optimisation",
+          "paragraphs": [
+            "Les performances se dégradent quand de nouvelles images, polices ou balises tierces sont ajoutées sans contrôle. Un budget simple peut fixer des limites par type de ressource et déclencher une vérification avant chaque mise en ligne importante.",
+            "Le suivi doit combiner les données terrain disponibles, des tests réguliers sur les pages critiques et la vérification des parcours après une évolution. La maintenance technique sert à détecter ces régressions avant qu’elles ne s’installent."
+          ],
+          "links": [
+            { "service": "maintenance-site-web", "label": "Voir notre accompagnement en maintenance et performance web" }
+          ]
+        },
+        {
+          "heading": "Checklist d’un diagnostic de performance",
+          "list": [
+            "Pages et parcours critiques sélectionnés",
+            "Données laboratoire et terrain distinguées",
+            "Appareils et conditions de test documentés",
+            "Éléments responsables identifiés avant correction",
+            "Actions classées par impact et effort",
+            "Parcours retestés après chaque changement important",
+            "Budget et suivi prévus pour éviter les régressions"
+          ]
+        }
       ]
     }
   },
   {
     "id": "seo-local-maroc",
     "title": {
-      "fr": "SEO local au Maroc : Casablanca, Rabat, Marrakech",
+      "fr": "SEO local au Maroc : méthode pour une visibilité locale utile",
       "en": "Local SEO in Morocco: Casablanca, Rabat, Marrakech"
     },
     "excerpt": {
-      "fr": "Google My Business, citations locales et contenu géolocalisé : les leviers pour dominer la recherche locale dans les grandes villes marocaines.",
-      "en": "Google My Business, local citations and geo-targeted content: the levers for dominating local search in Morocco’s major cities."
+      "fr": "Google Business Profile, cohérence des informations, avis, pages locales et mesure : les bases du référencement local au Maroc.",
+      "en": "Google Business Profile, consistent business details, reviews, useful local pages and measurement: the foundations of local SEO in Morocco."
     },
     "author": "Nemsi Media",
     "date": "2026-04-05",
+    "updatedAt": "2026-10-04",
     "category": {
       "fr": "SEO",
       "en": "SEO"
     },
     "readTime": {
-      "fr": "6 min",
+      "fr": "8 min",
       "en": "6 min"
     },
     "content": {
-      "fr": [
-        "Le SEO local est crucial pour les entreprises marocaines qui ciblent une clientèle géographiquement définie. Casablanca, Rabat, Marrakech : chaque ville a ses spécificités de recherche.",
-        "Google My Business est votre outil principal. Une fiche complète avec photos, horaires, avis clients et publications régulières augmente votre visibilité dans le pack local.",
-        "Les citations cohérentes sur les annuaires marocains (Pagine.ma, Moteur.ma, etc.) renforcent votre autorité locale. La cohérence NAP (Nom, Adresse, Téléphone) est essentielle.",
-        "Le contenu géolocalisé — pages ville, articles sur des événements locaux, témoignages clients — signale à Google votre pertinence pour une zone donnée.",
-        "Évitez toutefois de dupliquer la même page pour chaque ville en changeant seulement le nom du lieu. Décrivez vos services, délais, réalisations et contraintes propres à la zone ciblée. Demandez des avis détaillés après une prestation, répondez-y avec soin et mesurez les appels, demandes d'itinéraire et formulaires issus de votre fiche pour concentrer vos efforts sur les actions réellement rentables."
-      ],
+      "fr": [],
       "en": [
-        "Local SEO is crucial for Moroccan businesses targeting a geographically defined clientele. Casablanca, Rabat, Marrakech: each city has its own search characteristics.",
-        "Google My Business is your primary tool. A complete listing with photos, opening hours, customer reviews and regular posts increases your visibility in the local pack.",
-        "Consistent citations on Moroccan directories (Pagine.ma, Moteur.ma, etc.) strengthen your local authority. NAP consistency (Name, Address, Phone) is essential.",
-        "Geo-targeted content—city pages, articles about local events and customer testimonials—signals your relevance for a given area to Google.",
-        "However, avoid duplicating the same page for every city by changing only the location name. Describe the services, lead times, projects and constraints specific to the targeted area. Ask for detailed reviews after a service, respond to them carefully and measure calls, direction requests and form submissions from your listing so you can focus your efforts on genuinely profitable actions."
+        "Local SEO is relevant when a business receives customers at a real location or serves a defined area. Adding a city name to every paragraph does not create local relevance; the location and service need to reflect how the business actually operates.",
+        "A Google Business Profile should use the real business name, an accurate primary category, current hours, the correct phone number, the official website and services that are genuinely available. False addresses or keyword-modified names create inconsistency and policy risk.",
+        "The business name, address and phone number should remain consistent across the profile, contact page and important external profiles. The linked page should confirm the activity and make the expected action easy.",
+        "A city page is useful only when it provides distinct information about the offer, conditions, constraints, evidence or context. Duplicating a national page and replacing the place name produces little value.",
+        "Track website clicks, calls, direction requests and forms where the setup allows it. Search Console does not provide a complete view of the local pack or every geographic position, so local analysis needs several data sources and careful attribution."
+      ]
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "À quelles entreprises le SEO local est-il utile ?",
+          "paragraphs": [
+            "Le référencement local concerne les entreprises dont la décision dépend d’une zone : établissement qui reçoit des visiteurs, professionnel qui se déplace ou service disponible dans un territoire défini. Il aide Google et l’utilisateur à relier une activité réelle à une recherche qui contient un lieu ou implique une proximité.",
+            "Une activité nationale sans point d’accueil ni zone particulière n’a pas besoin de multiplier les signaux locaux. Ajouter Casablanca, Rabat ou Marrakech dans chaque texte ne crée pas à lui seul de pertinence ; la zone annoncée doit correspondre aux services réellement disponibles."
+          ]
+        },
+        {
+          "heading": "Comprendre les résultats locaux affichés par Google",
+          "paragraphs": [
+            "Une recherche locale peut afficher des résultats cartographiques liés aux fiches d’établissement, puis des résultats organiques classiques. La visibilité dépend notamment de la pertinence entre la recherche et l’activité, de la distance lorsque Google peut l’estimer et de la notoriété que le moteur observe.",
+            "Aucun réglage isolé ne garantit une place dans le pack local. La fiche, le site, les avis, les mentions externes et les informations pratiques doivent raconter la même réalité."
+          ]
+        },
+        {
+          "heading": "Construire une fiche Google Business Profile fiable",
+          "paragraphs": [
+            "La fiche doit utiliser le nom réel de l’entreprise, une catégorie principale précise, des horaires à jour, le bon numéro, le site officiel et les services effectivement proposés. Les photos et informations complémentaires servent d’abord à aider une personne à vérifier qu’elle s’adresse au bon établissement.",
+            "Une entreprise de zone de service doit configurer cette zone selon son fonctionnement réel. Une fausse adresse, un bureau virtuel ou l’ajout de mots-clés au nom peut créer une incohérence et exposer la fiche à des corrections ou suspensions."
+          ]
+        },
+        {
+          "heading": "Aligner la fiche, le site et les informations de l’entreprise",
+          "paragraphs": [
+            "Le nom, l’adresse et le téléphone — souvent résumés par NAP — doivent rester cohérents entre la fiche, la page de contact et les profils externes importants. Les variantes de format sont moins problématiques qu’une information réellement contradictoire.",
+            "La fiche doit renvoyer vers une page qui confirme l’activité et facilite l’action attendue. Le site peut préciser les zones servies, les modalités, les services et les contacts sans inventer des implantations."
+          ]
+        },
+        {
+          "heading": "Créer une page locale seulement lorsqu’elle apporte une information propre",
+          "paragraphs": [
+            "Une page dédiée à une ville est utile si l’offre, les modalités, les contraintes, les preuves ou le contexte y sont suffisamment spécifiques. Elle doit répondre à une décision réelle, pas reproduire une page nationale en remplaçant uniquement le nom du lieu.",
+            "Pour une entreprise basée à Casablanca qui travaille dans tout le Maroc, la page principale peut établir clairement ce point. Des pages supplémentaires ne deviennent pertinentes que si elles disposent d’un contenu et d’une proposition réellement distincts."
+          ]
+        },
+        {
+          "heading": "Obtenir et gérer des avis de manière durable",
+          "paragraphs": [
+            "La demande d’avis doit suivre une interaction réelle et rester simple, sans exiger une note positive ni offrir une contrepartie trompeuse. Une réponse utile remercie, apporte un contexte si nécessaire et indique comment poursuivre l’échange lorsqu’un problème doit être résolu.",
+            "Les avis aident surtout les futurs clients à comprendre l’expérience. Leur nombre ou leur note ne constituent pas une garantie de classement, et les faux avis créent un risque de confiance comme de conformité."
+          ]
+        },
+        {
+          "heading": "Mesurer les actions générées par la visibilité locale",
+          "paragraphs": [
+            "Selon les outils disponibles, le suivi peut inclure clics vers le site, appels, demandes d’itinéraire, formulaires et autres conversions. Des paramètres UTM sur le lien de la fiche aident à distinguer une partie du trafic dans l’outil analytics.",
+            "Search Console montre les requêtes et pages organiques, mais ne fournit pas une lecture complète du pack local ni de chaque position géographique. Il faut rapprocher plusieurs sources et accepter que l’attribution reste partielle."
+          ],
+          "links": [
+            { "service": "seo-maroc", "label": "Découvrir notre accompagnement SEO à Casablanca et au Maroc" }
+          ]
+        },
+        {
+          "heading": "Checklist de visibilité locale",
+          "list": [
+            "Éligibilité et présence physique ou zone de service vérifiées",
+            "Google Business Profile complété avec des informations réelles",
+            "Nom, adresse et téléphone cohérents sur les sources importantes",
+            "Page de destination utile et adaptée au service recherché",
+            "Avis demandés après de vraies interactions et réponses suivies",
+            "Pages ville créées uniquement lorsqu’un contenu propre les justifie",
+            "Appels, clics, itinéraires et formulaires mesurés lorsque possible"
+          ]
+        }
       ]
     }
   },
   {
     "id": "design-ux-maroc-2026",
     "title": {
-      "fr": "Design UX au Maroc : créer des interfaces qui convertissent",
+      "fr": "Design UX au Maroc : améliorer les parcours et les interfaces",
       "en": "UX design in Morocco: creating interfaces that convert"
     },
     "excerpt": {
-      "fr": "Mobile-first, accessibilité et parcours utilisateur fluide : les principes UX qui font la différence pour les sites marocains en 2026.",
-      "en": "Mobile-first, accessibility and a smooth user journey: the UX principles that make a difference for Moroccan websites in 2026."
+      "fr": "Tâches utilisateur, mobile, navigation, accessibilité et tests : une méthode concrète pour identifier et réduire les frictions d’une interface.",
+      "en": "User tasks, mobile design, navigation, accessibility and testing: a practical method for identifying and reducing interface friction."
     },
     "author": "Nemsi Media",
     "date": "2026-05-18",
+    "updatedAt": "2026-10-04",
     "category": {
       "fr": "UX Design",
       "en": "UX Design"
     },
     "readTime": {
-      "fr": "6 min",
+      "fr": "7 min",
       "en": "6 min"
     },
     "content": {
-      "fr": [
-        "Le mobile-first n'est plus une option : 78% des Marocains accèdent à Internet via leur smartphone. Votre site doit offrir une expérience irréprochable sur mobile.",
-        "L'accessibilité numérique est devenue un impératif légal et éthique. Contrastes suffisants, textes alternatifs, navigation au clavier : chaque détail compte pour l'inclusion.",
-        "Le parcours utilisateur doit être intuitif et rapide. Réduisez le nombre d'étapes pour atteindre l'objectif (contact, achat, inscription) et supprimez les frictions inutiles.",
-        "Les micro-interactions et animations fluides améliorent la perception de qualité. Mais attention : chaque animation doit avoir un objectif, pas seulement une fonction décorative.",
-        "Pour évaluer une interface, observez des utilisateurs accomplir une tâche réelle sans les guider. Notez les hésitations, les retours en arrière et les éléments ignorés. Priorisez ensuite les corrections qui réduisent l'effort : libellés plus précis, contraste renforcé, formulaire plus court ou appel à l'action mieux placé. Une bonne UX se valide par la compréhension et la réussite, pas par la quantité d'effets visuels."
-      ],
+      "fr": [],
       "en": [
-        "Mobile-first is no longer optional: 78% of Moroccans access the internet via their smartphone. Your site must provide an impeccable mobile experience.",
-        "Digital accessibility has become a legal and ethical imperative. Sufficient contrast, alternative text and keyboard navigation: every detail matters for inclusion.",
-        "The user journey must be intuitive and fast. Reduce the number of steps needed to reach the goal (contact, purchase, registration) and remove unnecessary friction.",
-        "Micro-interactions and smooth animations improve the perception of quality. But be careful: every animation must have a purpose, not merely a decorative function.",
-        "To evaluate an interface, observe users completing a real task without guiding them. Note hesitations, backtracking and ignored elements. Then prioritise fixes that reduce effort: more precise labels, stronger contrast, a shorter form or a better-placed call to action. Good UX is validated by understanding and success, not by the quantity of visual effects."
+        "A useful interface begins with the task a person needs to complete: finding information, comparing options, making contact, buying or carrying out an operation. Success, errors and abandonment reveal more than an isolated visual preference.",
+        "User context, device, knowledge and constraints should affect decisions. Mobile-first is a prioritisation method that forces teams to identify essential content and actions; it is not a claim that every audience uses the same device.",
+        "Navigation labels, content hierarchy and calls to action should describe destinations and next steps clearly. Competing primary actions and internal jargon make the journey harder to understand.",
+        "Contrast, heading structure, visible focus, form labels, error messages and keyboard access support many users. Accessibility should be considered during design rather than added after the interface is complete.",
+        "Test the interface by asking people to complete a real task without guidance. Record hesitations, errors and backtracking, prioritise the frictions that block the task, then test the correction again."
+      ]
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Une bonne UX se mesure par la réussite d’une tâche",
+          "paragraphs": [
+            "Avant de juger les couleurs ou les animations, il faut définir ce que la personne cherche à accomplir : comprendre une offre, comparer des options, contacter l’entreprise, acheter ou effectuer une opération. Une interface utile rend cette tâche compréhensible et récupérable en cas d’erreur.",
+            "Le taux de réussite, le temps nécessaire, les erreurs et les abandons apportent plus d’informations qu’une préférence esthétique isolée. Le design sert le parcours ; il ne remplace pas la définition du problème."
+          ]
+        },
+        {
+          "heading": "Identifier les utilisateurs et les parcours prioritaires",
+          "paragraphs": [
+            "Les décisions doivent partir des utilisateurs réels, de leur niveau de connaissance, de leur appareil et de leur contexte. Un client qui vérifie un prix sur mobile n’a pas le même besoin qu’un collaborateur qui utilise un outil métier toute la journée.",
+            "Les personas ne sont utiles que s’ils modifient une décision : vocabulaire, informations prioritaires, ordre des étapes ou niveau d’assistance. Une fiche décorative sans conséquence sur l’interface n’aide pas le projet."
+          ]
+        },
+        {
+          "heading": "Concevoir d’abord pour les contraintes du mobile",
+          "paragraphs": [
+            "L’espace réduit oblige à choisir ce qui doit apparaître en premier. Les titres, actions, zones tactiles, formulaires et contenus essentiels doivent rester lisibles sans dépendre d’un survol ou d’une précision de souris.",
+            "Le mobile-first est une méthode de priorisation, pas l’affirmation que tous les utilisateurs ont le même appareil. La version ordinateur doit ensuite exploiter l’espace supplémentaire sans changer inutilement le fonctionnement appris."
+          ]
+        },
+        {
+          "heading": "Clarifier navigation, contenu et appels à l’action",
+          "paragraphs": [
+            "Les libellés doivent décrire la destination ou l’action, plutôt que reprendre un jargon interne. La navigation montre les grandes catégories, tandis que les pages précisent l’offre et proposent une prochaine étape cohérente avec leur contenu.",
+            "Plusieurs appels à l’action concurrents peuvent rendre la décision moins claire. Il vaut mieux établir une action principale et réserver les options secondaires aux personnes qui ont réellement besoin d’un autre parcours."
+          ]
+        },
+        {
+          "heading": "Traiter l’accessibilité comme une condition d’usage",
+          "paragraphs": [
+            "Une structure de titres cohérente, des contrastes lisibles, un focus visible, des labels de formulaire et des messages d’erreur précis profitent à de nombreux utilisateurs. Les textes alternatifs décrivent les images informatives ; les images décoratives peuvent rester ignorées des technologies d’assistance.",
+            "Le clavier permet de vérifier l’ordre de navigation et l’accès aux contrôles. Les exigences réglementaires dépendent du contexte, mais l’accessibilité doit être intégrée aux décisions de conception plutôt qu’ajoutée à la fin."
+          ]
+        },
+        {
+          "heading": "Tester une interface avec des tâches réelles",
+          "paragraphs": [
+            "Un test utile demande à une personne d’accomplir une tâche sans lui montrer le chemin. Les hésitations, retours en arrière, erreurs et éléments ignorés sont observés, puis rapprochés du but initial.",
+            "Il faut distinguer un comportement observé d’une opinion. Une personne qui dit préférer un bouton bleu exprime un goût ; plusieurs personnes qui ne trouvent pas l’action révèlent une friction à examiner."
+          ]
+        },
+        {
+          "heading": "Prioriser les améliorations à partir des frictions",
+          "table": {
+            "headers": ["Friction observée", "Hypothèse", "Correction à tester", "Signal de réussite"],
+            "rows": [
+              ["Champ souvent abandonné", "Label ou format incompris", "Clarifier l’exemple et l’erreur", "Davantage de formulaires terminés"],
+              ["CTA ignoré", "Action noyée ou libellé vague", "Renforcer hiérarchie et texte", "Action trouvée sans aide"],
+              ["Navigation circulaire", "Catégories ambiguës", "Renommer et regrouper", "Chemin plus direct"],
+              ["Erreur répétée", "Retour système insuffisant", "Expliquer la cause et la correction", "Moins de répétitions de l’erreur"]
+            ]
+          }
+        },
+        {
+          "heading": "Checklist avant de valider une interface",
+          "list": [
+            "Tâches prioritaires et critères de réussite définis",
+            "Parcours mobile contrôlés sur un appareil réel",
+            "Navigation clavier et focus vérifiés",
+            "Formulaires, erreurs et états vides relus",
+            "Contrastes et textes alternatifs contrôlés",
+            "Utilisateurs observés sans être guidés",
+            "Corrections prioritaires retestées"
+          ],
+          "links": [
+            { "service": "ui-ux-identite-visuelle", "label": "Découvrir notre service de design UI/UX à Casablanca" }
+          ]
+        }
       ]
     }
   },
   {
     "id": "twilio-whatsapp-automation",
     "title": {
-      "fr": "WhatsApp : connectez vos clients en temps réel",
+      "fr": "Automatisation WhatsApp avec Twilio : cadrer un parcours utile",
       "en": "WhatsApp: connect with your customers in real time"
     },
     "excerpt": {
-      "fr": "Intégrez WhatsApp Business API à votre site pour automatiser les réponses, qualifier les leads et améliorer votre service client au Maroc.",
-      "en": "Integrate the WhatsApp Business API into your website to automate replies, qualify leads and improve customer service in Morocco."
+      "fr": "Cas d’usage, consentement, modèles, webhooks, relais humain et mesure : les décisions à préparer avant une automatisation WhatsApp.",
+      "en": "Use cases, consent, templates, webhooks, human handoff and measurement: what to prepare before automating a WhatsApp journey."
     },
     "author": "Nemsi Media",
     "date": "2026-06-22",
+    "updatedAt": "2026-10-04",
     "category": {
       "fr": "Automatisation",
       "en": "Automation"
     },
     "readTime": {
-      "fr": "5 min",
+      "fr": "8 min",
       "en": "5 min"
     },
     "content": {
-      "fr": [
-        "WhatsApp est le canal de communication préféré des Marocains. Intégrer WhatsApp Business API à votre site permet de répondre instantanément aux questions de vos prospects.",
-        "Les chatbots intelligents peuvent qualifier les leads 24/7 : recueillir les coordonnées, identifier le besoin, orienter vers le bon service — sans intervention humaine.",
-        "Au-delà du support, WhatsApp devient un canal de vente : envoi de devis, confirmation de commande, relance de panier abandonné. Le taux d'ouverture dépasse les 90%.",
-        "L'automatisation ne remplace pas l'humain : elle le libère pour les cas complexes. Combinez automatisation et suivi personnalisé pour un service client d'excellence.",
-        "Avant de connecter Twilio, cartographiez les scénarios autorisés, le consentement, les modèles de messages et le passage vers un conseiller. Conservez l'historique utile sans collecter plus de données que nécessaire. Lancez d'abord un parcours simple, mesurez le délai de réponse et le taux de résolution, puis ajoutez des automatisations uniquement lorsqu'elles réduisent une friction clairement identifiée."
-      ],
+      "fr": [],
       "en": [
-        "WhatsApp is Moroccans’ preferred communication channel. Integrating the WhatsApp Business API into your website lets you respond instantly to prospects’ questions.",
-        "Intelligent chatbots can qualify leads 24/7: collect contact details, identify the need and direct them to the right service—without human intervention.",
-        "Beyond support, WhatsApp becomes a sales channel: sending quotes, confirming orders and following up on abandoned baskets. The open rate exceeds 90%.",
-        "Automation does not replace people; it frees them for complex cases. Combine automation and personalised follow-up for excellent customer service.",
-        "Before connecting Twilio, map authorised scenarios, consent, message templates and handoff to an adviser. Keep useful history without collecting more data than necessary. Start with a simple journey, measure response time and resolution rate, then add automation only when it reduces clearly identified friction."
+        "A simple WhatsApp link may be enough when a business only needs to start a conversation. Automation becomes relevant when requests repeat, a status needs to be sent or the channel must exchange data with a CRM, catalogue or business tool.",
+        "WhatsApp Business Platform provides the channel and its rules. Twilio can provide technical access, while the business application remains responsible for workflow rules, necessary data and the logic behind each action.",
+        "Start with one narrow scenario such as qualifying a request, confirming an action, sending a status update or handing the conversation to an adviser. Define the expected outcome and failure path before adding more flows.",
+        "Consent, the reason for contact, message templates where required, opt-out and human handoff need to be planned. Collect only the data needed for the scenario and keep access credentials on the server.",
+        "Measure completion, response delay, human transfer, errors, opt-outs or resolution according to the use case. Expand the automation only when the pilot reduces a verified friction without overloading the team or weakening trust."
+      ]
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Quand une automatisation WhatsApp répond-elle à un besoin réel ?",
+          "paragraphs": [
+            "Un simple lien WhatsApp suffit lorsqu’une entreprise veut seulement faciliter le démarrage d’une conversation. Une automatisation devient pertinente lorsque les mêmes demandes reviennent souvent, qu’un statut doit être transmis ou que le canal doit échanger avec un CRM, un catalogue ou un outil métier.",
+            "Le premier objectif n’est pas de créer un chatbot complexe. Il consiste à identifier une friction répétée, le résultat attendu et les cas qui doivent être repris par une personne."
+          ]
+        },
+        {
+          "heading": "Comprendre les rôles de WhatsApp et de Twilio",
+          "paragraphs": [
+            "WhatsApp Business Platform fournit le canal et ses règles. Twilio peut servir de fournisseur d’accès et d’interface technique. L’application de l’entreprise conserve les règles métier, les données nécessaires et la logique qui décide quoi envoyer ou enregistrer.",
+            "Twilio n’est pas la seule voie possible. Le choix dépend des pays couverts, des intégrations, des outils déjà utilisés, de la maintenance et du niveau de contrôle attendu."
+          ]
+        },
+        {
+          "heading": "Choisir un premier scénario étroit",
+          "paragraphs": [
+            "Un pilote peut qualifier une demande, confirmer une action, notifier un changement de statut, guider une question fréquente ou transmettre la conversation à un conseiller. Le scénario doit avoir un début, une issue et une personne responsable lorsqu’il échoue.",
+            "Commencer par un seul flux facilite les tests et la mesure. Ajouter plusieurs parcours dès le départ multiplie les messages, les exceptions et les données à synchroniser avant d’avoir validé l’utilité du canal."
+          ],
+          "list": [
+            "Demande répétitive et clairement identifiable",
+            "Données minimales nécessaires connues",
+            "Réponse ou état de sortie défini",
+            "Cas d’erreur et relais humain prévus",
+            "Indicateur de réussite choisi avant le lancement"
+          ]
+        },
+        {
+          "heading": "Prévoir consentement, modèles et attentes du destinataire",
+          "paragraphs": [
+            "L’entreprise doit pouvoir expliquer pourquoi elle contacte la personne, quelle action a déclenché le message et comment arrêter les communications. Les modèles approuvés sont préparés lorsque les règles du canal l’exigent, avec un texte qui reste compréhensible hors du contexte interne.",
+            "Les règles et catégories de messages peuvent évoluer. Leur vérification fait partie du cadrage et de la maintenance ; un ancien modèle ne doit pas être considéré comme valide pour toujours."
+          ]
+        },
+        {
+          "heading": "Concevoir le dialogue et le passage vers un conseiller",
+          "paragraphs": [
+            "Les questions doivent être courtes, les choix explicites et les réponses inattendues gérées sans enfermer l’utilisateur dans une boucle. Le système doit indiquer ce qu’il a compris et permettre de corriger une information importante.",
+            "Le relais humain est une partie du parcours. Le conseiller doit recevoir le contexte utile sans demander à la personne de tout répéter, tandis que le système évite de collecter des données qui ne servent pas au traitement de la demande."
+          ]
+        },
+        {
+          "heading": "Relier le canal aux systèmes de l’entreprise",
+          "paragraphs": [
+            "Les webhooks transmettent les messages et changements d’état à l’application. Une intégration fiable identifie chaque événement, vérifie sa provenance, évite de traiter deux fois la même action et journalise les erreurs utiles au diagnostic.",
+            "Le CRM ou l’outil métier doit rester la source de vérité pour les informations qu’il possède déjà. WhatsApp transporte une conversation ; il ne remplace pas automatiquement la gestion des commandes, des clients ou des droits d’accès."
+          ],
+          "links": [
+            { "service": "backend-api", "label": "Voir notre service d’intégration backend et API" }
+          ]
+        },
+        {
+          "heading": "Protéger les données et la fiabilité du parcours",
+          "paragraphs": [
+            "Les accès et secrets sont conservés côté serveur, les permissions sont limitées et la durée de conservation répond au besoin réel. Une donnée sensible ne doit pas être demandée simplement parce que le canal permet de la saisir.",
+            "Le parcours doit prévoir les indisponibilités, les délais, les messages échoués et la reprise. Une automatisation qui ne signale pas ses erreurs peut créer davantage de travail manuel que le processus qu’elle remplace."
+          ]
+        },
+        {
+          "heading": "Mesurer un pilote avant de l’étendre",
+          "paragraphs": [
+            "Les indicateurs dépendent du scénario : délai de première réponse, taux d’achèvement, transfert vers un conseiller, erreurs, désinscriptions ou résolution. Ils servent à décider s’il faut poursuivre, corriger ou arrêter le flux.",
+            "Une hausse des messages n’est pas forcément un succès. Le pilote est utile lorsqu’il réduit une friction, améliore la qualité de l’information ou accélère une étape sans dégrader la confiance ni surcharger l’équipe."
+          ],
+          "links": [
+            { "service": "application-web-sur-mesure", "label": "Discuter d’une application web et de ses automatisations" }
+          ]
+        }
       ]
     }
   },
@@ -872,6 +1213,585 @@
           ],
           "links": [
             { "service": "ecommerce-maroc", "label": "Explore our e-commerce website development service" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "seo-avant-refonte-site",
+    "title": {
+      "fr": "SEO avant une refonte de site : les points à préparer",
+      "en": "SEO Before a Website Redesign: What to Prepare"
+    },
+    "excerpt": {
+      "fr": "Les informations SEO et décisions à documenter avant de refondre un site, pour faciliter la revue du nouveau projet avant sa mise en ligne.",
+      "en": "The SEO information and decisions to document before redesigning a website, making the new project easier to review before launch."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-09-29",
+    "category": {
+      "fr": "SEO",
+      "en": "SEO"
+    },
+    "readTime": {
+      "fr": "7 min",
+      "en": "7 min"
+    },
+    "content": {
+      "fr": [],
+      "en": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Préparer le SEO avant que la refonte ne commence",
+          "paragraphs": [
+            "Une refonte peut modifier les pages, la navigation, les contenus ou la manière dont une entreprise présente ses offres. Le SEO mérite donc d’être pris en compte avant les premières décisions de design ou de développement, et non uniquement au moment de la mise en ligne.",
+            "Cette préparation ne promet pas de conserver des positions ni d’éviter toute variation de visibilité. Elle aide surtout l’entreprise à documenter ce qui existe, à clarifier les changements prévus et à rendre la nouvelle version plus simple à revoir."
+          ]
+        },
+        {
+          "heading": "Identifier les pages qui comptent aujourd’hui",
+          "paragraphs": [
+            "Commencez par lister les pages qui jouent un rôle concret dans l’activité : services, produits, pages stratégiques, contenus utiles et points de contact. Si des données sont disponibles, ajoutez les pages qui reçoivent déjà une visibilité ou des visites utiles.",
+            "L’objectif n’est pas de conserver chaque page à l’identique. Il est de savoir lesquelles doivent être revues avec attention lorsque leur contenu, leur rôle ou leur adresse est susceptible de changer."
+          ]
+        },
+        {
+          "heading": "Documenter les URLs et les changements envisagés",
+          "paragraphs": [
+            "Une URL peut rester pertinente, être remplacée, être regroupée avec une autre page ou ne plus correspondre à la future structure. Il est utile de noter les URLs importantes et celles qui risquent d’évoluer afin qu’elles puissent être revues pendant la refonte.",
+            "Lorsque des adresses changent, une planification des redirections peut être nécessaire. Cet article ne constitue pas un tutoriel de mise en œuvre ni une promesse de couverture : il invite à documenter les changements avant de les valider."
+          ]
+        },
+        {
+          "heading": "Préserver l’intention utile de chaque page",
+          "paragraphs": [
+            "Une page ne se résume pas à sa mise en forme. Avant de la remplacer, notez sa question principale, son H1, son rôle dans le parcours, les informations utiles qu’elle contient et les liens internes qui l’alimentent ou qu’elle transmet.",
+            "Ce repère aide à éviter qu’une nouvelle navigation ou un contenu plus court fasse disparaître une intention importante sans qu’elle soit reprise ailleurs dans le futur site."
+          ]
+        },
+        {
+          "heading": "Relire les liens internes et la structure du futur site",
+          "paragraphs": [
+            "Les services, les Insights et les pages commerciales importantes doivent rester accessibles depuis une structure compréhensible. Avant la refonte, relevez les liens qui orientent réellement un visiteur d’une information vers une prochaine décision.",
+            "La future architecture peut évoluer, mais elle doit prévoir comment les pages utiles seront reliées entre elles et comment les pages importantes éviteront de devenir isolées."
+          ]
+        },
+        {
+          "heading": "Préparer les repères de contenu et de métadonnées",
+          "paragraphs": [
+            "Titres de page, descriptions, H1, contenus utiles et données structurées existantes constituent des repères à examiner avant de reconstruire une page. Ils ne doivent pas être copiés automatiquement : leur rôle, leur précision et leur cohérence avec la nouvelle offre doivent être revus.",
+            "Cette étape permet de distinguer ce qui mérite d’être conservé, réécrit ou regroupé, sans remplacer le travail éditorial par une simple reprise de mots-clés."
+          ]
+        },
+        {
+          "heading": "Noter les éléments techniques à vérifier",
+          "paragraphs": [
+            "Avant la mise en ligne, certains éléments doivent être prévus pour pouvoir être contrôlés : indexabilité, balises canonical, alternates de langue lorsque le site en utilise, robots, sitemap, données structurées, liens internes et performance des pages importantes.",
+            "Les vérifications nécessaires dépendent du périmètre réel du projet. Les noter dès le départ permet de les intégrer à la revue finale plutôt que de les découvrir après le lancement."
+          ]
+        },
+        {
+          "heading": "Valider la nouvelle version avant sa mise en ligne",
+          "paragraphs": [
+            "La revue finale peut confirmer que les pages prévues sont accessibles, que leurs canonicals et leur indexabilité correspondent à l’intention, que les liens internes fonctionnent et que le sitemap ou les règles robots sont cohérents lorsque ces éléments s’appliquent au projet.",
+            "Pour un site multilingue, les versions localisées, les alternates et la langue affichée font aussi partie des éléments à relire avant lancement."
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Découvrir notre service de création de sites web" }
+          ]
+        },
+        {
+          "heading": "Checklist SEO avant une refonte",
+          "list": [
+            "Pages importantes identifiées",
+            "URLs importantes documentées",
+            "Pages susceptibles de changer repérées",
+            "Intention principale de chaque page notée",
+            "Titres, H1 et contenus utiles revus",
+            "Liens internes importants relevés",
+            "Exigences de canonical, hreflang et indexabilité notées lorsque pertinentes",
+            "Éléments sitemap et robots à vérifier documentés",
+            "Responsabilités de validation avant mise en ligne clarifiées"
+          ]
+        },
+        {
+          "heading": "Transformer une refonte en projet plus facile à relire",
+          "paragraphs": [
+            "Préparer ces informations ne remplace ni le cadrage du projet ni les validations nécessaires pendant la réalisation. Cela donne à l’entreprise une base plus claire pour discuter des priorités SEO avant que la future structure ne soit figée."
+          ],
+          "links": [
+            { "service": "seo-maroc", "label": "Discuter des priorités SEO avant une refonte de site" }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "heading": "Prepare SEO before the redesign begins",
+          "paragraphs": [
+            "A redesign can change pages, navigation, content or how a business presents its offers. SEO should therefore be considered before the first design or development decisions, rather than only at launch.",
+            "This preparation does not promise to preserve rankings or prevent every visibility change. It helps a business document what exists, clarify planned changes and make the new version easier to review."
+          ]
+        },
+        {
+          "heading": "Identify the pages that matter today",
+          "paragraphs": [
+            "Start by listing the pages that have a practical role in the business: services, products, strategic pages, useful content and contact points. When data is available, add pages already receiving useful visibility or visits.",
+            "The goal is not to retain every page unchanged. It is to know which ones need careful review when their content, purpose or address may change."
+          ]
+        },
+        {
+          "heading": "Document URLs and planned changes",
+          "paragraphs": [
+            "A URL may remain relevant, be replaced, be combined with another page or no longer fit the future structure. It is useful to note important URLs and those likely to change so they can be reviewed during the redesign.",
+            "When addresses change, redirect planning may be needed. This article is not an implementation tutorial or a coverage promise: it encourages teams to document changes before approving them."
+          ]
+        },
+        {
+          "heading": "Keep the useful intent of each page",
+          "paragraphs": [
+            "A page is more than its presentation. Before replacing it, record its main question, H1, role in the journey, useful information and the internal links it receives or sends.",
+            "This reference helps prevent a new navigation or shorter content from removing an important intent without carrying it elsewhere in the future website."
+          ]
+        },
+        {
+          "heading": "Review internal links and the future website structure",
+          "paragraphs": [
+            "Services, Insights and important commercial pages should remain reachable from a structure that people can understand. Before redesigning, identify the links that genuinely move visitors from information to a next decision.",
+            "The future architecture can evolve, but it should show how useful pages will connect and how important pages will avoid becoming isolated."
+          ]
+        },
+        {
+          "heading": "Prepare content and metadata references",
+          "paragraphs": [
+            "Page titles, descriptions, H1s, useful content and existing structured data are references to examine before rebuilding a page. They should not be copied automatically: their purpose, accuracy and fit with the new offer need review.",
+            "This helps distinguish what should be retained, rewritten or combined without replacing editorial work with simple keyword reuse."
+          ]
+        },
+        {
+          "heading": "Note the technical SEO elements to verify",
+          "paragraphs": [
+            "Before launch, some elements should be planned so they can be checked: indexability, canonical tags, language alternates where the website uses them, robots, sitemap, structured data, internal links and performance on important pages.",
+            "The checks needed depend on the real project scope. Recording them early makes them part of the final review instead of discovering them after launch."
+          ]
+        },
+        {
+          "heading": "Validate the new version before launch",
+          "paragraphs": [
+            "The final review can confirm that intended pages are reachable, their canonicals and indexability match their purpose, internal links work, and sitemap or robots rules are consistent where those elements apply to the project.",
+            "For a multilingual website, localised versions, alternate links and the language shown are also worth reviewing before launch."
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Explore our website design service" }
+          ]
+        },
+        {
+          "heading": "SEO checklist before a redesign",
+          "list": [
+            "Important pages identified",
+            "Important URLs documented",
+            "Pages likely to change identified",
+            "Primary intent for each page recorded",
+            "Titles, H1s and useful content reviewed",
+            "Important internal links recorded",
+            "Canonical, hreflang and indexability requirements noted where relevant",
+            "Sitemap and robots elements to verify documented",
+            "Pre-launch validation responsibilities clarified"
+          ]
+        },
+        {
+          "heading": "Make a redesign easier to review",
+          "paragraphs": [
+            "Preparing this information does not replace project scoping or the checks needed during delivery. It gives a business a clearer foundation for discussing SEO priorities before the future structure is fixed."
+          ],
+          "links": [
+            { "service": "seo-maroc", "label": "Discuss SEO priorities before a website redesign" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "prix-seo-maroc",
+    "locales": ["fr"],
+    "title": {
+      "fr": "Prix SEO au Maroc : tarifs, budgets et contenu d’un devis"
+    },
+    "excerpt": {
+      "fr": "Combien coûte le SEO au Maroc ? Comparez audit, mission ponctuelle et accompagnement régulier, puis vérifiez le périmètre avant de choisir un devis."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-10-04",
+    "category": {
+      "fr": "SEO"
+    },
+    "readTime": {
+      "fr": "9 min"
+    },
+    "content": {
+      "fr": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Combien coûte le SEO au Maroc ?",
+          "paragraphs": [
+            "Il n’existe pas de tarif SEO universel au Maroc. Deux sites peuvent viser les mêmes requêtes tout en demandant un travail très différent selon leur état technique, leur nombre de pages, la concurrence, les contenus disponibles et la capacité de l’équipe à appliquer les recommandations.",
+            "Un prix n’est donc comparable que si le périmètre l’est aussi. Avant de demander un montant, précisez si le besoin concerne un diagnostic, des corrections techniques, l’amélioration de pages existantes, la création de contenus, le SEO local, un catalogue e-commerce ou un suivi régulier. Aucune moyenne de marché non vérifiée n’est utilisée dans ce guide."
+          ]
+        },
+        {
+          "heading": "Les facteurs qui font varier un budget SEO",
+          "paragraphs": [
+            "Le premier facteur est la taille réelle du site : quelques pages de services ne demandent pas le même inventaire qu’un catalogue avec catégories, produits, variantes et filtres. L’état de départ compte également : erreurs d’indexation, migrations anciennes, contenu dupliqué ou architecture confuse augmentent le travail nécessaire avant toute croissance éditoriale.",
+            "Le budget dépend aussi du marché visé, des langues, du niveau de concurrence, du volume de contenu à produire et de la personne chargée de l’intégration. Une recommandation livrée à une équipe technique interne n’a pas le même périmètre qu’une mission où l’agence réalise les corrections, rédige les pages et contrôle leur déploiement."
+          ],
+          "list": [
+            "Nombre de pages, produits, catégories et langues",
+            "État du crawl, de l’indexation et de l’architecture",
+            "Concurrence et étendue géographique réellement ciblée",
+            "Contenus existants, à réécrire ou à produire",
+            "Corrections réalisées par le client ou par le prestataire",
+            "Outils, données et accès disponibles",
+            "Cadence de suivi et niveau de reporting attendu"
+          ]
+        },
+        {
+          "heading": "Audit, mission ponctuelle ou accompagnement régulier ?",
+          "paragraphs": [
+            "Ces formats répondent à des besoins différents. Un audit sans mise en œuvre peut clarifier les priorités, mais il ne corrige rien à lui seul. Une mission ponctuelle convient à un périmètre défini. Un accompagnement régulier devient utile lorsque les pages, le catalogue, la concurrence ou les données évoluent dans le temps."
+          ],
+          "table": {
+            "headers": ["Format", "Quand il est pertinent", "Livrable principal", "Limite à vérifier"],
+            "rows": [
+              ["Audit SEO", "Comprendre les obstacles et priorités", "Diagnostic et feuille de route", "Qui appliquera les corrections ?"],
+              ["Mission ponctuelle", "Corriger ou construire un périmètre précis", "Pages, correctifs ou architecture définis", "Que se passe-t-il après livraison ?"],
+              ["Accompagnement régulier", "Faire évoluer contenu, technique et mesure", "Cycle de priorisation, exécution et suivi", "Quelle capacité mensuelle est réellement incluse ?"]
+            ]
+          }
+        },
+        {
+          "heading": "Le type de site change la nature du travail",
+          "paragraphs": [
+            "Une PME locale peut commencer par ses pages de services, sa cohérence géographique et ses points de contact. Un site B2B multi-services doit souvent clarifier l’intention de chaque page et éviter que plusieurs offres se concurrencent. Un site multilingue ajoute les équivalences, canonicals et alternates à contrôler.",
+            "Pour un e-commerce, l’analyse peut inclure catégories, fiches produit, filtres, pagination, variantes, produits indisponibles et maillage interne. Le budget doit refléter ces modèles de pages et non uniquement le nombre total d’URLs affiché par un outil."
+          ]
+        },
+        {
+          "heading": "Ce qu’un devis SEO doit préciser",
+          "paragraphs": [
+            "Un devis lisible décrit les pages et systèmes concernés, les livrables, les responsabilités, les validations et la cadence. Il distingue la recherche, les recommandations, la rédaction, l’intégration technique et le suivi afin que le client sache ce qui sera réellement produit.",
+            "Les accès nécessaires et la propriété des livrables doivent aussi être clairs. Le client doit savoir s’il récupère les documents, contenus, configurations, tableaux de suivi et comptes utilisés pendant la mission."
+          ],
+          "list": [
+            "Périmètre d’URLs et objectifs de la mission",
+            "Audit technique et niveau d’exploration prévu",
+            "Recherche d’intentions et pages à travailler",
+            "Rédaction, validation et intégration des contenus",
+            "Corrections techniques incluses ou exclues",
+            "Maillage interne et données structurées applicables",
+            "Indicateurs suivis, fréquence et format du reporting",
+            "Accès, propriété des livrables et conditions de sortie"
+          ]
+        },
+        {
+          "heading": "Les coûts souvent exclus ou mal définis",
+          "paragraphs": [
+            "Le développement nécessaire pour appliquer une recommandation peut être séparé du conseil SEO. Il en va de même pour la traduction, la production photo, la rédaction spécialisée, certains outils payants, une refonte ou la recherche de liens externes.",
+            "Demandez explicitement ce qui est inclus. Une offre peu chère peut laisser l’intégration à votre équipe ; une offre plus élevée peut inclure rédaction, développement et contrôle après déploiement. Sans cette distinction, les montants ne décrivent pas le même service."
+          ]
+        },
+        {
+          "heading": "Comment comparer deux devis SEO",
+          "paragraphs": [
+            "Commencez par remettre les deux propositions au même périmètre : nombre de pages, langues, production éditoriale, intégration, réunions et durée. Vérifiez ensuite la méthode de priorisation et les preuves fournies après chaque action.",
+            "Une proposition sérieuse explique les dépendances et les limites. Elle ne confond pas impressions, clics et conversions, et ne transforme pas une projection en résultat garanti."
+          ],
+          "table": {
+            "headers": ["Question", "Pourquoi elle compte"],
+            "rows": [
+              ["Quelles pages seront réellement travaillées ?", "Évite un périmètre formulé uniquement en mots-clés"],
+              ["Qui rédige et qui intègre ?", "Révèle les coûts et ressources encore nécessaires"],
+              ["Comment les actions sont-elles priorisées ?", "Distingue une checklist d’une feuille de route métier"],
+              ["Quels indicateurs seront suivis ?", "Évite un reporting limité à des positions isolées"],
+              ["Que récupère le client à la fin ?", "Clarifie la propriété et la continuité du travail"]
+            ]
+          }
+        },
+        {
+          "heading": "Les signaux d’alerte dans une offre SEO",
+          "paragraphs": [
+            "Une garantie de première position, un volume de trafic promis sans données ou une liste de livrables volontairement vague doivent être questionnés. Aucun prestataire ne contrôle l’algorithme, les concurrents ou le moment exact où Google réévaluera une page.",
+            "Méfiez-vous également des créations massives de pages presque identiques, des liens achetés sans transparence, des contenus publiés sans validation et des rapports qui ne montrent ni URLs, ni changements, ni décisions."
+          ],
+          "sources": [
+            { "label": "Google Search Central — Avez-vous besoin d’un référenceur ?", "href": "https://developers.google.com/search/docs/fundamentals/do-i-need-seo?hl=fr" },
+            { "label": "Google Search Central — Premiers pas avec Search Console", "href": "https://developers.google.com/search/docs/monitor-debug/search-console-start?hl=fr" }
+          ]
+        },
+        {
+          "heading": "Construire un budget SEO soutenable",
+          "paragraphs": [
+            "Un budget soutenable commence par les pages les plus proches de l’activité, les obstacles d’indexation et les contenus qui peuvent réellement être validés. Il vaut mieux terminer un périmètre utile, mesurer puis élargir que financer une grande liste de tâches sans responsable ni calendrier.",
+            "Avant le devis, préparez vos services prioritaires, vos zones réellement couvertes, vos contenus, vos accès et la personne qui validera les changements. Cette préparation permet de chiffrer un travail concret plutôt qu’une promesse abstraite de visibilité."
+          ],
+          "links": [
+            { "service": "seo-maroc", "label": "Découvrir notre accompagnement SEO à Casablanca et au Maroc" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "prix-creation-site-web-maroc",
+    "locales": ["fr"],
+    "title": {
+      "fr": "Combien coûte la création d’un site web au Maroc ?"
+    },
+    "excerpt": {
+      "fr": "Site vitrine, sur mesure ou e-commerce : comprenez les postes d’un devis web, les coûts récurrents et les décisions qui font varier le budget."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-10-04",
+    "category": {
+      "fr": "Stratégie web"
+    },
+    "readTime": {
+      "fr": "9 min"
+    },
+    "content": {
+      "fr": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "Pourquoi il n’existe pas un prix unique pour un site web",
+          "paragraphs": [
+            "Le prix de création d’un site web au Maroc dépend d’abord de ce que le site doit permettre de comprendre ou de faire. Une landing page pour une campagne, un site vitrine de plusieurs services, une boutique et une application métier n’ont ni le même périmètre ni les mêmes responsabilités.",
+            "Un montant sans détail ne permet donc pas de comparer deux offres. Ce guide n’utilise pas de moyenne tarifaire non vérifiée : il aide à identifier les postes du devis, les coûts futurs et les décisions à prendre avant de demander un chiffrage."
+          ]
+        },
+        {
+          "heading": "Ce que le prix d’un site doit réellement couvrir",
+          "paragraphs": [
+            "Le travail peut commencer par le cadrage des objectifs, des audiences et des contenus. Viennent ensuite l’arborescence, l’UX, la direction visuelle, le développement responsive, le CMS éventuel, les formulaires, les intégrations, la performance, le SEO de lancement, les tests et la mise en ligne.",
+            "Les contenus changent fortement le devis. La rédaction, les traductions, les photos, la reprise d’un ancien site et la saisie d’un catalogue demandent du temps, même lorsque le nombre d’écrans semble limité."
+          ],
+          "list": [
+            "Cadrage, arborescence et wireframes",
+            "Rédaction, reprise ou traduction des contenus",
+            "Direction visuelle et design responsive",
+            "Développement, CMS et administration",
+            "Formulaires, réservation, paiement ou autres intégrations",
+            "SEO technique, analytics et contrôle des conversions",
+            "Tests, mise en ligne, documentation et prise en main"
+          ]
+        },
+        {
+          "heading": "Le format du projet change le périmètre",
+          "table": {
+            "headers": ["Format", "Besoin principal", "Postes qui font varier le devis"],
+            "rows": [
+              ["Landing page", "Une offre et une action", "Copywriting, campagne, formulaire, tracking"],
+              ["Site vitrine", "Présenter l’entreprise et ses services", "Nombre de pages, contenus, preuves, langues"],
+              ["Site corporate", "Servir plusieurs audiences ou pôles", "Architecture, gouvernance éditoriale, intégrations"],
+              ["E-commerce", "Présenter et vendre un catalogue", "Produits, paiement, livraison, stock, commande"],
+              ["Application web", "Gérer un processus ou des données", "Rôles, règles métier, sécurité, maintenance"]
+            ]
+          },
+          "links": [
+            { "service": "ecommerce-maroc", "label": "Voir le périmètre d’un projet e-commerce" }
+          ]
+        },
+        {
+          "heading": "Pourquoi deux devis web peuvent être incomparables",
+          "paragraphs": [
+            "Une offre peut partir d’un thème existant et demander au client de fournir tous les textes. Une autre peut inclure recherche, architecture, contenu, design sur mesure, développement et contrôles. Les deux portent le même nom de site vitrine, mais elles ne couvrent pas le même travail.",
+            "Le nombre de révisions, la préparation mobile, les critères d’acceptation et la qualité de la documentation comptent aussi. Demandez une liste de livrables et d’exclusions plutôt qu’un intitulé général."
+          ]
+        },
+        {
+          "heading": "Les coûts récurrents à prévoir après la mise en ligne",
+          "paragraphs": [
+            "Le nom de domaine, l’hébergement, les licences éventuelles, la maintenance, les sauvegardes et les outils tiers peuvent générer des coûts récurrents. Leur montant dépend des fournisseurs, du trafic, du stockage et des fonctionnalités utilisées.",
+            "Les contenus continuent également d’évoluer : nouvelles pages, actualités, produits, traductions ou campagnes. Le devis initial doit indiquer ce qui est inclus après le lancement et comment les demandes supplémentaires seront estimées."
+          ]
+        },
+        {
+          "heading": "Template, solution hybride ou sur mesure : effet sur le devis",
+          "paragraphs": [
+            "Un template réduit une partie du travail de conception lorsqu’il correspond au besoin et que les adaptations restent limitées. Une solution hybride part d’une base existante mais adapte davantage les composants et contenus. Le sur mesure devient pertinent lorsque l’identité, les parcours ou les intégrations ne rentrent pas proprement dans une structure standard.",
+            "Le choix ne doit pas reposer sur le prestige. Il faut comparer le coût initial, les limites de licence, l’autonomie, la maintenance et les évolutions probables."
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Découvrir notre approche de création de sites web" }
+          ]
+        },
+        {
+          "heading": "Comparer un devis ligne par ligne",
+          "list": [
+            "Nombre et type de pages compris dans le périmètre",
+            "Rédaction, traduction, photos et saisie de contenu",
+            "Niveau de personnalisation du design",
+            "Version mobile et navigateurs contrôlés",
+            "CMS, rôles et formation de l’équipe",
+            "Formulaires, paiements, CRM ou autres intégrations",
+            "SEO de lancement, analytics et événements suivis",
+            "Nombre de révisions et critères de validation",
+            "Propriété du domaine, du code, des comptes et des contenus",
+            "Hébergement, maintenance et coûts après lancement"
+          ]
+        },
+        {
+          "heading": "Raisonner par scénario plutôt que par moyenne",
+          "paragraphs": [
+            "Un indépendant qui lance une offre peut commencer avec un périmètre court, des contenus clairs et un seul parcours de contact. Une PME multi-services aura besoin d’une architecture plus large, de pages dédiées et parfois de plusieurs langues. Une boutique doit préparer catalogue, paiement, livraison et gestion des commandes.",
+            "Ces scénarios ne donnent pas un prix moyen. Ils montrent pourquoi le budget dépend des décisions opérationnelles et de la quantité de travail vérifiable, pas seulement de la technologie choisie."
+          ]
+        },
+        {
+          "heading": "Checklist avant de demander un devis",
+          "list": [
+            "Objectif commercial et action principale définis",
+            "Audiences et services prioritaires listés",
+            "Format du site et langues envisagés",
+            "Contenus, photos et preuves disponibles identifiés",
+            "Fonctionnalités et intégrations réellement nécessaires",
+            "Personne responsable des validations désignée",
+            "Budget, date souhaitée et coûts futurs discutés"
+          ],
+          "sources": [
+            { "label": "Google Search Central — Comprendre les Core Web Vitals", "href": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=fr" },
+            { "label": "CNDP Maroc — Traitement des données personnelles", "href": "https://www.cndp.ma/traitement-des-donnees-personnelles-au-maroc/" }
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Préparer un devis de création de site web adapté à votre projet" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "site-sur-mesure-ou-template",
+    "locales": ["fr"],
+    "title": {
+      "fr": "Template ou site sur mesure : que choisir pour votre projet au Maroc ?"
+    },
+    "excerpt": {
+      "fr": "Comparez template, solution hybride et site sur mesure selon le budget, les délais, l’autonomie, le SEO, les intégrations et les évolutions futures."
+    },
+    "author": "Nemsi Media",
+    "date": "2026-10-04",
+    "category": {
+      "fr": "Stratégie web"
+    },
+    "readTime": {
+      "fr": "8 min"
+    },
+    "content": {
+      "fr": []
+    },
+    "sections": {
+      "fr": [
+        {
+          "heading": "La réponse courte : le choix dépend du besoin",
+          "paragraphs": [
+            "Un template n’est pas automatiquement une mauvaise solution et le sur mesure n’est pas automatiquement supérieur. Le bon choix dépend de la clarté du besoin, du niveau de différenciation, des intégrations, de l’autonomie attendue et des changements probables après le lancement.",
+            "Pour une offre simple et un calendrier court, une base existante bien choisie peut être rationnelle. Le sur mesure devient utile lorsque les parcours, l’identité ou les règles métier seraient continuellement contraints par le modèle."
+          ]
+        },
+        {
+          "heading": "Template, solution hybride et sur mesure : définitions",
+          "paragraphs": [
+            "Un template fournit une structure et des composants déjà conçus, que l’on configure avec le contenu et l’identité de l’entreprise. Une solution hybride conserve une base existante mais personnalise davantage la mise en page, les composants ou certains comportements.",
+            "Un site sur mesure conçoit l’architecture, l’interface et le développement autour du projet. Cela ne signifie pas que chaque ligne de code est unique : les bibliothèques et standards restent utiles. La différence réside dans la manière dont les décisions partent du besoin plutôt que des limites d’un thème."
+          ]
+        },
+        {
+          "heading": "Comparer les trois approches",
+          "table": {
+            "headers": ["Critère", "Template", "Hybride", "Sur mesure"],
+            "rows": [
+              ["Démarrage", "Rapide si le besoin correspond", "Base existante à adapter", "Phase de cadrage plus importante"],
+              ["Différenciation", "Limitée par le modèle", "Personnalisation intermédiaire", "Interface pensée pour le projet"],
+              ["Intégrations", "Plugins ou fonctions prévues", "Connexions ciblées possibles", "Architecture adaptée aux systèmes utiles"],
+              ["Évolution", "Dépend du thème et de l’écosystème", "Variable selon les adaptations", "Préparée selon la feuille de route"],
+              ["Maintenance", "Mises à jour du thème et extensions", "Base et code adapté à suivre", "Code, dépendances et documentation à maintenir"]
+            ]
+          }
+        },
+        {
+          "heading": "Le SEO ne se résume pas au choix du template",
+          "paragraphs": [
+            "Un template peut produire un site rapide et indexable s’il est bien construit, correctement configuré et alimenté par des contenus utiles. Un développement sur mesure peut être lent ou difficile à explorer s’il néglige la structure, le rendu, les liens internes ou les performances.",
+            "Le référencement dépend notamment de l’architecture, du contenu, des métadonnées, du mobile, de l’indexabilité, des données structurées applicables et de l’autorité du domaine. Le sur mesure donne davantage de contrôle ; il ne garantit pas un classement."
+          ],
+          "sources": [
+            { "label": "Google Search Central — Expérience sur la page", "href": "https://developers.google.com/search/docs/appearance/page-experience?hl=fr" },
+            { "label": "Google Search Central — Core Web Vitals", "href": "https://developers.google.com/search/docs/appearance/core-web-vitals?hl=fr" }
+          ]
+        },
+        {
+          "heading": "Vérifier propriété, licences et réversibilité",
+          "paragraphs": [
+            "Avant de choisir, vérifiez qui possède le domaine, les contenus, les comptes, les licences et les fichiers du projet. Certaines bases ou extensions imposent des conditions d’usage, des renouvellements ou une dépendance à une plateforme.",
+            "La réversibilité désigne la capacité à récupérer ses données et à changer de prestataire ou d’outil. Elle doit être discutée avant le lancement, surtout lorsque le site contient un catalogue, des comptes clients ou des données métier."
+          ],
+          "sources": [
+            { "label": "WordPress Theme Handbook", "href": "https://developer.wordpress.org/themes/" },
+            { "label": "Webflow — licences des templates", "href": "https://webflow.com/templates/template-licenses" }
+          ]
+        },
+        {
+          "heading": "Comparer le coût total et la maintenance",
+          "paragraphs": [
+            "Le template peut réduire le coût initial, puis demander des abonnements, extensions et adaptations. Le sur mesure demande davantage de conception et de développement, mais peut éviter des contournements si le besoin est spécifique. Dans les deux cas, mises à jour, hébergement, sauvegardes et évolutions doivent être prévues.",
+            "Le coût total s’évalue sur la durée d’usage envisagée. Une solution moins chère devient coûteuse si chaque changement nécessite un contournement ; une solution sur mesure devient disproportionnée si les fonctions prévues ne sont jamais utilisées."
+          ]
+        },
+        {
+          "heading": "Quand un template suffit",
+          "paragraphs": [
+            "Un template est pertinent lorsque l’offre est simple, les contenus sont prêts, les fonctionnalités sont standard et la structure choisie correspond réellement au parcours. Il peut convenir à un lancement, un site informatif court ou une équipe capable de rester dans les limites du modèle.",
+            "Le choix reste solide si la version mobile, l’accessibilité, les performances, les mises à jour et les licences sont contrôlées avant l’achat ou la mise en ligne."
+          ]
+        },
+        {
+          "heading": "Quand le sur mesure devient rationnel",
+          "paragraphs": [
+            "Le sur mesure se justifie quand plusieurs audiences ont des parcours différents, que l’identité doit se distinguer fortement, que le contenu ne rentre pas dans une structure standard ou que des intégrations métier sont nécessaires.",
+            "Il devient également pertinent lorsque le site doit évoluer par étapes et que les décisions d’aujourd’hui doivent préparer des fonctionnalités futures. Cette flexibilité a de la valeur seulement si la feuille de route est réelle et priorisée."
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Découvrir notre approche de création de sites web sur mesure" }
+          ]
+        },
+        {
+          "heading": "Trois scénarios pour décider",
+          "table": {
+            "headers": ["Contexte", "Option à examiner", "Question décisive"],
+            "rows": [
+              ["Indépendant lançant une offre", "Template ou hybride", "Le modèle couvre-t-il le contenu et l’action principale ?"],
+              ["PME multi-services ou multilingue", "Hybride ou sur mesure", "L’architecture reste-t-elle claire pour chaque audience ?"],
+              ["Entreprise avec CRM, réservation ou processus métier", "Sur mesure", "Les intégrations et règles sont-elles documentées ?"]
+            ]
+          }
+        },
+        {
+          "heading": "Checklist avant de choisir",
+          "list": [
+            "Objectif, audiences et parcours prioritaires définis",
+            "Contenus et langues réellement nécessaires identifiés",
+            "Fonctionnalités standard séparées des besoins spécifiques",
+            "Licences, accès et propriété clarifiés",
+            "Version mobile, accessibilité et SEO de base vérifiés",
+            "Maintenance et coûts futurs comparés",
+            "Réversibilité et export des données confirmés"
+          ],
+          "links": [
+            { "service": "creation-site-web-maroc", "label": "Choisir une approche adaptée avec notre agence web à Casablanca" }
           ]
         }
       ]

@@ -27,9 +27,9 @@ export default function sitemap() {
   }))
 
   const articlePages = insightsData.flatMap((article) =>
-    ["fr", "en"].map((lang) => ({
+    (article.locales || ["fr", "en"]).map((lang) => ({
       url: `${SITE_URL}/${lang}/insights/${article.id}`,
-      lastModified: new Date(article.date),
+      lastModified: new Date(article.updatedAt || article.date),
       changeFrequency: "monthly",
       priority: 0.7,
     })),
