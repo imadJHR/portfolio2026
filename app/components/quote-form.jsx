@@ -62,7 +62,7 @@ export default function QuoteForm({ lang }) {
       isEnglish ? `Hello, I would like to receive a quote.%0A%0A*Name:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A*Phone:* ${encodeURIComponent(form.phone)}%0A*Services:* ${encodeURIComponent(serviceLabels.join(", "))}%0A*Budget:* ${encodeURIComponent(budgetLabel)}%0A*Needs:* ${encodeURIComponent(form.need)}` : `Bonjour, je souhaite recevoir un devis.%0A%0A*Nom:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A*Téléphone:* ${encodeURIComponent(form.phone)}%0A*Services:* ${encodeURIComponent(serviceLabels.join(", "))}%0A*Budget:* ${encodeURIComponent(budgetLabel)}%0A*Besoins:* ${encodeURIComponent(form.need)}`
 
     setTimeout(() => {
-      window.open(`https://wa.me/212709120432?text=${message}`, "_blank")
+      window.open(`https://wa.me/212645288216?text=${message}`, "_blank")
       setLoading(false)
       setForm({ name: "", email: "", phone: "", services: [], budget: "", need: "" })
     }, 400)
